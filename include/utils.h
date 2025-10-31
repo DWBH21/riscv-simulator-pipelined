@@ -11,6 +11,7 @@
 #include "vm/registers.h"
 #include "vm/vm_base.h"
 #include "vm_asm_mw.h"
+#include "vm/rv5s/pipeline_registers.h" 
 
 #include <string>
 #include <filesystem>
@@ -54,5 +55,21 @@ void DumpRegisters(const std::filesystem::path &filename, RegisterFile &register
 void DumpDisasssembly(const std::filesystem::path &filename, AssembledProgram &program);
 
 void SetupConfigFile();
+
+/**
+ * @brief Dumps the state of all 5-stage pipeline registers to a JSON stream.
+ * @param file The output file stream to write to.
+ * @param if_id The IF/ID pipeline register.
+ * @param id_ex The ID/EX pipeline register.
+ * @param ex_mem The EX/MEM pipeline register.
+ * @param mem_wb The MEM/WB pipeline register.
+ */
+void DumpPipelineRegisters(
+    std::ofstream &file,
+    const IF_ID_Reg &if_id,
+    const ID_EX_Reg &id_ex,
+    const EX_MEM_Reg &ex_mem,
+    const MEM_WB_Reg &mem_wb
+);
 
 #endif // UTILS_H

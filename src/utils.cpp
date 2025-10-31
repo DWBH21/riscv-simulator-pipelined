@@ -8,7 +8,9 @@
 #include "utils.h"
 #include "vm/registers.h"
 #include "globals.h"
+#include "vm/rv5s/pipeline_registers.h"
 
+#include <iomanip>
 #include <filesystem>
 #include <fstream>
 #include <vector>
@@ -419,4 +421,115 @@ void SetupConfigFile() {
   config_file << "branch_prediction_table_size=0\n";
   config_file << "branch_prediction_table_associativity=0\n";
   config_file.close();
+}
+
+// NEW FUNCTIONS FOR 5-STAGE PIPELINE DUMPING
+/**
+ * @brief Helper function to write key/value pairs to a JSON stream.
+ */
+template<typename T>
+void write_json_field(std::ofstream &file, const std::string &key, const T &value, bool is_hex = false, bool last = false) {
+    file << "        \"" << key << "\": ";
+    if (is_hex) {
+        // Handle uint32_t for instruction
+        if (std::is_same<T, uint32_t>::value) {
+             file << "\"0x" << std::hex << std::setw(8) << std::setfill('0') << value << std::dec << std::setfill(' ') << "\"";
+        } else {
+             file << "\"0x" << std::hex << std::setw(16) << std::setfill('0') << value << std::dec << std::setfill(' ') << "\"";
+        }
+    } else if (std::is_same<T, bool>::value) {
+        file << (value ? "true" : "false");
+    } else if (std::is_integral<T>::value || std::is_floating_point<T>::value) {
+        file << value;
+    } else {
+        file << "\"" << value << "\""; // Assume string or string-convertible
+    }
+    if (!last) {
+        file << ",";
+    }
+    file << "\n";
+}
+
+// Specialization for int64_t to be hex by default
+void write_json_field(std::ofstream &file, const std::string &key, int64_t value, bool last = false) {
+    write_json_field(file, key, value, true, last);
+}
+
+// Specialization for uint64_t to be hex by default
+void write_json_field(std::ofstream &file, const std::string &key, uint64_t value, bool last = false) {
+    write_json_field(file, key, value, true, last);
+}
+
+// Specialization for uint32_t to be hex by default
+void write_json_field(std::ofstream &file, const std::string &key, uint32_t value, bool last = false) {
+    write_json_field(file, key, value, true, last);
+}
+
+// Specialization for int to be decimal by default
+void write_json_field(std::ofstream &file, const std::string &key, int value, bool last = false) {
+    write_json_field(file, key, value, false, last);
+}
+
+// Specialization for bool
+void write_json_field(std::ofstream &file, const std::string &key, bool value, bool last = false) {
+    write_json_field(file, key, value, false, last);
+}
+
+
+/**
+ * @brief Dumps the state of all 5-stage pipeline registers to a JSON stream.
+ */
+void DumpPipelineRegisters(
+    std::ofstream &file,
+    const IF_ID_Reg &if_id,
+    const ID_EX_Reg &id_ex,
+    const EX_MEM_Reg &ex_mem,
+    const MEM_WB_Reg &mem_wb
+) {
+    file << "  \"pipeline_registers\": {\n";
+
+    // IF/ID Register
+    file << "    \"IF_ID\": {\n";
+    write_json_field(file, "is_valid", if_id.is_valid);
+    write_json_field(file, "pc", if_id.pc);
+    write_json_field(file, "instruction", if_id.instruction, true); // Force hex for instruction
+    file << "    },\n";
+  
+    // ID/EX Register
+    file << "    \"ID_EX\": {\n";
+    write_json_field(file, "is_valid", id_ex.is_valid);
+    write_json_field(file, "pc", id_ex.pc);
+    write_json_field(file, "rs1_data", id_ex.rs1_data);
+    write_json_field(file, "rs2_data", id_ex.rs2_data);
+    write_json_field(file, "immediate", id_ex.immediate);
+    write_json_field(file, "rs1_index", (int)id_ex.rs1_index);
+    write_json_field(file, "rs2_index", (int)id_ex.rs2_index);
+    write_json_field(file, "rd_index", (int)id_ex.rd_index);
+    write_json_field(file, "CTRL_branch", id_ex.control.branch);
+    write_json_field(file, "CTRL_mem_read", id_ex.control.mem_read);
+    write_json_field(file, "CTRL_mem_write", id_ex.control.mem_write);
+    write_json_field(file, "CTRL_reg_write", id_ex.control.reg_write, true);
+    file << "    },\n";
+
+    // EX/MEM Register
+    file << "    \"EX_MEM\": {\n";
+    write_json_field(file, "is_valid", ex_mem.is_valid);
+    write_json_field(file, "alu_result", ex_mem.alu_result);
+    write_json_field(file, "store_data", ex_mem.store_data);
+    write_json_field(file, "rd_index", (int)ex_mem.rd_index);
+    write_json_field(file, "CTRL_mem_read", ex_mem.control.mem_read);
+    write_json_field(file, "CTRL_mem_write", ex_mem.control.mem_write);
+    write_json_field(file, "CTRL_reg_write", ex_mem.control.reg_write, true);
+    file << "    },\n";
+
+    // MEM/WB Register
+    file << "    \"MEM_WB\": {\n";
+    write_json_field(file, "is_valid", mem_wb.is_valid);
+    write_json_field(file, "memory_data", mem_wb.memory_data);
+    write_json_field(file, "alu_result", mem_wb.alu_result);
+    write_json_field(file, "rd_index", (int)mem_wb.rd_index);
+    write_json_field(file, "CTRL_reg_write", mem_wb.control.reg_write, true);
+    file << "    }\n";
+
+    file << "  }\n"; // End of pipeline_registers object
 }
