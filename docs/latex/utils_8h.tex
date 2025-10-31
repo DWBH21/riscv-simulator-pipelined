@@ -9,6 +9,7 @@ Contains utility functions for file I/O and string manipulation.
 {\ttfamily \#include \char`\"{}vm/registers.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}vm/vm\+\_\+base.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}vm\+\_\+asm\+\_\+mw.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vm/rv5s/pipeline\+\_\+registers.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$string$>$}\newline
 {\ttfamily \#include $<$filesystem$>$}\newline
 Include dependency graph for utils.\+h\+:
@@ -47,7 +48,9 @@ void \mbox{\hyperlink{utils_8h_a4645b448c63ee103e8ae566d83b45470}{Dump\+Register
 void \mbox{\hyperlink{utils_8h_a05b17231f2df6613889cdeccfdffa6c0}{Dump\+Disasssembly}} (const std\+::filesystem\+::path \&filename, \mbox{\hyperlink{structAssembledProgram}{Assembled\+Program}} \&program)
 \item 
 void \mbox{\hyperlink{utils_8h_a105ade81d4e257f3764e557f57773066}{Setup\+Config\+File}} ()
-\end{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{utils_8h_a7fcefe58df312dfca4e0475c20cf61bd}{Dump\+Pipeline\+Registers}} (std\+::ofstream \&file, const \mbox{\hyperlink{structIF__ID__Reg}{IF\+\_\+\+ID\+\_\+\+Reg}} \&if\+\_\+id, const \mbox{\hyperlink{structID__EX__Reg}{ID\+\_\+\+EX\+\_\+\+Reg}} \&id\+\_\+ex, const \mbox{\hyperlink{structEX__MEM__Reg}{EX\+\_\+\+MEM\+\_\+\+Reg}} \&ex\+\_\+mem, const \mbox{\hyperlink{structMEM__WB__Reg}{MEM\+\_\+\+WB\+\_\+\+Reg}} \&mem\+\_\+wb)
+\begin{DoxyCompactList}\small\item\em Dumps the state of all 5-\/stage pipeline registers to a JSON stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -100,6 +103,29 @@ The number of lines in the file.
 \doxysubsubsection{\texorpdfstring{DumpNoErrors()}{DumpNoErrors()}}
 {\footnotesize\ttfamily void Dump\+No\+Errors (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{filename }\end{DoxyParamCaption})}
 
+\mbox{\Hypertarget{utils_8h_a7fcefe58df312dfca4e0475c20cf61bd}\label{utils_8h_a7fcefe58df312dfca4e0475c20cf61bd}} 
+\index{utils.h@{utils.h}!DumpPipelineRegisters@{DumpPipelineRegisters}}
+\index{DumpPipelineRegisters@{DumpPipelineRegisters}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{DumpPipelineRegisters()}{DumpPipelineRegisters()}}
+{\footnotesize\ttfamily void Dump\+Pipeline\+Registers (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{file,  }\item[{const \mbox{\hyperlink{structIF__ID__Reg}{IF\+\_\+\+ID\+\_\+\+Reg}} \&}]{if\+\_\+id,  }\item[{const \mbox{\hyperlink{structID__EX__Reg}{ID\+\_\+\+EX\+\_\+\+Reg}} \&}]{id\+\_\+ex,  }\item[{const \mbox{\hyperlink{structEX__MEM__Reg}{EX\+\_\+\+MEM\+\_\+\+Reg}} \&}]{ex\+\_\+mem,  }\item[{const \mbox{\hyperlink{structMEM__WB__Reg}{MEM\+\_\+\+WB\+\_\+\+Reg}} \&}]{mem\+\_\+wb }\end{DoxyParamCaption})}
+
+
+
+Dumps the state of all 5-\/stage pipeline registers to a JSON stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The output file stream to write to. \\
+\hline
+{\em if\+\_\+id} & The IF/\+ID pipeline register. \\
+\hline
+{\em id\+\_\+ex} & The ID/\+EX pipeline register. \\
+\hline
+{\em ex\+\_\+mem} & The EX/\+MEM pipeline register. \\
+\hline
+{\em mem\+\_\+wb} & The MEM/\+WB pipeline register. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{utils_8h_a4645b448c63ee103e8ae566d83b45470}\label{utils_8h_a4645b448c63ee103e8ae566d83b45470}} 
 \index{utils.h@{utils.h}!DumpRegisters@{DumpRegisters}}
 \index{DumpRegisters@{DumpRegisters}!utils.h@{utils.h}}

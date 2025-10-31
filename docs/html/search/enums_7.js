@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['vmtypes_1217',['VmTypes',['../namespacevm__config.html#aa4eeb50c28c404f656938f58b44562b5',1,'vm_config']]]
+  ['registertype_1751',['RegisterType',['../classRegisterFile.html#ad20885f84b337c67fd63b230e11ba230',1,'RegisterFile']]],
+  ['replacementpolicy_1752',['ReplacementPolicy',['../namespacecache.html#afdbade0aa5657d2124a87a5dbc578c8c',1,'cache']]],
+  ['roundingmode_1753',['RoundingMode',['../rounding__modes_8h.html#a5959c934b204c7bcb6766cfaea8ae101',1,'rounding_modes.h']]]
 ];

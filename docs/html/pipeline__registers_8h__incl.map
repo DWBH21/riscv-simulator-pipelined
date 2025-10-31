@@ -1,0 +1,8 @@
+<map id="include/vm/rv5s/pipeline_registers.h" name="include/vm/rv5s/pipeline_registers.h">
+<area shape="rect" id="node1" title="Defines the data structures for pipeline registers and control signals." alt="" coords="161,5,343,47"/>
+<area shape="rect" id="node2" href="$alu_8h.html" title="Contains the definition of the alu class for performing arithmetic and logic operations." alt="" coords="174,95,253,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="276,169,343,196"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,169,64,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="89,169,151,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="175,169,251,196"/>
+</map>

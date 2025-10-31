@@ -67,7 +67,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">instructions.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -77,19 +78,22 @@ $(function() {
 <code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;array&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for instructions.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="instructions_8cpp__incl.png" border="0" usemap="#asrc_2common_2instructions_8cpp" alt=""/></div>
 <map name="asrc_2common_2instructions_8cpp" id="asrc_2common_2instructions_8cpp">
-<area shape="rect" title=" " alt="" coords="211,5,420,32"/>
-<area shape="rect" href="instructions_8h.html" title="Contains the declarations for the InstructionEncoding struct and related functions." alt="" coords="107,80,278,107"/>
+<area shape="rect" title=" " alt="" coords="356,5,565,32"/>
+<area shape="rect" href="instructions_8h.html" title="Contains the declarations for the InstructionEncoding struct and related functions." alt="" coords="227,80,398,107"/>
 <area shape="rect" title=" " alt="" coords="5,155,68,181"/>
-<area shape="rect" title=" " alt="" coords="266,155,325,181"/>
-<area shape="rect" title=" " alt="" coords="349,155,473,181"/>
-<area shape="rect" title=" " alt="" coords="403,80,518,107"/>
-<area shape="rect" title=" " alt="" coords="183,155,242,181"/>
-<area shape="rect" title=" " alt="" coords="93,155,159,181"/>
+<area shape="rect" title=" " alt="" coords="383,155,442,181"/>
+<area shape="rect" title=" " alt="" coords="467,155,591,181"/>
+<area shape="rect" title=" " alt="" coords="615,155,671,181"/>
+<area shape="rect" title=" " alt="" coords="574,80,689,107"/>
+<area shape="rect" title=" " alt="" coords="93,155,151,181"/>
+<area shape="rect" title=" " alt="" coords="175,155,242,181"/>
+<area shape="rect" title=" " alt="" coords="267,155,359,181"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -124,6 +128,12 @@ Functions</h2></td></tr>
 <tr class="separator:adf2c87a1fa7b27e0012e3eaf1f575538"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e26615428ea0891ded649073e440d88"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceinstruction__set.html#a3e26615428ea0891ded649073e440d88">instruction_set::isValidBaseExtensionInstruction</a> (const std::string &amp;instruction)</td></tr>
 <tr class="separator:a3e26615428ea0891ded649073e440d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e6f000a9cc56a65caac4033c362717d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceinstruction__set.html#a3e6f000a9cc56a65caac4033c362717d">instruction_set::isValidMExtensionInstruction</a> (const std::string &amp;instruction)</td></tr>
+<tr class="separator:a3e6f000a9cc56a65caac4033c362717d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac62387417c2482375edb488f4e563337"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceinstruction__set.html#ac62387417c2482375edb488f4e563337">instruction_set::isValidFExtensionInstruction</a> (const std::string &amp;instruction)</td></tr>
+<tr class="separator:ac62387417c2482375edb488f4e563337"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f75bd1bb73cd69424ee50160488cb79"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceinstruction__set.html#a5f75bd1bb73cd69424ee50160488cb79">instruction_set::isValidDExtensionInstruction</a> (const std::string &amp;instruction)</td></tr>
+<tr class="separator:a5f75bd1bb73cd69424ee50160488cb79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a390f2245d92958d7d6e67df52fdeab34"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceinstruction__set.html#a390f2245d92958d7d6e67df52fdeab34">instruction_set::isValidCSRRTypeInstruction</a> (const std::string &amp;instruction)</td></tr>
 <tr class="separator:a390f2245d92958d7d6e67df52fdeab34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac19e70a283ee2e1b15125faad66ba23e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceinstruction__set.html#ac19e70a283ee2e1b15125faad66ba23e">instruction_set::isValidCSRITypeInstruction</a> (const std::string &amp;instruction)</td></tr>
@@ -150,6 +160,13 @@ Functions</h2></td></tr>
 <tr class="separator:a5303fb0dd8dd34c268231c47f85a02fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a605befee774c8275dccbdf096ac5b66f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceinstruction__set.html#a605befee774c8275dccbdf096ac5b66f">instruction_set::getExpectedSyntaxes</a> (const std::string &amp;opcode)</td></tr>
 <tr class="separator:a605befee774c8275dccbdf096ac5b66f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:adae655b34cefe90f98b40fd0fed8702e"><td class="memItemLeft" align="right" valign="top">const std::unordered_set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceinstruction__set.html#adae655b34cefe90f98b40fd0fed8702e">instruction_set::FExtensionInstructions</a></td></tr>
+<tr class="separator:adae655b34cefe90f98b40fd0fed8702e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ec560a7abcbeaf88abf481cea62dbd3"><td class="memItemLeft" align="right" valign="top">const std::unordered_set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceinstruction__set.html#a6ec560a7abcbeaf88abf481cea62dbd3">instruction_set::DExtensionInstructions</a></td></tr>
+<tr class="separator:a6ec560a7abcbeaf88abf481cea62dbd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

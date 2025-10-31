@@ -76,8 +76,9 @@ Inheritance diagram for VmBase:</div>
 <div class="dyncontent">
 <div class="center"><img src="classVmBase__inherit__graph.png" border="0" usemap="#aVmBase_inherit__map" alt="Inheritance graph"/></div>
 <map name="aVmBase_inherit__map" id="aVmBase_inherit__map">
-<area shape="rect" title=" " alt="" coords="6,5,82,32"/>
-<area shape="rect" href="classRVSSVM.html" title=" " alt="" coords="5,80,83,107"/>
+<area shape="rect" title=" " alt="" coords="57,5,133,32"/>
+<area shape="rect" href="classRV5SVM.html" title=" " alt="" coords="5,80,83,107"/>
+<area shape="rect" href="classRVSSVM.html" title=" " alt="" coords="107,80,184,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -127,6 +128,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab323c0d074c2ceb9885746d1073ed505"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8262f906074f8e778665b73841b0352"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVmBase.html#ae8262f906074f8e778665b73841b0352">Reset</a> ()=0</td></tr>
 <tr class="separator:ae8262f906074f8e778665b73841b0352"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb9835e856c3ce41f0e326794526db78"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVmBase.html#adb9835e856c3ce41f0e326794526db78">RequestStop</a> ()</td></tr>
+<tr class="separator:adb9835e856c3ce41f0e326794526db78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49e7906bf19ce3fd22cf5f941ed13fab"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVmBase.html#a49e7906bf19ce3fd22cf5f941ed13fab">IsStopRequested</a> () const</td></tr>
+<tr class="separator:a49e7906bf19ce3fd22cf5f941ed13fab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04d991f8e23ad55a7183cc1b1245d23d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVmBase.html#a04d991f8e23ad55a7183cc1b1245d23d">ClearStop</a> ()</td></tr>
+<tr class="separator:a04d991f8e23ad55a7183cc1b1245d23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4c112996906a10c6e8a27cbd5091c22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVmBase.html#aa4c112996906a10c6e8a27cbd5091c22">DumpState</a> (const std::filesystem::path &amp;filename)</td></tr>
 <tr class="separator:aa4c112996906a10c6e8a27cbd5091c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafff61aba5fac925eb82f5b533b2df4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVmBase.html#aafff61aba5fac925eb82f5b533b2df4e">ModifyRegister</a> (const std::string &amp;reg_name, uint64_t value)</td></tr>
@@ -273,6 +280,31 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a04d991f8e23ad55a7183cc1b1245d23d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04d991f8e23ad55a7183cc1b1245d23d">&#9670;&nbsp;</a></span>ClearStop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VmBase::ClearStop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ac14764bc14c9e4dd41655c9054b1dfa4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac14764bc14c9e4dd41655c9054b1dfa4">&#9670;&nbsp;</a></span>DebugRun()</h2>
 
@@ -296,7 +328,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classRVSSVM.html#a8b954269c60ab390ecca05966dacb47e">RVSSVM</a>.</p>
+<p>Implemented in <a class="el" href="classRVSSVM.html#a8b954269c60ab390ecca05966dacb47e">RVSSVM</a>, and <a class="el" href="classRV5SVM.html#a976104059b9f28048b4b2f0f7545ab99">RV5SVM</a>.</p>
 
 </div>
 </div>
@@ -349,6 +381,31 @@ Public Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a49e7906bf19ce3fd22cf5f941ed13fab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49e7906bf19ce3fd22cf5f941ed13fab">&#9670;&nbsp;</a></span>IsStopRequested()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool VmBase::IsStopRequested </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -466,7 +523,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classRVSSVM.html#a9cb130b8c84159be82027d49ce3e4279">RVSSVM</a>.</p>
+<p>Implemented in <a class="el" href="classRVSSVM.html#a9cb130b8c84159be82027d49ce3e4279">RVSSVM</a>, and <a class="el" href="classRV5SVM.html#ab2dae5a89f3e454fc740feee8fae5d0f">RV5SVM</a>.</p>
 
 </div>
 </div>
@@ -498,6 +555,31 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="adb9835e856c3ce41f0e326794526db78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb9835e856c3ce41f0e326794526db78">&#9670;&nbsp;</a></span>RequestStop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VmBase::RequestStop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae8262f906074f8e778665b73841b0352"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae8262f906074f8e778665b73841b0352">&#9670;&nbsp;</a></span>Reset()</h2>
 
@@ -521,7 +603,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classRVSSVM.html#aa75bbde8be42c275f928681e372d6c7c">RVSSVM</a>.</p>
+<p>Implemented in <a class="el" href="classRVSSVM.html#aa75bbde8be42c275f928681e372d6c7c">RVSSVM</a>, and <a class="el" href="classRV5SVM.html#a654893f3844e6002704db2e5dc36ea35">RV5SVM</a>.</p>
 
 </div>
 </div>
@@ -548,7 +630,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classRVSSVM.html#a0aa85843a97344299380afebc83d2a5e">RVSSVM</a>.</p>
+<p>Implemented in <a class="el" href="classRVSSVM.html#a0aa85843a97344299380afebc83d2a5e">RVSSVM</a>, and <a class="el" href="classRV5SVM.html#a1710e4750daf34a8af45479f37cc44c5">RV5SVM</a>.</p>
 
 </div>
 </div>
@@ -575,7 +657,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classRVSSVM.html#a5547766e7446048242849d2510e3b2ef">RVSSVM</a>.</p>
+<p>Implemented in <a class="el" href="classRVSSVM.html#a5547766e7446048242849d2510e3b2ef">RVSSVM</a>, and <a class="el" href="classRV5SVM.html#afb43c1466cebec9376c61a5e823e0769">RV5SVM</a>.</p>
 
 </div>
 </div>
@@ -602,7 +684,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classRVSSVM.html#aabc759ac821f87303daa71c9480b8756">RVSSVM</a>.</p>
+<p>Implemented in <a class="el" href="classRVSSVM.html#aabc759ac821f87303daa71c9480b8756">RVSSVM</a>, and <a class="el" href="classRV5SVM.html#a080d127429f7058394f6f74fbe565406">RV5SVM</a>.</p>
 
 </div>
 </div>

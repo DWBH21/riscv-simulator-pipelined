@@ -77,6 +77,8 @@ $(function() {
 <div class="textblock"><code>#include &quot;<a class="el" href="utils_8h_source.html">utils.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="registers_8h_source.html">vm/registers.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="globals_8h_source.html">globals.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="pipeline__registers_8h_source.html">vm/rv5s/pipeline_registers.h</a>&quot;</code><br />
+<code>#include &lt;iomanip&gt;</code><br />
 <code>#include &lt;filesystem&gt;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
@@ -87,43 +89,44 @@ Include dependency graph for utils.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="utils_8cpp__incl.png" border="0" usemap="#asrc_2utils_8cpp" alt=""/></div>
 <map name="asrc_2utils_8cpp" id="asrc_2utils_8cpp">
-<area shape="rect" title="Contains utility functions for the VM." alt="" coords="2330,5,2430,32"/>
-<area shape="rect" href="utils_8h.html" title="Contains utility functions for file I/O and string manipulation." alt="" coords="1393,80,1455,107"/>
-<area shape="rect" title=" " alt="" coords="415,453,478,480"/>
-<area shape="rect" href="registers_8h.html" title="Contains the definition of the RegisterFile class for managing registers in the simulator." alt="" coords="142,304,258,331"/>
-<area shape="rect" href="globals_8h.html" title="Contains global definitions and includes for the assembler." alt="" coords="2522,453,2603,480"/>
-<area shape="rect" title=" " alt="" coords="2556,528,2647,555"/>
-<area shape="rect" title=" " alt="" coords="2003,453,2077,480"/>
-<area shape="rect" title=" " alt="" coords="2340,453,2415,480"/>
-<area shape="rect" title=" " alt="" coords="2729,80,2815,107"/>
-<area shape="rect" href="parser_8h.html" title="Contains the definition of the Parser class for parsing tokens and generating intermediate code." alt="" coords="929,304,1076,331"/>
-<area shape="rect" title=" " alt="" coords="1395,453,1453,480"/>
-<area shape="rect" href="vm__base_8h.html" title="File containing the base class for the virtual machine." alt="" coords="1553,155,1671,181"/>
-<area shape="rect" href="vm__asm__mw_8h.html" title="Contains functions to handle assembler input for the VM." alt="" coords="943,229,1063,256"/>
-<area shape="rect" href="tokens_8h.html" title="Contains the definition of the TokenType enum and the Token struct." alt="" coords="1136,379,1285,405"/>
-<area shape="rect" href="code__generator_8h.html" title="Contains the definition of the ICUnit struct and functions for generating machine code." alt="" coords="854,379,1061,405"/>
-<area shape="rect" href="errors_8h.html" title="Defines error handling structures and error types for syntax and semantic errors in the assembler." alt="" coords="1461,379,1605,405"/>
-<area shape="rect" title=" " alt="" coords="677,379,728,405"/>
-<area shape="rect" title=" " alt="" coords="585,379,653,405"/>
-<area shape="rect" title=" " alt="" coords="671,453,727,480"/>
-<area shape="rect" title=" " alt="" coords="1801,453,1868,480"/>
-<area shape="rect" title=" " alt="" coords="1697,453,1777,480"/>
-<area shape="rect" title=" " alt="" coords="971,453,1037,480"/>
-<area shape="rect" title=" " alt="" coords="872,453,947,480"/>
-<area shape="rect" title=" " alt="" coords="2153,453,2229,480"/>
-<area shape="rect" title=" " alt="" coords="93,379,208,405"/>
-<area shape="rect" title=" " alt="" coords="385,379,509,405"/>
-<area shape="rect" href="memory__controller_8h.html" title="Contains the declaration of the MemoryController class for managing memory in the VM." alt="" coords="2013,229,2171,256"/>
-<area shape="rect" href="alu_8h.html" title="Contains the definition of the alu class for performing arithmetic and logic operations." alt="" coords="2246,379,2301,405"/>
-<area shape="rect" title=" " alt="" coords="1580,229,1644,256"/>
-<area shape="rect" title=" " alt="" coords="1669,229,1811,256"/>
-<area shape="rect" title=" " alt="" coords="1835,229,1898,256"/>
-<area shape="rect" title=" " alt="" coords="1923,229,1989,256"/>
-<area shape="rect" href="config_8h.html" title="Contains configuration options for the assembler." alt="" coords="2035,379,2120,405"/>
-<area shape="rect" href="main__memory_8h.html" title="Contains the definition of the MemoryBlock and Memory classes." alt="" coords="1833,304,1959,331"/>
-<area shape="rect" title=" " alt="" coords="1893,453,1979,480"/>
-<area shape="rect" title=" " alt="" coords="2439,453,2497,480"/>
-<area shape="rect" title=" " alt="" coords="2253,453,2315,480"/>
+<area shape="rect" title="Contains utility functions for the VM." alt="" coords="2014,5,2114,32"/>
+<area shape="rect" href="utils_8h.html" title="Contains utility functions for file I/O and string manipulation." alt="" coords="987,80,1050,107"/>
+<area shape="rect" title=" " alt="" coords="946,453,1009,480"/>
+<area shape="rect" title=" " alt="" coords="1931,453,2005,480"/>
+<area shape="rect" href="registers_8h.html" title="Contains the definition of the RegisterFile class for managing registers in the simulator." alt="" coords="491,304,607,331"/>
+<area shape="rect" href="globals_8h.html" title="Contains global definitions and includes for the assembler." alt="" coords="2030,453,2111,480"/>
+<area shape="rect" title=" " alt="" coords="535,528,625,555"/>
+<area shape="rect" title=" " alt="" coords="2351,453,2425,480"/>
+<area shape="rect" title=" " alt="" coords="2557,453,2632,480"/>
+<area shape="rect" href="pipeline__registers_8h.html" title="Defines the data structures for pipeline registers and control signals." alt="" coords="94,155,301,181"/>
+<area shape="rect" title=" " alt="" coords="2701,80,2787,107"/>
+<area shape="rect" href="parser_8h.html" title="Contains the definition of the Parser class for parsing tokens and generating intermediate code." alt="" coords="1492,304,1639,331"/>
+<area shape="rect" title=" " alt="" coords="1848,453,1907,480"/>
+<area shape="rect" href="vm__base_8h.html" title="File containing the base class for the virtual machine." alt="" coords="817,155,935,181"/>
+<area shape="rect" href="vm__asm__mw_8h.html" title="Contains functions to handle assembler input for the VM." alt="" coords="1288,229,1408,256"/>
+<area shape="rect" href="tokens_8h.html" title="Contains the definition of the TokenType enum and the Token struct." alt="" coords="2080,379,2229,405"/>
+<area shape="rect" href="code__generator_8h.html" title="Contains the definition of the ICUnit struct and functions for generating machine code." alt="" coords="1462,379,1669,405"/>
+<area shape="rect" href="errors_8h.html" title="Defines error handling structures and error types for syntax and semantic errors in the assembler." alt="" coords="1293,379,1437,405"/>
+<area shape="rect" title=" " alt="" coords="1955,379,2005,405"/>
+<area shape="rect" title=" " alt="" coords="2254,379,2322,405"/>
+<area shape="rect" title=" " alt="" coords="680,453,736,480"/>
+<area shape="rect" title=" " alt="" coords="368,453,435,480"/>
+<area shape="rect" title=" " alt="" coords="1615,453,1695,480"/>
+<area shape="rect" title=" " alt="" coords="1412,453,1479,480"/>
+<area shape="rect" title=" " alt="" coords="553,453,629,480"/>
+<area shape="rect" title=" " alt="" coords="347,379,461,405"/>
+<area shape="rect" title=" " alt="" coords="739,379,863,405"/>
+<area shape="rect" href="memory__controller_8h.html" title="Contains the declaration of the MemoryController class for managing memory in the VM." alt="" coords="1001,229,1159,256"/>
+<area shape="rect" href="alu_8h.html" title="Contains the definition of the alu class for performing arithmetic and logic operations." alt="" coords="217,229,271,256"/>
+<area shape="rect" title=" " alt="" coords="913,229,977,256"/>
+<area shape="rect" title=" " alt="" coords="467,229,610,256"/>
+<area shape="rect" title=" " alt="" coords="634,229,697,256"/>
+<area shape="rect" title=" " alt="" coords="721,229,788,256"/>
+<area shape="rect" href="config_8h.html" title="Contains configuration options for the assembler." alt="" coords="1795,379,1880,405"/>
+<area shape="rect" href="main__memory_8h.html" title="Contains the definition of the MemoryBlock and Memory classes." alt="" coords="981,304,1107,331"/>
+<area shape="rect" title=" " alt="" coords="1503,453,1590,480"/>
+<area shape="rect" title=" " alt="" coords="195,304,253,331"/>
+<area shape="rect" title=" " alt="" coords="278,304,341,331"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -150,6 +153,23 @@ Functions</h2></td></tr>
 <tr class="separator:a05b17231f2df6613889cdeccfdffa6c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a105ade81d4e257f3764e557f57773066"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8cpp.html#a105ade81d4e257f3764e557f57773066">SetupConfigFile</a> ()</td></tr>
 <tr class="separator:a105ade81d4e257f3764e557f57773066"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcd80ef37f66a812d3b34255932d58c8"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:adcd80ef37f66a812d3b34255932d58c8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="utils_8cpp.html#adcd80ef37f66a812d3b34255932d58c8">write_json_field</a> (std::ofstream &amp;file, const std::string &amp;key, const T &amp;value, bool is_hex=false, bool last=false)</td></tr>
+<tr class="memdesc:adcd80ef37f66a812d3b34255932d58c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to write key/value pairs to a JSON stream.  <a href="utils_8cpp.html#adcd80ef37f66a812d3b34255932d58c8">More...</a><br /></td></tr>
+<tr class="separator:adcd80ef37f66a812d3b34255932d58c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a420ccf358036a25409c17cf6e2122f2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8cpp.html#a420ccf358036a25409c17cf6e2122f2c">write_json_field</a> (std::ofstream &amp;file, const std::string &amp;key, int64_t value, bool last=false)</td></tr>
+<tr class="separator:a420ccf358036a25409c17cf6e2122f2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca91bc10c457f40f1461f3070f90aad4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8cpp.html#aca91bc10c457f40f1461f3070f90aad4">write_json_field</a> (std::ofstream &amp;file, const std::string &amp;key, uint64_t value, bool last=false)</td></tr>
+<tr class="separator:aca91bc10c457f40f1461f3070f90aad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a6037c5c8000f1f3b2a160ff6611d41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8cpp.html#a7a6037c5c8000f1f3b2a160ff6611d41">write_json_field</a> (std::ofstream &amp;file, const std::string &amp;key, uint32_t value, bool last=false)</td></tr>
+<tr class="separator:a7a6037c5c8000f1f3b2a160ff6611d41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8082fcc90b6cf515cf83d0bdc5b9dbff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8cpp.html#a8082fcc90b6cf515cf83d0bdc5b9dbff">write_json_field</a> (std::ofstream &amp;file, const std::string &amp;key, int value, bool last=false)</td></tr>
+<tr class="separator:a8082fcc90b6cf515cf83d0bdc5b9dbff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa6b9e3c89e8a80d22d63904650f6944"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8cpp.html#aaa6b9e3c89e8a80d22d63904650f6944">write_json_field</a> (std::ofstream &amp;file, const std::string &amp;key, bool value, bool last=false)</td></tr>
+<tr class="separator:aaa6b9e3c89e8a80d22d63904650f6944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fcefe58df312dfca4e0475c20cf61bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8cpp.html#a7fcefe58df312dfca4e0475c20cf61bd">DumpPipelineRegisters</a> (std::ofstream &amp;file, const <a class="el" href="structIF__ID__Reg.html">IF_ID_Reg</a> &amp;if_id, const <a class="el" href="structID__EX__Reg.html">ID_EX_Reg</a> &amp;id_ex, const <a class="el" href="structEX__MEM__Reg.html">EX_MEM_Reg</a> &amp;ex_mem, const <a class="el" href="structMEM__WB__Reg.html">MEM_WB_Reg</a> &amp;mem_wb)</td></tr>
+<tr class="memdesc:a7fcefe58df312dfca4e0475c20cf61bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dumps the state of all 5-stage pipeline registers to a JSON stream.  <a href="utils_8cpp.html#a7fcefe58df312dfca4e0475c20cf61bd">More...</a><br /></td></tr>
+<tr class="separator:a7fcefe58df312dfca4e0475c20cf61bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains utility functions for the VM. </p>
@@ -259,6 +279,64 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7fcefe58df312dfca4e0475c20cf61bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fcefe58df312dfca4e0475c20cf61bd">&#9670;&nbsp;</a></span>DumpPipelineRegisters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DumpPipelineRegisters </td>
+          <td>(</td>
+          <td class="paramtype">std::ofstream &amp;&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structIF__ID__Reg.html">IF_ID_Reg</a> &amp;&#160;</td>
+          <td class="paramname"><em>if_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structID__EX__Reg.html">ID_EX_Reg</a> &amp;&#160;</td>
+          <td class="paramname"><em>id_ex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structEX__MEM__Reg.html">EX_MEM_Reg</a> &amp;&#160;</td>
+          <td class="paramname"><em>ex_mem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structMEM__WB__Reg.html">MEM_WB_Reg</a> &amp;&#160;</td>
+          <td class="paramname"><em>mem_wb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dumps the state of all 5-stage pipeline registers to a JSON stream. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>The output file stream to write to. </td></tr>
+    <tr><td class="paramname">if_id</td><td>The IF/ID pipeline register. </td></tr>
+    <tr><td class="paramname">id_ex</td><td>The ID/EX pipeline register. </td></tr>
+    <tr><td class="paramname">ex_mem</td><td>The EX/MEM pipeline register. </td></tr>
+    <tr><td class="paramname">mem_wb</td><td>The MEM/WB pipeline register. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -390,6 +468,256 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaa6b9e3c89e8a80d22d63904650f6944"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa6b9e3c89e8a80d22d63904650f6944">&#9670;&nbsp;</a></span>write_json_field() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void write_json_field </td>
+          <td>(</td>
+          <td class="paramtype">std::ofstream &amp;&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>last</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adcd80ef37f66a812d3b34255932d58c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcd80ef37f66a812d3b34255932d58c8">&#9670;&nbsp;</a></span>write_json_field() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void write_json_field </td>
+          <td>(</td>
+          <td class="paramtype">std::ofstream &amp;&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_hex</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>last</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Helper function to write key/value pairs to a JSON stream. </p>
+
+</div>
+</div>
+<a id="a8082fcc90b6cf515cf83d0bdc5b9dbff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8082fcc90b6cf515cf83d0bdc5b9dbff">&#9670;&nbsp;</a></span>write_json_field() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void write_json_field </td>
+          <td>(</td>
+          <td class="paramtype">std::ofstream &amp;&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>last</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a420ccf358036a25409c17cf6e2122f2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a420ccf358036a25409c17cf6e2122f2c">&#9670;&nbsp;</a></span>write_json_field() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void write_json_field </td>
+          <td>(</td>
+          <td class="paramtype">std::ofstream &amp;&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>last</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7a6037c5c8000f1f3b2a160ff6611d41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a6037c5c8000f1f3b2a160ff6611d41">&#9670;&nbsp;</a></span>write_json_field() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void write_json_field </td>
+          <td>(</td>
+          <td class="paramtype">std::ofstream &amp;&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>last</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aca91bc10c457f40f1461f3070f90aad4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca91bc10c457f40f1461f3070f90aad4">&#9670;&nbsp;</a></span>write_json_field() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void write_json_field </td>
+          <td>(</td>
+          <td class="paramtype">std::ofstream &amp;&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>last</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">

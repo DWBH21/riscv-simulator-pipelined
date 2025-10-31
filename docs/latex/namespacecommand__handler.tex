@@ -22,16 +22,19 @@ enum class \mbox{\hyperlink{namespacecommand__handler_a49f72bb84305031f68e77b48b
 \mbox{\hyperlink{namespacecommand__handler_a49f72bb84305031f68e77b48be812681ac07bf946a7da4553f9f2776656e0d60f}{REDO}}
 , \mbox{\hyperlink{namespacecommand__handler_a49f72bb84305031f68e77b48be812681ab5859d8721cfdc0312b2838b9c985bc1}{RESET}}
 , \mbox{\hyperlink{namespacecommand__handler_a49f72bb84305031f68e77b48be812681ab0fe93313e04f4e2c261e0ff20dfdbcb}{MODIFY\+\_\+\+REGISTER}}
+, \mbox{\hyperlink{namespacecommand__handler_a49f72bb84305031f68e77b48be812681a5f20fb1a83a6f2777b80c6a05c21c099}{GET\+\_\+\+REGISTER}}
+, \newline
+\mbox{\hyperlink{namespacecommand__handler_a49f72bb84305031f68e77b48be812681a2420ea46ee68f3eff9ec681e913f4a19}{MODIFY\+\_\+\+MEMORY}}
 , \mbox{\hyperlink{namespacecommand__handler_a49f72bb84305031f68e77b48be812681acecaa410a5dbf8993459edf9f5227a92}{DUMP\+\_\+\+MEMORY}}
-, \newline
-\mbox{\hyperlink{namespacecommand__handler_a49f72bb84305031f68e77b48be812681aac0e0a212458cb501d6a64b97e1ca817}{PRINT\+\_\+\+MEMORY}}
+, \mbox{\hyperlink{namespacecommand__handler_a49f72bb84305031f68e77b48be812681aac0e0a212458cb501d6a64b97e1ca817}{PRINT\+\_\+\+MEMORY}}
 , \mbox{\hyperlink{namespacecommand__handler_a49f72bb84305031f68e77b48be812681a8c3c1a5f272ba8b70b2de2d21d98ef69}{GET\+\_\+\+MEMORY\+\_\+\+POINT}}
-, \mbox{\hyperlink{namespacecommand__handler_a49f72bb84305031f68e77b48be812681af4981f876938b4f77a6a883cdc0631d5}{DUMP\+\_\+\+CACHE}}
-, \mbox{\hyperlink{namespacecommand__handler_a49f72bb84305031f68e77b48be812681a495ead75498c058e80ac36a65b2399db}{ADD\+\_\+\+BREAKPOINT}}
 , \newline
-\mbox{\hyperlink{namespacecommand__handler_a49f72bb84305031f68e77b48be812681a1af1483e77cfe2abd58e8eb639768b15}{REMOVE\+\_\+\+BREAKPOINT}}
+\mbox{\hyperlink{namespacecommand__handler_a49f72bb84305031f68e77b48be812681af4981f876938b4f77a6a883cdc0631d5}{DUMP\+\_\+\+CACHE}}
+, \mbox{\hyperlink{namespacecommand__handler_a49f72bb84305031f68e77b48be812681a495ead75498c058e80ac36a65b2399db}{ADD\+\_\+\+BREAKPOINT}}
+, \mbox{\hyperlink{namespacecommand__handler_a49f72bb84305031f68e77b48be812681a1af1483e77cfe2abd58e8eb639768b15}{REMOVE\+\_\+\+BREAKPOINT}}
 , \mbox{\hyperlink{namespacecommand__handler_a49f72bb84305031f68e77b48be812681a3cbd204eb9b0446f83da767225380a79}{VM\+\_\+\+STDIN}}
-, \mbox{\hyperlink{namespacecommand__handler_a49f72bb84305031f68e77b48be812681aa42b2fb0e720a080e79a92f4ca97d927}{EXIT}}
+, \newline
+\mbox{\hyperlink{namespacecommand__handler_a49f72bb84305031f68e77b48be812681aa42b2fb0e720a080e79a92f4ca97d927}{EXIT}}
  \}
 \item 
 enum class \mbox{\hyperlink{namespacecommand__handler_a44c251e1711cea6749a00f36fcb08cf4}{Command\+Argument\+Type}} \{ \newline
@@ -135,6 +138,14 @@ RESET&\\
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MODIFY\_REGISTER@{MODIFY\_REGISTER}!command\_handler@{command\_handler}}\index{command\_handler@{command\_handler}!MODIFY\_REGISTER@{MODIFY\_REGISTER}}}\mbox{\Hypertarget{namespacecommand__handler_a49f72bb84305031f68e77b48be812681ab0fe93313e04f4e2c261e0ff20dfdbcb}\label{namespacecommand__handler_a49f72bb84305031f68e77b48be812681ab0fe93313e04f4e2c261e0ff20dfdbcb}} 
 MODIFY\+\_\+\+REGISTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GET\_REGISTER@{GET\_REGISTER}!command\_handler@{command\_handler}}\index{command\_handler@{command\_handler}!GET\_REGISTER@{GET\_REGISTER}}}\mbox{\Hypertarget{namespacecommand__handler_a49f72bb84305031f68e77b48be812681a5f20fb1a83a6f2777b80c6a05c21c099}\label{namespacecommand__handler_a49f72bb84305031f68e77b48be812681a5f20fb1a83a6f2777b80c6a05c21c099}} 
+GET\+\_\+\+REGISTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MODIFY\_MEMORY@{MODIFY\_MEMORY}!command\_handler@{command\_handler}}\index{command\_handler@{command\_handler}!MODIFY\_MEMORY@{MODIFY\_MEMORY}}}\mbox{\Hypertarget{namespacecommand__handler_a49f72bb84305031f68e77b48be812681a2420ea46ee68f3eff9ec681e913f4a19}\label{namespacecommand__handler_a49f72bb84305031f68e77b48be812681a2420ea46ee68f3eff9ec681e913f4a19}} 
+MODIFY\+\_\+\+MEMORY&\\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{DUMP\_MEMORY@{DUMP\_MEMORY}!command\_handler@{command\_handler}}\index{command\_handler@{command\_handler}!DUMP\_MEMORY@{DUMP\_MEMORY}}}\mbox{\Hypertarget{namespacecommand__handler_a49f72bb84305031f68e77b48be812681acecaa410a5dbf8993459edf9f5227a92}\label{namespacecommand__handler_a49f72bb84305031f68e77b48be812681acecaa410a5dbf8993459edf9f5227a92}} 

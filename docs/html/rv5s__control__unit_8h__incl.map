@@ -1,0 +1,9 @@
+<map id="include/vm/rv5s/rv5s_control_unit.h" name="include/vm/rv5s/rv5s_control_unit.h">
+<area shape="rect" id="node1" title="Definition of the Control Unit for the 5&#45;stage pipeline." alt="" coords="189,5,347,47"/>
+<area shape="rect" id="node2" href="$pipeline__registers_8h.html" title="Defines the data structures for pipeline registers and control signals." alt="" coords="137,95,287,121"/>
+<area shape="rect" id="node6" title=" " alt="" coords="276,244,343,271"/>
+<area shape="rect" id="node3" href="$alu_8h.html" title="Contains the definition of the alu class for performing arithmetic and logic operations." alt="" coords="158,169,237,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,244,64,271"/>
+<area shape="rect" id="node5" title=" " alt="" coords="89,244,151,271"/>
+<area shape="rect" id="node7" title=" " alt="" coords="175,244,251,271"/>
+</map>

@@ -1,20 +1,11 @@
 var searchData=
 [
-  ['r_5ftype_5finstruction_5fencoding_5fmap_1217',['R_type_instruction_encoding_map',['../namespaceinstruction__set.html#a859191af4ff841c4c7486a6a19c7fa7a',1,'instruction_set']]],
-  ['rd_1218',['rd',['../structICUnit.html#aa9aa05995849c6ac8cbe1d127d1f922e',1,'ICUnit']]],
-  ['redo_5fstack_5f_1219',['redo_stack_',['../classRVSSVM.html#ab108a22ac8ca3f2634b8cd2322736f1d',1,'RVSSVM']]],
-  ['reg_5falias_5fto_5fname_1220',['reg_alias_to_name',['../registers_8cpp.html#af4ede5aac2f7597ad13f0a67cb8b13b5',1,'reg_alias_to_name():&#160;registers.cpp'],['../registers_8h.html#af4ede5aac2f7597ad13f0a67cb8b13b5',1,'reg_alias_to_name():&#160;registers.cpp']]],
-  ['reg_5findex_1221',['reg_index',['../structRegisterChange.html#afb16485a17aff6acb690782da5dcb713',1,'RegisterChange']]],
-  ['reg_5ftype_1222',['reg_type',['../structRegisterChange.html#ac04acbfc8d09357500d12c1d9acc7f8c',1,'RegisterChange']]],
-  ['reg_5fwrite_5f_1223',['reg_write_',['../classControlUnit.html#a5b002e22ea0e96d2d2ce24daf74a1e8b',1,'ControlUnit']]],
-  ['register_5fchanges_1224',['register_changes',['../structStepDelta.html#a3e41fab118a0d4425af18a7dac832086',1,'StepDelta']]],
-  ['registers_5f_1225',['registers_',['../classVmBase.html#a3edc0e9c3765ae9720874b361c58e947',1,'VmBase']]],
-  ['registers_5fdump_5ffile_5fpath_1226',['registers_dump_file_path',['../namespaceglobals.html#a71fe4e87fbec0b990ffe7bc7e592d0d1',1,'globals']]],
-  ['return_5faddress_5f_1227',['return_address_',['../classRVSSVM.html#a22bbb0ff1567f0a6483f74f4327b606a',1,'RVSSVM']]],
-  ['rm_1228',['rm',['../structICUnit.html#a1862ec48ba599365d6f38c5e0f69f84c',1,'ICUnit']]],
-  ['roundingmodeencoding_1229',['roundingModeEncoding',['../rounding__modes_8h.html#a0f5fc322fb6db7cb06e5a912be28bf20',1,'rounding_modes.h']]],
-  ['rs1_1230',['rs1',['../structICUnit.html#a5cc64dcce86bb9c70403503ddd1e6978',1,'ICUnit']]],
-  ['rs2_1231',['rs2',['../structICUnit.html#a65f2bf2a14c45bb210439ed02862232c',1,'ICUnit']]],
-  ['rs3_1232',['rs3',['../structICUnit.html#a4fa54a29e2374eeb6204d4d36c3a198d',1,'ICUnit']]],
-  ['run_5fstep_5fdelay_1233',['run_step_delay',['../structvm__config_1_1VmConfig.html#a9438d71dc02eca394d21d60da75d50f9',1,'vm_config::VmConfig']]]
+  ['parse_5ferrors_1665',['parse_errors',['../structErrorTracker.html#a06c0ef1d1a2e8062c085e89a57989264',1,'ErrorTracker']]],
+  ['pc_1666',['pc',['../structIF__ID__Reg.html#a171eb3843fc3872fc4a423fcd7fc724f',1,'IF_ID_Reg::pc()'],['../structID__EX__Reg.html#acd4de7ebe06eb866b6bc28a315214391',1,'ID_EX_Reg::pc()']]],
+  ['pc_5finc_1667',['pc_inc',['../structIF__ID__Reg.html#abab24e6bc4e24f1f1fb1e90c7428e784',1,'IF_ID_Reg::pc_inc()'],['../structID__EX__Reg.html#a7ba991798fdb6bba19d55fe5d78ba4f3',1,'ID_EX_Reg::pc_inc()'],['../structEX__MEM__Reg.html#a92e9436ff4863b034e2f38415657522f',1,'EX_MEM_Reg::pc_inc()'],['../structMEM__WB__Reg.html#a34f749fc9e6e5573cb70c45535b8c197',1,'MEM_WB_Reg::pc_inc()']]],
+  ['pc_5fsrc_5f_1668',['pc_src_',['../classControlUnit.html#a53da51422d76b66d1dee86fd80e4ae28',1,'ControlUnit']]],
+  ['pipeline_5fmode_1669',['pipeline_mode',['../structvm__config_1_1VmConfig.html#a2cf9c2a5caf45a34cbb9cd7677dd97bf',1,'vm_config::VmConfig']]],
+  ['program_5f_1670',['program_',['../classVmBase.html#a8232ad061e0f14d237c83c22a2ef4781',1,'VmBase']]],
+  ['program_5fcounter_5f_1671',['program_counter_',['../classVmBase.html#a786aa9116a8240f3c80a478fa2c7bed9',1,'VmBase']]],
+  ['program_5fsize_5f_1672',['program_size_',['../classVmBase.html#a95d14315496f42dd5be394f0ab950539',1,'VmBase']]]
 ];

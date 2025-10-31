@@ -1,0 +1,210 @@
+\hypertarget{namespaceinstruction__type}{}\doxysection{instruction\+\_\+type Namespace Reference}
+\label{namespaceinstruction__type}\index{instruction\_type@{instruction\_type}}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24}{Mem\+Read\+Op}} \{ \newline
+\mbox{\hyperlink{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24a3f633207a2358f809869765ae2898857}{MEM\+\_\+\+READ\+\_\+\+NONE}}
+, \mbox{\hyperlink{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24ade75c27100df7968d3dba511ecba52b1}{MEM\+\_\+\+READ\+\_\+\+BYTE}}
+, \mbox{\hyperlink{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24a93c069840698a8ac3d9aac8fe49d71da}{MEM\+\_\+\+READ\+\_\+\+HALF}}
+, \mbox{\hyperlink{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24ab5486d3222864880c8b40fde7c0a5de1}{MEM\+\_\+\+READ\+\_\+\+WORD}}
+, \newline
+\mbox{\hyperlink{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24adc0055f6d93822dbb3853963e3511745}{MEM\+\_\+\+READ\+\_\+\+DOUBLE}}
+, \mbox{\hyperlink{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24a2d2e2cb45da4e8548de9b20608daf7b5}{MEM\+\_\+\+READ\+\_\+\+BYTE\+\_\+\+UNSIGNED}}
+, \mbox{\hyperlink{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24abac5a60aa1db3f10bc3bd6488ea02e46}{MEM\+\_\+\+READ\+\_\+\+HALF\+\_\+\+UNSIGNED}}
+, \mbox{\hyperlink{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24a31895ae0ab6136b64a3a75ee11f8951e}{MEM\+\_\+\+READ\+\_\+\+WORD\+\_\+\+UNSIGNED}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3}{Mem\+Write\+Op}} \{ \newline
+\mbox{\hyperlink{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3a4036c2baeda38dd8a524fa06c146d524}{MEM\+\_\+\+WRITE\+\_\+\+NONE}}
+, \mbox{\hyperlink{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3a2e7e68e21257154bf25863028f2c214d}{MEM\+\_\+\+WRITE\+\_\+\+BYTE}}
+, \mbox{\hyperlink{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3a613d00187e90c3e8c47e7194f871da72}{MEM\+\_\+\+WRITE\+\_\+\+HALF}}
+, \mbox{\hyperlink{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3a80968b2f19e67404361b0f9a34ef0878}{MEM\+\_\+\+WRITE\+\_\+\+WORD}}
+, \newline
+\mbox{\hyperlink{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3aec96d0c2e5cea732dd8afa9b0a5a3b5e}{MEM\+\_\+\+WRITE\+\_\+\+DOUBLE}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6}{Write\+Back\+Src}} \{ \mbox{\hyperlink{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6a2606ca2795c6026cf391522576e38515}{WB\+\_\+\+NONE}}
+, \mbox{\hyperlink{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6af3d5f0dfe931a198333adfc33230824b}{WB\+\_\+\+FROM\+\_\+\+ALU}}
+, \mbox{\hyperlink{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6a299bf78f61a6862293a27f4d97cdd4c4}{WB\+\_\+\+FROM\+\_\+\+MEM}}
+, \mbox{\hyperlink{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6a17ccae40692060ece3bb09df459dfb56}{WB\+\_\+\+FROM\+\_\+\+PC\+\_\+\+INC}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceinstruction__type_a9ea23266a02a440e587963a92ba3adc6}{Alu\+SrcA}} \{ \mbox{\hyperlink{namespaceinstruction__type_a9ea23266a02a440e587963a92ba3adc6ae2b5e72aa6d3cd85f6c9c8160bf62fab}{ALU\+\_\+\+SRC\+\_\+\+A\+\_\+\+RS1}}
+, \mbox{\hyperlink{namespaceinstruction__type_a9ea23266a02a440e587963a92ba3adc6a417a15061c716ff7b0d9db79769fe016}{ALU\+\_\+\+SRC\+\_\+\+A\+\_\+\+ZERO}}
+, \mbox{\hyperlink{namespaceinstruction__type_a9ea23266a02a440e587963a92ba3adc6a3e529486cc1964496b972ae3732cd9b1}{ALU\+\_\+\+SRC\+\_\+\+A\+\_\+\+PC}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41af}{Branch\+Op}} \{ \newline
+\mbox{\hyperlink{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afae95021374f8867c2463a9c09587e7688}{B\+\_\+\+NONE}}
+, \mbox{\hyperlink{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa3ef284f0b58cec98a7df8e2e33ab427e}{BEQ}}
+, \mbox{\hyperlink{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa3827ab4696b8138650c6f3032d9dab85}{BNE}}
+, \mbox{\hyperlink{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa12ab0dd970dd28f28d70b70750d5ea54}{BLT}}
+, \newline
+\mbox{\hyperlink{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa3139f70a3cb6c0695e717928e8784e2d}{BGE}}
+, \mbox{\hyperlink{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa1682a6aab702f24a1dba8cee987d26cd}{BLTU}}
+, \mbox{\hyperlink{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa84332398d8df4c9dcaa20982b5a6fb9a}{BGEU}}
+, \mbox{\hyperlink{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa52c88232f5460c965dd7d967d20f7eb8}{JAL}}
+, \newline
+\mbox{\hyperlink{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa526bb8779ccb9c20f429718264723fcd}{JALR}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespaceinstruction__type_a9ea23266a02a440e587963a92ba3adc6}\label{namespaceinstruction__type_a9ea23266a02a440e587963a92ba3adc6}} 
+\index{instruction\_type@{instruction\_type}!AluSrcA@{AluSrcA}}
+\index{AluSrcA@{AluSrcA}!instruction\_type@{instruction\_type}}
+\doxysubsubsection{\texorpdfstring{AluSrcA}{AluSrcA}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceinstruction__type_a9ea23266a02a440e587963a92ba3adc6}{instruction\+\_\+type\+::\+Alu\+SrcA}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALU\_SRC\_A\_RS1@{ALU\_SRC\_A\_RS1}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!ALU\_SRC\_A\_RS1@{ALU\_SRC\_A\_RS1}}}\mbox{\Hypertarget{namespaceinstruction__type_a9ea23266a02a440e587963a92ba3adc6ae2b5e72aa6d3cd85f6c9c8160bf62fab}\label{namespaceinstruction__type_a9ea23266a02a440e587963a92ba3adc6ae2b5e72aa6d3cd85f6c9c8160bf62fab}} 
+ALU\+\_\+\+SRC\+\_\+\+A\+\_\+\+RS1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALU\_SRC\_A\_ZERO@{ALU\_SRC\_A\_ZERO}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!ALU\_SRC\_A\_ZERO@{ALU\_SRC\_A\_ZERO}}}\mbox{\Hypertarget{namespaceinstruction__type_a9ea23266a02a440e587963a92ba3adc6a417a15061c716ff7b0d9db79769fe016}\label{namespaceinstruction__type_a9ea23266a02a440e587963a92ba3adc6a417a15061c716ff7b0d9db79769fe016}} 
+ALU\+\_\+\+SRC\+\_\+\+A\+\_\+\+ZERO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALU\_SRC\_A\_PC@{ALU\_SRC\_A\_PC}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!ALU\_SRC\_A\_PC@{ALU\_SRC\_A\_PC}}}\mbox{\Hypertarget{namespaceinstruction__type_a9ea23266a02a440e587963a92ba3adc6a3e529486cc1964496b972ae3732cd9b1}\label{namespaceinstruction__type_a9ea23266a02a440e587963a92ba3adc6a3e529486cc1964496b972ae3732cd9b1}} 
+ALU\+\_\+\+SRC\+\_\+\+A\+\_\+\+PC&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41af}\label{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41af}} 
+\index{instruction\_type@{instruction\_type}!BranchOp@{BranchOp}}
+\index{BranchOp@{BranchOp}!instruction\_type@{instruction\_type}}
+\doxysubsubsection{\texorpdfstring{BranchOp}{BranchOp}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41af}{instruction\+\_\+type\+::\+Branch\+Op}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\_NONE@{B\_NONE}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!B\_NONE@{B\_NONE}}}\mbox{\Hypertarget{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afae95021374f8867c2463a9c09587e7688}\label{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afae95021374f8867c2463a9c09587e7688}} 
+B\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BEQ@{BEQ}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!BEQ@{BEQ}}}\mbox{\Hypertarget{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa3ef284f0b58cec98a7df8e2e33ab427e}\label{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa3ef284f0b58cec98a7df8e2e33ab427e}} 
+BEQ&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BNE@{BNE}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!BNE@{BNE}}}\mbox{\Hypertarget{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa3827ab4696b8138650c6f3032d9dab85}\label{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa3827ab4696b8138650c6f3032d9dab85}} 
+BNE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BLT@{BLT}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!BLT@{BLT}}}\mbox{\Hypertarget{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa12ab0dd970dd28f28d70b70750d5ea54}\label{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa12ab0dd970dd28f28d70b70750d5ea54}} 
+BLT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BGE@{BGE}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!BGE@{BGE}}}\mbox{\Hypertarget{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa3139f70a3cb6c0695e717928e8784e2d}\label{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa3139f70a3cb6c0695e717928e8784e2d}} 
+BGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BLTU@{BLTU}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!BLTU@{BLTU}}}\mbox{\Hypertarget{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa1682a6aab702f24a1dba8cee987d26cd}\label{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa1682a6aab702f24a1dba8cee987d26cd}} 
+BLTU&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BGEU@{BGEU}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!BGEU@{BGEU}}}\mbox{\Hypertarget{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa84332398d8df4c9dcaa20982b5a6fb9a}\label{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa84332398d8df4c9dcaa20982b5a6fb9a}} 
+BGEU&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JAL@{JAL}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!JAL@{JAL}}}\mbox{\Hypertarget{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa52c88232f5460c965dd7d967d20f7eb8}\label{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa52c88232f5460c965dd7d967d20f7eb8}} 
+JAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JALR@{JALR}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!JALR@{JALR}}}\mbox{\Hypertarget{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa526bb8779ccb9c20f429718264723fcd}\label{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa526bb8779ccb9c20f429718264723fcd}} 
+JALR&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24}\label{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24}} 
+\index{instruction\_type@{instruction\_type}!MemReadOp@{MemReadOp}}
+\index{MemReadOp@{MemReadOp}!instruction\_type@{instruction\_type}}
+\doxysubsubsection{\texorpdfstring{MemReadOp}{MemReadOp}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24}{instruction\+\_\+type\+::\+Mem\+Read\+Op}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MEM\_READ\_NONE@{MEM\_READ\_NONE}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!MEM\_READ\_NONE@{MEM\_READ\_NONE}}}\mbox{\Hypertarget{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24a3f633207a2358f809869765ae2898857}\label{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24a3f633207a2358f809869765ae2898857}} 
+MEM\+\_\+\+READ\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MEM\_READ\_BYTE@{MEM\_READ\_BYTE}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!MEM\_READ\_BYTE@{MEM\_READ\_BYTE}}}\mbox{\Hypertarget{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24ade75c27100df7968d3dba511ecba52b1}\label{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24ade75c27100df7968d3dba511ecba52b1}} 
+MEM\+\_\+\+READ\+\_\+\+BYTE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MEM\_READ\_HALF@{MEM\_READ\_HALF}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!MEM\_READ\_HALF@{MEM\_READ\_HALF}}}\mbox{\Hypertarget{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24a93c069840698a8ac3d9aac8fe49d71da}\label{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24a93c069840698a8ac3d9aac8fe49d71da}} 
+MEM\+\_\+\+READ\+\_\+\+HALF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MEM\_READ\_WORD@{MEM\_READ\_WORD}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!MEM\_READ\_WORD@{MEM\_READ\_WORD}}}\mbox{\Hypertarget{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24ab5486d3222864880c8b40fde7c0a5de1}\label{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24ab5486d3222864880c8b40fde7c0a5de1}} 
+MEM\+\_\+\+READ\+\_\+\+WORD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MEM\_READ\_DOUBLE@{MEM\_READ\_DOUBLE}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!MEM\_READ\_DOUBLE@{MEM\_READ\_DOUBLE}}}\mbox{\Hypertarget{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24adc0055f6d93822dbb3853963e3511745}\label{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24adc0055f6d93822dbb3853963e3511745}} 
+MEM\+\_\+\+READ\+\_\+\+DOUBLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MEM\_READ\_BYTE\_UNSIGNED@{MEM\_READ\_BYTE\_UNSIGNED}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!MEM\_READ\_BYTE\_UNSIGNED@{MEM\_READ\_BYTE\_UNSIGNED}}}\mbox{\Hypertarget{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24a2d2e2cb45da4e8548de9b20608daf7b5}\label{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24a2d2e2cb45da4e8548de9b20608daf7b5}} 
+MEM\+\_\+\+READ\+\_\+\+BYTE\+\_\+\+UNSIGNED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MEM\_READ\_HALF\_UNSIGNED@{MEM\_READ\_HALF\_UNSIGNED}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!MEM\_READ\_HALF\_UNSIGNED@{MEM\_READ\_HALF\_UNSIGNED}}}\mbox{\Hypertarget{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24abac5a60aa1db3f10bc3bd6488ea02e46}\label{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24abac5a60aa1db3f10bc3bd6488ea02e46}} 
+MEM\+\_\+\+READ\+\_\+\+HALF\+\_\+\+UNSIGNED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MEM\_READ\_WORD\_UNSIGNED@{MEM\_READ\_WORD\_UNSIGNED}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!MEM\_READ\_WORD\_UNSIGNED@{MEM\_READ\_WORD\_UNSIGNED}}}\mbox{\Hypertarget{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24a31895ae0ab6136b64a3a75ee11f8951e}\label{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24a31895ae0ab6136b64a3a75ee11f8951e}} 
+MEM\+\_\+\+READ\+\_\+\+WORD\+\_\+\+UNSIGNED&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3}\label{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3}} 
+\index{instruction\_type@{instruction\_type}!MemWriteOp@{MemWriteOp}}
+\index{MemWriteOp@{MemWriteOp}!instruction\_type@{instruction\_type}}
+\doxysubsubsection{\texorpdfstring{MemWriteOp}{MemWriteOp}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3}{instruction\+\_\+type\+::\+Mem\+Write\+Op}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MEM\_WRITE\_NONE@{MEM\_WRITE\_NONE}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!MEM\_WRITE\_NONE@{MEM\_WRITE\_NONE}}}\mbox{\Hypertarget{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3a4036c2baeda38dd8a524fa06c146d524}\label{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3a4036c2baeda38dd8a524fa06c146d524}} 
+MEM\+\_\+\+WRITE\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MEM\_WRITE\_BYTE@{MEM\_WRITE\_BYTE}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!MEM\_WRITE\_BYTE@{MEM\_WRITE\_BYTE}}}\mbox{\Hypertarget{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3a2e7e68e21257154bf25863028f2c214d}\label{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3a2e7e68e21257154bf25863028f2c214d}} 
+MEM\+\_\+\+WRITE\+\_\+\+BYTE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MEM\_WRITE\_HALF@{MEM\_WRITE\_HALF}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!MEM\_WRITE\_HALF@{MEM\_WRITE\_HALF}}}\mbox{\Hypertarget{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3a613d00187e90c3e8c47e7194f871da72}\label{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3a613d00187e90c3e8c47e7194f871da72}} 
+MEM\+\_\+\+WRITE\+\_\+\+HALF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MEM\_WRITE\_WORD@{MEM\_WRITE\_WORD}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!MEM\_WRITE\_WORD@{MEM\_WRITE\_WORD}}}\mbox{\Hypertarget{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3a80968b2f19e67404361b0f9a34ef0878}\label{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3a80968b2f19e67404361b0f9a34ef0878}} 
+MEM\+\_\+\+WRITE\+\_\+\+WORD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MEM\_WRITE\_DOUBLE@{MEM\_WRITE\_DOUBLE}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!MEM\_WRITE\_DOUBLE@{MEM\_WRITE\_DOUBLE}}}\mbox{\Hypertarget{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3aec96d0c2e5cea732dd8afa9b0a5a3b5e}\label{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3aec96d0c2e5cea732dd8afa9b0a5a3b5e}} 
+MEM\+\_\+\+WRITE\+\_\+\+DOUBLE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6}\label{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6}} 
+\index{instruction\_type@{instruction\_type}!WriteBackSrc@{WriteBackSrc}}
+\index{WriteBackSrc@{WriteBackSrc}!instruction\_type@{instruction\_type}}
+\doxysubsubsection{\texorpdfstring{WriteBackSrc}{WriteBackSrc}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6}{instruction\+\_\+type\+::\+Write\+Back\+Src}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WB\_NONE@{WB\_NONE}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!WB\_NONE@{WB\_NONE}}}\mbox{\Hypertarget{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6a2606ca2795c6026cf391522576e38515}\label{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6a2606ca2795c6026cf391522576e38515}} 
+WB\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WB\_FROM\_ALU@{WB\_FROM\_ALU}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!WB\_FROM\_ALU@{WB\_FROM\_ALU}}}\mbox{\Hypertarget{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6af3d5f0dfe931a198333adfc33230824b}\label{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6af3d5f0dfe931a198333adfc33230824b}} 
+WB\+\_\+\+FROM\+\_\+\+ALU&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WB\_FROM\_MEM@{WB\_FROM\_MEM}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!WB\_FROM\_MEM@{WB\_FROM\_MEM}}}\mbox{\Hypertarget{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6a299bf78f61a6862293a27f4d97cdd4c4}\label{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6a299bf78f61a6862293a27f4d97cdd4c4}} 
+WB\+\_\+\+FROM\+\_\+\+MEM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WB\_FROM\_PC\_INC@{WB\_FROM\_PC\_INC}!instruction\_type@{instruction\_type}}\index{instruction\_type@{instruction\_type}!WB\_FROM\_PC\_INC@{WB\_FROM\_PC\_INC}}}\mbox{\Hypertarget{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6a17ccae40692060ece3bb09df459dfb56}\label{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6a17ccae40692060ece3bb09df459dfb56}} 
+WB\+\_\+\+FROM\+\_\+\+PC\+\_\+\+INC&\\
+\hline
+
+\end{DoxyEnumFields}

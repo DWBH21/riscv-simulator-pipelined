@@ -76,21 +76,23 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a16938e23c332b0d727322ffa4e5ee660"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobals.html#a16938e23c332b0d727322ffa4e5ee660">vm_state_directory</a> = std::filesystem::path(&quot;.&quot;) / &quot;vm_state&quot;</td></tr>
+<tr class="memitem:a9e8f7ae299f4cca0042e23cc974dfbc7"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobals.html#a9e8f7ae299f4cca0042e23cc974dfbc7">invokation_path</a> = std::filesystem::current_path()</td></tr>
+<tr class="separator:a9e8f7ae299f4cca0042e23cc974dfbc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16938e23c332b0d727322ffa4e5ee660"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobals.html#a16938e23c332b0d727322ffa4e5ee660">vm_state_directory</a> = <a class="el" href="namespaceglobals.html#a9e8f7ae299f4cca0042e23cc974dfbc7">globals::invokation_path</a> / &quot;vm_state&quot;</td></tr>
 <tr class="separator:a16938e23c332b0d727322ffa4e5ee660"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4371da31b2e38c3ed3e4bbe6f6ea756d"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobals.html#a4371da31b2e38c3ed3e4bbe6f6ea756d">config_file_path</a> = (std::filesystem::path(&quot;.&quot;)/&quot;vm_state&quot;/&quot;config.ini&quot;)</td></tr>
+<tr class="memitem:a4371da31b2e38c3ed3e4bbe6f6ea756d"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobals.html#a4371da31b2e38c3ed3e4bbe6f6ea756d">config_file_path</a> = (<a class="el" href="namespaceglobals.html#a9e8f7ae299f4cca0042e23cc974dfbc7">globals::invokation_path</a> / &quot;vm_state&quot; / &quot;config.ini&quot;)</td></tr>
 <tr class="separator:a4371da31b2e38c3ed3e4bbe6f6ea756d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fb2e27b096375cbfbb54f0118d0c9c4"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobals.html#a4fb2e27b096375cbfbb54f0118d0c9c4">disassembly_file_path</a> = (std::filesystem::path(&quot;.&quot;)/&quot;vm_state&quot;/&quot;disassembly.txt&quot;)</td></tr>
+<tr class="memitem:a4fb2e27b096375cbfbb54f0118d0c9c4"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobals.html#a4fb2e27b096375cbfbb54f0118d0c9c4">disassembly_file_path</a> = (<a class="el" href="namespaceglobals.html#a9e8f7ae299f4cca0042e23cc974dfbc7">globals::invokation_path</a> / &quot;vm_state&quot; / &quot;disassembly.txt&quot;)</td></tr>
 <tr class="separator:a4fb2e27b096375cbfbb54f0118d0c9c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c793cd30fee5a5830c09f5da66ad597"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobals.html#a8c793cd30fee5a5830c09f5da66ad597">errors_dump_file_path</a> = (std::filesystem::path(&quot;.&quot;)/&quot;vm_state&quot;/&quot;errors_dump.json&quot;)</td></tr>
+<tr class="memitem:a8c793cd30fee5a5830c09f5da66ad597"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobals.html#a8c793cd30fee5a5830c09f5da66ad597">errors_dump_file_path</a> = (<a class="el" href="namespaceglobals.html#a9e8f7ae299f4cca0042e23cc974dfbc7">globals::invokation_path</a> / &quot;vm_state&quot; / &quot;errors_dump.json&quot;)</td></tr>
 <tr class="separator:a8c793cd30fee5a5830c09f5da66ad597"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71fe4e87fbec0b990ffe7bc7e592d0d1"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobals.html#a71fe4e87fbec0b990ffe7bc7e592d0d1">registers_dump_file_path</a> = (std::filesystem::path(&quot;.&quot;)/&quot;vm_state&quot;/&quot;registers_dump.json&quot;)</td></tr>
+<tr class="memitem:a71fe4e87fbec0b990ffe7bc7e592d0d1"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobals.html#a71fe4e87fbec0b990ffe7bc7e592d0d1">registers_dump_file_path</a> = (<a class="el" href="namespaceglobals.html#a9e8f7ae299f4cca0042e23cc974dfbc7">globals::invokation_path</a> / &quot;vm_state&quot; / &quot;registers_dump.json&quot;)</td></tr>
 <tr class="separator:a71fe4e87fbec0b990ffe7bc7e592d0d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9268aa42b04405c06946d3386d3b2c14"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobals.html#a9268aa42b04405c06946d3386d3b2c14">memory_dump_file_path</a> = (std::filesystem::path(&quot;.&quot;)/&quot;vm_state&quot;/&quot;memory_dump.json&quot;)</td></tr>
+<tr class="memitem:a9268aa42b04405c06946d3386d3b2c14"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobals.html#a9268aa42b04405c06946d3386d3b2c14">memory_dump_file_path</a> = (<a class="el" href="namespaceglobals.html#a9e8f7ae299f4cca0042e23cc974dfbc7">globals::invokation_path</a> / &quot;vm_state&quot; / &quot;memory_dump.json&quot;)</td></tr>
 <tr class="separator:a9268aa42b04405c06946d3386d3b2c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a926592cabd4ae18cac4cac2fba351ac9"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobals.html#a926592cabd4ae18cac4cac2fba351ac9">cache_dump_file_path</a> = (std::filesystem::path(&quot;.&quot;)/&quot;vm_state&quot;/&quot;cache_dump.json&quot;)</td></tr>
+<tr class="memitem:a926592cabd4ae18cac4cac2fba351ac9"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobals.html#a926592cabd4ae18cac4cac2fba351ac9">cache_dump_file_path</a> = (<a class="el" href="namespaceglobals.html#a9e8f7ae299f4cca0042e23cc974dfbc7">globals::invokation_path</a> / &quot;vm_state&quot; / &quot;cache_dump.json&quot;)</td></tr>
 <tr class="separator:a926592cabd4ae18cac4cac2fba351ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15602230069b77cb24d50ab0ea458426"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobals.html#a15602230069b77cb24d50ab0ea458426">vm_state_dump_file_path</a> = (std::filesystem::path(&quot;.&quot;)/&quot;vm_state&quot;/&quot;vm_state_dump.json&quot;)</td></tr>
+<tr class="memitem:a15602230069b77cb24d50ab0ea458426"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobals.html#a15602230069b77cb24d50ab0ea458426">vm_state_dump_file_path</a> = (<a class="el" href="namespaceglobals.html#a9e8f7ae299f4cca0042e23cc974dfbc7">globals::invokation_path</a> / &quot;vm_state&quot; / &quot;vm_state_dump.json&quot;)</td></tr>
 <tr class="separator:a15602230069b77cb24d50ab0ea458426"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23d4de6e5986a330c86d741c092a94b8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobals.html#a23d4de6e5986a330c86d741c092a94b8">verbose_errors_print</a> = false</td></tr>
 <tr class="separator:a23d4de6e5986a330c86d741c092a94b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -100,8 +102,6 @@ Variables</h2></td></tr>
 <tr class="separator:a3af4ada39791277323bd8a32c3ec6caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb16734b649eb981c3f2e6cb218106be"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobals.html#aeb16734b649eb981c3f2e6cb218106be">text_section_start</a> = 0x00000000</td></tr>
 <tr class="separator:aeb16734b649eb981c3f2e6cb218106be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae569afb99e3b6782cc92c0545417ffab"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobals.html#ae569afb99e3b6782cc92c0545417ffab">data_section_start</a> = 0x10000000</td></tr>
-<tr class="separator:ae569afb99e3b6782cc92c0545417ffab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="aa11e5b4f00b5bec36fe4cf155707e56b"></a>
@@ -132,7 +132,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::filesystem::path globals::cache_dump_file_path = (std::filesystem::path(&quot;.&quot;)/&quot;vm_state&quot;/&quot;cache_dump.json&quot;)</td>
+          <td class="memname">std::filesystem::path globals::cache_dump_file_path = (<a class="el" href="namespaceglobals.html#a9e8f7ae299f4cca0042e23cc974dfbc7">globals::invokation_path</a> / &quot;vm_state&quot; / &quot;cache_dump.json&quot;)</td>
         </tr>
       </table>
   </td>
@@ -154,29 +154,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::filesystem::path globals::config_file_path = (std::filesystem::path(&quot;.&quot;)/&quot;vm_state&quot;/&quot;config.ini&quot;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae569afb99e3b6782cc92c0545417ffab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae569afb99e3b6782cc92c0545417ffab">&#9670;&nbsp;</a></span>data_section_start</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned int globals::data_section_start = 0x10000000</td>
+          <td class="memname">std::filesystem::path globals::config_file_path = (<a class="el" href="namespaceglobals.html#a9e8f7ae299f4cca0042e23cc974dfbc7">globals::invokation_path</a> / &quot;vm_state&quot; / &quot;config.ini&quot;)</td>
         </tr>
       </table>
   </td>
@@ -198,7 +176,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::filesystem::path globals::disassembly_file_path = (std::filesystem::path(&quot;.&quot;)/&quot;vm_state&quot;/&quot;disassembly.txt&quot;)</td>
+          <td class="memname">std::filesystem::path globals::disassembly_file_path = (<a class="el" href="namespaceglobals.html#a9e8f7ae299f4cca0042e23cc974dfbc7">globals::invokation_path</a> / &quot;vm_state&quot; / &quot;disassembly.txt&quot;)</td>
         </tr>
       </table>
   </td>
@@ -220,7 +198,29 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::filesystem::path globals::errors_dump_file_path = (std::filesystem::path(&quot;.&quot;)/&quot;vm_state&quot;/&quot;errors_dump.json&quot;)</td>
+          <td class="memname">std::filesystem::path globals::errors_dump_file_path = (<a class="el" href="namespaceglobals.html#a9e8f7ae299f4cca0042e23cc974dfbc7">globals::invokation_path</a> / &quot;vm_state&quot; / &quot;errors_dump.json&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9e8f7ae299f4cca0042e23cc974dfbc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e8f7ae299f4cca0042e23cc974dfbc7">&#9670;&nbsp;</a></span>invokation_path</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::filesystem::path globals::invokation_path = std::filesystem::current_path()</td>
         </tr>
       </table>
   </td>
@@ -242,7 +242,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::filesystem::path globals::memory_dump_file_path = (std::filesystem::path(&quot;.&quot;)/&quot;vm_state&quot;/&quot;memory_dump.json&quot;)</td>
+          <td class="memname">std::filesystem::path globals::memory_dump_file_path = (<a class="el" href="namespaceglobals.html#a9e8f7ae299f4cca0042e23cc974dfbc7">globals::invokation_path</a> / &quot;vm_state&quot; / &quot;memory_dump.json&quot;)</td>
         </tr>
       </table>
   </td>
@@ -264,7 +264,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::filesystem::path globals::registers_dump_file_path = (std::filesystem::path(&quot;.&quot;)/&quot;vm_state&quot;/&quot;registers_dump.json&quot;)</td>
+          <td class="memname">std::filesystem::path globals::registers_dump_file_path = (<a class="el" href="namespaceglobals.html#a9e8f7ae299f4cca0042e23cc974dfbc7">globals::invokation_path</a> / &quot;vm_state&quot; / &quot;registers_dump.json&quot;)</td>
         </tr>
       </table>
   </td>
@@ -374,7 +374,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::filesystem::path globals::vm_state_directory = std::filesystem::path(&quot;.&quot;) / &quot;vm_state&quot;</td>
+          <td class="memname">std::filesystem::path globals::vm_state_directory = <a class="el" href="namespaceglobals.html#a9e8f7ae299f4cca0042e23cc974dfbc7">globals::invokation_path</a> / &quot;vm_state&quot;</td>
         </tr>
       </table>
   </td>
@@ -396,7 +396,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::filesystem::path globals::vm_state_dump_file_path = (std::filesystem::path(&quot;.&quot;)/&quot;vm_state&quot;/&quot;vm_state_dump.json&quot;)</td>
+          <td class="memname">std::filesystem::path globals::vm_state_dump_file_path = (<a class="el" href="namespaceglobals.html#a9e8f7ae299f4cca0042e23cc974dfbc7">globals::invokation_path</a> / &quot;vm_state&quot; / &quot;vm_state_dump.json&quot;)</td>
         </tr>
       </table>
   </td>

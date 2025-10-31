@@ -1,0 +1,147 @@
+\hypertarget{structControlSignals}{}\doxysection{Control\+Signals Struct Reference}
+\label{structControlSignals}\index{ControlSignals@{ControlSignals}}
+
+
+{\ttfamily \#include $<$pipeline\+\_\+registers.\+h$>$}
+
+
+
+Collaboration diagram for Control\+Signals\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structControlSignals__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacealu_a168383e119a615fcfa97506988a23985}{alu\+::\+Alu\+Op}} \mbox{\hyperlink{structControlSignals_a49aab66716784d76783b338663904930}{alu\+\_\+op}} = \mbox{\hyperlink{namespacealu_a168383e119a615fcfa97506988a23985a35c3ace1970663a16e5c65baa5941b13}{alu\+::\+Alu\+Op\+::k\+None}}
+\item 
+bool \mbox{\hyperlink{structControlSignals_a8bad7bef224b49f822fe3f6ba8fb62e7}{alu\+\_\+src\+\_\+b}} = false
+\item 
+\mbox{\hyperlink{namespaceinstruction__type_a9ea23266a02a440e587963a92ba3adc6}{instruction\+\_\+type\+::\+Alu\+SrcA}} \mbox{\hyperlink{structControlSignals_a72920924c2329ea385336ebe65f65aff}{alu\+\_\+src\+\_\+a}}
+\item 
+bool \mbox{\hyperlink{structControlSignals_a9836f39265c837fc301ccf8e0b03ef28}{mem\+\_\+read}} = false
+\item 
+bool \mbox{\hyperlink{structControlSignals_a342ca146cc13adc0f517f4f3b8997221}{mem\+\_\+write}} = false
+\item 
+\mbox{\hyperlink{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24}{instruction\+\_\+type\+::\+Mem\+Read\+Op}} \mbox{\hyperlink{structControlSignals_aaddf76417b2d6fd55b0f39fee7bce86a}{mem\+\_\+read\+\_\+op}} = instruction\+\_\+type\+::\+Mem\+Read\+Op\+::\+MEM\+\_\+\+READ\+\_\+\+NONE
+\item 
+\mbox{\hyperlink{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3}{instruction\+\_\+type\+::\+Mem\+Write\+Op}} \mbox{\hyperlink{structControlSignals_a852ad56c02e8fe48c4ac7c683a8a1b9a}{mem\+\_\+write\+\_\+op}} = instruction\+\_\+type\+::\+Mem\+Write\+Op\+::\+MEM\+\_\+\+WRITE\+\_\+\+NONE
+\item 
+bool \mbox{\hyperlink{structControlSignals_ab88fabbb0380f83b0010eb55341ba615}{branch}} = false
+\item 
+\mbox{\hyperlink{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41af}{instruction\+\_\+type\+::\+Branch\+Op}} \mbox{\hyperlink{structControlSignals_a5c369dc1a241a7dfdcbc2db650015ace}{branch\+\_\+op}} = instruction\+\_\+type\+::\+Branch\+Op\+::\+B\+\_\+\+NONE
+\item 
+bool \mbox{\hyperlink{structControlSignals_a14b69522f3037ec4de79c39425e9814f}{reg\+\_\+write}} = false
+\item 
+bool \mbox{\hyperlink{structControlSignals_a2cca9d49c84e194086296964f3dbc57d}{mem\+\_\+to\+\_\+reg}} = false
+\item 
+\mbox{\hyperlink{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6}{instruction\+\_\+type\+::\+Write\+Back\+Src}} \mbox{\hyperlink{structControlSignals_a8d45400de89410255c88829180b60850}{wb\+\_\+src}} = \mbox{\hyperlink{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6a2606ca2795c6026cf391522576e38515}{instruction\+\_\+type\+::\+WB\+\_\+\+NONE}}
+\item 
+bool \mbox{\hyperlink{structControlSignals_a6243d63c2b9cfed5030f3a878c70ed42}{is\+\_\+csr}} = false
+\item 
+bool \mbox{\hyperlink{structControlSignals_a35248b0a7bca4492ca15dfcb787bf94f}{is\+\_\+syscall}} = false
+\item 
+bool \mbox{\hyperlink{structControlSignals_a06113cede5539e42cb4eedad8717027c}{is\+\_\+nop}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structControlSignals_a49aab66716784d76783b338663904930}\label{structControlSignals_a49aab66716784d76783b338663904930}} 
+\index{ControlSignals@{ControlSignals}!alu\_op@{alu\_op}}
+\index{alu\_op@{alu\_op}!ControlSignals@{ControlSignals}}
+\doxysubsubsection{\texorpdfstring{alu\_op}{alu\_op}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacealu_a168383e119a615fcfa97506988a23985}{alu\+::\+Alu\+Op}} Control\+Signals\+::alu\+\_\+op = \mbox{\hyperlink{namespacealu_a168383e119a615fcfa97506988a23985a35c3ace1970663a16e5c65baa5941b13}{alu\+::\+Alu\+Op\+::k\+None}}}
+
+\mbox{\Hypertarget{structControlSignals_a72920924c2329ea385336ebe65f65aff}\label{structControlSignals_a72920924c2329ea385336ebe65f65aff}} 
+\index{ControlSignals@{ControlSignals}!alu\_src\_a@{alu\_src\_a}}
+\index{alu\_src\_a@{alu\_src\_a}!ControlSignals@{ControlSignals}}
+\doxysubsubsection{\texorpdfstring{alu\_src\_a}{alu\_src\_a}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceinstruction__type_a9ea23266a02a440e587963a92ba3adc6}{instruction\+\_\+type\+::\+Alu\+SrcA}} Control\+Signals\+::alu\+\_\+src\+\_\+a}
+
+\mbox{\Hypertarget{structControlSignals_a8bad7bef224b49f822fe3f6ba8fb62e7}\label{structControlSignals_a8bad7bef224b49f822fe3f6ba8fb62e7}} 
+\index{ControlSignals@{ControlSignals}!alu\_src\_b@{alu\_src\_b}}
+\index{alu\_src\_b@{alu\_src\_b}!ControlSignals@{ControlSignals}}
+\doxysubsubsection{\texorpdfstring{alu\_src\_b}{alu\_src\_b}}
+{\footnotesize\ttfamily bool Control\+Signals\+::alu\+\_\+src\+\_\+b = false}
+
+\mbox{\Hypertarget{structControlSignals_ab88fabbb0380f83b0010eb55341ba615}\label{structControlSignals_ab88fabbb0380f83b0010eb55341ba615}} 
+\index{ControlSignals@{ControlSignals}!branch@{branch}}
+\index{branch@{branch}!ControlSignals@{ControlSignals}}
+\doxysubsubsection{\texorpdfstring{branch}{branch}}
+{\footnotesize\ttfamily bool Control\+Signals\+::branch = false}
+
+\mbox{\Hypertarget{structControlSignals_a5c369dc1a241a7dfdcbc2db650015ace}\label{structControlSignals_a5c369dc1a241a7dfdcbc2db650015ace}} 
+\index{ControlSignals@{ControlSignals}!branch\_op@{branch\_op}}
+\index{branch\_op@{branch\_op}!ControlSignals@{ControlSignals}}
+\doxysubsubsection{\texorpdfstring{branch\_op}{branch\_op}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41af}{instruction\+\_\+type\+::\+Branch\+Op}} Control\+Signals\+::branch\+\_\+op = instruction\+\_\+type\+::\+Branch\+Op\+::\+B\+\_\+\+NONE}
+
+\mbox{\Hypertarget{structControlSignals_a6243d63c2b9cfed5030f3a878c70ed42}\label{structControlSignals_a6243d63c2b9cfed5030f3a878c70ed42}} 
+\index{ControlSignals@{ControlSignals}!is\_csr@{is\_csr}}
+\index{is\_csr@{is\_csr}!ControlSignals@{ControlSignals}}
+\doxysubsubsection{\texorpdfstring{is\_csr}{is\_csr}}
+{\footnotesize\ttfamily bool Control\+Signals\+::is\+\_\+csr = false}
+
+\mbox{\Hypertarget{structControlSignals_a06113cede5539e42cb4eedad8717027c}\label{structControlSignals_a06113cede5539e42cb4eedad8717027c}} 
+\index{ControlSignals@{ControlSignals}!is\_nop@{is\_nop}}
+\index{is\_nop@{is\_nop}!ControlSignals@{ControlSignals}}
+\doxysubsubsection{\texorpdfstring{is\_nop}{is\_nop}}
+{\footnotesize\ttfamily bool Control\+Signals\+::is\+\_\+nop = true}
+
+\mbox{\Hypertarget{structControlSignals_a35248b0a7bca4492ca15dfcb787bf94f}\label{structControlSignals_a35248b0a7bca4492ca15dfcb787bf94f}} 
+\index{ControlSignals@{ControlSignals}!is\_syscall@{is\_syscall}}
+\index{is\_syscall@{is\_syscall}!ControlSignals@{ControlSignals}}
+\doxysubsubsection{\texorpdfstring{is\_syscall}{is\_syscall}}
+{\footnotesize\ttfamily bool Control\+Signals\+::is\+\_\+syscall = false}
+
+\mbox{\Hypertarget{structControlSignals_a9836f39265c837fc301ccf8e0b03ef28}\label{structControlSignals_a9836f39265c837fc301ccf8e0b03ef28}} 
+\index{ControlSignals@{ControlSignals}!mem\_read@{mem\_read}}
+\index{mem\_read@{mem\_read}!ControlSignals@{ControlSignals}}
+\doxysubsubsection{\texorpdfstring{mem\_read}{mem\_read}}
+{\footnotesize\ttfamily bool Control\+Signals\+::mem\+\_\+read = false}
+
+\mbox{\Hypertarget{structControlSignals_aaddf76417b2d6fd55b0f39fee7bce86a}\label{structControlSignals_aaddf76417b2d6fd55b0f39fee7bce86a}} 
+\index{ControlSignals@{ControlSignals}!mem\_read\_op@{mem\_read\_op}}
+\index{mem\_read\_op@{mem\_read\_op}!ControlSignals@{ControlSignals}}
+\doxysubsubsection{\texorpdfstring{mem\_read\_op}{mem\_read\_op}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24}{instruction\+\_\+type\+::\+Mem\+Read\+Op}} Control\+Signals\+::mem\+\_\+read\+\_\+op = instruction\+\_\+type\+::\+Mem\+Read\+Op\+::\+MEM\+\_\+\+READ\+\_\+\+NONE}
+
+\mbox{\Hypertarget{structControlSignals_a2cca9d49c84e194086296964f3dbc57d}\label{structControlSignals_a2cca9d49c84e194086296964f3dbc57d}} 
+\index{ControlSignals@{ControlSignals}!mem\_to\_reg@{mem\_to\_reg}}
+\index{mem\_to\_reg@{mem\_to\_reg}!ControlSignals@{ControlSignals}}
+\doxysubsubsection{\texorpdfstring{mem\_to\_reg}{mem\_to\_reg}}
+{\footnotesize\ttfamily bool Control\+Signals\+::mem\+\_\+to\+\_\+reg = false}
+
+\mbox{\Hypertarget{structControlSignals_a342ca146cc13adc0f517f4f3b8997221}\label{structControlSignals_a342ca146cc13adc0f517f4f3b8997221}} 
+\index{ControlSignals@{ControlSignals}!mem\_write@{mem\_write}}
+\index{mem\_write@{mem\_write}!ControlSignals@{ControlSignals}}
+\doxysubsubsection{\texorpdfstring{mem\_write}{mem\_write}}
+{\footnotesize\ttfamily bool Control\+Signals\+::mem\+\_\+write = false}
+
+\mbox{\Hypertarget{structControlSignals_a852ad56c02e8fe48c4ac7c683a8a1b9a}\label{structControlSignals_a852ad56c02e8fe48c4ac7c683a8a1b9a}} 
+\index{ControlSignals@{ControlSignals}!mem\_write\_op@{mem\_write\_op}}
+\index{mem\_write\_op@{mem\_write\_op}!ControlSignals@{ControlSignals}}
+\doxysubsubsection{\texorpdfstring{mem\_write\_op}{mem\_write\_op}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3}{instruction\+\_\+type\+::\+Mem\+Write\+Op}} Control\+Signals\+::mem\+\_\+write\+\_\+op = instruction\+\_\+type\+::\+Mem\+Write\+Op\+::\+MEM\+\_\+\+WRITE\+\_\+\+NONE}
+
+\mbox{\Hypertarget{structControlSignals_a14b69522f3037ec4de79c39425e9814f}\label{structControlSignals_a14b69522f3037ec4de79c39425e9814f}} 
+\index{ControlSignals@{ControlSignals}!reg\_write@{reg\_write}}
+\index{reg\_write@{reg\_write}!ControlSignals@{ControlSignals}}
+\doxysubsubsection{\texorpdfstring{reg\_write}{reg\_write}}
+{\footnotesize\ttfamily bool Control\+Signals\+::reg\+\_\+write = false}
+
+\mbox{\Hypertarget{structControlSignals_a8d45400de89410255c88829180b60850}\label{structControlSignals_a8d45400de89410255c88829180b60850}} 
+\index{ControlSignals@{ControlSignals}!wb\_src@{wb\_src}}
+\index{wb\_src@{wb\_src}!ControlSignals@{ControlSignals}}
+\doxysubsubsection{\texorpdfstring{wb\_src}{wb\_src}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6}{instruction\+\_\+type\+::\+Write\+Back\+Src}} Control\+Signals\+::wb\+\_\+src = \mbox{\hyperlink{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6a2606ca2795c6026cf391522576e38515}{instruction\+\_\+type\+::\+WB\+\_\+\+NONE}}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/vm/rv5s/\mbox{\hyperlink{pipeline__registers_8h}{pipeline\+\_\+registers.\+h}}\end{DoxyCompactItemize}

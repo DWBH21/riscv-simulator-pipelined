@@ -69,20 +69,12 @@ void \mbox{\hyperlink{classRVSSVM_a9cb130b8c84159be82027d49ce3e4279}{Redo}} () o
 \item 
 void \mbox{\hyperlink{classRVSSVM_aa75bbde8be42c275f928681e372d6c7c}{Reset}} () override
 \item 
-void \mbox{\hyperlink{classRVSSVM_a989ddd15e98b143799703dd41b859bf7}{Request\+Stop}} ()
-\item 
-bool \mbox{\hyperlink{classRVSSVM_a5e21b4bd05329a9f78579208988de719}{Is\+Stop\+Requested}} () const
-\item 
-void \mbox{\hyperlink{classRVSSVM_a1934a8a076f44dd66abd79972886a021}{Clear\+Stop}} ()
-\item 
 void \mbox{\hyperlink{classRVSSVM_a6cb411487b468c3a5e88780a10cedf76}{Print\+Type}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classRVSSControlUnit}{RVSSControl\+Unit}} \mbox{\hyperlink{classRVSSVM_af791e8846fc4e92787827da00a5bc809}{control\+\_\+unit\+\_\+}}
-\item 
-std\+::atomic$<$ bool $>$ \mbox{\hyperlink{classRVSSVM_a65484df815fde89d6fddb059c192b414}{stop\+\_\+requested\+\_\+}} = false
 \item 
 std\+::stack$<$ \mbox{\hyperlink{structStepDelta}{Step\+Delta}} $>$ \mbox{\hyperlink{classRVSSVM_a731a113960710ba745841a7f97678430}{undo\+\_\+stack\+\_\+}}
 \item 
@@ -126,12 +118,6 @@ uint8\+\_\+t \mbox{\hyperlink{classRVSSVM_a7951fd1c543faff83b8aee97427c01a2}{csr
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classRVSSVM_a1934a8a076f44dd66abd79972886a021}\label{classRVSSVM_a1934a8a076f44dd66abd79972886a021}} 
-\index{RVSSVM@{RVSSVM}!ClearStop@{ClearStop}}
-\index{ClearStop@{ClearStop}!RVSSVM@{RVSSVM}}
-\doxysubsubsection{\texorpdfstring{ClearStop()}{ClearStop()}}
-{\footnotesize\ttfamily void RVSSVM\+::\+Clear\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
 \mbox{\Hypertarget{classRVSSVM_a8b954269c60ab390ecca05966dacb47e}\label{classRVSSVM_a8b954269c60ab390ecca05966dacb47e}} 
 \index{RVSSVM@{RVSSVM}!DebugRun@{DebugRun}}
 \index{DebugRun@{DebugRun}!RVSSVM@{RVSSVM}}
@@ -184,12 +170,6 @@ Implements \mbox{\hyperlink{classVmBase_ac14764bc14c9e4dd41655c9054b1dfa4}{Vm\+B
 \doxysubsubsection{\texorpdfstring{HandleSyscall()}{HandleSyscall()}}
 {\footnotesize\ttfamily void RVSSVM\+::\+Handle\+Syscall (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classRVSSVM_a5e21b4bd05329a9f78579208988de719}\label{classRVSSVM_a5e21b4bd05329a9f78579208988de719}} 
-\index{RVSSVM@{RVSSVM}!IsStopRequested@{IsStopRequested}}
-\index{IsStopRequested@{IsStopRequested}!RVSSVM@{RVSSVM}}
-\doxysubsubsection{\texorpdfstring{IsStopRequested()}{IsStopRequested()}}
-{\footnotesize\ttfamily bool RVSSVM\+::\+Is\+Stop\+Requested (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
 \mbox{\Hypertarget{classRVSSVM_a6cb411487b468c3a5e88780a10cedf76}\label{classRVSSVM_a6cb411487b468c3a5e88780a10cedf76}} 
 \index{RVSSVM@{RVSSVM}!PrintType@{PrintType}}
 \index{PrintType@{PrintType}!RVSSVM@{RVSSVM}}
@@ -205,12 +185,6 @@ Implements \mbox{\hyperlink{classVmBase_ac14764bc14c9e4dd41655c9054b1dfa4}{Vm\+B
 
 
 Implements \mbox{\hyperlink{classVmBase_ab323c0d074c2ceb9885746d1073ed505}{Vm\+Base}}.
-
-\mbox{\Hypertarget{classRVSSVM_a989ddd15e98b143799703dd41b859bf7}\label{classRVSSVM_a989ddd15e98b143799703dd41b859bf7}} 
-\index{RVSSVM@{RVSSVM}!RequestStop@{RequestStop}}
-\index{RequestStop@{RequestStop}!RVSSVM@{RVSSVM}}
-\doxysubsubsection{\texorpdfstring{RequestStop()}{RequestStop()}}
-{\footnotesize\ttfamily void RVSSVM\+::\+Request\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{classRVSSVM_aa75bbde8be42c275f928681e372d6c7c}\label{classRVSSVM_aa75bbde8be42c275f928681e372d6c7c}} 
 \index{RVSSVM@{RVSSVM}!Reset@{Reset}}
@@ -368,12 +342,6 @@ Implements \mbox{\hyperlink{classVmBase_a141e025834dd6b9d68f08db7959ed391}{Vm\+B
 \index{return\_address\_@{return\_address\_}!RVSSVM@{RVSSVM}}
 \doxysubsubsection{\texorpdfstring{return\_address\_}{return\_address\_}}
 {\footnotesize\ttfamily uint64\+\_\+t RVSSVM\+::return\+\_\+address\+\_\+ \{\}}
-
-\mbox{\Hypertarget{classRVSSVM_a65484df815fde89d6fddb059c192b414}\label{classRVSSVM_a65484df815fde89d6fddb059c192b414}} 
-\index{RVSSVM@{RVSSVM}!stop\_requested\_@{stop\_requested\_}}
-\index{stop\_requested\_@{stop\_requested\_}!RVSSVM@{RVSSVM}}
-\doxysubsubsection{\texorpdfstring{stop\_requested\_}{stop\_requested\_}}
-{\footnotesize\ttfamily std\+::atomic$<$bool$>$ RVSSVM\+::stop\+\_\+requested\+\_\+ = false}
 
 \mbox{\Hypertarget{classRVSSVM_a731a113960710ba745841a7f97678430}\label{classRVSSVM_a731a113960710ba745841a7f97678430}} 
 \index{RVSSVM@{RVSSVM}!undo\_stack\_@{undo\_stack\_}}

@@ -1,12 +1,22 @@
 var searchData=
 [
-  ['b_5ftype_5finstruction_5fencoding_5fmap_22',['B_type_instruction_encoding_map',['../namespaceinstruction__set.html#a3e35acfc82b9e41676104e2747733de6',1,'instruction_set']]],
-  ['baseaddress_23',['baseAddress',['../classMMIODevice.html#ab5d704272d2cf6d18cda4514110c7879',1,'MMIODevice::baseAddress()'],['../classNullMMIODevice.html#af1e784af30e77f4b5d997cc9f1e645e0',1,'NullMMIODevice::baseAddress()']]],
-  ['block_5fsize_24',['block_size',['../structMemoryBlock.html#a4fc9655625b9d635d1c0458e5d096373',1,'MemoryBlock']]],
-  ['branch_5f_25',['branch_',['../classControlUnit.html#aa6c5d30456a87d6b4454772d35770145',1,'ControlUnit']]],
-  ['branch_5fflag_5f_26',['branch_flag_',['../classRVSSVM.html#adac1aa09fc07850d4f5446a9321bcee3',1,'RVSSVM']]],
-  ['branch_5fmispredictions_5f_27',['branch_mispredictions_',['../classVmBase.html#a13c51d85a826a7bea080d8a9ead0913b',1,'VmBase']]],
-  ['breakpoints_5f_28',['breakpoints_',['../classVmBase.html#a1ab317e9659f20f6edddad20ec241f98',1,'VmBase']]],
-  ['bss_5fsection_5fstart_29',['bss_section_start',['../structvm__config_1_1VmConfig.html#a219e9e3f1ddeb1535d0eed15ec59895f',1,'vm_config::VmConfig']]],
-  ['btypeinstructionencoding_30',['BTypeInstructionEncoding',['../structinstruction__set_1_1BTypeInstructionEncoding.html#a3ba23591ee77efa63baf872e304d32aa',1,'instruction_set::BTypeInstructionEncoding::BTypeInstructionEncoding()'],['../structinstruction__set_1_1BTypeInstructionEncoding.html',1,'instruction_set::BTypeInstructionEncoding']]]
+  ['b_5fnone_34',['B_NONE',['../namespaceinstruction__type.html#aa1eab7aa4e293318f6670cbbe73a41afae95021374f8867c2463a9c09587e7688',1,'instruction_type']]],
+  ['b_5ftype_5finstruction_5fencoding_5fmap_35',['B_type_instruction_encoding_map',['../namespaceinstruction__set.html#a3e35acfc82b9e41676104e2747733de6',1,'instruction_set']]],
+  ['baseaddress_36',['baseAddress',['../classMMIODevice.html#ab5d704272d2cf6d18cda4514110c7879',1,'MMIODevice::baseAddress()'],['../classNullMMIODevice.html#af1e784af30e77f4b5d997cc9f1e645e0',1,'NullMMIODevice::baseAddress()']]],
+  ['beq_37',['BEQ',['../namespaceinstruction__type.html#aa1eab7aa4e293318f6670cbbe73a41afa3ef284f0b58cec98a7df8e2e33ab427e',1,'instruction_type']]],
+  ['bge_38',['BGE',['../namespaceinstruction__type.html#aa1eab7aa4e293318f6670cbbe73a41afa3139f70a3cb6c0695e717928e8784e2d',1,'instruction_type']]],
+  ['bgeu_39',['BGEU',['../namespaceinstruction__type.html#aa1eab7aa4e293318f6670cbbe73a41afa84332398d8df4c9dcaa20982b5a6fb9a',1,'instruction_type']]],
+  ['block_5fsize_40',['block_size',['../structMemoryBlock.html#a4fc9655625b9d635d1c0458e5d096373',1,'MemoryBlock']]],
+  ['blt_41',['BLT',['../namespaceinstruction__type.html#aa1eab7aa4e293318f6670cbbe73a41afa12ab0dd970dd28f28d70b70750d5ea54',1,'instruction_type']]],
+  ['bltu_42',['BLTU',['../namespaceinstruction__type.html#aa1eab7aa4e293318f6670cbbe73a41afa1682a6aab702f24a1dba8cee987d26cd',1,'instruction_type']]],
+  ['bne_43',['BNE',['../namespaceinstruction__type.html#aa1eab7aa4e293318f6670cbbe73a41afa3827ab4696b8138650c6f3032d9dab85',1,'instruction_type']]],
+  ['branch_44',['branch',['../structControlSignals.html#ab88fabbb0380f83b0010eb55341ba615',1,'ControlSignals']]],
+  ['branch_5f_45',['branch_',['../classControlUnit.html#aa6c5d30456a87d6b4454772d35770145',1,'ControlUnit']]],
+  ['branch_5fflag_5f_46',['branch_flag_',['../classRVSSVM.html#adac1aa09fc07850d4f5446a9321bcee3',1,'RVSSVM']]],
+  ['branch_5fmispredictions_5f_47',['branch_mispredictions_',['../classVmBase.html#a13c51d85a826a7bea080d8a9ead0913b',1,'VmBase']]],
+  ['branch_5fop_48',['branch_op',['../structControlSignals.html#a5c369dc1a241a7dfdcbc2db650015ace',1,'ControlSignals']]],
+  ['branchop_49',['BranchOp',['../namespaceinstruction__type.html#aa1eab7aa4e293318f6670cbbe73a41af',1,'instruction_type']]],
+  ['breakpoints_5f_50',['breakpoints_',['../classVmBase.html#a1ab317e9659f20f6edddad20ec241f98',1,'VmBase']]],
+  ['bss_5fsection_5fstart_51',['bss_section_start',['../structvm__config_1_1VmConfig.html#a219e9e3f1ddeb1535d0eed15ec59895f',1,'vm_config::VmConfig']]],
+  ['btypeinstructionencoding_52',['BTypeInstructionEncoding',['../structinstruction__set_1_1BTypeInstructionEncoding.html#a3ba23591ee77efa63baf872e304d32aa',1,'instruction_set::BTypeInstructionEncoding::BTypeInstructionEncoding()'],['../structinstruction__set_1_1BTypeInstructionEncoding.html',1,'instruction_set::BTypeInstructionEncoding']]]
 ];

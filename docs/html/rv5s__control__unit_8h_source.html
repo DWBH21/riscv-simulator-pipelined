@@ -69,7 +69,35 @@ $(function() {
 <div class="title">rv5s_control_unit.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="rv5s__control__unit_8h.html">Go to the documentation of this file.</a><div class="fragment"></div><!-- fragment --></div><!-- contents -->
+<a href="rv5s__control__unit_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef RV5S_CONTROL_UNIT_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define RV5S_CONTROL_UNIT_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pipeline__registers_8h.html">pipeline_registers.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classRV5SControlUnit.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRV5SControlUnit.html">RV5SControlUnit</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classRV5SControlUnit.html#acbf6b666797e935c825b5dec2ad8a32b">   14</a></span>&#160;    <a class="code" href="classRV5SControlUnit.html#acbf6b666797e935c825b5dec2ad8a32b">RV5SControlUnit</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classRV5SControlUnit.html#a3a35e549fdfda9f5d3f2d2867a803f1e">   15</a></span>&#160;    <a class="code" href="classRV5SControlUnit.html#a3a35e549fdfda9f5d3f2d2867a803f1e">~RV5SControlUnit</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">// Generates control signals from an instruction</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="structControlSignals.html">ControlSignals</a> <a class="code" href="classRV5SControlUnit.html#a8391db23bf761623d6316823c4b9e570">getControlSignals</a>(uint32_t instruction);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// Returns a &quot;disable all&quot; control signal, that acts as a nop </span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="structControlSignals.html">ControlSignals</a> <a class="code" href="classRV5SControlUnit.html#a7b591f64943c55f5c4d595a13236e32e">CreateNOP</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="ttc" id="aclassRV5SControlUnit_html"><div class="ttname"><a href="classRV5SControlUnit.html">RV5SControlUnit</a></div><div class="ttdef"><b>Definition:</b> rv5s_control_unit.h:12</div></div>
+<div class="ttc" id="aclassRV5SControlUnit_html_a3a35e549fdfda9f5d3f2d2867a803f1e"><div class="ttname"><a href="classRV5SControlUnit.html#a3a35e549fdfda9f5d3f2d2867a803f1e">RV5SControlUnit::~RV5SControlUnit</a></div><div class="ttdeci">~RV5SControlUnit()=default</div></div>
+<div class="ttc" id="aclassRV5SControlUnit_html_a7b591f64943c55f5c4d595a13236e32e"><div class="ttname"><a href="classRV5SControlUnit.html#a7b591f64943c55f5c4d595a13236e32e">RV5SControlUnit::CreateNOP</a></div><div class="ttdeci">ControlSignals CreateNOP()</div><div class="ttdef"><b>Definition:</b> rv5s_control_unit.cpp:33</div></div>
+<div class="ttc" id="aclassRV5SControlUnit_html_a8391db23bf761623d6316823c4b9e570"><div class="ttname"><a href="classRV5SControlUnit.html#a8391db23bf761623d6316823c4b9e570">RV5SControlUnit::getControlSignals</a></div><div class="ttdeci">ControlSignals getControlSignals(uint32_t instruction)</div><div class="ttdef"><b>Definition:</b> rv5s_control_unit.cpp:39</div></div>
+<div class="ttc" id="aclassRV5SControlUnit_html_acbf6b666797e935c825b5dec2ad8a32b"><div class="ttname"><a href="classRV5SControlUnit.html#acbf6b666797e935c825b5dec2ad8a32b">RV5SControlUnit::RV5SControlUnit</a></div><div class="ttdeci">RV5SControlUnit()=default</div></div>
+<div class="ttc" id="apipeline__registers_8h_html"><div class="ttname"><a href="pipeline__registers_8h.html">pipeline_registers.h</a></div><div class="ttdoc">Defines the data structures for pipeline registers and control signals.</div></div>
+<div class="ttc" id="astructControlSignals_html"><div class="ttname"><a href="structControlSignals.html">ControlSignals</a></div><div class="ttdef"><b>Definition:</b> pipeline_registers.h:59</div></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1

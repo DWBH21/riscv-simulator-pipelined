@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['command_5fhandler_781',['command_handler',['../namespacecommand__handler.html',1,'']]]
+  ['cache_1136',['cache',['../namespacecache.html',1,'']]],
+  ['command_5fhandler_1137',['command_handler',['../namespacecommand__handler.html',1,'']]]
 ];

@@ -12,8 +12,7 @@ Contains configuration options for the assembler.
 {\ttfamily \#include $<$cstdint$>$}\newline
 {\ttfamily \#include $<$fstream$>$}\newline
 {\ttfamily \#include $<$sstream$>$}\newline
-Include dependency graph for config.\+h\+:
-\nopagebreak
+Include dependency graph for config.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -40,6 +39,15 @@ struct \mbox{\hyperlink{structvm__config_1_1VmConfig}{vm\+\_\+config\+::\+Vm\+Co
 \begin{DoxyCompactList}\small\item\em Namespace for VM configuration management. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458fea}{vm\+\_\+config\+::\+Pipeline\+Modes}} \{ \newline
+\mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa4bbb8f967da6d1a610596d7257179c2b}{vm\+\_\+config\+::\+Invalid}}
+, \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa22b7c2abfb7dcf0f672899fb2b6f1670}{vm\+\_\+config\+::\+Ideal}}
+, \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa319f6a2b71d73e01044ba8dad5a8b64f}{vm\+\_\+config\+::\+With\+Hazards}}
+, \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa6fc5bfd9851bccaada6434942533b7f4}{vm\+\_\+config\+::\+With\+Forwarding}}
+, \newline
+\mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa4a7dc14ff5cf7bbc5f3201d483291e5e}{vm\+\_\+config\+::\+With\+Static\+Branch\+Prediction}}
+ \}
 \item 
 enum class \mbox{\hyperlink{namespacevm__config_aa4eeb50c28c404f656938f58b44562b5}{vm\+\_\+config\+::\+Vm\+Types}} \{ \mbox{\hyperlink{namespacevm__config_aa4eeb50c28c404f656938f58b44562b5a2c4a0af0ffe5afecf34ef3401408722c}{vm\+\_\+config\+::\+SINGLE\+\_\+\+STAGE}}
 , \mbox{\hyperlink{namespacevm__config_aa4eeb50c28c404f656938f58b44562b5ad300fd0998c340710fb890f72de460b1}{vm\+\_\+config\+::\+MULTI\+\_\+\+STAGE}}

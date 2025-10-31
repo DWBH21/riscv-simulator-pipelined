@@ -1,0 +1,97 @@
+\hypertarget{pipeline__registers_8h}{}\doxysection{include/vm/rv5s/pipeline\+\_\+registers.h File Reference}
+\label{pipeline__registers_8h}\index{include/vm/rv5s/pipeline\_registers.h@{include/vm/rv5s/pipeline\_registers.h}}
+
+
+Defines the data structures for pipeline registers and control signals.  
+
+
+{\ttfamily \#include \char`\"{}vm/alu.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+Include dependency graph for pipeline\+\_\+registers.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{pipeline__registers_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pipeline__registers_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structControlSignals}{Control\+Signals}}
+\item 
+struct \mbox{\hyperlink{structIF__ID__Reg}{IF\+\_\+\+ID\+\_\+\+Reg}}
+\item 
+struct \mbox{\hyperlink{structID__EX__Reg}{ID\+\_\+\+EX\+\_\+\+Reg}}
+\item 
+struct \mbox{\hyperlink{structEX__MEM__Reg}{EX\+\_\+\+MEM\+\_\+\+Reg}}
+\item 
+struct \mbox{\hyperlink{structMEM__WB__Reg}{MEM\+\_\+\+WB\+\_\+\+Reg}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceinstruction__type}{instruction\+\_\+type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24}{instruction\+\_\+type\+::\+Mem\+Read\+Op}} \{ \newline
+\mbox{\hyperlink{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24a3f633207a2358f809869765ae2898857}{instruction\+\_\+type\+::\+MEM\+\_\+\+READ\+\_\+\+NONE}}
+, \mbox{\hyperlink{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24ade75c27100df7968d3dba511ecba52b1}{instruction\+\_\+type\+::\+MEM\+\_\+\+READ\+\_\+\+BYTE}}
+, \mbox{\hyperlink{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24a93c069840698a8ac3d9aac8fe49d71da}{instruction\+\_\+type\+::\+MEM\+\_\+\+READ\+\_\+\+HALF}}
+, \mbox{\hyperlink{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24ab5486d3222864880c8b40fde7c0a5de1}{instruction\+\_\+type\+::\+MEM\+\_\+\+READ\+\_\+\+WORD}}
+, \newline
+\mbox{\hyperlink{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24adc0055f6d93822dbb3853963e3511745}{instruction\+\_\+type\+::\+MEM\+\_\+\+READ\+\_\+\+DOUBLE}}
+, \mbox{\hyperlink{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24a2d2e2cb45da4e8548de9b20608daf7b5}{instruction\+\_\+type\+::\+MEM\+\_\+\+READ\+\_\+\+BYTE\+\_\+\+UNSIGNED}}
+, \mbox{\hyperlink{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24abac5a60aa1db3f10bc3bd6488ea02e46}{instruction\+\_\+type\+::\+MEM\+\_\+\+READ\+\_\+\+HALF\+\_\+\+UNSIGNED}}
+, \mbox{\hyperlink{namespaceinstruction__type_a88b81fb5d72298ebb6e839fdbbe13b24a31895ae0ab6136b64a3a75ee11f8951e}{instruction\+\_\+type\+::\+MEM\+\_\+\+READ\+\_\+\+WORD\+\_\+\+UNSIGNED}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3}{instruction\+\_\+type\+::\+Mem\+Write\+Op}} \{ \newline
+\mbox{\hyperlink{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3a4036c2baeda38dd8a524fa06c146d524}{instruction\+\_\+type\+::\+MEM\+\_\+\+WRITE\+\_\+\+NONE}}
+, \mbox{\hyperlink{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3a2e7e68e21257154bf25863028f2c214d}{instruction\+\_\+type\+::\+MEM\+\_\+\+WRITE\+\_\+\+BYTE}}
+, \mbox{\hyperlink{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3a613d00187e90c3e8c47e7194f871da72}{instruction\+\_\+type\+::\+MEM\+\_\+\+WRITE\+\_\+\+HALF}}
+, \mbox{\hyperlink{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3a80968b2f19e67404361b0f9a34ef0878}{instruction\+\_\+type\+::\+MEM\+\_\+\+WRITE\+\_\+\+WORD}}
+, \newline
+\mbox{\hyperlink{namespaceinstruction__type_a2099622d17eaf6717ae3a57eed1113a3aec96d0c2e5cea732dd8afa9b0a5a3b5e}{instruction\+\_\+type\+::\+MEM\+\_\+\+WRITE\+\_\+\+DOUBLE}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6}{instruction\+\_\+type\+::\+Write\+Back\+Src}} \{ \mbox{\hyperlink{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6a2606ca2795c6026cf391522576e38515}{instruction\+\_\+type\+::\+WB\+\_\+\+NONE}}
+, \mbox{\hyperlink{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6af3d5f0dfe931a198333adfc33230824b}{instruction\+\_\+type\+::\+WB\+\_\+\+FROM\+\_\+\+ALU}}
+, \mbox{\hyperlink{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6a299bf78f61a6862293a27f4d97cdd4c4}{instruction\+\_\+type\+::\+WB\+\_\+\+FROM\+\_\+\+MEM}}
+, \mbox{\hyperlink{namespaceinstruction__type_ab01da33423bd88aee4e0270ea9a3cbc6a17ccae40692060ece3bb09df459dfb56}{instruction\+\_\+type\+::\+WB\+\_\+\+FROM\+\_\+\+PC\+\_\+\+INC}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceinstruction__type_a9ea23266a02a440e587963a92ba3adc6}{instruction\+\_\+type\+::\+Alu\+SrcA}} \{ \mbox{\hyperlink{namespaceinstruction__type_a9ea23266a02a440e587963a92ba3adc6ae2b5e72aa6d3cd85f6c9c8160bf62fab}{instruction\+\_\+type\+::\+ALU\+\_\+\+SRC\+\_\+\+A\+\_\+\+RS1}}
+, \mbox{\hyperlink{namespaceinstruction__type_a9ea23266a02a440e587963a92ba3adc6a417a15061c716ff7b0d9db79769fe016}{instruction\+\_\+type\+::\+ALU\+\_\+\+SRC\+\_\+\+A\+\_\+\+ZERO}}
+, \mbox{\hyperlink{namespaceinstruction__type_a9ea23266a02a440e587963a92ba3adc6a3e529486cc1964496b972ae3732cd9b1}{instruction\+\_\+type\+::\+ALU\+\_\+\+SRC\+\_\+\+A\+\_\+\+PC}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41af}{instruction\+\_\+type\+::\+Branch\+Op}} \{ \newline
+\mbox{\hyperlink{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afae95021374f8867c2463a9c09587e7688}{instruction\+\_\+type\+::\+B\+\_\+\+NONE}}
+, \mbox{\hyperlink{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa3ef284f0b58cec98a7df8e2e33ab427e}{instruction\+\_\+type\+::\+BEQ}}
+, \mbox{\hyperlink{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa3827ab4696b8138650c6f3032d9dab85}{instruction\+\_\+type\+::\+BNE}}
+, \mbox{\hyperlink{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa12ab0dd970dd28f28d70b70750d5ea54}{instruction\+\_\+type\+::\+BLT}}
+, \newline
+\mbox{\hyperlink{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa3139f70a3cb6c0695e717928e8784e2d}{instruction\+\_\+type\+::\+BGE}}
+, \mbox{\hyperlink{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa1682a6aab702f24a1dba8cee987d26cd}{instruction\+\_\+type\+::\+BLTU}}
+, \mbox{\hyperlink{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa84332398d8df4c9dcaa20982b5a6fb9a}{instruction\+\_\+type\+::\+BGEU}}
+, \mbox{\hyperlink{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa52c88232f5460c965dd7d967d20f7eb8}{instruction\+\_\+type\+::\+JAL}}
+, \newline
+\mbox{\hyperlink{namespaceinstruction__type_aa1eab7aa4e293318f6670cbbe73a41afa526bb8779ccb9c20f429718264723fcd}{instruction\+\_\+type\+::\+JALR}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the data structures for pipeline registers and control signals. 
+

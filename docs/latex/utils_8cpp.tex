@@ -8,6 +8,8 @@ Contains utility functions for the VM.
 {\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}vm/registers.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vm/rv5s/pipeline\+\_\+registers.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
 {\ttfamily \#include $<$filesystem$>$}\newline
 {\ttfamily \#include $<$fstream$>$}\newline
 {\ttfamily \#include $<$vector$>$}\newline
@@ -41,7 +43,21 @@ void \mbox{\hyperlink{utils_8cpp_a4645b448c63ee103e8ae566d83b45470}{Dump\+Regist
 void \mbox{\hyperlink{utils_8cpp_a05b17231f2df6613889cdeccfdffa6c0}{Dump\+Disasssembly}} (const std\+::filesystem\+::path \&filename, \mbox{\hyperlink{structAssembledProgram}{Assembled\+Program}} \&program)
 \item 
 void \mbox{\hyperlink{utils_8cpp_a105ade81d4e257f3764e557f57773066}{Setup\+Config\+File}} ()
-\end{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{utils_8cpp_adcd80ef37f66a812d3b34255932d58c8}{write\+\_\+json\+\_\+field}} (std\+::ofstream \&file, const std\+::string \&key, const T \&value, bool is\+\_\+hex=false, bool last=false)
+\begin{DoxyCompactList}\small\item\em Helper function to write key/value pairs to a JSON stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8cpp_a420ccf358036a25409c17cf6e2122f2c}{write\+\_\+json\+\_\+field}} (std\+::ofstream \&file, const std\+::string \&key, int64\+\_\+t value, bool last=false)
+\item 
+void \mbox{\hyperlink{utils_8cpp_aca91bc10c457f40f1461f3070f90aad4}{write\+\_\+json\+\_\+field}} (std\+::ofstream \&file, const std\+::string \&key, uint64\+\_\+t value, bool last=false)
+\item 
+void \mbox{\hyperlink{utils_8cpp_a7a6037c5c8000f1f3b2a160ff6611d41}{write\+\_\+json\+\_\+field}} (std\+::ofstream \&file, const std\+::string \&key, uint32\+\_\+t value, bool last=false)
+\item 
+void \mbox{\hyperlink{utils_8cpp_a8082fcc90b6cf515cf83d0bdc5b9dbff}{write\+\_\+json\+\_\+field}} (std\+::ofstream \&file, const std\+::string \&key, int value, bool last=false)
+\item 
+void \mbox{\hyperlink{utils_8cpp_aaa6b9e3c89e8a80d22d63904650f6944}{write\+\_\+json\+\_\+field}} (std\+::ofstream \&file, const std\+::string \&key, bool value, bool last=false)
+\item 
+void \mbox{\hyperlink{utils_8cpp_a7fcefe58df312dfca4e0475c20cf61bd}{Dump\+Pipeline\+Registers}} (std\+::ofstream \&file, const \mbox{\hyperlink{structIF__ID__Reg}{IF\+\_\+\+ID\+\_\+\+Reg}} \&if\+\_\+id, const \mbox{\hyperlink{structID__EX__Reg}{ID\+\_\+\+EX\+\_\+\+Reg}} \&id\+\_\+ex, const \mbox{\hyperlink{structEX__MEM__Reg}{EX\+\_\+\+MEM\+\_\+\+Reg}} \&ex\+\_\+mem, const \mbox{\hyperlink{structMEM__WB__Reg}{MEM\+\_\+\+WB\+\_\+\+Reg}} \&mem\+\_\+wb)
+\begin{DoxyCompactList}\small\item\em Dumps the state of all 5-\/stage pipeline registers to a JSON stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -94,6 +110,29 @@ The number of lines in the file.
 \doxysubsubsection{\texorpdfstring{DumpNoErrors()}{DumpNoErrors()}}
 {\footnotesize\ttfamily void Dump\+No\+Errors (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{filename }\end{DoxyParamCaption})}
 
+\mbox{\Hypertarget{utils_8cpp_a7fcefe58df312dfca4e0475c20cf61bd}\label{utils_8cpp_a7fcefe58df312dfca4e0475c20cf61bd}} 
+\index{utils.cpp@{utils.cpp}!DumpPipelineRegisters@{DumpPipelineRegisters}}
+\index{DumpPipelineRegisters@{DumpPipelineRegisters}!utils.cpp@{utils.cpp}}
+\doxysubsubsection{\texorpdfstring{DumpPipelineRegisters()}{DumpPipelineRegisters()}}
+{\footnotesize\ttfamily void Dump\+Pipeline\+Registers (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{file,  }\item[{const \mbox{\hyperlink{structIF__ID__Reg}{IF\+\_\+\+ID\+\_\+\+Reg}} \&}]{if\+\_\+id,  }\item[{const \mbox{\hyperlink{structID__EX__Reg}{ID\+\_\+\+EX\+\_\+\+Reg}} \&}]{id\+\_\+ex,  }\item[{const \mbox{\hyperlink{structEX__MEM__Reg}{EX\+\_\+\+MEM\+\_\+\+Reg}} \&}]{ex\+\_\+mem,  }\item[{const \mbox{\hyperlink{structMEM__WB__Reg}{MEM\+\_\+\+WB\+\_\+\+Reg}} \&}]{mem\+\_\+wb }\end{DoxyParamCaption})}
+
+
+
+Dumps the state of all 5-\/stage pipeline registers to a JSON stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The output file stream to write to. \\
+\hline
+{\em if\+\_\+id} & The IF/\+ID pipeline register. \\
+\hline
+{\em id\+\_\+ex} & The ID/\+EX pipeline register. \\
+\hline
+{\em ex\+\_\+mem} & The EX/\+MEM pipeline register. \\
+\hline
+{\em mem\+\_\+wb} & The MEM/\+WB pipeline register. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{utils_8cpp_a4645b448c63ee103e8ae566d83b45470}\label{utils_8cpp_a4645b448c63ee103e8ae566d83b45470}} 
 \index{utils.cpp@{utils.cpp}!DumpRegisters@{DumpRegisters}}
 \index{DumpRegisters@{DumpRegisters}!utils.cpp@{utils.cpp}}
@@ -156,4 +195,45 @@ The unescaped string.
 \index{setupVmStateDirectory@{setupVmStateDirectory}!utils.cpp@{utils.cpp}}
 \doxysubsubsection{\texorpdfstring{setupVmStateDirectory()}{setupVmStateDirectory()}}
 {\footnotesize\ttfamily void setup\+Vm\+State\+Directory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{utils_8cpp_aaa6b9e3c89e8a80d22d63904650f6944}\label{utils_8cpp_aaa6b9e3c89e8a80d22d63904650f6944}} 
+\index{utils.cpp@{utils.cpp}!write\_json\_field@{write\_json\_field}}
+\index{write\_json\_field@{write\_json\_field}!utils.cpp@{utils.cpp}}
+\doxysubsubsection{\texorpdfstring{write\_json\_field()}{write\_json\_field()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void write\+\_\+json\+\_\+field (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{file,  }\item[{const std\+::string \&}]{key,  }\item[{bool}]{value,  }\item[{bool}]{last = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{utils_8cpp_adcd80ef37f66a812d3b34255932d58c8}\label{utils_8cpp_adcd80ef37f66a812d3b34255932d58c8}} 
+\index{utils.cpp@{utils.cpp}!write\_json\_field@{write\_json\_field}}
+\index{write\_json\_field@{write\_json\_field}!utils.cpp@{utils.cpp}}
+\doxysubsubsection{\texorpdfstring{write\_json\_field()}{write\_json\_field()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void write\+\_\+json\+\_\+field (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{file,  }\item[{const std\+::string \&}]{key,  }\item[{const T \&}]{value,  }\item[{bool}]{is\+\_\+hex = {\ttfamily false},  }\item[{bool}]{last = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Helper function to write key/value pairs to a JSON stream. 
+
+\mbox{\Hypertarget{utils_8cpp_a8082fcc90b6cf515cf83d0bdc5b9dbff}\label{utils_8cpp_a8082fcc90b6cf515cf83d0bdc5b9dbff}} 
+\index{utils.cpp@{utils.cpp}!write\_json\_field@{write\_json\_field}}
+\index{write\_json\_field@{write\_json\_field}!utils.cpp@{utils.cpp}}
+\doxysubsubsection{\texorpdfstring{write\_json\_field()}{write\_json\_field()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void write\+\_\+json\+\_\+field (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{file,  }\item[{const std\+::string \&}]{key,  }\item[{int}]{value,  }\item[{bool}]{last = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{utils_8cpp_a420ccf358036a25409c17cf6e2122f2c}\label{utils_8cpp_a420ccf358036a25409c17cf6e2122f2c}} 
+\index{utils.cpp@{utils.cpp}!write\_json\_field@{write\_json\_field}}
+\index{write\_json\_field@{write\_json\_field}!utils.cpp@{utils.cpp}}
+\doxysubsubsection{\texorpdfstring{write\_json\_field()}{write\_json\_field()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void write\+\_\+json\+\_\+field (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{file,  }\item[{const std\+::string \&}]{key,  }\item[{int64\+\_\+t}]{value,  }\item[{bool}]{last = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{utils_8cpp_a7a6037c5c8000f1f3b2a160ff6611d41}\label{utils_8cpp_a7a6037c5c8000f1f3b2a160ff6611d41}} 
+\index{utils.cpp@{utils.cpp}!write\_json\_field@{write\_json\_field}}
+\index{write\_json\_field@{write\_json\_field}!utils.cpp@{utils.cpp}}
+\doxysubsubsection{\texorpdfstring{write\_json\_field()}{write\_json\_field()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void write\+\_\+json\+\_\+field (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{file,  }\item[{const std\+::string \&}]{key,  }\item[{uint32\+\_\+t}]{value,  }\item[{bool}]{last = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{utils_8cpp_aca91bc10c457f40f1461f3070f90aad4}\label{utils_8cpp_aca91bc10c457f40f1461f3070f90aad4}} 
+\index{utils.cpp@{utils.cpp}!write\_json\_field@{write\_json\_field}}
+\index{write\_json\_field@{write\_json\_field}!utils.cpp@{utils.cpp}}
+\doxysubsubsection{\texorpdfstring{write\_json\_field()}{write\_json\_field()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void write\+\_\+json\+\_\+field (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{file,  }\item[{const std\+::string \&}]{key,  }\item[{uint64\+\_\+t}]{value,  }\item[{bool}]{last = {\ttfamily false} }\end{DoxyParamCaption})}
 

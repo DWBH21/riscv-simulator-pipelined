@@ -5,6 +5,7 @@
 {\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
 {\ttfamily \#include $<$string$>$}\newline
 {\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
 Include dependency graph for instructions.\+cpp\+:
 \nopagebreak
 \begin{figure}[H]
@@ -45,6 +46,12 @@ bool \mbox{\hyperlink{namespaceinstruction__set_adf2c87a1fa7b27e0012e3eaf1f57553
 \item 
 bool \mbox{\hyperlink{namespaceinstruction__set_a3e26615428ea0891ded649073e440d88}{instruction\+\_\+set\+::is\+Valid\+Base\+Extension\+Instruction}} (const std\+::string \&instruction)
 \item 
+bool \mbox{\hyperlink{namespaceinstruction__set_a3e6f000a9cc56a65caac4033c362717d}{instruction\+\_\+set\+::is\+Valid\+MExtension\+Instruction}} (const std\+::string \&instruction)
+\item 
+bool \mbox{\hyperlink{namespaceinstruction__set_ac62387417c2482375edb488f4e563337}{instruction\+\_\+set\+::is\+Valid\+FExtension\+Instruction}} (const std\+::string \&instruction)
+\item 
+bool \mbox{\hyperlink{namespaceinstruction__set_a5f75bd1bb73cd69424ee50160488cb79}{instruction\+\_\+set\+::is\+Valid\+DExtension\+Instruction}} (const std\+::string \&instruction)
+\item 
 bool \mbox{\hyperlink{namespaceinstruction__set_a390f2245d92958d7d6e67df52fdeab34}{instruction\+\_\+set\+::is\+Valid\+CSRRType\+Instruction}} (const std\+::string \&instruction)
 \item 
 bool \mbox{\hyperlink{namespaceinstruction__set_ac19e70a283ee2e1b15125faad66ba23e}{instruction\+\_\+set\+::is\+Valid\+CSRIType\+Instruction}} (const std\+::string \&instruction)
@@ -70,4 +77,11 @@ bool \mbox{\hyperlink{namespaceinstruction__set_aa2718ca4cc03370f5c3d248ed59028b
 bool \mbox{\hyperlink{namespaceinstruction__set_a5303fb0dd8dd34c268231c47f85a02fc}{instruction\+\_\+set\+::is\+DInstruction}} (const uint32\+\_\+t \&instruction)
 \item 
 std\+::string \mbox{\hyperlink{namespaceinstruction__set_a605befee774c8275dccbdf096ac5b66f}{instruction\+\_\+set\+::get\+Expected\+Syntaxes}} (const std\+::string \&opcode)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::unordered\+\_\+set$<$ std\+::string $>$ \mbox{\hyperlink{namespaceinstruction__set_adae655b34cefe90f98b40fd0fed8702e}{instruction\+\_\+set\+::\+FExtension\+Instructions}}
+\item 
+const std\+::unordered\+\_\+set$<$ std\+::string $>$ \mbox{\hyperlink{namespaceinstruction__set_a6ec560a7abcbeaf88abf481cea62dbd3}{instruction\+\_\+set\+::\+DExtension\+Instructions}}
 \end{DoxyCompactItemize}

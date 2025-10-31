@@ -13,6 +13,15 @@ struct \mbox{\hyperlink{structvm__config_1_1VmConfig}{Vm\+Config}}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
+enum class \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458fea}{Pipeline\+Modes}} \{ \newline
+\mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa4bbb8f967da6d1a610596d7257179c2b}{Invalid}}
+, \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa22b7c2abfb7dcf0f672899fb2b6f1670}{Ideal}}
+, \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa319f6a2b71d73e01044ba8dad5a8b64f}{With\+Hazards}}
+, \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa6fc5bfd9851bccaada6434942533b7f4}{With\+Forwarding}}
+, \newline
+\mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa4a7dc14ff5cf7bbc5f3201d483291e5e}{With\+Static\+Branch\+Prediction}}
+ \}
+\item 
 enum class \mbox{\hyperlink{namespacevm__config_aa4eeb50c28c404f656938f58b44562b5}{Vm\+Types}} \{ \mbox{\hyperlink{namespacevm__config_aa4eeb50c28c404f656938f58b44562b5a2c4a0af0ffe5afecf34ef3401408722c}{SINGLE\+\_\+\+STAGE}}
 , \mbox{\hyperlink{namespacevm__config_aa4eeb50c28c404f656938f58b44562b5ad300fd0998c340710fb890f72de460b1}{MULTI\+\_\+\+STAGE}}
  \}
@@ -28,6 +37,34 @@ enum class \mbox{\hyperlink{namespacevm__config_aa4eeb50c28c404f656938f58b44562b
 Namespace for VM configuration management. 
 
 \doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458fea}\label{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458fea}} 
+\index{vm\_config@{vm\_config}!PipelineModes@{PipelineModes}}
+\index{PipelineModes@{PipelineModes}!vm\_config@{vm\_config}}
+\doxysubsubsection{\texorpdfstring{PipelineModes}{PipelineModes}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458fea}{vm\+\_\+config\+::\+Pipeline\+Modes}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Invalid@{Invalid}!vm\_config@{vm\_config}}\index{vm\_config@{vm\_config}!Invalid@{Invalid}}}\mbox{\Hypertarget{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa4bbb8f967da6d1a610596d7257179c2b}\label{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa4bbb8f967da6d1a610596d7257179c2b}} 
+Invalid&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ideal@{Ideal}!vm\_config@{vm\_config}}\index{vm\_config@{vm\_config}!Ideal@{Ideal}}}\mbox{\Hypertarget{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa22b7c2abfb7dcf0f672899fb2b6f1670}\label{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa22b7c2abfb7dcf0f672899fb2b6f1670}} 
+Ideal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WithHazards@{WithHazards}!vm\_config@{vm\_config}}\index{vm\_config@{vm\_config}!WithHazards@{WithHazards}}}\mbox{\Hypertarget{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa319f6a2b71d73e01044ba8dad5a8b64f}\label{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa319f6a2b71d73e01044ba8dad5a8b64f}} 
+With\+Hazards&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WithForwarding@{WithForwarding}!vm\_config@{vm\_config}}\index{vm\_config@{vm\_config}!WithForwarding@{WithForwarding}}}\mbox{\Hypertarget{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa6fc5bfd9851bccaada6434942533b7f4}\label{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa6fc5bfd9851bccaada6434942533b7f4}} 
+With\+Forwarding&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WithStaticBranchPrediction@{WithStaticBranchPrediction}!vm\_config@{vm\_config}}\index{vm\_config@{vm\_config}!WithStaticBranchPrediction@{WithStaticBranchPrediction}}}\mbox{\Hypertarget{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa4a7dc14ff5cf7bbc5f3201d483291e5e}\label{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa4a7dc14ff5cf7bbc5f3201d483291e5e}} 
+With\+Static\+Branch\+Prediction&\\
+\hline
+
+\end{DoxyEnumFields}
 \mbox{\Hypertarget{namespacevm__config_aa4eeb50c28c404f656938f58b44562b5}\label{namespacevm__config_aa4eeb50c28c404f656938f58b44562b5}} 
 \index{vm\_config@{vm\_config}!VmTypes@{VmTypes}}
 \index{VmTypes@{VmTypes}!vm\_config@{vm\_config}}

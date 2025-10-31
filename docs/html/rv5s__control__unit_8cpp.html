@@ -65,10 +65,71 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">rv5s_control_unit.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>RV5S Control Unit implementation.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="rv5s__control__unit_8h_source.html">vm/rv5s/rv5s_control_unit.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="alu_8h_source.html">vm/alu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="instructions_8h_source.html">common/instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="pipeline__registers_8h_source.html">vm/rv5s/pipeline_registers.h</a>&quot;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for rv5s_control_unit.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="rv5s__control__unit_8cpp__incl.png" border="0" usemap="#asrc_2vm_2rv5s_2rv5s__control__unit_8cpp" alt=""/></div>
+<map name="asrc_2vm_2rv5s_2rv5s__control__unit_8cpp" id="asrc_2vm_2rv5s_2rv5s__control__unit_8cpp">
+<area shape="rect" title="RV5S Control Unit implementation." alt="" coords="205,5,388,47"/>
+<area shape="rect" href="rv5s__control__unit_8h.html" title="Definition of the Control Unit for the 5&#45;stage pipeline." alt="" coords="159,95,317,136"/>
+<area shape="rect" href="pipeline__registers_8h.html" title="Defines the data structures for pipeline registers and control signals." alt="" coords="112,184,263,211"/>
+<area shape="rect" href="alu_8h.html" title="Contains the definition of the alu class for performing arithmetic and logic operations." alt="" coords="103,259,181,285"/>
+<area shape="rect" title=" " alt="" coords="275,333,342,360"/>
+<area shape="rect" href="instructions_8h.html" title="Contains the declarations for the InstructionEncoding struct and related functions." alt="" coords="582,102,753,129"/>
+<area shape="rect" title=" " alt="" coords="777,102,857,129"/>
+<area shape="rect" title=" " alt="" coords="193,333,251,360"/>
+<area shape="rect" title=" " alt="" coords="5,333,68,360"/>
+<area shape="rect" title=" " alt="" coords="92,333,168,360"/>
+<area shape="rect" title=" " alt="" coords="789,184,847,211"/>
+<area shape="rect" title=" " alt="" coords="872,184,935,211"/>
+<area shape="rect" title=" " alt="" coords="959,184,1018,211"/>
+<area shape="rect" title=" " alt="" coords="392,184,516,211"/>
+<area shape="rect" title=" " alt="" coords="541,184,597,211"/>
+<area shape="rect" title=" " alt="" coords="621,184,713,211"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a70ebe7df0c576bca9324a85eafd640d1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rv5s__control__unit_8cpp.html#a70ebe7df0c576bca9324a85eafd640d1">isFloatingPointOpcode</a> (uint8_t opcode)</td></tr>
+<tr class="separator:a70ebe7df0c576bca9324a85eafd640d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>RV5S Control Unit implementation. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a70ebe7df0c576bca9324a85eafd640d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70ebe7df0c576bca9324a85eafd640d1">&#9670;&nbsp;</a></span>isFloatingPointOpcode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isFloatingPointOpcode </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>opcode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
