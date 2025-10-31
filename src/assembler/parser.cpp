@@ -291,6 +291,30 @@ void Parser::parseTextDirective() {
         skipCurrentLine();
         continue;
       }
+      else if (instruction_set::isValidFExtensionInstruction(currentToken().value) && vm_config::config.getFExtensionEnabled() == false) {
+        errors_.count++;
+        recordError(ParseError(currentToken().line_number, "Unexpected opcode, F extension is disabled: " + currentToken().value));
+        errors_.all_errors.emplace_back(errors::UnexpectedTokenError("Unexpected opcode, F extension is disabled",
+                                                                   filename_,
+                                                                   currentToken().line_number,
+                                                                   currentToken().column_number,
+                                                                   GetLineFromFile(filename_,
+                                                                                   currentToken().line_number)));
+        skipCurrentLine();
+        continue;
+      }
+      else if (instruction_set::isValidDExtensionInstruction(currentToken().value) && vm_config::config.getDExtensionEnabled() == false) {
+        errors_.count++;
+        recordError(ParseError(currentToken().line_number, "Unexpected opcode, D extension is disabled: " + currentToken().value));
+        errors_.all_errors.emplace_back(errors::UnexpectedTokenError("Unexpected opcode, D extension is disabled",
+                                                                   filename_,
+                                                                   currentToken().line_number,
+                                                                   currentToken().column_number,
+                                                                   GetLineFromFile(filename_,
+                                                                                   currentToken().line_number)));
+        skipCurrentLine();
+        continue;
+      }
 
       std::vector<instruction_set::SyntaxType>
           syntaxes = instruction_set::instruction_syntax_map[currentToken().value];

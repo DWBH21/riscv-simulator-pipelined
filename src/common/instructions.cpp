@@ -315,6 +315,24 @@ static const std::unordered_set<std::string> MExtensionInstructions = {
     "mulw", "divw", "divuw", "remw", "remuw",
 };
 
+// Added set for f and d type instructions
+const std::unordered_set<std::string> FExtensionInstructions = {
+    "flw", "fsw", "fmadd.s", "fmsub.s", "fnmsub.s", "fnmadd.s", "fadd.s",
+    "fsub.s", "fmul.s", "fdiv.s", "fsqrt.s", "fsgnj.s", "fsgnjn.s", "fsgnjx.s",
+    "fmin.s", "fmax.s", "fcvt.w.s", "fcvt.wu.s", "fmv.x.w", "feq.s", "flt.s",
+    "fle.s", "fclass.s", "fcvt.s.w", "fcvt.s.wu", "fmv.w.x",
+    "fcvt.l.s", "fcvt.lu.s", "fcvt.s.l", "fcvt.s.lu",
+    "fcvt.s.d", "fcvt.d.s"
+};
+
+const std::unordered_set<std::string> DExtensionInstructions = {
+    "fld", "fsd", "fmadd.d", "fmsub.d", "fnmsub.d", "fnmadd.d", "fadd.d",
+    "fsub.d", "fmul.d", "fdiv.d", "fsqrt.d", "fsgnj.d", "fsgnjn.d", "fsgnjx.d",
+    "fmin.d", "fmax.d", "fcvt.s.d", "fcvt.d.s", "feq.d", "flt.d", "fle.d",
+    "fclass.d", "fcvt.w.d", "fcvt.wu.d", "fcvt.d.w", "fcvt.d.wu",
+    "fcvt.l.d", "fcvt.lu.d", "fmv.x.d", "fcvt.d.l", "fcvt.d.lu", "fmv.d.x"
+};
+
 //====================================================================================
 static const std::unordered_set<std::string> FDExtensionRTypeInstructions = {
     "fsgnj.s", "fsgnjn.s", "fsgnjx.s", "fmin.s", "fmax.s",
@@ -362,19 +380,6 @@ static const std::unordered_set<std::string> FDExtensionITypeInstructions = {
 static const std::unordered_set<std::string> FDExtensionSTypeInstructions = {
     "fsw", "fsd",
 };
-
-static const std::unordered_set<std::string> FExtensionInstructions = {
-    "flw", "fsw", "fmadd.s", "fmsub.d", "fnmsub.s", "fnmadd.s",
-    "fadd.s", "fsub.s", "fmul.s", "fdiv.s", "fsqrt.s",
-    "fsgnj.s", "fsgnjn.s", "fsgnjx.s",
-    "fmin.s", "fmax.s",
-    "fcvt.w.s", "fcvt.wu.s", "fmv.x.w",
-    "feq.s", "flt.s", "fle.s",
-    "fclass.s", "fcvt.s.w", "fcvt.s.wu", "fmv.w.x",
-    "fcvt.l.s", "fcvt.lu.s", "fcvt.s.l", "fcvt.s.lu",
-};
-
-static const std::unordered_set<std::string> DExtensionInstructions = {};
 
 std::unordered_map<std::string, RTypeInstructionEncoding> R_type_instruction_encoding_map = {
     {"add", {0b0110011, 0b000, 0b0000000}}, // O_GPR_C_GPR_C_GPR
@@ -869,6 +874,15 @@ bool isValidBaseExtensionInstruction(const std::string &instruction) {
 
 bool isValidMExtensionInstruction(const std::string &instruction) {
   return MExtensionInstructions.find(instruction)!=MExtensionInstructions.end();
+}
+
+// Added check for valid f and d type instructions
+bool isValidFExtensionInstruction(const std::string &instruction) {
+  return FExtensionInstructions.find(instruction)!=FExtensionInstructions.end();
+}
+
+bool isValidDExtensionInstruction(const std::string &instruction) {
+  return DExtensionInstructions.find(instruction)!=DExtensionInstructions.end();
 }
 
 bool isValidCSRRTypeInstruction(const std::string &instruction) {
