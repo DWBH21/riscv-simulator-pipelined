@@ -99,7 +99,7 @@ struct StepDelta {
 class RVSSVM : public VmBase {
  public:
   RVSSControlUnit control_unit_;
-  std::atomic<bool> stop_requested_ = false;
+  // std::atomic<bool> stop_requested_ = false;    // why is this redeclared again here ? already declared in vm_base
 
 
   std::stack<StepDelta> undo_stack_;
@@ -153,17 +153,18 @@ class RVSSVM : public VmBase {
   void Redo() override;
   void Reset() override;
 
-  void RequestStop() {
-    stop_requested_ = true;
-  }
+  // were redeclared...already present in vm_base 
+  // void RequestStop() {
+  //   stop_requested_ = true;
+  // }
 
-  bool IsStopRequested() const {
-    return stop_requested_;
-  }
+  // bool IsStopRequested() const {
+  //   return stop_requested_;
+  // }
   
-  void ClearStop() {
-    stop_requested_ = false;
-  }
+  // void ClearStop() {
+  //   stop_requested_ = false;
+  // }
 
   void PrintType() {
     std::cout << "rvssvm" << std::endl;

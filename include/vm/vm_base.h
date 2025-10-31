@@ -89,12 +89,19 @@ public:
     // void HandleSyscall();
     void PrintString(uint64_t address);
 
+    // only difference between run and debugrun is that debugrun has an intercycle delay
     virtual void Run() = 0;
     virtual void DebugRun() = 0;
     virtual void Step() = 0;
     virtual void Undo() = 0;
     virtual void Redo() = 0;
     virtual void Reset() = 0;
+
+    // Added declarations for functions related to (std::atomic<bool> stop_requested_ = false)
+    virtual void RequestStop();
+    virtual bool IsStopRequested() const;
+    virtual void ClearStop();
+
     void DumpState(const std::filesystem::path &filename);
 
     void ModifyRegister(const std::string &reg_name, uint64_t value);

@@ -85,6 +85,19 @@ void VmBase::LoadProgram(const AssembledProgram &program) {
 
 }
 
+// moved functions related to std::atomic<bool> stop_requested_ = false to vm_base
+void VmBase::RequestStop() {
+    stop_requested_ = true;
+}
+
+bool VmBase::IsStopRequested() const {
+    return stop_requested_;
+}
+
+void VmBase::ClearStop() {
+    stop_requested_ = false;
+}
+
 uint64_t VmBase::GetProgramCounter() const {
     return program_counter_;
 }
