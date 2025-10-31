@@ -19,6 +19,15 @@
  * @brief Namespace for VM configuration management.
  */
 namespace vm_config {
+
+enum class PipelineModes {
+    Invalid,           // Mode 0: No pipelining -> single stage
+    Ideal,          // Mode 1: No Hazard Detection
+    WithHazards,    // Mode 2: Stall in case of Hazards, no forwarding
+    WithForwarding,  // Mode 3: Uses forwarding, stalls only when necessary
+    WithStaticBranchPrediction // Mode 4: Defaults branch to "predict not taken"
+};
+
 enum class VmTypes {
   SINGLE_STAGE,
   MULTI_STAGE
@@ -26,6 +35,7 @@ enum class VmTypes {
 
 struct VmConfig {
   VmTypes vm_type = VmTypes::SINGLE_STAGE;
+  PipelineModes pipeline_mode = PipelineModes::Invalid;
   uint64_t run_step_delay = 300;
   uint64_t memory_size = 0xffffffffffffffff; // 64-bit address space
   uint64_t memory_block_size = 1024; // 1 KB blocks
@@ -43,8 +53,26 @@ struct VmConfig {
     vm_type = type;
   }
 
+  // setter for pipeline mode
+  void setPipelineMode(const PipelineModes &mode) 
+  {
+    pipeline_mode = mode;
+    std::cout << "Pipeline mode set to: ";
+    switch(mode) {
+      case PipelineModes::Invalid: std::cout << "Mode 0: Single stage processor, no pipelining"; break;
+      case PipelineModes::Ideal: std::cout << "Mode 1: No Hazard Detection"; break;
+      case PipelineModes::WithHazards: std::cout << "Mode 2: With Hazards Detection and Handling using Stalls"; break;
+      case PipelineModes::WithForwarding: std::cout << "Mode 3: With Hazard Detection and Forwarding"; break;
+      case PipelineModes::WithStaticBranchPrediction: std::cout << "Mode 4: With static branch prediction and default \"predict not taken\" strategy"; break;
+    }
+    std::cout << std::endl;
+  }
+
   VmTypes getVmType() const {
     return vm_type;
+  }
+  PipelineModes getPipelineMode() const { 
+    return pipeline_mode;
   }
   void setRunStepDelay(uint64_t delay) {
     run_step_delay = delay;
@@ -134,8 +162,13 @@ struct VmConfig {
         setRunStepDelay(std::stoull(value));
       } else if (key == "instruction_execution_limit") {
         setInstructionExecutionLimit(std::stoull(value));
+      } else if(key == "pipeline_mode") {
+        if (value == "ideal") setPipelineMode(PipelineModes::Ideal);
+        else if (value == "hazards") setPipelineMode(PipelineModes::WithHazards);
+        else if (value == "forwarding") setPipelineMode(PipelineModes::WithForwarding);
+        else if (value == "static") setPipelineMode(PipelineModes::WithStaticBranchPrediction);
+        else throw std::invalid_argument("Unknown pipeline_mode value: " + value);
       }
-      
       else {
         throw std::invalid_argument("Unknown key: " + key);
       }
