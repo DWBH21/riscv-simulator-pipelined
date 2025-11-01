@@ -17,23 +17,57 @@ set(INCLUDE_DIR "include")
 set(TEST_DIR "test")
 
 file(GLOB_RECURSE SRC_FILES "${SRC_DIR}/*.cpp")
+
+set(MAIN_SRC "${SRC_DIR}/main.cpp")
+set(ASSEMBLER_MAIN_SRC "${SRC_DIR}/test/main_assembler.cpp")
+set(RVSS_MAIN_SRC "${SRC_DIR}/test/main_rvss.cpp")
+set(RV5S_MAIN_SRC "${SRC_DIR}/test/main_rv5s.cpp")
+
+# Create a list of all library files    
+set(LIB_SRC_FILES ${SRC_FILES})
+
+# Remove all the main entry points -> this gives the list of only the library source files
+list(REMOVE_ITEM LIB_SRC_FILES
+    ${MAIN_SRC}
+    ${ASSEMBLER_MAIN_SRC}
+    ${RVSS_MAIN_SRC}
+    ${RV5S_MAIN_SRC}
+)
+
 file(GLOB_RECURSE TEST_FILES "${TEST_DIR}/*.cpp")
 
-add_executable(${PROJECT_NAME} ${SRC_FILES})
-target_include_directories(${PROJECT_NAME} PRIVATE ${INCLUDE_DIR})
-target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -pedantic -frounding-math -ffloat-store -g -O3)
-target_link_libraries(${PROJECT_NAME} PRIVATE m)
+# A single library that all the executables will link against
+add_library(vm_core ${LIB_SRC_FILES})
 
-if(ENABLE_ASAN)
-    message(STATUS "ASAN enabled: Adding AddressSanitizer flags to main target")
-    target_compile_options(${PROJECT_NAME} PRIVATE -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer)
-    target_link_options(${PROJECT_NAME} PRIVATE -fsanitize=address)
-    set(ASAN_ENV "ASAN_OPTIONS=detect_leaks=1:leak_check_at_exit=1")
-    add_custom_target(run_asan
-        COMMAND ${CMAKE_COMMAND} -E env ${ASAN_ENV} ./${PROJECT_NAME}
-        DEPENDS ${PROJECT_NAME}
+target_include_directories(vm_core PUBLIC ${INCLUDE_DIR})
+target_compile_options(vm_core PUBLIC -Wall -Wextra -pedantic -frounding-math -ffloat-store -g -O3)
+target_link_libraries(vm_core PUBLIC m)
+
+# define all executables
+add_executable(${PROJECT_NAME} ${MAIN_SRC})            # the original vm
+add_executable(assembler_binary ${ASSEMBLER_MAIN_SRC})
+add_executable(rvss_binary ${RVSS_MAIN_SRC})
+add_executable(rv5s_binary ${RV5S_MAIN_SRC})
+
+# link all executalbes against the core library
+set(ALL_EXECUTABLES ${PROJECT_NAME} assembler_binary rvss_binary rv5s_binary)
+foreach(exec ${ALL_EXECUTABLES})
+    target_link_libraries(${exec} PRIVATE vm_core)
+endforeach()
+
+if(ENABLE_TESTS)
+    find_package(GTest REQUIRED)
+    
+    # Build tests using the *library* files and the test files
+    add_executable(tests ${LIB_SRC_FILES} ${TEST_FILES})
+    
+    # Link tests against vm_core and GTest
+    target_link_libraries(tests PRIVATE vm_core GTest::GTest GTest::Main pthread)
+    
+    add_custom_target(test_run
+        COMMAND ./tests
+        DEPENDS tests
         WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
-        COMMENT "Running ${PROJECT_NAME} with ASAN"
     )
 endif()
 
