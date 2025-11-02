@@ -28,8 +28,10 @@ using instruction_set::get_instr_encoding;
 
 
 RVSSVM::RVSSVM() : VmBase() {
-  DumpRegisters(globals::registers_dump_file_path, registers_);
-  DumpState(globals::vm_state_dump_file_path);
+  if(!silent_mode_) {
+    DumpRegisters(globals::registers_dump_file_path, registers_);
+    DumpState(globals::vm_state_dump_file_path);
+  }
 }
 
 RVSSVM::~RVSSVM() = default;
@@ -818,8 +820,10 @@ void RVSSVM::Run() {
     std::cout << "VM_PROGRAM_END" << std::endl;
     output_status_ = "VM_PROGRAM_END";
   }
-  DumpRegisters(globals::registers_dump_file_path, registers_);
-  DumpState(globals::vm_state_dump_file_path);
+  if(!silent_mode_) {
+    DumpRegisters(globals::registers_dump_file_path, registers_);
+    DumpState(globals::vm_state_dump_file_path);
+  }
 }
 
 void RVSSVM::DebugRun() {
@@ -854,8 +858,10 @@ void RVSSVM::DebugRun() {
         std::cout << "VM_LAST_INSTRUCTION_STEPPED" << std::endl;
         output_status_ = "VM_LAST_INSTRUCTION_STEPPED";
       }
-      DumpRegisters(globals::registers_dump_file_path, registers_);
-      DumpState(globals::vm_state_dump_file_path);
+      if(!silent_mode_) {
+        DumpRegisters(globals::registers_dump_file_path, registers_);
+        DumpState(globals::vm_state_dump_file_path);
+      }
 
       unsigned int delay_ms = vm_config::config.getRunStepDelay();
       std::this_thread::sleep_for(std::chrono::milliseconds(delay_ms));
@@ -870,8 +876,10 @@ void RVSSVM::DebugRun() {
     std::cout << "VM_PROGRAM_END" << std::endl;
     output_status_ = "VM_PROGRAM_END";
   }
-  DumpRegisters(globals::registers_dump_file_path, registers_);
-  DumpState(globals::vm_state_dump_file_path);
+  if(!silent_mode_) {
+    DumpRegisters(globals::registers_dump_file_path, registers_);
+    DumpState(globals::vm_state_dump_file_path);
+  }
 }
 
 void RVSSVM::Step() {
@@ -910,8 +918,10 @@ void RVSSVM::Step() {
     std::cout << "VM_PROGRAM_END" << std::endl;
     output_status_ = "VM_PROGRAM_END";
   }
-  DumpRegisters(globals::registers_dump_file_path, registers_);
-  DumpState(globals::vm_state_dump_file_path);
+  if(!silent_mode_) {
+    DumpRegisters(globals::registers_dump_file_path, registers_);
+    DumpState(globals::vm_state_dump_file_path);
+  }
 }
 
 void RVSSVM::Undo() {
@@ -966,8 +976,10 @@ void RVSSVM::Undo() {
   output_status_ = "VM_UNDO_COMPLETED";
   std::cout << "VM_UNDO_COMPLETED" << std::endl;
 
-  DumpRegisters(globals::registers_dump_file_path, registers_);
-  DumpState(globals::vm_state_dump_file_path);
+  if(!silent_mode_) {
+    DumpRegisters(globals::registers_dump_file_path, registers_);
+    DumpState(globals::vm_state_dump_file_path);
+  }
 }
 
 void RVSSVM::Redo() {
@@ -1014,8 +1026,10 @@ void RVSSVM::Redo() {
   program_counter_ = next.new_pc;
   instructions_retired_++;
   cycle_s_++;
-  DumpRegisters(globals::registers_dump_file_path, registers_);
-  DumpState(globals::vm_state_dump_file_path);
+  if(!silent_mode_) {
+    DumpRegisters(globals::registers_dump_file_path, registers_);
+    DumpState(globals::vm_state_dump_file_path);
+  }
   std::cout << "Program Counter: " << program_counter_ << std::endl;
   undo_stack_.push(next);
 
@@ -1027,6 +1041,8 @@ void RVSSVM::Reset() {
   cycle_s_ = 0;
   registers_.Reset();
   memory_controller_.Reset();
+  program_size_ = 0;          // this should also be made zero as memory controller is reset (including the text and data segment)
+  
   control_unit_.Reset();
   branch_flag_ = false;
   next_pc_ = 0;

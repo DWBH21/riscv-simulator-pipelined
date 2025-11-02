@@ -33,8 +33,10 @@ using instruction_type::BranchOp;
 
 RV5SVM::RV5SVM() : VmBase() {
   Reset();
-  DumpRegisters(globals::registers_dump_file_path, registers_);
-  DumpState(globals::vm_state_dump_file_path);
+  if(!silent_mode_) {
+    DumpRegisters(globals::registers_dump_file_path, registers_);
+    DumpState(globals::vm_state_dump_file_path);
+  }
 }
 
 RV5SVM::~RV5SVM() = default;
@@ -47,9 +49,9 @@ void RV5SVM::Reset() {
     ipc_ = 0.0;
     stall_cycles_ = 0;
     branch_mispredictions_ = 0;
-    pipeline_drain_counter_ = 0;
     registers_.Reset();
     memory_controller_.Reset();
+    program_size_ = 0;          // this should also be made zero as memory controller is reset (including the text and data segment)
     
     if_id_reg_ = CreateBubble<IF_ID_Reg>();             
     id_ex_reg_ = CreateBubble<ID_EX_Reg>();
@@ -60,15 +62,16 @@ void RV5SVM::Reset() {
     next_id_ex_reg_ = CreateBubble<ID_EX_Reg>();
     next_ex_mem_reg_ = CreateBubble<EX_MEM_Reg>();
     next_mem_wb_reg_ = CreateBubble<MEM_WB_Reg>();
-
-    // to add reset for control, status
-    DumpRegisters(globals::registers_dump_file_path, registers_);
-    DumpState(globals::vm_state_dump_file_path);
 }
 
 void RV5SVM::Step() {
     // extra additional check for stop based on output status reqd ? 
     // Execute individual stages and write data to the next pipeline registers 
+
+    if (output_status_ == "VM_PROGRAM_END") {
+        std::cout << "VM_PROGRAM_END" << std::endl;
+        return;
+    }
 
     WriteBack_Stage();
     Memory_Stage();
@@ -76,13 +79,7 @@ void RV5SVM::Step() {
     Decode_Stage();
     Fetch_Stage();
 
-    if(program_counter_ <= program_size_ || pipeline_drain_counter_ > 0) {
-        std::cout << "VM_STEP_COMPLETED" << std::endl;
-        output_status_ = "VM_STEP_COMPLETED";         
-    }                                                                           
-
     cycle_s_++; // increment the no of cycles
-
     if_id_reg_ = next_if_id_reg_;       // update pipeline registers
     id_ex_reg_ = next_id_ex_reg_;
     ex_mem_reg_ = next_ex_mem_reg_;
@@ -99,24 +96,26 @@ void RV5SVM::Step() {
         ipc_ = 0.0;
     }
 
-    DumpRegisters(globals::registers_dump_file_path, registers_);
-    DumpState(globals::vm_state_dump_file_path);
-
-    if (pipeline_drain_counter_ > 0) {
-        pipeline_drain_counter_--;
-        if (pipeline_drain_counter_ == 0) {     // all instructions cleared from pipeline
-            RequestStop(); 
-            std::cout << "VM_PROGRAM_END" << std::endl;                         
-            output_status_ = "VM_PROGRAM_END";      
-        }
+    if(!silent_mode_) {
+        DumpRegisters(globals::registers_dump_file_path, registers_);
+        DumpState(globals::vm_state_dump_file_path);
     }
-    // if the next instruction is a breakpoint, indicate a stop to the run or debugRun functions
-    // if (CheckBreakpoint(program_counter_)) {
-    //    RequestStop(); 
-    //    output_status_ = "VM_BREAKPOINT";
-    //    DumpState(globals::vm_state_dump_file_path);         // dump state again to show breakpoint
-    //    std::cout << "VM_BREAKPOINT" << std::endl;
-    // }
+
+    bool all_instructions_fetched = (program_counter_ >= program_size_);
+    bool is_pipeline_empty = !if_id_reg_.is_valid && !id_ex_reg_.is_valid && !ex_mem_reg_.is_valid && !mem_wb_reg_.is_valid;
+
+    if (all_instructions_fetched && is_pipeline_empty) {
+        RequestStop();
+        std::cout << "VM_PROGRAM_END" << std::endl;
+        output_status_ = "VM_PROGRAM_END";
+        
+        if(!silent_mode_) {
+            DumpState(globals::vm_state_dump_file_path);        // final state with updated output status
+        }
+    } else {
+        std::cout << "VM_STEP_COMPLETED" << std::endl;
+        output_status_ = "VM_STEP_COMPLETED";
+    }
 }
 
 void RV5SVM::Run() {
@@ -129,6 +128,7 @@ void RV5SVM::Run() {
             break;
         }
         Step();
+        std::cout << "Program Counter: " << program_counter_ << std::endl;
     }
 }
 
@@ -143,10 +143,13 @@ void RV5SVM::DebugRun() {
         if (CheckBreakpoint(program_counter_)) {
             std::cout << "VM_BREAKPOINT_HIT " << program_counter_ << std::endl;
             output_status_ = "VM_BREAKPOINT_HIT";
-            DumpState(globals::vm_state_dump_file_path);
+            if(!silent_mode_) {
+                DumpState(globals::vm_state_dump_file_path);
+            }
             break;      // stop execution
         }
         Step();
+        std::cout << "Program Counter: " << program_counter_ << std::endl;
         unsigned int delay_ms = vm_config::config.getRunStepDelay();
         std::this_thread::sleep_for(std::chrono::milliseconds(delay_ms));
     }
@@ -161,36 +164,26 @@ void RV5SVM::Redo() {
 }
 
 void RV5SVM::Fetch_Stage() {
-    // If last instruction has been fetched already, but there are instructions remaining in the pipeline.
-    if (pipeline_drain_counter_ > 0) {
+    // If all instructions have been fetched
+    if (program_counter_ >= program_size_) {
         next_if_id_reg_ = CreateBubble<IF_ID_Reg>();
         return;
     }
 
-    if(program_counter_ >= program_size_) {
-        std::cout << "All instructions have been fetched. Subsequent steps will drain the pipeline." << std::endl;
-        pipeline_drain_counter_ = 4;
-
-        next_if_id_reg_ = CreateBubble<IF_ID_Reg>();
-    }
-    else  
-    {
-        // the Memory::ReadWord function throws a std::out_of_range exception if an invalid memory address is read.
-        try {
-            uint32_t instruction = memory_controller_.ReadWord(program_counter_);
-            next_if_id_reg_.instruction = instruction;
-            next_if_id_reg_.pc = program_counter_;       // original pc stored 
-            UpdateProgramCounter(4);
-            next_if_id_reg_.pc_inc = program_counter_; // the incremented pc to be stored in the pipeline register
-            next_if_id_reg_.is_valid = true;
-        } catch(const std::exception& e) {
-            std::cerr << "Fetch Stage Error: " << e.what() << std::endl;
-            next_if_id_reg_.instruction = 0;    // insert bubble 
-            next_if_id_reg_.pc = program_counter_;       // original pc stored 
-            UpdateProgramCounter(4);
-            next_if_id_reg_.pc_inc = program_counter_; // the incremented pc to be stored in the pipeline register
-            next_if_id_reg_.is_valid = true;
-        }
+    // the Memory::ReadWord function throws a std::out_of_range exception if an invalid memory address is read. Safety Check -> 
+    try {
+        uint32_t instruction = memory_controller_.ReadWord(program_counter_);
+        next_if_id_reg_.instruction = instruction;
+        next_if_id_reg_.pc = program_counter_;       // original pc stored 
+        UpdateProgramCounter(4);
+        next_if_id_reg_.pc_inc = program_counter_; // the incremented pc to be stored in the pipeline register
+        next_if_id_reg_.is_valid = true;
+    } catch(const std::exception& e) {
+        std::cerr << "Fetch Stage Error: " << e.what() << std::endl;
+        next_if_id_reg_ = CreateBubble<IF_ID_Reg>();    // insert bubble 
+        next_if_id_reg_.pc = program_counter_;       // original pc stored 
+        UpdateProgramCounter(4);
+        next_if_id_reg_.pc_inc = program_counter_; // the incremented pc to be stored in the pipeline register
     }
 }
 
@@ -462,9 +455,8 @@ void RV5SVM::DumpState(const std::filesystem::path &filename) {
     file << "    \"cycles\": " << cycle_s_ << ",\n";
     file << "    \"instructions_retired\": " << instructions_retired_ << ",\n";
     file << "    \"cpi\": " << cpi_ << ",\n";
-    file << "    \"ipc\": " << ipc_ << ",\n";
-    file << "    \"pipeline_drain_counter\": " << pipeline_drain_counter_ << "\n";
-    file << "  },\n"; // <-- Add comma
+    file << "    \"ipc\": " << ipc_ << "\n";
+    file << "  },\n";
 
     // Dump the pipeline registers
     DumpPipelineRegisters(file, if_id_reg_, id_ex_reg_, ex_mem_reg_, mem_wb_reg_);

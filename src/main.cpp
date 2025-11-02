@@ -169,6 +169,13 @@ int main(int argc, char *argv[]) {
             std::cout << "Initializing 5-Stage Pipeline vm_ptr->.." << std::endl;
             vm_ptr = std::make_unique<RV5SVM>();
         }
+
+        // Check if the program from the previous load exists
+        if (!program.filename.empty()) {
+            std::cout << "Re-loading existing program: " << program.filename << std::endl;
+            vm_ptr->LoadProgram(program);
+        }
+
       } catch (const std::exception &e) {
         std::cout << "VM_MODIFY_CONFIG_ERROR" << std::endl;
         std::cerr << e.what() << '\n';
@@ -215,6 +222,9 @@ int main(int argc, char *argv[]) {
       vm_ptr->Redo();
     } else if (command.type==command_handler::CommandType::RESET) {
       vm_ptr->Reset();
+      program = AssembledProgram();
+      vm_ptr->output_status_ = "VM_RESET";
+      vm_ptr->DumpState(globals::vm_state_dump_file_path);
     } else if (command.type==command_handler::CommandType::EXIT) {
       vm_ptr->RequestStop();
       if (vm_thread.joinable()) vm_thread.join(); // ensure clean exit      // if thread is running, join it with main such that main finishes only after thread finishes

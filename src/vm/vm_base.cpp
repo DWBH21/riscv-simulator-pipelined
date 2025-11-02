@@ -80,9 +80,17 @@ void VmBase::LoadProgram(const AssembledProgram &program) {
   std::cout << "VM_PROGRAM_LOADED" << std::endl;
   output_status_ = "VM_PROGRAM_LOADED";
 
-  DumpState(globals::vm_state_dump_file_path);
-    
+  if(!silent_mode_) {
+    DumpState(globals::vm_state_dump_file_path);
+  }
 
+}
+void VmBase::SetSilentMode(bool silent) {
+    silent_mode_ = silent;
+}
+
+void VmBase::SetProgramSize(uint64_t size) {
+    program_size_ = size;
 }
 
 // moved functions related to std::atomic<bool> stop_requested_ = false to vm_base
@@ -211,8 +219,9 @@ void VmBase::AddBreakpoint(uint64_t val, bool is_line) {
         }
         breakpoints_.emplace_back(val);
     }
-
-    DumpState(globals::vm_state_dump_file_path);
+    if(!silent_mode_) {
+        DumpState(globals::vm_state_dump_file_path);
+    }
 }
 
 void VmBase::RemoveBreakpoint(uint64_t val, bool is_line) {
@@ -240,9 +249,9 @@ void VmBase::RemoveBreakpoint(uint64_t val, bool is_line) {
         }
         breakpoints_.erase(std::remove(breakpoints_.begin(), breakpoints_.end(), val), breakpoints_.end());
     }
-    DumpState(globals::vm_state_dump_file_path);
-
-
+    if(!silent_mode_) {
+        DumpState(globals::vm_state_dump_file_path);
+    }
 }
 
 bool VmBase::CheckBreakpoint(uint64_t address) {
@@ -266,8 +275,14 @@ void VmBase::DumpState(const std::filesystem::path &filename) {
         return;
     }
 
-    unsigned int instruction_number = program_counter_ / 4;
-    unsigned int current_line = program_.instruction_number_line_number_mapping[instruction_number];
+    unsigned int instruction_number = 0;
+    unsigned int current_line = 0;
+
+    // Access 'program_' only if it has been initialized. (will not be in testing) 
+    if (!program_.instruction_number_line_number_mapping.empty()) {
+        instruction_number = program_counter_ / 4;
+        current_line = program_.instruction_number_line_number_mapping[instruction_number];
+    }
 
     file << "{\n";
     file << "    \"program_counter\": " << "\"0x" 

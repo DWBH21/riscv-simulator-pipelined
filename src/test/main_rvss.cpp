@@ -20,9 +20,11 @@ int main(int argc, char *argv[]) {
     try {
         std::unique_ptr<VmBase> vm = std::make_unique<RVSSVM>();
         LoadMemoryImage(vm.get(), input_file);
+        vm->SetSilentMode(true);            // disable all dumps to the global files
         vm->Run();
+
         // vm->DumpState(output_file);      // should already be done in the vm->Run() function, but output file path needs to be changed in globals ?
-        // vm->DumpRegisters();
+        DumpRegisters(output_file, vm->registers_);     // not actually required
         return 0;
     } catch (const std::exception& e) {
         std::cerr << "RVSSVM Error: " << e.what() << '\n';

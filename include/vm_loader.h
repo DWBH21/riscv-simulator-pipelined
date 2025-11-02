@@ -44,11 +44,13 @@ void LoadMemoryImage(VmBase* vm, const std::string& image_path) {
             case 'D':
                 vm->memory_controller_.WriteDoubleWord(address, value);
                 break;
+            case 'P':           // log for program size
+                vm->SetProgramSize(address); // address now holds the program size
+                break;
             default:
                 std::cerr << "Warning: Unknown memory image type: " << type << std::endl;
         }
     }
-    // need to add a breakpoint here ? 
 }
 
 #endif

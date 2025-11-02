@@ -37,8 +37,6 @@
             RV5SControlUnit control_unit_;
             // HazardUnit hazard_unit_;         // to be added later
 
-            int pipeline_drain_counter_ = 0;     // will count the no of instructions left in the pipeline after the last fetch
-
             IF_ID_Reg if_id_reg_{};             // pipeline registers to hold state at beginning of a clock cycle
             ID_EX_Reg id_ex_reg_{};
             EX_MEM_Reg ex_mem_reg_{};

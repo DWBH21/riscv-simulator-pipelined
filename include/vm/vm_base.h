@@ -70,6 +70,7 @@ public:
 
     void LoadProgram(const AssembledProgram &program);
     uint64_t program_size_ = 0;
+    void SetProgramSize(uint64_t size);     // to be used for testing later
 
     uint64_t GetProgramCounter() const;
     void UpdateProgramCounter(int64_t value);
@@ -102,6 +103,8 @@ public:
     virtual bool IsStopRequested() const;
     virtual void ClearStop();
 
+    bool silent_mode_ = false;              // if silent_mode_ is true, nothing will be dumped onto the global dump files, will be enabled in testing
+    void SetSilentMode(bool silent);
     void DumpState(const std::filesystem::path &filename);
 
     void ModifyRegister(const std::string &reg_name, uint64_t value);

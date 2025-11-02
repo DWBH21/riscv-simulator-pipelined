@@ -83,6 +83,7 @@ int main(int argc, char *argv[]) {
                 }
             }, data);
         }
+        out_file << "P 0x" << counter << " 0x0\n";    // writing the program_size_ as an address at the end of the file
         out_file.close();
         return 0;
     } catch (const std::exception& e) {
