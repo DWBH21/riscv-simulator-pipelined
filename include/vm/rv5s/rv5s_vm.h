@@ -17,7 +17,7 @@
 
     class RV5SVM : public VmBase {
         public: 
-            RV5SVM();
+            explicit RV5SVM(bool silent = false);
             ~RV5SVM();
 
             void Run() override;

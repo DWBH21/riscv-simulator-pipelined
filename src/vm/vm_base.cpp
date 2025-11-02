@@ -18,6 +18,9 @@
 #include <cstring>
 #include <thread>
 
+VmBase::VmBase(bool silent) : silent_mode_(silent) {
+
+}
 
 void VmBase::LoadProgram(const AssembledProgram &program) {
   program_ = program;
@@ -84,9 +87,6 @@ void VmBase::LoadProgram(const AssembledProgram &program) {
     DumpState(globals::vm_state_dump_file_path);
   }
 
-}
-void VmBase::SetSilentMode(bool silent) {
-    silent_mode_ = silent;
 }
 
 void VmBase::SetProgramSize(uint64_t size) {
@@ -320,4 +320,69 @@ void VmBase::DumpState(const std::filesystem::path &filename) {
 
 void VmBase::ModifyRegister(const std::string &reg_name, uint64_t value) {
     registers_.ModifyRegister(reg_name, value);
+}
+
+void VmBase::DumpFinalState(const std::filesystem::path &filename, uint64_t mem_base_addr) {
+    std::ofstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "Error opening file for dumping final state: " 
+                  << filename.string() << std::endl;
+        return;
+    }
+
+    file << "{\n";
+
+    // Dump VM State
+    file << "  \"vm_state\": {\n";
+    file << "    \"program_counter\": " << "\"0x" << std::hex << std::setw(8) 
+         << std::setfill('0') << program_counter_ << std::dec << std::setfill(' ') << "\",\n";
+    file << "    \"output_status\": \"" << output_status_ << "\",\n";
+    file << "    \"instructions_retired\": " << instructions_retired_ << ",\n";
+    file << "    \"cycle_s\": " << cycle_s_ << ",\n";
+    file << "    \"stall_cycles\": " << stall_cycles_ << ",\n";
+    file << "    \"branch_mispredictions\": " << branch_mispredictions_ << ",\n";
+    file << "    \"cpi\": " << cpi_ << ",\n";
+    file << "    \"ipc\": " << ipc_ << "\n";
+    file << "  },\n";
+
+    
+    // Dump Registers
+    file << "  \"registers\": {\n";
+    for (int i = 0; i < 32; ++i) {
+        std::string reg_name = "x" + std::to_string(i);
+        file << "    \"" << reg_name << "\": "
+             << "\"0x" << std::hex << std::setw(8) << std::setfill('0')
+             << registers_.ReadGpr(i) << std::dec << std::setfill(' ')
+             << "\"";
+        if (i < 31) {
+            file << ",\n";
+        } else {
+            file << "\n";
+        }
+    }
+    file << "  },\n";
+
+    // Dump Memory Region
+    uint64_t mem_dump_size = VmBase::kTestMemDumpSize;
+    file << "  \"memory_dump\": {\n";
+    for (uint64_t i = 0; i < mem_dump_size; ++i) {
+        uint64_t addr = mem_base_addr + i;
+        uint8_t byte = memory_controller_.ReadByte(addr);
+        
+        std::stringstream ss_addr;
+        ss_addr << "0x" << std::hex << addr;
+        file << "    \"" << ss_addr.str() << "\": "
+             << "\"0x" << std::hex << std::setw(2) << std::setfill('0')
+             << static_cast<int>(byte) << std::dec << std::setfill(' ')
+             << "\"";
+        if (i < mem_dump_size - 1) {
+            file << ",\n";
+        } else {
+            file << "\n";
+        }
+    }
+    file << "  }\n";
+
+    file << "}\n";
+    file.close();
 }

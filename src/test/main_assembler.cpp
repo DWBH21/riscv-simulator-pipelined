@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
     std::string output_file = argv[3];
 
     try {
-        AssembledProgram program = assemble(input_file);
+        AssembledProgram program = assemble(input_file, true);
         std::ofstream out_file(output_file);
         out_file << std::hex << std::setfill('0');
 

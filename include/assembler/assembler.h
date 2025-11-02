@@ -26,7 +26,12 @@
  * 
  * @param IntermediateCode A vector of pairs containing ICUnit and a boolean flag.
  * @return A vector of strings representing the machine code.
- */
-AssembledProgram assemble(const std::string &filename);
+ *
+
+// silent_mode to be used in tests
+// if enabled will not dump any information -> like the disassembly or errors into a json file
+*/
+
+AssembledProgram assemble(const std::string &filename, bool silent_mode = false);
 
 #endif // ASSEMBLER_H

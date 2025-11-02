@@ -31,12 +31,8 @@ using instruction_type::WriteBackSrc;
 using instruction_type::AluSrcA;
 using instruction_type::BranchOp;
 
-RV5SVM::RV5SVM() : VmBase() {
-  Reset();
-  if(!silent_mode_) {
-    DumpRegisters(globals::registers_dump_file_path, registers_);
-    DumpState(globals::vm_state_dump_file_path);
-  }
+RV5SVM::RV5SVM(bool silent) : VmBase(silent) {
+    Reset();
 }
 
 RV5SVM::~RV5SVM() = default;
@@ -62,6 +58,11 @@ void RV5SVM::Reset() {
     next_id_ex_reg_ = CreateBubble<ID_EX_Reg>();
     next_ex_mem_reg_ = CreateBubble<EX_MEM_Reg>();
     next_mem_wb_reg_ = CreateBubble<MEM_WB_Reg>();
+
+    if(!silent_mode_) {
+        DumpRegisters(globals::registers_dump_file_path, registers_);
+        DumpState(globals::vm_state_dump_file_path);
+    }
 }
 
 void RV5SVM::Step() {

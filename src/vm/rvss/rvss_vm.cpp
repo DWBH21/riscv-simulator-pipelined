@@ -27,13 +27,9 @@ using instruction_set::Instruction;
 using instruction_set::get_instr_encoding;
 
 
-RVSSVM::RVSSVM() : VmBase() {
-  if(!silent_mode_) {
-    DumpRegisters(globals::registers_dump_file_path, registers_);
-    DumpState(globals::vm_state_dump_file_path);
-  }
+RVSSVM::RVSSVM(bool silent) : VmBase(silent) {
+  Reset();
 }
-
 RVSSVM::~RVSSVM() = default;
 
 void RVSSVM::Fetch() {
@@ -1061,6 +1057,10 @@ void RVSSVM::Reset() {
   undo_stack_ = std::stack<StepDelta>();
   redo_stack_ = std::stack<StepDelta>();
 
+  if(!silent_mode_) {
+    DumpRegisters(globals::registers_dump_file_path, registers_);
+    DumpState(globals::vm_state_dump_file_path);
+  }
 }
 
 

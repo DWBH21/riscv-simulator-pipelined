@@ -6,6 +6,7 @@
 #include "vm/rv5s/rv5s_vm.h"
 #include "vm_loader.h"
 #include "utils.h"
+#include "config.h"
 #include <iostream>
 #include <string>
 
@@ -18,14 +19,14 @@ int main(int argc, char *argv[]) {
     std::string output_file = argv[3];
 
     try {
-        std::unique_ptr<VmBase> vm = std::make_unique<RV5SVM>();
+        std::unique_ptr<VmBase> vm = std::make_unique<RV5SVM>(true);
         LoadMemoryImage(vm.get(), input_file);
-        vm->SetSilentMode(true);            // disable all dumps to the global files
         vm->Run();
 
-        // vm->DumpState(output_file);      // not actually required
-        DumpRegisters(output_file, vm->registers_);
+        uint64_t data_addr = vm_config::config.getDataSectionStart();
+        vm->DumpFinalState(output_file, data_addr);
         return 0;
+        
     } catch (const std::exception& e) {
         std::cerr << "RV5SVM Error: " << e.what() << '\n';
         return 1;

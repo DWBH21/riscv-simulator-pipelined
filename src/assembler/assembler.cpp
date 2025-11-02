@@ -18,7 +18,7 @@
 #include <iostream>
 #include <algorithm>
 
-AssembledProgram assemble(const std::string &filename) {
+AssembledProgram assemble(const std::string &filename, bool silent_mode) {
   std::unique_ptr<Lexer> lexer;
   try {
     lexer = std::make_unique<Lexer>(filename);
@@ -73,13 +73,14 @@ AssembledProgram assemble(const std::string &filename) {
 
     program.symbol_table = parser.getSymbolTable();
 
-    
-    DumpDisasssembly(globals::disassembly_file_path, program);
-
-    DumpNoErrors(globals::errors_dump_file_path);
-
+    if(!silent_mode) {
+      DumpDisasssembly(globals::disassembly_file_path, program);
+      DumpNoErrors(globals::errors_dump_file_path);
+    }
   } else {
-    DumpErrors(globals::errors_dump_file_path, parser.getErrors());
+    if(!silent_mode) {
+      DumpErrors(globals::errors_dump_file_path, parser.getErrors());
+    }
     if (globals::verbose_errors_print) {
       parser.printErrors();
     }

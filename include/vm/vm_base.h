@@ -35,7 +35,7 @@ enum SyscallCode {
 
 class VmBase {
 public:
-    VmBase() = default;
+    explicit VmBase(bool silent = false);
     ~VmBase() = default;
 
     AssembledProgram program_;
@@ -104,8 +104,11 @@ public:
     virtual void ClearStop();
 
     bool silent_mode_ = false;              // if silent_mode_ is true, nothing will be dumped onto the global dump files, will be enabled in testing
-    void SetSilentMode(bool silent);
     void DumpState(const std::filesystem::path &filename);
+
+    // To Dump all necessary information to a single for json for testing
+    static constexpr uint64_t kTestMemDumpSize = 256;
+    void DumpFinalState(const std::filesystem::path &filename, uint64_t mem_base_addr);
 
     void ModifyRegister(const std::string &reg_name, uint64_t value);
     void PushInput(const std::string& input) {

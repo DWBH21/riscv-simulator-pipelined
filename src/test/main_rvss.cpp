@@ -6,6 +6,7 @@
 #include "vm/rvss/rvss_vm.h"
 #include "vm_loader.h"
 #include "utils.h"
+#include "config.h"
 #include <iostream>
 #include <string>
 
@@ -18,14 +19,14 @@ int main(int argc, char *argv[]) {
     std::string output_file = argv[3];
 
     try {
-        std::unique_ptr<VmBase> vm = std::make_unique<RVSSVM>();
+        std::unique_ptr<VmBase> vm = std::make_unique<RVSSVM>(true);
         LoadMemoryImage(vm.get(), input_file);
-        vm->SetSilentMode(true);            // disable all dumps to the global files
         vm->Run();
 
-        // vm->DumpState(output_file);      // should already be done in the vm->Run() function, but output file path needs to be changed in globals ?
-        DumpRegisters(output_file, vm->registers_);     // not actually required
+        uint64_t data_addr = vm_config::config.getDataSectionStart();
+        vm->DumpFinalState(output_file, data_addr);
         return 0;
+        
     } catch (const std::exception& e) {
         std::cerr << "RVSSVM Error: " << e.what() << '\n';
         return 1;
