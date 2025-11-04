@@ -1,0 +1,25 @@
+
+.text
+    addi x1, x0, 10
+
+    addi x0, x0, 0
+    addi x0, x0, 0
+    addi x0, x0, 0
+    addi x0, x0, 0
+
+    addi x2, x0, 20
+
+    addi x0, x0, 0
+    addi x0, x0, 0
+    addi x0, x0, 0
+    addi x0, x0, 0
+
+    sll x1, x1, x1
+
+    addi x0, x0, 0
+    addi x0, x0, 0
+    addi x0, x0, 0
+    addi x0, x0, 0
+
+
+end_program:
