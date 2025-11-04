@@ -284,10 +284,20 @@ void RV5SVM::Execute_Stage() {
             break;
     }
 
-    if(control.alu_src_b) {       // I type instruction
+    if (control.alu_src_a == AluSrcA::ALU_SRC_A_ZERO || control.alu_src_a == AluSrcA::ALU_SRC_A_PC)   // lui, auipc
+    {
+        reg2_value = static_cast<uint64_t>(static_cast<int64_t>(id_ex_reg_.immediate)) << 12;   // left shift the imm by 12 bits 
+        uint64_t and_mask = 0xA0000000;
+        uint64_t or_mask = 0xFFFFFFFF00000000;
+        if(reg2_value & and_mask)  // sign extend the one
+        {
+            reg2_value |= or_mask;
+        } 
+    }
+    else if (control.alu_src_b) {           // normal I type
         reg2_value = static_cast<uint64_t>(static_cast<int64_t>(id_ex_reg_.immediate));
-    } else {                    // R type instruction
-        reg2_value = id_ex_reg_.rs2_data;
+    }   // R type
+    else {reg2_value = id_ex_reg_.rs2_data;
     }
 
     alu::AluOp aluOperation = control.alu_op;
