@@ -9,7 +9,7 @@ init(autoreset=True)
 BUILD_DIR = Path("../build")
 ASSEMBLER_BIN = BUILD_DIR / "assembler_binary"
 SIM1_BIN = BUILD_DIR / "rvss_binary"  # Base reference: single stage (mode-0)
-TEST_S_DIR = Path("./assembly")
+TEST_S_DIR = Path("./assembly_single")
 REF_DIR = Path("../reference_artifacts")
 
 def main():

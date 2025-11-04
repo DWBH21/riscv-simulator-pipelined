@@ -12,7 +12,7 @@ except ImportError:
 
 BUILD_DIR = Path("../build")
 SIM2_BIN = BUILD_DIR / "rv5s_binary" # Simulator under test
-TEST_S_DIR = Path("./assembly")
+TEST_S_DIR = Path("./assembly_single")
 REF_DIR = Path("../reference_artifacts")
 RUN_DIR = Path("../test_run_outputs") # Separate dir for output
 

@@ -12,6 +12,7 @@ cmake-build-debug/
 .cache
 smalltest/
 pytests/assembly/
+pytests/assembly_single/
 reference_artifacts/
 test_run_outputs/
 pytests/__pycache__/
