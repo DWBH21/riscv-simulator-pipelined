@@ -1,0 +1,43 @@
+\hypertarget{rv5s__id__vm_8cpp}{}\doxysection{src/vm/rv5s/rv5s\+\_\+id\+\_\+vm.cpp File Reference}
+\label{rv5s__id__vm_8cpp}\index{src/vm/rv5s/rv5s\_id\_vm.cpp@{src/vm/rv5s/rv5s\_id\_vm.cpp}}
+
+
+Implementation of the 5-\/stage pipelined RISC-\/V VM where Branch Comparison happens in the EX stage.  
+
+
+{\ttfamily \#include \char`\"{}vm/rv5s/rv5s\+\_\+id\+\_\+vm.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vm/rv5s/rv5s\+\_\+control\+\_\+unit.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vm/rv5s/pipeline\+\_\+registers.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vm/rv5s/rv5s\+\_\+hazard\+\_\+unit.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vm/rv5s/rv5s\+\_\+forwarding\+\_\+unit.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vm/rv5s/branch\+\_\+prediction/static\+\_\+predictors.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vm/rv5s/branch\+\_\+prediction/dynamic\+\_\+1bit\+\_\+predictor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vm/rv5s/branch\+\_\+prediction/dynamic\+\_\+2bit\+\_\+predictor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/instructions.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$tuple$>$}\newline
+{\ttfamily \#include $<$stack$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$condition\+\_\+variable$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$atomic$>$}\newline
+Include dependency graph for rv5s\+\_\+id\+\_\+vm.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rv5s__id__vm_8cpp__incl}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the 5-\/stage pipelined RISC-\/V VM where Branch Comparison happens in the EX stage. 
+

@@ -38,6 +38,9 @@
   - Modifies the internal configuration by setting the specified key in the given section to the provided value.
   - `Execution`
     - `processor_type` (string) : `single_stage` | `multi_stage`  
+    - `data_hazard_mode` (string) : `ideal` | `stall` | `forwarding` : (multi_stage only) Sets the data hazard resolution mode.
+    - `branch_predictor` (string) : `static_not_taken` | `static_taken` | `dynamic_1bit` | `dynamic_2bit` : (multi_stage only) Sets the branch prediction mode.
+    - `branch_stage` (string) : `ex` | `id` : (multi_stage only) Sets the pipeline stage where branch comparison occurs.
     - `run_step_delay` (unsigned int) : milliseconds
     - `instruction_execution_limit` (unsigned int) : Specifies the number of instruction to run on one use of `run` button. Set to `0` for no limit.
   - `Memory`

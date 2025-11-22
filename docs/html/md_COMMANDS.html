@@ -116,6 +116,9 @@ $(function() {
 <li><code>Execution</code><ul>
 <li><code>processor_type</code> (string) : <code>single_stage</code> | <code>multi_stage</code> <br  />
 </li>
+<li><code>data_hazard_mode</code> (string) : <code>ideal</code> | <code>stall</code> | <code>forwarding</code> : (multi_stage only) Sets the data hazard resolution mode.</li>
+<li><code>branch_predictor</code> (string) : <code>static_not_taken</code> | <code>static_taken</code> | <code>dynamic_1bit</code> | <code>dynamic_2bit</code> : (multi_stage only) Sets the branch prediction mode.</li>
+<li><code>branch_stage</code> (string) : <code>ex</code> | <code>id</code> : (multi_stage only) Sets the pipeline stage where branch comparison occurs.</li>
 <li><code>run_step_delay</code> (unsigned int) : milliseconds</li>
 <li><code>instruction_execution_limit</code> (unsigned int) : Specifies the number of instruction to run on one use of <code>run</code> button. Set to <code>0</code> for no limit.</li>
 </ul>

@@ -40,17 +40,26 @@ struct \mbox{\hyperlink{structvm__config_1_1VmConfig}{vm\+\_\+config\+::\+Vm\+Co
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum class \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458fea}{vm\+\_\+config\+::\+Pipeline\+Modes}} \{ \newline
-\mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa4bbb8f967da6d1a610596d7257179c2b}{vm\+\_\+config\+::\+Invalid}}
-, \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa22b7c2abfb7dcf0f672899fb2b6f1670}{vm\+\_\+config\+::\+Ideal}}
-, \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa319f6a2b71d73e01044ba8dad5a8b64f}{vm\+\_\+config\+::\+With\+Hazards}}
-, \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa6fc5bfd9851bccaada6434942533b7f4}{vm\+\_\+config\+::\+With\+Forwarding}}
-, \newline
-\mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa4a7dc14ff5cf7bbc5f3201d483291e5e}{vm\+\_\+config\+::\+With\+Static\+Branch\+Prediction}}
- \}
-\item 
 enum class \mbox{\hyperlink{namespacevm__config_aa4eeb50c28c404f656938f58b44562b5}{vm\+\_\+config\+::\+Vm\+Types}} \{ \mbox{\hyperlink{namespacevm__config_aa4eeb50c28c404f656938f58b44562b5a2c4a0af0ffe5afecf34ef3401408722c}{vm\+\_\+config\+::\+SINGLE\+\_\+\+STAGE}}
 , \mbox{\hyperlink{namespacevm__config_aa4eeb50c28c404f656938f58b44562b5ad300fd0998c340710fb890f72de460b1}{vm\+\_\+config\+::\+MULTI\+\_\+\+STAGE}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25}{vm\+\_\+config\+::\+Data\+Hazard\+Mode}} \{ \mbox{\hyperlink{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25a07df98da6e2b219bc61e36237a2bf2ff}{vm\+\_\+config\+::\+IDEAL}}
+, \mbox{\hyperlink{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25af7b2d220d73db661af69e83fc9fc5587}{vm\+\_\+config\+::\+STALL\+\_\+\+ONLY}}
+, \mbox{\hyperlink{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25a92d5f2010ddf30a38352de388488a0ce}{vm\+\_\+config\+::\+FORWARDING}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751d}{vm\+\_\+config\+::\+Branch\+Predictor\+Type}} \{ \newline
+\mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751da1e6f43e47ebeec0a7f958f53b77515f7}{vm\+\_\+config\+::\+STATIC\+\_\+\+NOT\+\_\+\+TAKEN}}
+, \mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751da8966b508d261053794884245bf8b7338}{vm\+\_\+config\+::\+STATIC\+\_\+\+TAKEN}}
+, \mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751daf3894c607a2b7d52eb68ec6d1a5167f0}{vm\+\_\+config\+::\+DYNAMIC\+\_\+1\+BIT}}
+, \mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751da4399398d10a417a2c00453de0f264b10}{vm\+\_\+config\+::\+DYNAMIC\+\_\+2\+BIT}}
+, \newline
+\mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751da46ba89eb960127fef8af5df131a5212a}{vm\+\_\+config\+::\+TOURNAMENT}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespacevm__config_a95a8e5163d817e700a22dd4c2b903d37}{vm\+\_\+config\+::\+Branch\+Stage}} \{ \mbox{\hyperlink{namespacevm__config_a95a8e5163d817e700a22dd4c2b903d37aa734abca01add327e8830687ffd7c123}{vm\+\_\+config\+::\+BRANCH\+\_\+\+IN\+\_\+\+EX}}
+, \mbox{\hyperlink{namespacevm__config_a95a8e5163d817e700a22dd4c2b903d37a4fce297ede30a974a7972bb8786c68fa}{vm\+\_\+config\+::\+BRANCH\+\_\+\+IN\+\_\+\+ID}}
  \}
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}

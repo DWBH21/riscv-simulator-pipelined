@@ -1,0 +1,186 @@
+\hypertarget{namespacegenerate__control__data__tests}{}\doxysection{generate\+\_\+control\+\_\+data\+\_\+tests Namespace Reference}
+\label{namespacegenerate__control__data__tests}\index{generate\_control\_data\_tests@{generate\_control\_data\_tests}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacegenerate__control__data__tests_a880d9f888c1dbbcd8089b07e2c110c02}{format\+\_\+test\+\_\+file}} (preamble\+\_\+lines, test\+\_\+lines)
+\item 
+def \mbox{\hyperlink{namespacegenerate__control__data__tests_a35e39c0d18e08bb3544a57d52854bf6d}{get\+\_\+producer\+\_\+line}} (instr, rd)
+\item 
+def \mbox{\hyperlink{namespacegenerate__control__data__tests_aafee00fad3a28fd70f48330d44e6fcfa}{generate\+\_\+branch\+\_\+taken\+\_\+hazards}} ()
+\item 
+def \mbox{\hyperlink{namespacegenerate__control__data__tests_af95e23dd0091d151dbf2b667e95074de}{generate\+\_\+branch\+\_\+not\+\_\+taken\+\_\+hazards}} ()
+\item 
+def \mbox{\hyperlink{namespacegenerate__control__data__tests_ac41118d73ea2e306d8285307b7b43187}{generate\+\_\+jalr\+\_\+hazards}} ()
+\item 
+def \mbox{\hyperlink{namespacegenerate__control__data__tests_ae62b9809ea361fcfc5634ab23cb50c42}{generate\+\_\+hazard\+\_\+across\+\_\+branch}} ()
+\item 
+def \mbox{\hyperlink{namespacegenerate__control__data__tests_afe674cbe56c33ba419cf00f343a5fd3e}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespacegenerate__control__data__tests_ad89ae23679558f501e9e10bc28f7f558}{BASE\+\_\+\+DIR}} = \char`\"{}assembly\+\_\+multi\+\_\+hazard\char`\"{}
+\item 
+\mbox{\hyperlink{namespacegenerate__control__data__tests_a5bb49ce31d08be1b410bbcaa8f5ea63e}{HAZARD\+\_\+\+DIR}} = os.\+path.\+join(\mbox{\hyperlink{namespacegenerate__control__data__tests_ad89ae23679558f501e9e10bc28f7f558}{BASE\+\_\+\+DIR}}, \char`\"{}control\+\_\+data\char`\"{})
+\item 
+list \mbox{\hyperlink{namespacegenerate__control__data__tests_aec54f9c2ad8c8f2cc6636b0aecbaa097}{DEP\+\_\+\+REGS}} = \mbox{[}\char`\"{}x0\char`\"{}, \char`\"{}x1\char`\"{}\mbox{]}
+\item 
+string \mbox{\hyperlink{namespacegenerate__control__data__tests_ad08f7e3b180adbd2794d16a009157588}{TEST\+\_\+\+REG}} = \char`\"{}x30\char`\"{}
+\item 
+string \mbox{\hyperlink{namespacegenerate__control__data__tests_ad63f8fa195fcbc56a63d078d299df3e4}{FLUSH\+\_\+\+REG}} = \char`\"{}x29\char`\"{}
+\item 
+string \mbox{\hyperlink{namespacegenerate__control__data__tests_a2cfe4290156261f8d0283a9a32ec809e}{REG\+\_\+\+VAL\+\_\+10}} = \char`\"{}x1\char`\"{}
+\item 
+string \mbox{\hyperlink{namespacegenerate__control__data__tests_a4d72bf37421177367cad3045bb151b2c}{REG\+\_\+\+VAL\+\_\+20}} = \char`\"{}x2\char`\"{}
+\item 
+string \mbox{\hyperlink{namespacegenerate__control__data__tests_ac625fba97fdc64aad1cb4475719aec27}{REG\+\_\+\+COPY\+\_\+10}} = \char`\"{}x3\char`\"{}
+\item 
+string \mbox{\hyperlink{namespacegenerate__control__data__tests_aeec0a720d0cf24d660fb52d25e642543}{REG\+\_\+\+ADDR\+\_\+\+LABEL}} = \char`\"{}x5\char`\"{}
+\item 
+string \mbox{\hyperlink{namespacegenerate__control__data__tests_a2e0e67a1ba343f1eb28e8ee70f1ceda1}{OTHER\+\_\+\+REG\+\_\+\+BASE}} = \char`\"{}x4\char`\"{}
+\item 
+string \mbox{\hyperlink{namespacegenerate__control__data__tests_ae85ee8bbdbe3c13f2a1cca864ae3e268}{DATA\+\_\+\+SECTION\+\_\+\+LUI\+\_\+\+VAL}} = \char`\"{}0x10000\char`\"{}
+\item 
+int \mbox{\hyperlink{namespacegenerate__control__data__tests_ac75c045f5eacf09b27220393dc1c9c29}{DATA\+\_\+\+SECTION\+\_\+\+OFFSET}} = 128
+\item 
+list \mbox{\hyperlink{namespacegenerate__control__data__tests_adce401469d9987a45f72ba6442b47a43}{PRODUCERS}} = \mbox{[}\char`\"{}add\char`\"{}, \char`\"{}addi\char`\"{}, \char`\"{}lw\char`\"{}, \char`\"{}lui\char`\"{}, \char`\"{}jal\char`\"{}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacegenerate__control__data__tests_a880d9f888c1dbbcd8089b07e2c110c02}\label{namespacegenerate__control__data__tests_a880d9f888c1dbbcd8089b07e2c110c02}} 
+\index{generate\_control\_data\_tests@{generate\_control\_data\_tests}!format\_test\_file@{format\_test\_file}}
+\index{format\_test\_file@{format\_test\_file}!generate\_control\_data\_tests@{generate\_control\_data\_tests}}
+\doxysubsubsection{\texorpdfstring{format\_test\_file()}{format\_test\_file()}}
+{\footnotesize\ttfamily def generate\+\_\+control\+\_\+data\+\_\+tests.\+format\+\_\+test\+\_\+file (\begin{DoxyParamCaption}\item[{}]{preamble\+\_\+lines,  }\item[{}]{test\+\_\+lines }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegenerate__control__data__tests_af95e23dd0091d151dbf2b667e95074de}\label{namespacegenerate__control__data__tests_af95e23dd0091d151dbf2b667e95074de}} 
+\index{generate\_control\_data\_tests@{generate\_control\_data\_tests}!generate\_branch\_not\_taken\_hazards@{generate\_branch\_not\_taken\_hazards}}
+\index{generate\_branch\_not\_taken\_hazards@{generate\_branch\_not\_taken\_hazards}!generate\_control\_data\_tests@{generate\_control\_data\_tests}}
+\doxysubsubsection{\texorpdfstring{generate\_branch\_not\_taken\_hazards()}{generate\_branch\_not\_taken\_hazards()}}
+{\footnotesize\ttfamily def generate\+\_\+control\+\_\+data\+\_\+tests.\+generate\+\_\+branch\+\_\+not\+\_\+taken\+\_\+hazards (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Tests: Producer -> BEQ (Not Taken).
+Verifies forwarding allows branch to correctly fail.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacegenerate__control__data__tests_aafee00fad3a28fd70f48330d44e6fcfa}\label{namespacegenerate__control__data__tests_aafee00fad3a28fd70f48330d44e6fcfa}} 
+\index{generate\_control\_data\_tests@{generate\_control\_data\_tests}!generate\_branch\_taken\_hazards@{generate\_branch\_taken\_hazards}}
+\index{generate\_branch\_taken\_hazards@{generate\_branch\_taken\_hazards}!generate\_control\_data\_tests@{generate\_control\_data\_tests}}
+\doxysubsubsection{\texorpdfstring{generate\_branch\_taken\_hazards()}{generate\_branch\_taken\_hazards()}}
+{\footnotesize\ttfamily def generate\+\_\+control\+\_\+data\+\_\+tests.\+generate\+\_\+branch\+\_\+taken\+\_\+hazards (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Tests: Producer -> BEQ (Taken).
+Verifies forwarding to ID stage for comparison.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacegenerate__control__data__tests_ae62b9809ea361fcfc5634ab23cb50c42}\label{namespacegenerate__control__data__tests_ae62b9809ea361fcfc5634ab23cb50c42}} 
+\index{generate\_control\_data\_tests@{generate\_control\_data\_tests}!generate\_hazard\_across\_branch@{generate\_hazard\_across\_branch}}
+\index{generate\_hazard\_across\_branch@{generate\_hazard\_across\_branch}!generate\_control\_data\_tests@{generate\_control\_data\_tests}}
+\doxysubsubsection{\texorpdfstring{generate\_hazard\_across\_branch()}{generate\_hazard\_across\_branch()}}
+{\footnotesize\ttfamily def generate\+\_\+control\+\_\+data\+\_\+tests.\+generate\+\_\+hazard\+\_\+across\+\_\+branch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Tests: Producer -> Branch(Taken) -> ... -> Consumer.
+Verifies forwarding works across a pipeline flush.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacegenerate__control__data__tests_ac41118d73ea2e306d8285307b7b43187}\label{namespacegenerate__control__data__tests_ac41118d73ea2e306d8285307b7b43187}} 
+\index{generate\_control\_data\_tests@{generate\_control\_data\_tests}!generate\_jalr\_hazards@{generate\_jalr\_hazards}}
+\index{generate\_jalr\_hazards@{generate\_jalr\_hazards}!generate\_control\_data\_tests@{generate\_control\_data\_tests}}
+\doxysubsubsection{\texorpdfstring{generate\_jalr\_hazards()}{generate\_jalr\_hazards()}}
+{\footnotesize\ttfamily def generate\+\_\+control\+\_\+data\+\_\+tests.\+generate\+\_\+jalr\+\_\+hazards (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Tests: Producer -> JALR.
+Verifies if data hazards for jalr are correctly handled
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacegenerate__control__data__tests_a35e39c0d18e08bb3544a57d52854bf6d}\label{namespacegenerate__control__data__tests_a35e39c0d18e08bb3544a57d52854bf6d}} 
+\index{generate\_control\_data\_tests@{generate\_control\_data\_tests}!get\_producer\_line@{get\_producer\_line}}
+\index{get\_producer\_line@{get\_producer\_line}!generate\_control\_data\_tests@{generate\_control\_data\_tests}}
+\doxysubsubsection{\texorpdfstring{get\_producer\_line()}{get\_producer\_line()}}
+{\footnotesize\ttfamily def generate\+\_\+control\+\_\+data\+\_\+tests.\+get\+\_\+producer\+\_\+line (\begin{DoxyParamCaption}\item[{}]{instr,  }\item[{}]{rd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegenerate__control__data__tests_afe674cbe56c33ba419cf00f343a5fd3e}\label{namespacegenerate__control__data__tests_afe674cbe56c33ba419cf00f343a5fd3e}} 
+\index{generate\_control\_data\_tests@{generate\_control\_data\_tests}!main@{main}}
+\index{main@{main}!generate\_control\_data\_tests@{generate\_control\_data\_tests}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily def generate\+\_\+control\+\_\+data\+\_\+tests.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacegenerate__control__data__tests_ad89ae23679558f501e9e10bc28f7f558}\label{namespacegenerate__control__data__tests_ad89ae23679558f501e9e10bc28f7f558}} 
+\index{generate\_control\_data\_tests@{generate\_control\_data\_tests}!BASE\_DIR@{BASE\_DIR}}
+\index{BASE\_DIR@{BASE\_DIR}!generate\_control\_data\_tests@{generate\_control\_data\_tests}}
+\doxysubsubsection{\texorpdfstring{BASE\_DIR}{BASE\_DIR}}
+{\footnotesize\ttfamily string generate\+\_\+control\+\_\+data\+\_\+tests.\+BASE\+\_\+\+DIR = \char`\"{}assembly\+\_\+multi\+\_\+hazard\char`\"{}}
+
+\mbox{\Hypertarget{namespacegenerate__control__data__tests_ae85ee8bbdbe3c13f2a1cca864ae3e268}\label{namespacegenerate__control__data__tests_ae85ee8bbdbe3c13f2a1cca864ae3e268}} 
+\index{generate\_control\_data\_tests@{generate\_control\_data\_tests}!DATA\_SECTION\_LUI\_VAL@{DATA\_SECTION\_LUI\_VAL}}
+\index{DATA\_SECTION\_LUI\_VAL@{DATA\_SECTION\_LUI\_VAL}!generate\_control\_data\_tests@{generate\_control\_data\_tests}}
+\doxysubsubsection{\texorpdfstring{DATA\_SECTION\_LUI\_VAL}{DATA\_SECTION\_LUI\_VAL}}
+{\footnotesize\ttfamily string generate\+\_\+control\+\_\+data\+\_\+tests.\+DATA\+\_\+\+SECTION\+\_\+\+LUI\+\_\+\+VAL = \char`\"{}0x10000\char`\"{}}
+
+\mbox{\Hypertarget{namespacegenerate__control__data__tests_ac75c045f5eacf09b27220393dc1c9c29}\label{namespacegenerate__control__data__tests_ac75c045f5eacf09b27220393dc1c9c29}} 
+\index{generate\_control\_data\_tests@{generate\_control\_data\_tests}!DATA\_SECTION\_OFFSET@{DATA\_SECTION\_OFFSET}}
+\index{DATA\_SECTION\_OFFSET@{DATA\_SECTION\_OFFSET}!generate\_control\_data\_tests@{generate\_control\_data\_tests}}
+\doxysubsubsection{\texorpdfstring{DATA\_SECTION\_OFFSET}{DATA\_SECTION\_OFFSET}}
+{\footnotesize\ttfamily int generate\+\_\+control\+\_\+data\+\_\+tests.\+DATA\+\_\+\+SECTION\+\_\+\+OFFSET = 128}
+
+\mbox{\Hypertarget{namespacegenerate__control__data__tests_aec54f9c2ad8c8f2cc6636b0aecbaa097}\label{namespacegenerate__control__data__tests_aec54f9c2ad8c8f2cc6636b0aecbaa097}} 
+\index{generate\_control\_data\_tests@{generate\_control\_data\_tests}!DEP\_REGS@{DEP\_REGS}}
+\index{DEP\_REGS@{DEP\_REGS}!generate\_control\_data\_tests@{generate\_control\_data\_tests}}
+\doxysubsubsection{\texorpdfstring{DEP\_REGS}{DEP\_REGS}}
+{\footnotesize\ttfamily list generate\+\_\+control\+\_\+data\+\_\+tests.\+DEP\+\_\+\+REGS = \mbox{[}\char`\"{}x0\char`\"{}, \char`\"{}x1\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacegenerate__control__data__tests_ad63f8fa195fcbc56a63d078d299df3e4}\label{namespacegenerate__control__data__tests_ad63f8fa195fcbc56a63d078d299df3e4}} 
+\index{generate\_control\_data\_tests@{generate\_control\_data\_tests}!FLUSH\_REG@{FLUSH\_REG}}
+\index{FLUSH\_REG@{FLUSH\_REG}!generate\_control\_data\_tests@{generate\_control\_data\_tests}}
+\doxysubsubsection{\texorpdfstring{FLUSH\_REG}{FLUSH\_REG}}
+{\footnotesize\ttfamily string generate\+\_\+control\+\_\+data\+\_\+tests.\+FLUSH\+\_\+\+REG = \char`\"{}x29\char`\"{}}
+
+\mbox{\Hypertarget{namespacegenerate__control__data__tests_a5bb49ce31d08be1b410bbcaa8f5ea63e}\label{namespacegenerate__control__data__tests_a5bb49ce31d08be1b410bbcaa8f5ea63e}} 
+\index{generate\_control\_data\_tests@{generate\_control\_data\_tests}!HAZARD\_DIR@{HAZARD\_DIR}}
+\index{HAZARD\_DIR@{HAZARD\_DIR}!generate\_control\_data\_tests@{generate\_control\_data\_tests}}
+\doxysubsubsection{\texorpdfstring{HAZARD\_DIR}{HAZARD\_DIR}}
+{\footnotesize\ttfamily generate\+\_\+control\+\_\+data\+\_\+tests.\+HAZARD\+\_\+\+DIR = os.\+path.\+join(\mbox{\hyperlink{namespacegenerate__control__data__tests_ad89ae23679558f501e9e10bc28f7f558}{BASE\+\_\+\+DIR}}, \char`\"{}control\+\_\+data\char`\"{})}
+
+\mbox{\Hypertarget{namespacegenerate__control__data__tests_a2e0e67a1ba343f1eb28e8ee70f1ceda1}\label{namespacegenerate__control__data__tests_a2e0e67a1ba343f1eb28e8ee70f1ceda1}} 
+\index{generate\_control\_data\_tests@{generate\_control\_data\_tests}!OTHER\_REG\_BASE@{OTHER\_REG\_BASE}}
+\index{OTHER\_REG\_BASE@{OTHER\_REG\_BASE}!generate\_control\_data\_tests@{generate\_control\_data\_tests}}
+\doxysubsubsection{\texorpdfstring{OTHER\_REG\_BASE}{OTHER\_REG\_BASE}}
+{\footnotesize\ttfamily string generate\+\_\+control\+\_\+data\+\_\+tests.\+OTHER\+\_\+\+REG\+\_\+\+BASE = \char`\"{}x4\char`\"{}}
+
+\mbox{\Hypertarget{namespacegenerate__control__data__tests_adce401469d9987a45f72ba6442b47a43}\label{namespacegenerate__control__data__tests_adce401469d9987a45f72ba6442b47a43}} 
+\index{generate\_control\_data\_tests@{generate\_control\_data\_tests}!PRODUCERS@{PRODUCERS}}
+\index{PRODUCERS@{PRODUCERS}!generate\_control\_data\_tests@{generate\_control\_data\_tests}}
+\doxysubsubsection{\texorpdfstring{PRODUCERS}{PRODUCERS}}
+{\footnotesize\ttfamily list generate\+\_\+control\+\_\+data\+\_\+tests.\+PRODUCERS = \mbox{[}\char`\"{}add\char`\"{}, \char`\"{}addi\char`\"{}, \char`\"{}lw\char`\"{}, \char`\"{}lui\char`\"{}, \char`\"{}jal\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacegenerate__control__data__tests_aeec0a720d0cf24d660fb52d25e642543}\label{namespacegenerate__control__data__tests_aeec0a720d0cf24d660fb52d25e642543}} 
+\index{generate\_control\_data\_tests@{generate\_control\_data\_tests}!REG\_ADDR\_LABEL@{REG\_ADDR\_LABEL}}
+\index{REG\_ADDR\_LABEL@{REG\_ADDR\_LABEL}!generate\_control\_data\_tests@{generate\_control\_data\_tests}}
+\doxysubsubsection{\texorpdfstring{REG\_ADDR\_LABEL}{REG\_ADDR\_LABEL}}
+{\footnotesize\ttfamily string generate\+\_\+control\+\_\+data\+\_\+tests.\+REG\+\_\+\+ADDR\+\_\+\+LABEL = \char`\"{}x5\char`\"{}}
+
+\mbox{\Hypertarget{namespacegenerate__control__data__tests_ac625fba97fdc64aad1cb4475719aec27}\label{namespacegenerate__control__data__tests_ac625fba97fdc64aad1cb4475719aec27}} 
+\index{generate\_control\_data\_tests@{generate\_control\_data\_tests}!REG\_COPY\_10@{REG\_COPY\_10}}
+\index{REG\_COPY\_10@{REG\_COPY\_10}!generate\_control\_data\_tests@{generate\_control\_data\_tests}}
+\doxysubsubsection{\texorpdfstring{REG\_COPY\_10}{REG\_COPY\_10}}
+{\footnotesize\ttfamily string generate\+\_\+control\+\_\+data\+\_\+tests.\+REG\+\_\+\+COPY\+\_\+10 = \char`\"{}x3\char`\"{}}
+
+\mbox{\Hypertarget{namespacegenerate__control__data__tests_a2cfe4290156261f8d0283a9a32ec809e}\label{namespacegenerate__control__data__tests_a2cfe4290156261f8d0283a9a32ec809e}} 
+\index{generate\_control\_data\_tests@{generate\_control\_data\_tests}!REG\_VAL\_10@{REG\_VAL\_10}}
+\index{REG\_VAL\_10@{REG\_VAL\_10}!generate\_control\_data\_tests@{generate\_control\_data\_tests}}
+\doxysubsubsection{\texorpdfstring{REG\_VAL\_10}{REG\_VAL\_10}}
+{\footnotesize\ttfamily string generate\+\_\+control\+\_\+data\+\_\+tests.\+REG\+\_\+\+VAL\+\_\+10 = \char`\"{}x1\char`\"{}}
+
+\mbox{\Hypertarget{namespacegenerate__control__data__tests_a4d72bf37421177367cad3045bb151b2c}\label{namespacegenerate__control__data__tests_a4d72bf37421177367cad3045bb151b2c}} 
+\index{generate\_control\_data\_tests@{generate\_control\_data\_tests}!REG\_VAL\_20@{REG\_VAL\_20}}
+\index{REG\_VAL\_20@{REG\_VAL\_20}!generate\_control\_data\_tests@{generate\_control\_data\_tests}}
+\doxysubsubsection{\texorpdfstring{REG\_VAL\_20}{REG\_VAL\_20}}
+{\footnotesize\ttfamily string generate\+\_\+control\+\_\+data\+\_\+tests.\+REG\+\_\+\+VAL\+\_\+20 = \char`\"{}x2\char`\"{}}
+
+\mbox{\Hypertarget{namespacegenerate__control__data__tests_ad08f7e3b180adbd2794d16a009157588}\label{namespacegenerate__control__data__tests_ad08f7e3b180adbd2794d16a009157588}} 
+\index{generate\_control\_data\_tests@{generate\_control\_data\_tests}!TEST\_REG@{TEST\_REG}}
+\index{TEST\_REG@{TEST\_REG}!generate\_control\_data\_tests@{generate\_control\_data\_tests}}
+\doxysubsubsection{\texorpdfstring{TEST\_REG}{TEST\_REG}}
+{\footnotesize\ttfamily string generate\+\_\+control\+\_\+data\+\_\+tests.\+TEST\+\_\+\+REG = \char`\"{}x30\char`\"{}}
+

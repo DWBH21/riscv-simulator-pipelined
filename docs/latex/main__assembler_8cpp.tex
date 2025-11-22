@@ -1,0 +1,40 @@
+\hypertarget{main__assembler_8cpp}{}\doxysection{src/test/main\+\_\+assembler.cpp File Reference}
+\label{main__assembler_8cpp}\index{src/test/main\_assembler.cpp@{src/test/main\_assembler.cpp}}
+
+
+Isolated Assembler for Testing. It reads a .s file, assembles it and converts the \mbox{\hyperlink{structAssembledProgram}{Assembled\+Program}} struct into a file that can be decoded by the different VMs. This file logs the memory\+\_\+controller\+\_\+.\+write operations that the \mbox{\hyperlink{classVmBase_a4d59d9f602948448e72a7f711ac32cbf}{Vm\+Base\+::\+Load\+Program}} functions performs to populate the text and data segments in memory The \mbox{\hyperlink{structAssembledProgram}{Assembled\+Program}} is too complex to store directly into a file. This approach takes advantage of the fact that the assembly of the program and then loading it into memory is identical for all VM modes.  
+
+
+{\ttfamily \#include \char`\"{}assembler/assembler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+Include dependency graph for main\+\_\+assembler.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main__assembler_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main__assembler_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Isolated Assembler for Testing. It reads a .s file, assembles it and converts the \mbox{\hyperlink{structAssembledProgram}{Assembled\+Program}} struct into a file that can be decoded by the different VMs. This file logs the memory\+\_\+controller\+\_\+.\+write operations that the \mbox{\hyperlink{classVmBase_a4d59d9f602948448e72a7f711ac32cbf}{Vm\+Base\+::\+Load\+Program}} functions performs to populate the text and data segments in memory The \mbox{\hyperlink{structAssembledProgram}{Assembled\+Program}} is too complex to store directly into a file. This approach takes advantage of the fact that the assembly of the program and then loading it into memory is identical for all VM modes. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main__assembler_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{main__assembler_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main\_assembler.cpp@{main\_assembler.cpp}!main@{main}}
+\index{main@{main}!main\_assembler.cpp@{main\_assembler.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+

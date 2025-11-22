@@ -1,0 +1,25 @@
+\hypertarget{dir_120ed4da3e3217b1e7fc0b4f48568e79}{}\doxysection{src/test Directory Reference}
+\label{dir_120ed4da3e3217b1e7fc0b4f48568e79}\index{src/test Directory Reference@{src/test Directory Reference}}
+Directory dependency graph for test\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{dir_120ed4da3e3217b1e7fc0b4f48568e79_dep}
+\end{center}
+\end{figure}
+\doxysubsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \mbox{\hyperlink{main__assembler_8cpp}{main\+\_\+assembler.\+cpp}}
+\begin{DoxyCompactList}\small\item\em Isolated Assembler for Testing. It reads a .s file, assembles it and converts the \mbox{\hyperlink{structAssembledProgram}{Assembled\+Program}} struct into a file that can be decoded by the different VMs. This file logs the memory\+\_\+controller\+\_\+.\+write operations that the \mbox{\hyperlink{classVmBase_a4d59d9f602948448e72a7f711ac32cbf}{Vm\+Base\+::\+Load\+Program}} functions performs to populate the text and data segments in memory The \mbox{\hyperlink{structAssembledProgram}{Assembled\+Program}} is too complex to store directly into a file. This approach takes advantage of the fact that the assembly of the program and then loading it into memory is identical for all VM modes. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{main__cli_8cpp}{main\+\_\+cli.\+cpp}}
+\item 
+file \mbox{\hyperlink{main__rv5s_8cpp}{main\+\_\+rv5s.\+cpp}}
+\begin{DoxyCompactList}\small\item\em Isolated Entry Point for the 5-\/stage processor mode for Testing. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{main__rv5s__ex_8cpp}{main\+\_\+rv5s\+\_\+ex.\+cpp}}
+\begin{DoxyCompactList}\small\item\em Isolated Entry Point for the 5-\/stage processor mode (with Branch Comparison in the EX stage) for Testing. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{main__rv5s__stall_8cpp}{main\+\_\+rv5s\+\_\+stall.\+cpp}}
+\begin{DoxyCompactList}\small\item\em Isolated Entry Point for the 5-\/stage processor mode (stalls only) for Testing. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{main__rvss_8cpp}{main\+\_\+rvss.\+cpp}}
+\begin{DoxyCompactList}\small\item\em Isolated Entry Point for the single stage processor mode for Testing. \end{DoxyCompactList}\end{DoxyCompactItemize}

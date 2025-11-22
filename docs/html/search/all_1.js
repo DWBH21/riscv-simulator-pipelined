@@ -27,10 +27,12 @@ var searchData=
   ['ansi_5fcode_5freset_25',['ANSI_code_reset',['../namespaceerrors.html#adf4393c33a85393d238a21ef77abfdd9',1,'errors']]],
   ['architecture_5fid_26',['ARCHITECTURE_ID',['../CMakeCXXCompilerId_8cpp.html#aba35d0d200deaeb06aee95ca297acb28',1,'CMakeCXXCompilerId.cpp']]],
   ['args_27',['args',['../structcommand__handler_1_1Command.html#a466fdb94f87f97969ddd24c88b1324e7',1,'command_handler::Command']]],
-  ['assemble_28',['assemble',['../assembler_8h.html#a8e37bfd2b778ed2eb6c17c251aac6120',1,'assemble(const std::string &amp;filename):&#160;assembler.cpp'],['../assembler_8cpp.html#a8e37bfd2b778ed2eb6c17c251aac6120',1,'assemble(const std::string &amp;filename):&#160;assembler.cpp']]],
+  ['assemble_28',['assemble',['../assembler_8cpp.html#ada0c4a8073144da4c1df14d33be6d7ce',1,'assemble(const std::string &amp;filename, bool silent_mode):&#160;assembler.cpp'],['../assembler_8h.html#ae0aecc9b3c7e50826d707d14d96c1bd1',1,'assemble(const std::string &amp;filename, bool silent_mode=false):&#160;assembler.cpp']]],
   ['assembledprogram_29',['AssembledProgram',['../structAssembledProgram.html',1,'']]],
   ['assembler_2ecpp_30',['assembler.cpp',['../assembler_8cpp.html',1,'']]],
   ['assembler_2ecpp_2eo_2ed_31',['assembler.cpp.o.d',['../assembler_8cpp_8o_8d.html',1,'']]],
   ['assembler_2eh_32',['assembler.h',['../assembler_8h.html',1,'']]],
-  ['associativity_33',['associativity',['../structcache_1_1CacheSet.html#ae646abcfafd18508cb7e2fb47359e8ab',1,'cache::CacheSet::associativity()'],['../structcache_1_1CacheConfig.html#aab905a2f456ce1a8faa31675768d1e29',1,'cache::CacheConfig::associativity()']]]
+  ['assembler_5fbin_33',['ASSEMBLER_BIN',['../namespacegenerate__references.html#ae55db9ef10e722ea29dcf1b8325c542a',1,'generate_references']]],
+  ['associativity_34',['associativity',['../structcache_1_1CacheSet.html#ae646abcfafd18508cb7e2fb47359e8ab',1,'cache::CacheSet::associativity()'],['../structcache_1_1CacheConfig.html#aab905a2f456ce1a8faa31675768d1e29',1,'cache::CacheConfig::associativity()']]],
+  ['autoreset_35',['autoreset',['../namespacegenerate__references.html#a44f68aa426a38819b2d3eadcae507157',1,'generate_references']]]
 ];

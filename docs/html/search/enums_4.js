@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['instruction_1747',['Instruction',['../namespaceinstruction__set.html#ab8754e798b5117896d42d78c0a67d980',1,'instruction_set']]]
+  ['errortype_2100',['ErrorType',['../namespaceerrors.html#a08d49fe09bd28d4b06dc27d2a5e3e2ae',1,'errors']]]
 ];

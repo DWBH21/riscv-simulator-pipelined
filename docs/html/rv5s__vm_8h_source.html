@@ -85,7 +85,7 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classRV5SVM.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classRV5SVM.html">RV5SVM</a> : <span class="keyword">public</span> <a class="code" href="classVmBase.html">VmBase</a> {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">public</span>: </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <a class="code" href="classRV5SVM.html#a6735ba1e3ae5c6500a80869580a02c4a">RV5SVM</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keyword">explicit</span> <a class="code" href="classRV5SVM.html#ae2105264405492b76f4f65b8fe25a82e">RV5SVM</a>(<span class="keywordtype">bool</span> silent = <span class="keyword">false</span>);</div>
 <div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classRV5SVM.html#a803d7bbda5d7c0a073bd3d672af24681">   21</a></span>&#160;            <a class="code" href="classRV5SVM.html#a803d7bbda5d7c0a073bd3d672af24681">~RV5SVM</a>();</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classRV5SVM.html#a1710e4750daf34a8af45479f37cc44c5">Run</a>() <span class="keyword">override</span>;</div>
@@ -105,51 +105,49 @@ $(function() {
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <a class="code" href="classRV5SControlUnit.html">RV5SControlUnit</a> control_unit_;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="comment">// HazardUnit hazard_unit_;         // to be added later</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordtype">int</span> pipeline_drain_counter_ = 0;     <span class="comment">// will count the no of instructions left in the pipeline after the last fetch</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="structIF__ID__Reg.html">IF_ID_Reg</a> if_id_reg_{};             <span class="comment">// pipeline registers to hold state at beginning of a clock cycle</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="structID__EX__Reg.html">ID_EX_Reg</a> id_ex_reg_{};</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="structEX__MEM__Reg.html">EX_MEM_Reg</a> ex_mem_reg_{};</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="structMEM__WB__Reg.html">MEM_WB_Reg</a> mem_wb_reg_{};</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="structIF__ID__Reg.html">IF_ID_Reg</a> next_if_id_reg_{};             <span class="comment">// pipeline registers to hold state during a clock cycle and will be stored at the end</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="structID__EX__Reg.html">ID_EX_Reg</a> next_id_ex_reg_{};</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="structEX__MEM__Reg.html">EX_MEM_Reg</a> next_ex_mem_reg_{};</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="structMEM__WB__Reg.html">MEM_WB_Reg</a> next_mem_wb_reg_{};</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordtype">void</span> Fetch_Stage();                     <span class="comment">//  pipeline stage functions </span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordtype">void</span> Decode_Stage();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordtype">void</span> Execute_Stage();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordtype">void</span> Memory_Stage();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordtype">void</span> WriteBack_Stage();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> RegType&gt; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            RegType CreateBubble() {                <span class="comment">// function to create a bubble of an register type</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                RegType bubble;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                bubble.is_valid = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordflow">return</span> bubble;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    };</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="structIF__ID__Reg.html">IF_ID_Reg</a> if_id_reg_{};             <span class="comment">// pipeline registers to hold state at beginning of a clock cycle</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <a class="code" href="structID__EX__Reg.html">ID_EX_Reg</a> id_ex_reg_{};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="structEX__MEM__Reg.html">EX_MEM_Reg</a> ex_mem_reg_{};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="structMEM__WB__Reg.html">MEM_WB_Reg</a> mem_wb_reg_{};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="structIF__ID__Reg.html">IF_ID_Reg</a> next_if_id_reg_{};             <span class="comment">// pipeline registers to hold state during a clock cycle and will be stored at the end</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="structID__EX__Reg.html">ID_EX_Reg</a> next_id_ex_reg_{};</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="structEX__MEM__Reg.html">EX_MEM_Reg</a> next_ex_mem_reg_{};</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="structMEM__WB__Reg.html">MEM_WB_Reg</a> next_mem_wb_reg_{};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordtype">void</span> Fetch_Stage();                     <span class="comment">//  pipeline stage functions </span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordtype">void</span> Decode_Stage();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordtype">void</span> Execute_Stage();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordtype">void</span> Memory_Stage();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordtype">void</span> WriteBack_Stage();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> RegType&gt; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            RegType CreateBubble() {                <span class="comment">// function to create a bubble of an register type</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                RegType bubble;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                bubble.is_valid = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">return</span> bubble;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    };</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="ttc" id="aclassRV5SControlUnit_html"><div class="ttname"><a href="classRV5SControlUnit.html">RV5SControlUnit</a></div><div class="ttdef"><b>Definition:</b> rv5s_control_unit.h:12</div></div>
 <div class="ttc" id="aclassRV5SVM_html"><div class="ttname"><a href="classRV5SVM.html">RV5SVM</a></div><div class="ttdef"><b>Definition:</b> rv5s_vm.h:18</div></div>
-<div class="ttc" id="aclassRV5SVM_html_a080d127429f7058394f6f74fbe565406"><div class="ttname"><a href="classRV5SVM.html#a080d127429f7058394f6f74fbe565406">RV5SVM::Undo</a></div><div class="ttdeci">void Undo() override</div><div class="ttdef"><b>Definition:</b> rv5s_vm.cpp:155</div></div>
+<div class="ttc" id="aclassRV5SVM_html_a080d127429f7058394f6f74fbe565406"><div class="ttname"><a href="classRV5SVM.html#a080d127429f7058394f6f74fbe565406">RV5SVM::Undo</a></div><div class="ttdeci">void Undo() override</div><div class="ttdef"><b>Definition:</b> rv5s_vm.cpp:159</div></div>
 <div class="ttc" id="aclassRV5SVM_html_a1710e4750daf34a8af45479f37cc44c5"><div class="ttname"><a href="classRV5SVM.html#a1710e4750daf34a8af45479f37cc44c5">RV5SVM::Run</a></div><div class="ttdeci">void Run() override</div><div class="ttdef"><b>Definition:</b> rv5s_vm.cpp:122</div></div>
-<div class="ttc" id="aclassRV5SVM_html_a654893f3844e6002704db2e5dc36ea35"><div class="ttname"><a href="classRV5SVM.html#a654893f3844e6002704db2e5dc36ea35">RV5SVM::Reset</a></div><div class="ttdeci">void Reset() override</div><div class="ttdef"><b>Definition:</b> rv5s_vm.cpp:42</div></div>
-<div class="ttc" id="aclassRV5SVM_html_a6735ba1e3ae5c6500a80869580a02c4a"><div class="ttname"><a href="classRV5SVM.html#a6735ba1e3ae5c6500a80869580a02c4a">RV5SVM::RV5SVM</a></div><div class="ttdeci">RV5SVM()</div><div class="ttdef"><b>Definition:</b> rv5s_vm.cpp:34</div></div>
+<div class="ttc" id="aclassRV5SVM_html_a654893f3844e6002704db2e5dc36ea35"><div class="ttname"><a href="classRV5SVM.html#a654893f3844e6002704db2e5dc36ea35">RV5SVM::Reset</a></div><div class="ttdeci">void Reset() override</div><div class="ttdef"><b>Definition:</b> rv5s_vm.cpp:40</div></div>
 <div class="ttc" id="aclassRV5SVM_html_a803d7bbda5d7c0a073bd3d672af24681"><div class="ttname"><a href="classRV5SVM.html#a803d7bbda5d7c0a073bd3d672af24681">RV5SVM::~RV5SVM</a></div><div class="ttdeci">~RV5SVM()</div></div>
-<div class="ttc" id="aclassRV5SVM_html_a947e15b3259cd1c582f83b8e0ed30226"><div class="ttname"><a href="classRV5SVM.html#a947e15b3259cd1c582f83b8e0ed30226">RV5SVM::DumpState</a></div><div class="ttdeci">void DumpState(const std::filesystem::path &amp;filename)</div><div class="ttdoc">Dumps the current VM state to a JSON file. This is the 5-stage pipeline specific implementation.</div><div class="ttdef"><b>Definition:</b> rv5s_vm.cpp:449</div></div>
-<div class="ttc" id="aclassRV5SVM_html_a976104059b9f28048b4b2f0f7545ab99"><div class="ttname"><a href="classRV5SVM.html#a976104059b9f28048b4b2f0f7545ab99">RV5SVM::DebugRun</a></div><div class="ttdeci">void DebugRun() override</div><div class="ttdef"><b>Definition:</b> rv5s_vm.cpp:135</div></div>
-<div class="ttc" id="aclassRV5SVM_html_ab2dae5a89f3e454fc740feee8fae5d0f"><div class="ttname"><a href="classRV5SVM.html#ab2dae5a89f3e454fc740feee8fae5d0f">RV5SVM::Redo</a></div><div class="ttdeci">void Redo() override</div><div class="ttdef"><b>Definition:</b> rv5s_vm.cpp:159</div></div>
+<div class="ttc" id="aclassRV5SVM_html_a947e15b3259cd1c582f83b8e0ed30226"><div class="ttname"><a href="classRV5SVM.html#a947e15b3259cd1c582f83b8e0ed30226">RV5SVM::DumpState</a></div><div class="ttdeci">void DumpState(const std::filesystem::path &amp;filename)</div><div class="ttdoc">Dumps the current VM state to a JSON file. This is the 5-stage pipeline specific implementation.</div><div class="ttdef"><b>Definition:</b> rv5s_vm.cpp:453</div></div>
+<div class="ttc" id="aclassRV5SVM_html_a976104059b9f28048b4b2f0f7545ab99"><div class="ttname"><a href="classRV5SVM.html#a976104059b9f28048b4b2f0f7545ab99">RV5SVM::DebugRun</a></div><div class="ttdeci">void DebugRun() override</div><div class="ttdef"><b>Definition:</b> rv5s_vm.cpp:136</div></div>
+<div class="ttc" id="aclassRV5SVM_html_ab2dae5a89f3e454fc740feee8fae5d0f"><div class="ttname"><a href="classRV5SVM.html#ab2dae5a89f3e454fc740feee8fae5d0f">RV5SVM::Redo</a></div><div class="ttdeci">void Redo() override</div><div class="ttdef"><b>Definition:</b> rv5s_vm.cpp:163</div></div>
+<div class="ttc" id="aclassRV5SVM_html_ae2105264405492b76f4f65b8fe25a82e"><div class="ttname"><a href="classRV5SVM.html#ae2105264405492b76f4f65b8fe25a82e">RV5SVM::RV5SVM</a></div><div class="ttdeci">RV5SVM(bool silent=false)</div><div class="ttdef"><b>Definition:</b> rv5s_vm.cpp:34</div></div>
 <div class="ttc" id="aclassRV5SVM_html_af192fa86374168f8108c7cb1f4ad3dc1"><div class="ttname"><a href="classRV5SVM.html#af192fa86374168f8108c7cb1f4ad3dc1">RV5SVM::PrintType</a></div><div class="ttdeci">void PrintType()</div><div class="ttdef"><b>Definition:</b> rv5s_vm.h:32</div></div>
-<div class="ttc" id="aclassRV5SVM_html_afb43c1466cebec9376c61a5e823e0769"><div class="ttname"><a href="classRV5SVM.html#afb43c1466cebec9376c61a5e823e0769">RV5SVM::Step</a></div><div class="ttdeci">void Step() override</div><div class="ttdef"><b>Definition:</b> rv5s_vm.cpp:69</div></div>
+<div class="ttc" id="aclassRV5SVM_html_afb43c1466cebec9376c61a5e823e0769"><div class="ttname"><a href="classRV5SVM.html#afb43c1466cebec9376c61a5e823e0769">RV5SVM::Step</a></div><div class="ttdeci">void Step() override</div><div class="ttdef"><b>Definition:</b> rv5s_vm.cpp:68</div></div>
 <div class="ttc" id="aclassVmBase_html"><div class="ttname"><a href="classVmBase.html">VmBase</a></div><div class="ttdef"><b>Definition:</b> vm_base.h:36</div></div>
 <div class="ttc" id="apipeline__registers_8h_html"><div class="ttname"><a href="pipeline__registers_8h.html">pipeline_registers.h</a></div><div class="ttdoc">Defines the data structures for pipeline registers and control signals.</div></div>
 <div class="ttc" id="arv5s__control__unit_8h_html"><div class="ttname"><a href="rv5s__control__unit_8h.html">rv5s_control_unit.h</a></div><div class="ttdoc">Definition of the Control Unit for the 5-stage pipeline.</div></div>
-<div class="ttc" id="astructEX__MEM__Reg_html"><div class="ttname"><a href="structEX__MEM__Reg.html">EX_MEM_Reg</a></div><div class="ttdef"><b>Definition:</b> pipeline_registers.h:113</div></div>
+<div class="ttc" id="astructEX__MEM__Reg_html"><div class="ttname"><a href="structEX__MEM__Reg.html">EX_MEM_Reg</a></div><div class="ttdef"><b>Definition:</b> pipeline_registers.h:115</div></div>
 <div class="ttc" id="astructID__EX__Reg_html"><div class="ttname"><a href="structID__EX__Reg.html">ID_EX_Reg</a></div><div class="ttdef"><b>Definition:</b> pipeline_registers.h:94</div></div>
 <div class="ttc" id="astructIF__ID__Reg_html"><div class="ttname"><a href="structIF__ID__Reg.html">IF_ID_Reg</a></div><div class="ttdef"><b>Definition:</b> pipeline_registers.h:87</div></div>
-<div class="ttc" id="astructMEM__WB__Reg_html"><div class="ttname"><a href="structMEM__WB__Reg.html">MEM_WB_Reg</a></div><div class="ttdef"><b>Definition:</b> pipeline_registers.h:123</div></div>
+<div class="ttc" id="astructMEM__WB__Reg_html"><div class="ttname"><a href="structMEM__WB__Reg.html">MEM_WB_Reg</a></div><div class="ttdef"><b>Definition:</b> pipeline_registers.h:125</div></div>
 <div class="ttc" id="avm__base_8h_html"><div class="ttname"><a href="vm__base_8h.html">vm_base.h</a></div><div class="ttdoc">File containing the base class for the virtual machine.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

@@ -52,6 +52,9 @@
 \begin{DoxyItemize}
 \item {\ttfamily processor\+\_\+type} (string) \+: {\ttfamily single\+\_\+stage} $\vert$ {\ttfamily multi\+\_\+stage} ~\newline
 
+\item {\ttfamily data\+\_\+hazard\+\_\+mode} (string) \+: {\ttfamily ideal} $\vert$ {\ttfamily stall} $\vert$ {\ttfamily forwarding} \+: (multi\+\_\+stage only) Sets the data hazard resolution mode.
+\item {\ttfamily branch\+\_\+predictor} (string) \+: {\ttfamily static\+\_\+not\+\_\+taken} $\vert$ {\ttfamily static\+\_\+taken} $\vert$ {\ttfamily dynamic\+\_\+1bit} $\vert$ {\ttfamily dynamic\+\_\+2bit} \+: (multi\+\_\+stage only) Sets the branch prediction mode.
+\item {\ttfamily branch\+\_\+stage} (string) \+: {\ttfamily ex} $\vert$ {\ttfamily id} \+: (multi\+\_\+stage only) Sets the pipeline stage where branch comparison occurs.
 \item {\ttfamily run\+\_\+step\+\_\+delay} (unsigned int) \+: milliseconds
 \item {\ttfamily instruction\+\_\+execution\+\_\+limit} (unsigned int) \+: Specifies the number of instruction to run on one use of {\ttfamily run} button. Set to {\ttfamily 0} for no limit.
 \end{DoxyItemize}

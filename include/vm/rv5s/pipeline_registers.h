@@ -108,6 +108,8 @@ struct ID_EX_Reg {
     uint8_t rs1_index = 0;
     uint8_t rs2_index = 0;
     uint8_t rd_index = 0;
+
+    bool predicted_outcome = false;         // the branch predicted in case of branch instruction in the earlier stage, required to determine if it was a misprediction or not
 };
 
 struct EX_MEM_Reg {

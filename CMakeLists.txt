@@ -22,7 +22,7 @@ file(GLOB_RECURSE SRC_FILES "${SRC_DIR}/*.cpp")
 set(MAIN_SRC "${SRC_DIR}/main.cpp")
 set(ASSEMBLER_MAIN_SRC "${SRC_DIR}/test/main_assembler.cpp")
 set(RVSS_MAIN_SRC "${SRC_DIR}/test/main_rvss.cpp")
-set(RV5S_MAIN_SRC "${SRC_DIR}/test/main_rv5s.cpp")
+set(RV5S_MAIN_SRC "${SRC_DIR}/test/main_cli.cpp")
 
 # Create a list of all library files    
 set(LIB_SRC_FILES ${SRC_FILES})
@@ -50,7 +50,7 @@ add_executable(assembler_binary ${ASSEMBLER_MAIN_SRC})
 add_executable(rvss_binary ${RVSS_MAIN_SRC})
 add_executable(rv5s_binary ${RV5S_MAIN_SRC})
 
-# link all executalbes against the core library
+# link all executables against the core library
 set(ALL_EXECUTABLES ${PROJECT_NAME} assembler_binary rvss_binary rv5s_binary)
 foreach(exec ${ALL_EXECUTABLES})
     target_link_libraries(${exec} PRIVATE vm_core)

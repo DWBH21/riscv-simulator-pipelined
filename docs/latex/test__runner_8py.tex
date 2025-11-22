@@ -1,0 +1,41 @@
+\hypertarget{test__runner_8py}{}\doxysection{pytests/test\+\_\+runner.py File Reference}
+\label{test__runner_8py}\index{pytests/test\_runner.py@{pytests/test\_runner.py}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacetest__runner}{test\+\_\+runner}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacetest__runner_a97d620d7f61a33cbbde4c4d5b19bc4a0}{test\+\_\+runner.\+collect\+\_\+test\+\_\+cases}} ()
+\item 
+def \mbox{\hyperlink{namespacetest__runner_adf0404b3072090e1a1a12e43374d85c0}{test\+\_\+runner.\+generate\+\_\+test\+\_\+id}} (test\+\_\+case)
+\item 
+def \mbox{\hyperlink{namespacetest__runner_ad6b4698179ca8f56ccd89ff7ef2ad4bb}{test\+\_\+runner.\+test\+\_\+simulator\+\_\+pipeline}} (sim\+\_\+config, case\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacetest__runner_a7025f8a8da479ed5261c8eda643b742f}{test\+\_\+runner.\+TIME\+\_\+\+OUT\+\_\+\+WAIT}} = 3
+\item 
+\mbox{\hyperlink{namespacetest__runner_a60c0b841bdf3d51c9bdd8814900518cb}{test\+\_\+runner.\+BUILD\+\_\+\+DIR}} = Path(\char`\"{}../build\char`\"{})
+\item 
+string \mbox{\hyperlink{namespacetest__runner_a7a805701b1cd2ee2a076d6ec979a5f27}{test\+\_\+runner.\+SIM2\+\_\+\+BIN}} = BUILD\+\_\+\+DIR / \char`\"{}rv5s\+\_\+binary\char`\"{}
+\item 
+\mbox{\hyperlink{namespacetest__runner_a47d5fab22dd475d59680fe8b9a3182c2}{test\+\_\+runner.\+RUN\+\_\+\+DIR\+\_\+\+BASE}} = Path(\char`\"{}./test\+\_\+run\+\_\+outputs\char`\"{})
+\item 
+list \mbox{\hyperlink{namespacetest__runner_ae996e0d802e8dfa548a143b8ce8c7c32}{test\+\_\+runner.\+SIMULATOR\+\_\+\+CONFIGS}}
+\item 
+list \mbox{\hyperlink{namespacetest__runner_a9b9713ecf7ccd693564cb4a92f9343b7}{test\+\_\+runner.\+HAZARD\+\_\+\+MODES}}
+\item 
+list \mbox{\hyperlink{namespacetest__runner_a76ddb37764cfd878fdf159520cf7e36f}{test\+\_\+runner.\+BRANCH\+\_\+\+PREDICTORS}}
+\item 
+string \mbox{\hyperlink{namespacetest__runner_aa710181883c5fab1cfe296e11d82610a}{test\+\_\+runner.\+config\+\_\+id}} = f\char`\"{}5Stage\+\_\+\{mode\+\_\+name\}\+\_\+\{pred\}\char`\"{}
+\item 
+\mbox{\hyperlink{namespacetest__runner_af4290c59fb3728e3cf8a5dd04dd26512}{test\+\_\+runner.\+target\+\_\+mode}} = os.\+environ.\+get(\char`\"{}SIM\+\_\+\+MODE\char`\"{})
+\item 
+list \mbox{\hyperlink{namespacetest__runner_a392804e1cfe7567f85f8c940a193514e}{test\+\_\+runner.\+filtered\+\_\+configs}} = \mbox{[}c for c in SIMULATOR\+\_\+\+CONFIGS if c\mbox{[}\char`\"{}id\char`\"{}\mbox{]} == target\+\_\+mode\mbox{]}
+\item 
+dictionary \mbox{\hyperlink{namespacetest__runner_abdecaba8f835a891df95c2f65e2e6c47}{test\+\_\+runner.\+TEST\+\_\+\+SUITES}}
+\end{DoxyCompactItemize}

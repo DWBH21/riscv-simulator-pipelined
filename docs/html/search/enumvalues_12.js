@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['valid_2155',['Valid',['../namespacecache.html#a528c5a7abaa3626760c8a7d9fde3504aa3ac705f2acd51a4613f9188c05c91d0d',1,'cache']]],
-  ['value_2156',['VALUE',['../namespacecommand__handler.html#a44c251e1711cea6749a00f36fcb08cf4aecc2e9c313faddb07e7da223c1dc5c3f',1,'command_handler']]],
-  ['vec_5fregister_2157',['VEC_REGISTER',['../tokens_8h.html#aa520fbf142ba1e7e659590c07da31921ab1bc3ea41540ebb15bc6be2f8ac8b03f',1,'tokens.h']]],
-  ['vector_2158',['VECTOR',['../classRegisterFile.html#ad20885f84b337c67fd63b230e11ba230a87752381b583740610f1dfeb07fdad7e',1,'RegisterFile']]],
-  ['vm_5fstdin_2159',['VM_STDIN',['../namespacecommand__handler.html#a49f72bb84305031f68e77b48be812681a3cbd204eb9b0446f83da767225380a79',1,'command_handler']]]
+  ['undo_2516',['UNDO',['../namespacecommand__handler.html#a49f72bb84305031f68e77b48be812681a269940bcad6fddf5c68d3e67f767c3d1',1,'command_handler']]],
+  ['unexpected_5feof_2517',['UNEXPECTED_EOF',['../namespaceerrors.html#a08d49fe09bd28d4b06dc27d2a5e3e2aead7822fa0763e672131324accbcf830d0',1,'errors']]],
+  ['unexpected_5foperand_2518',['UNEXPECTED_OPERAND',['../namespaceerrors.html#a08d49fe09bd28d4b06dc27d2a5e3e2aea4598db2cfeef2078a4c652100cfe25c7',1,'errors']]],
+  ['unexpected_5ftoken_2519',['UNEXPECTED_TOKEN',['../namespaceerrors.html#a08d49fe09bd28d4b06dc27d2a5e3e2aea8015f208e97eb87d4077cf0c5d5aeb83',1,'errors']]],
+  ['unknown_5ferror_2520',['UNKNOWN_ERROR',['../namespaceerrors.html#a08d49fe09bd28d4b06dc27d2a5e3e2aea9a10f345b0f755d461a8673a5e9ef6b4',1,'errors']]]
 ];

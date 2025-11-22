@@ -1,0 +1,150 @@
+\hypertarget{classRV5SStallVM}{}\doxysection{RV5\+SStall\+VM Class Reference}
+\label{classRV5SStallVM}\index{RV5SStallVM@{RV5SStallVM}}
+
+
+{\ttfamily \#include $<$rv5s\+\_\+stall\+\_\+vm.\+h$>$}
+
+
+
+Inheritance diagram for RV5\+SStall\+VM\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classRV5SStallVM__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for RV5\+SStall\+VM\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRV5SStallVM__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRV5SStallVM_a7c339661a87089ba57126b5d1a7cb070}{RV5\+SStall\+VM}} (bool silent=false)
+\item 
+\mbox{\hyperlink{classRV5SStallVM_ad4a6a34a8bd0277789a207e6596a0632}{$\sim$\+RV5\+SStall\+VM}} ()
+\item 
+void \mbox{\hyperlink{classRV5SStallVM_af02371ce78f42f6a71f4e4921cbad739}{Run}} () override
+\item 
+void \mbox{\hyperlink{classRV5SStallVM_a3bf4f680d5358afb571c3daeea169456}{Debug\+Run}} () override
+\item 
+void \mbox{\hyperlink{classRV5SStallVM_a7dedf312dc9adf15984762eb2a5e01af}{Step}} () override
+\item 
+void \mbox{\hyperlink{classRV5SStallVM_af26fb9e5854051f51dd70431a63b5d4e}{Undo}} () override
+\item 
+void \mbox{\hyperlink{classRV5SStallVM_a6242c6d64bb59a85369f616682df8822}{Redo}} () override
+\item 
+void \mbox{\hyperlink{classRV5SStallVM_a1c53afc98b74ea81995c4ea20720f260}{Reset}} () override
+\item 
+void \mbox{\hyperlink{classRV5SStallVM_a118430a5af6670a8c061c3ec8d3ac5b2}{Dump\+State}} (const std\+::filesystem\+::path \&filename)
+\begin{DoxyCompactList}\small\item\em Dumps the current VM state to a JSON file. This is the 5-\/stage pipeline specific implementation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRV5SStallVM_a9bc0edc3f35a139e9a359f2e694ce84a}{Print\+Type}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRV5SStallVM_a7c339661a87089ba57126b5d1a7cb070}\label{classRV5SStallVM_a7c339661a87089ba57126b5d1a7cb070}} 
+\index{RV5SStallVM@{RV5SStallVM}!RV5SStallVM@{RV5SStallVM}}
+\index{RV5SStallVM@{RV5SStallVM}!RV5SStallVM@{RV5SStallVM}}
+\doxysubsubsection{\texorpdfstring{RV5SStallVM()}{RV5SStallVM()}}
+{\footnotesize\ttfamily RV5\+SStall\+VM\+::\+RV5\+SStall\+VM (\begin{DoxyParamCaption}\item[{bool}]{silent = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classRV5SStallVM_ad4a6a34a8bd0277789a207e6596a0632}\label{classRV5SStallVM_ad4a6a34a8bd0277789a207e6596a0632}} 
+\index{RV5SStallVM@{RV5SStallVM}!````~RV5SStallVM@{$\sim$RV5SStallVM}}
+\index{````~RV5SStallVM@{$\sim$RV5SStallVM}!RV5SStallVM@{RV5SStallVM}}
+\doxysubsubsection{\texorpdfstring{$\sim$RV5SStallVM()}{~RV5SStallVM()}}
+{\footnotesize\ttfamily RV5\+SStall\+VM\+::$\sim$\+RV5\+SStall\+VM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRV5SStallVM_a3bf4f680d5358afb571c3daeea169456}\label{classRV5SStallVM_a3bf4f680d5358afb571c3daeea169456}} 
+\index{RV5SStallVM@{RV5SStallVM}!DebugRun@{DebugRun}}
+\index{DebugRun@{DebugRun}!RV5SStallVM@{RV5SStallVM}}
+\doxysubsubsection{\texorpdfstring{DebugRun()}{DebugRun()}}
+{\footnotesize\ttfamily void RV5\+SStall\+VM\+::\+Debug\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVmBase_ac14764bc14c9e4dd41655c9054b1dfa4}{Vm\+Base}}.
+
+\mbox{\Hypertarget{classRV5SStallVM_a118430a5af6670a8c061c3ec8d3ac5b2}\label{classRV5SStallVM_a118430a5af6670a8c061c3ec8d3ac5b2}} 
+\index{RV5SStallVM@{RV5SStallVM}!DumpState@{DumpState}}
+\index{DumpState@{DumpState}!RV5SStallVM@{RV5SStallVM}}
+\doxysubsubsection{\texorpdfstring{DumpState()}{DumpState()}}
+{\footnotesize\ttfamily void RV5\+SStall\+VM\+::\+Dump\+State (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Dumps the current VM state to a JSON file. This is the 5-\/stage pipeline specific implementation. 
+
+\mbox{\Hypertarget{classRV5SStallVM_a9bc0edc3f35a139e9a359f2e694ce84a}\label{classRV5SStallVM_a9bc0edc3f35a139e9a359f2e694ce84a}} 
+\index{RV5SStallVM@{RV5SStallVM}!PrintType@{PrintType}}
+\index{PrintType@{PrintType}!RV5SStallVM@{RV5SStallVM}}
+\doxysubsubsection{\texorpdfstring{PrintType()}{PrintType()}}
+{\footnotesize\ttfamily void RV5\+SStall\+VM\+::\+Print\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classRV5SStallVM_a6242c6d64bb59a85369f616682df8822}\label{classRV5SStallVM_a6242c6d64bb59a85369f616682df8822}} 
+\index{RV5SStallVM@{RV5SStallVM}!Redo@{Redo}}
+\index{Redo@{Redo}!RV5SStallVM@{RV5SStallVM}}
+\doxysubsubsection{\texorpdfstring{Redo()}{Redo()}}
+{\footnotesize\ttfamily void RV5\+SStall\+VM\+::\+Redo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVmBase_ab323c0d074c2ceb9885746d1073ed505}{Vm\+Base}}.
+
+\mbox{\Hypertarget{classRV5SStallVM_a1c53afc98b74ea81995c4ea20720f260}\label{classRV5SStallVM_a1c53afc98b74ea81995c4ea20720f260}} 
+\index{RV5SStallVM@{RV5SStallVM}!Reset@{Reset}}
+\index{Reset@{Reset}!RV5SStallVM@{RV5SStallVM}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void RV5\+SStall\+VM\+::\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVmBase_ae8262f906074f8e778665b73841b0352}{Vm\+Base}}.
+
+\mbox{\Hypertarget{classRV5SStallVM_af02371ce78f42f6a71f4e4921cbad739}\label{classRV5SStallVM_af02371ce78f42f6a71f4e4921cbad739}} 
+\index{RV5SStallVM@{RV5SStallVM}!Run@{Run}}
+\index{Run@{Run}!RV5SStallVM@{RV5SStallVM}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily void RV5\+SStall\+VM\+::\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVmBase_ab99aff7b91e22e2b041d310791ae0281}{Vm\+Base}}.
+
+\mbox{\Hypertarget{classRV5SStallVM_a7dedf312dc9adf15984762eb2a5e01af}\label{classRV5SStallVM_a7dedf312dc9adf15984762eb2a5e01af}} 
+\index{RV5SStallVM@{RV5SStallVM}!Step@{Step}}
+\index{Step@{Step}!RV5SStallVM@{RV5SStallVM}}
+\doxysubsubsection{\texorpdfstring{Step()}{Step()}}
+{\footnotesize\ttfamily void RV5\+SStall\+VM\+::\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVmBase_a78fa2e4cc76ab45ca84e164b7b0af119}{Vm\+Base}}.
+
+\mbox{\Hypertarget{classRV5SStallVM_af26fb9e5854051f51dd70431a63b5d4e}\label{classRV5SStallVM_af26fb9e5854051f51dd70431a63b5d4e}} 
+\index{RV5SStallVM@{RV5SStallVM}!Undo@{Undo}}
+\index{Undo@{Undo}!RV5SStallVM@{RV5SStallVM}}
+\doxysubsubsection{\texorpdfstring{Undo()}{Undo()}}
+{\footnotesize\ttfamily void RV5\+SStall\+VM\+::\+Undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVmBase_a141e025834dd6b9d68f08db7959ed391}{Vm\+Base}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/vm/rv5s/\mbox{\hyperlink{rv5s__stall__vm_8h}{rv5s\+\_\+stall\+\_\+vm.\+h}}\item 
+src/vm/rv5s/\mbox{\hyperlink{rv5s__stall__vm_8cpp}{rv5s\+\_\+stall\+\_\+vm.\+cpp}}\end{DoxyCompactItemize}

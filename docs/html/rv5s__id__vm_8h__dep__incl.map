@@ -1,0 +1,4 @@
+<map id="include/vm/rv5s/rv5s_id_vm.h" name="include/vm/rv5s/rv5s_id_vm.h">
+<area shape="rect" id="node1" title="Definition of the 5&#45;stage pipelined RISC&#45;V VM where Branch Comparison happens in the ID stage." alt="" coords="5,5,164,47"/>
+<area shape="rect" id="node2" href="$rv5s__id__vm_8cpp.html" title="Implementation of the 5&#45;stage pipelined RISC&#45;V VM where Branch Comparison happens in the EX stage." alt="" coords="10,95,159,136"/>
+</map>

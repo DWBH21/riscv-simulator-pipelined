@@ -1,0 +1,5 @@
+<map id="include/vm/rv5s/rv5s_stall_vm.h" name="include/vm/rv5s/rv5s_stall_vm.h">
+<area shape="rect" id="node1" title="Definition of the 5&#45;stage pipelined RISC&#45;V VM with Hazard Detection and Resolution Using Stalls." alt="" coords="87,5,245,47"/>
+<area shape="rect" id="node2" href="$main__rv5s__stall_8cpp.html" title="Isolated Entry Point for the 5&#45;stage processor mode (stalls only) for Testing." alt="" coords="5,95,148,136"/>
+<area shape="rect" id="node3" href="$rv5s__stall__vm_8cpp.html" title=" " alt="" coords="173,95,338,136"/>
+</map>

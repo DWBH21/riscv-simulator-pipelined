@@ -1,24 +1,24 @@
     /**
-    * @file rv5s_vm.h
+    * @file rv5s_stall_vm.h
     * @brief Definition of the 5-stage pipelined RISC-V VM with Hazard Detection and Resolution Using Stalls.
     */
-    #ifndef RV5S_VM_H
-    #define RV5S_VM_H
+    #ifndef RV5S_STALL_VM_H
+    #define RV5S_STALL_VM_H
 
     #include "vm/vm_base.h"
     #include "vm/rv5s/pipeline_registers.h"
     #include "vm/rv5s/rv5s_control_unit.h"
-    #include "vm/rv5s/hazard_unit.h"     // added
+    #include "vm/rv5s/rv5s_hazard_unit.h"     // added
     // #include "config.h"                  // see if reqd later 
 
     #include <cstdint>
     #include <iostream> 
     #include <string>  
 
-    class RV5SVM : public VmBase {
+    class RV5SStallVM : public VmBase {
         public: 
-            explicit RV5SVM(bool silent = false);
-            ~RV5SVM();
+            explicit RV5SStallVM(bool silent = false);
+            ~RV5SStallVM();
 
             void Run() override;
             void DebugRun() override;
@@ -30,14 +30,14 @@
             void DumpState(const std::filesystem::path &filename);
 
             void PrintType() {
-                std::cout << "rv5svm" << std::endl;
+                std::cout << "rv5s_stall_vm" << std::endl;
             }
 
         private: 
             RV5SControlUnit control_unit_;
-            HazardUnit hazard_unit_;           // added hazard unit
-            unsigned int no_data_hazards_{};
-            unsigned int no_control_hazards_{};
+            RV5SHazardUnit hazard_unit_;           // added hazard unit
+            bool stall_request_ = false;            // to indicate a stall signal from the decode stage
+            bool flush_pipeline_ = false;           // to flush pipeline in case of branch taken in branch instructions
 
             IF_ID_Reg if_id_reg_{};             // pipeline registers to hold state at beginning of a clock cycle
             ID_EX_Reg id_ex_reg_{};

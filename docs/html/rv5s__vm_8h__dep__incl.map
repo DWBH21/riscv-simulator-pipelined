@@ -1,5 +1,7 @@
 <map id="include/vm/rv5s/rv5s_vm.h" name="include/vm/rv5s/rv5s_vm.h">
-<area shape="rect" id="node1" title="Definition of the 5&#45;stage pipelined RISC&#45;V VM." alt="" coords="43,5,241,32"/>
+<area shape="rect" id="node1" title="Definition of the 5&#45;stage pipelined RISC&#45;V VM." alt="" coords="207,5,405,32"/>
 <area shape="rect" id="node2" href="$main_8cpp.html" title=" " alt="" coords="5,80,111,107"/>
-<area shape="rect" id="node3" href="$rv5s__vm_8cpp.html" title=" " alt="" coords="135,80,320,107"/>
+<area shape="rect" id="node3" href="$main__cli_8cpp.html" title=" " alt="" coords="135,80,291,107"/>
+<area shape="rect" id="node4" href="$main__rv5s_8cpp.html" title="Isolated Entry Point for the 5&#45;stage processor mode for Testing." alt="" coords="315,80,484,107"/>
+<area shape="rect" id="node5" href="$rv5s__vm_8cpp.html" title=" " alt="" coords="508,80,693,107"/>
 </map>

@@ -9,11 +9,19 @@
 \item 
 void \mbox{\hyperlink{structvm__config_1_1VmConfig_abb8a00c8652daed6dfa60eba3c042f68}{set\+Vm\+Type}} (const \mbox{\hyperlink{namespacevm__config_aa4eeb50c28c404f656938f58b44562b5}{Vm\+Types}} \&type)
 \item 
-void \mbox{\hyperlink{structvm__config_1_1VmConfig_a75e151734d8115fd0fdbc5f718ead3bd}{set\+Pipeline\+Mode}} (const \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458fea}{Pipeline\+Modes}} \&mode)
+void \mbox{\hyperlink{structvm__config_1_1VmConfig_adc5b5fb3533e7dce69365048c9a78fae}{set\+Data\+Hazard\+Mode}} (const \mbox{\hyperlink{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25}{Data\+Hazard\+Mode}} \&mode)
+\item 
+void \mbox{\hyperlink{structvm__config_1_1VmConfig_a1ec73e1acdceb772c9ae04185bfcc75e}{set\+Branch\+Predictor\+Type}} (const \mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751d}{Branch\+Predictor\+Type}} \&type)
+\item 
+void \mbox{\hyperlink{structvm__config_1_1VmConfig_a54bf0cfc5d2bbcd3aa4cf9273e34285d}{set\+Branch\+Stage}} (const \mbox{\hyperlink{namespacevm__config_a95a8e5163d817e700a22dd4c2b903d37}{Branch\+Stage}} \&stage)
 \item 
 \mbox{\hyperlink{namespacevm__config_aa4eeb50c28c404f656938f58b44562b5}{Vm\+Types}} \mbox{\hyperlink{structvm__config_1_1VmConfig_aebb2b9192cf97c6c5f996c355fe52e5d}{get\+Vm\+Type}} () const
 \item 
-\mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458fea}{Pipeline\+Modes}} \mbox{\hyperlink{structvm__config_1_1VmConfig_ad86b351850ba654e9c2f820b397ee1b0}{get\+Pipeline\+Mode}} () const
+\mbox{\hyperlink{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25}{Data\+Hazard\+Mode}} \mbox{\hyperlink{structvm__config_1_1VmConfig_aa1b0332da41078194856b4201098c30d}{get\+Data\+Hazard\+Mode}} () const
+\item 
+\mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751d}{Branch\+Predictor\+Type}} \mbox{\hyperlink{structvm__config_1_1VmConfig_a5f193146ec7721921c05fd6a669abe7d}{get\+Branch\+Predictor\+Type}} () const
+\item 
+\mbox{\hyperlink{namespacevm__config_a95a8e5163d817e700a22dd4c2b903d37}{Branch\+Stage}} \mbox{\hyperlink{structvm__config_1_1VmConfig_ad8ba46d925634420f7908a917369d3ce}{get\+Branch\+Stage}} () const
 \item 
 void \mbox{\hyperlink{structvm__config_1_1VmConfig_a2de4c51b360792be181645482b79d6e1}{set\+Run\+Step\+Delay}} (uint64\+\_\+t delay)
 \item 
@@ -62,7 +70,11 @@ void \mbox{\hyperlink{structvm__config_1_1VmConfig_a294ab0dd2f427bdcb05292a9d6be
 \item 
 \mbox{\hyperlink{namespacevm__config_aa4eeb50c28c404f656938f58b44562b5}{Vm\+Types}} \mbox{\hyperlink{structvm__config_1_1VmConfig_ae04b975893d08f77ca2938aeda35cc77}{vm\+\_\+type}} = \mbox{\hyperlink{namespacevm__config_aa4eeb50c28c404f656938f58b44562b5a2c4a0af0ffe5afecf34ef3401408722c}{Vm\+Types\+::\+SINGLE\+\_\+\+STAGE}}
 \item 
-\mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458fea}{Pipeline\+Modes}} \mbox{\hyperlink{structvm__config_1_1VmConfig_a2cf9c2a5caf45a34cbb9cd7677dd97bf}{pipeline\+\_\+mode}} = \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa4bbb8f967da6d1a610596d7257179c2b}{Pipeline\+Modes\+::\+Invalid}}
+\mbox{\hyperlink{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25}{Data\+Hazard\+Mode}} \mbox{\hyperlink{structvm__config_1_1VmConfig_a4f1a2d9157384069625de53f0aa8d536}{data\+\_\+hazard\+\_\+mode}} = \mbox{\hyperlink{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25a07df98da6e2b219bc61e36237a2bf2ff}{Data\+Hazard\+Mode\+::\+IDEAL}}
+\item 
+\mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751d}{Branch\+Predictor\+Type}} \mbox{\hyperlink{structvm__config_1_1VmConfig_a4e07aba11e7d031c2ef537d1d364739b}{branch\+\_\+predictor\+\_\+type}} = \mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751da1e6f43e47ebeec0a7f958f53b77515f7}{Branch\+Predictor\+Type\+::\+STATIC\+\_\+\+NOT\+\_\+\+TAKEN}}
+\item 
+\mbox{\hyperlink{namespacevm__config_a95a8e5163d817e700a22dd4c2b903d37}{Branch\+Stage}} \mbox{\hyperlink{structvm__config_1_1VmConfig_ab7bfe3314402d9507cf27fbcf080d335}{branch\+\_\+stage}} = \mbox{\hyperlink{namespacevm__config_a95a8e5163d817e700a22dd4c2b903d37aa734abca01add327e8830687ffd7c123}{Branch\+Stage\+::\+BRANCH\+\_\+\+IN\+\_\+\+EX}}
 \item 
 uint64\+\_\+t \mbox{\hyperlink{structvm__config_1_1VmConfig_a9438d71dc02eca394d21d60da75d50f9}{run\+\_\+step\+\_\+delay}} = 300
 \item 
@@ -87,11 +99,29 @@ bool \mbox{\hyperlink{structvm__config_1_1VmConfig_a180f3d1f68cc8ee848e837efa1de
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structvm__config_1_1VmConfig_a5f193146ec7721921c05fd6a669abe7d}\label{structvm__config_1_1VmConfig_a5f193146ec7721921c05fd6a669abe7d}} 
+\index{vm\_config::VmConfig@{vm\_config::VmConfig}!getBranchPredictorType@{getBranchPredictorType}}
+\index{getBranchPredictorType@{getBranchPredictorType}!vm\_config::VmConfig@{vm\_config::VmConfig}}
+\doxysubsubsection{\texorpdfstring{getBranchPredictorType()}{getBranchPredictorType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751d}{Branch\+Predictor\+Type}} vm\+\_\+config\+::\+Vm\+Config\+::get\+Branch\+Predictor\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structvm__config_1_1VmConfig_ad8ba46d925634420f7908a917369d3ce}\label{structvm__config_1_1VmConfig_ad8ba46d925634420f7908a917369d3ce}} 
+\index{vm\_config::VmConfig@{vm\_config::VmConfig}!getBranchStage@{getBranchStage}}
+\index{getBranchStage@{getBranchStage}!vm\_config::VmConfig@{vm\_config::VmConfig}}
+\doxysubsubsection{\texorpdfstring{getBranchStage()}{getBranchStage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacevm__config_a95a8e5163d817e700a22dd4c2b903d37}{Branch\+Stage}} vm\+\_\+config\+::\+Vm\+Config\+::get\+Branch\+Stage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
 \mbox{\Hypertarget{structvm__config_1_1VmConfig_a0e7ae7889bdc62a23cbc66fad14e35f2}\label{structvm__config_1_1VmConfig_a0e7ae7889bdc62a23cbc66fad14e35f2}} 
 \index{vm\_config::VmConfig@{vm\_config::VmConfig}!getBssSectionStart@{getBssSectionStart}}
 \index{getBssSectionStart@{getBssSectionStart}!vm\_config::VmConfig@{vm\_config::VmConfig}}
 \doxysubsubsection{\texorpdfstring{getBssSectionStart()}{getBssSectionStart()}}
 {\footnotesize\ttfamily uint64\+\_\+t vm\+\_\+config\+::\+Vm\+Config\+::get\+Bss\+Section\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structvm__config_1_1VmConfig_aa1b0332da41078194856b4201098c30d}\label{structvm__config_1_1VmConfig_aa1b0332da41078194856b4201098c30d}} 
+\index{vm\_config::VmConfig@{vm\_config::VmConfig}!getDataHazardMode@{getDataHazardMode}}
+\index{getDataHazardMode@{getDataHazardMode}!vm\_config::VmConfig@{vm\_config::VmConfig}}
+\doxysubsubsection{\texorpdfstring{getDataHazardMode()}{getDataHazardMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25}{Data\+Hazard\+Mode}} vm\+\_\+config\+::\+Vm\+Config\+::get\+Data\+Hazard\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{structvm__config_1_1VmConfig_ad0e10a53f879c0e238cad84910424999}\label{structvm__config_1_1VmConfig_ad0e10a53f879c0e238cad84910424999}} 
 \index{vm\_config::VmConfig@{vm\_config::VmConfig}!getDataSectionStart@{getDataSectionStart}}
@@ -135,12 +165,6 @@ bool \mbox{\hyperlink{structvm__config_1_1VmConfig_a180f3d1f68cc8ee848e837efa1de
 \doxysubsubsection{\texorpdfstring{getMExtensionEnabled()}{getMExtensionEnabled()}}
 {\footnotesize\ttfamily bool vm\+\_\+config\+::\+Vm\+Config\+::get\+MExtension\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{structvm__config_1_1VmConfig_ad86b351850ba654e9c2f820b397ee1b0}\label{structvm__config_1_1VmConfig_ad86b351850ba654e9c2f820b397ee1b0}} 
-\index{vm\_config::VmConfig@{vm\_config::VmConfig}!getPipelineMode@{getPipelineMode}}
-\index{getPipelineMode@{getPipelineMode}!vm\_config::VmConfig@{vm\_config::VmConfig}}
-\doxysubsubsection{\texorpdfstring{getPipelineMode()}{getPipelineMode()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458fea}{Pipeline\+Modes}} vm\+\_\+config\+::\+Vm\+Config\+::get\+Pipeline\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
 \mbox{\Hypertarget{structvm__config_1_1VmConfig_a1362515d9135ef841481091006ba0200}\label{structvm__config_1_1VmConfig_a1362515d9135ef841481091006ba0200}} 
 \index{vm\_config::VmConfig@{vm\_config::VmConfig}!getRunStepDelay@{getRunStepDelay}}
 \index{getRunStepDelay@{getRunStepDelay}!vm\_config::VmConfig@{vm\_config::VmConfig}}
@@ -165,11 +189,29 @@ bool \mbox{\hyperlink{structvm__config_1_1VmConfig_a180f3d1f68cc8ee848e837efa1de
 \doxysubsubsection{\texorpdfstring{modifyConfig()}{modifyConfig()}}
 {\footnotesize\ttfamily void vm\+\_\+config\+::\+Vm\+Config\+::modify\+Config (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{section,  }\item[{const std\+::string \&}]{key,  }\item[{const std\+::string \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+\mbox{\Hypertarget{structvm__config_1_1VmConfig_a1ec73e1acdceb772c9ae04185bfcc75e}\label{structvm__config_1_1VmConfig_a1ec73e1acdceb772c9ae04185bfcc75e}} 
+\index{vm\_config::VmConfig@{vm\_config::VmConfig}!setBranchPredictorType@{setBranchPredictorType}}
+\index{setBranchPredictorType@{setBranchPredictorType}!vm\_config::VmConfig@{vm\_config::VmConfig}}
+\doxysubsubsection{\texorpdfstring{setBranchPredictorType()}{setBranchPredictorType()}}
+{\footnotesize\ttfamily void vm\+\_\+config\+::\+Vm\+Config\+::set\+Branch\+Predictor\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751d}{Branch\+Predictor\+Type}} \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structvm__config_1_1VmConfig_a54bf0cfc5d2bbcd3aa4cf9273e34285d}\label{structvm__config_1_1VmConfig_a54bf0cfc5d2bbcd3aa4cf9273e34285d}} 
+\index{vm\_config::VmConfig@{vm\_config::VmConfig}!setBranchStage@{setBranchStage}}
+\index{setBranchStage@{setBranchStage}!vm\_config::VmConfig@{vm\_config::VmConfig}}
+\doxysubsubsection{\texorpdfstring{setBranchStage()}{setBranchStage()}}
+{\footnotesize\ttfamily void vm\+\_\+config\+::\+Vm\+Config\+::set\+Branch\+Stage (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacevm__config_a95a8e5163d817e700a22dd4c2b903d37}{Branch\+Stage}} \&}]{stage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 \mbox{\Hypertarget{structvm__config_1_1VmConfig_aa81411167ed2848f96178becea4f8a03}\label{structvm__config_1_1VmConfig_aa81411167ed2848f96178becea4f8a03}} 
 \index{vm\_config::VmConfig@{vm\_config::VmConfig}!setBssSectionStart@{setBssSectionStart}}
 \index{setBssSectionStart@{setBssSectionStart}!vm\_config::VmConfig@{vm\_config::VmConfig}}
 \doxysubsubsection{\texorpdfstring{setBssSectionStart()}{setBssSectionStart()}}
 {\footnotesize\ttfamily void vm\+\_\+config\+::\+Vm\+Config\+::set\+Bss\+Section\+Start (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{start }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structvm__config_1_1VmConfig_adc5b5fb3533e7dce69365048c9a78fae}\label{structvm__config_1_1VmConfig_adc5b5fb3533e7dce69365048c9a78fae}} 
+\index{vm\_config::VmConfig@{vm\_config::VmConfig}!setDataHazardMode@{setDataHazardMode}}
+\index{setDataHazardMode@{setDataHazardMode}!vm\_config::VmConfig@{vm\_config::VmConfig}}
+\doxysubsubsection{\texorpdfstring{setDataHazardMode()}{setDataHazardMode()}}
+{\footnotesize\ttfamily void vm\+\_\+config\+::\+Vm\+Config\+::set\+Data\+Hazard\+Mode (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25}{Data\+Hazard\+Mode}} \&}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{structvm__config_1_1VmConfig_a348dde0e252bab4136c92f29c8eb1a19}\label{structvm__config_1_1VmConfig_a348dde0e252bab4136c92f29c8eb1a19}} 
 \index{vm\_config::VmConfig@{vm\_config::VmConfig}!setDataSectionStart@{setDataSectionStart}}
@@ -213,12 +255,6 @@ bool \mbox{\hyperlink{structvm__config_1_1VmConfig_a180f3d1f68cc8ee848e837efa1de
 \doxysubsubsection{\texorpdfstring{setMExtensionEnabled()}{setMExtensionEnabled()}}
 {\footnotesize\ttfamily void vm\+\_\+config\+::\+Vm\+Config\+::set\+MExtension\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{structvm__config_1_1VmConfig_a75e151734d8115fd0fdbc5f718ead3bd}\label{structvm__config_1_1VmConfig_a75e151734d8115fd0fdbc5f718ead3bd}} 
-\index{vm\_config::VmConfig@{vm\_config::VmConfig}!setPipelineMode@{setPipelineMode}}
-\index{setPipelineMode@{setPipelineMode}!vm\_config::VmConfig@{vm\_config::VmConfig}}
-\doxysubsubsection{\texorpdfstring{setPipelineMode()}{setPipelineMode()}}
-{\footnotesize\ttfamily void vm\+\_\+config\+::\+Vm\+Config\+::set\+Pipeline\+Mode (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458fea}{Pipeline\+Modes}} \&}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
 \mbox{\Hypertarget{structvm__config_1_1VmConfig_a2de4c51b360792be181645482b79d6e1}\label{structvm__config_1_1VmConfig_a2de4c51b360792be181645482b79d6e1}} 
 \index{vm\_config::VmConfig@{vm\_config::VmConfig}!setRunStepDelay@{setRunStepDelay}}
 \index{setRunStepDelay@{setRunStepDelay}!vm\_config::VmConfig@{vm\_config::VmConfig}}
@@ -240,6 +276,18 @@ bool \mbox{\hyperlink{structvm__config_1_1VmConfig_a180f3d1f68cc8ee848e837efa1de
 
 
 \doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structvm__config_1_1VmConfig_a4e07aba11e7d031c2ef537d1d364739b}\label{structvm__config_1_1VmConfig_a4e07aba11e7d031c2ef537d1d364739b}} 
+\index{vm\_config::VmConfig@{vm\_config::VmConfig}!branch\_predictor\_type@{branch\_predictor\_type}}
+\index{branch\_predictor\_type@{branch\_predictor\_type}!vm\_config::VmConfig@{vm\_config::VmConfig}}
+\doxysubsubsection{\texorpdfstring{branch\_predictor\_type}{branch\_predictor\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751d}{Branch\+Predictor\+Type}} vm\+\_\+config\+::\+Vm\+Config\+::branch\+\_\+predictor\+\_\+type = \mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751da1e6f43e47ebeec0a7f958f53b77515f7}{Branch\+Predictor\+Type\+::\+STATIC\+\_\+\+NOT\+\_\+\+TAKEN}}}
+
+\mbox{\Hypertarget{structvm__config_1_1VmConfig_ab7bfe3314402d9507cf27fbcf080d335}\label{structvm__config_1_1VmConfig_ab7bfe3314402d9507cf27fbcf080d335}} 
+\index{vm\_config::VmConfig@{vm\_config::VmConfig}!branch\_stage@{branch\_stage}}
+\index{branch\_stage@{branch\_stage}!vm\_config::VmConfig@{vm\_config::VmConfig}}
+\doxysubsubsection{\texorpdfstring{branch\_stage}{branch\_stage}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacevm__config_a95a8e5163d817e700a22dd4c2b903d37}{Branch\+Stage}} vm\+\_\+config\+::\+Vm\+Config\+::branch\+\_\+stage = \mbox{\hyperlink{namespacevm__config_a95a8e5163d817e700a22dd4c2b903d37aa734abca01add327e8830687ffd7c123}{Branch\+Stage\+::\+BRANCH\+\_\+\+IN\+\_\+\+EX}}}
+
 \mbox{\Hypertarget{structvm__config_1_1VmConfig_a219e9e3f1ddeb1535d0eed15ec59895f}\label{structvm__config_1_1VmConfig_a219e9e3f1ddeb1535d0eed15ec59895f}} 
 \index{vm\_config::VmConfig@{vm\_config::VmConfig}!bss\_section\_start@{bss\_section\_start}}
 \index{bss\_section\_start@{bss\_section\_start}!vm\_config::VmConfig@{vm\_config::VmConfig}}
@@ -251,6 +299,12 @@ bool \mbox{\hyperlink{structvm__config_1_1VmConfig_a180f3d1f68cc8ee848e837efa1de
 \index{d\_extension\_enabled@{d\_extension\_enabled}!vm\_config::VmConfig@{vm\_config::VmConfig}}
 \doxysubsubsection{\texorpdfstring{d\_extension\_enabled}{d\_extension\_enabled}}
 {\footnotesize\ttfamily bool vm\+\_\+config\+::\+Vm\+Config\+::d\+\_\+extension\+\_\+enabled = true}
+
+\mbox{\Hypertarget{structvm__config_1_1VmConfig_a4f1a2d9157384069625de53f0aa8d536}\label{structvm__config_1_1VmConfig_a4f1a2d9157384069625de53f0aa8d536}} 
+\index{vm\_config::VmConfig@{vm\_config::VmConfig}!data\_hazard\_mode@{data\_hazard\_mode}}
+\index{data\_hazard\_mode@{data\_hazard\_mode}!vm\_config::VmConfig@{vm\_config::VmConfig}}
+\doxysubsubsection{\texorpdfstring{data\_hazard\_mode}{data\_hazard\_mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25}{Data\+Hazard\+Mode}} vm\+\_\+config\+::\+Vm\+Config\+::data\+\_\+hazard\+\_\+mode = \mbox{\hyperlink{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25a07df98da6e2b219bc61e36237a2bf2ff}{Data\+Hazard\+Mode\+::\+IDEAL}}}
 
 \mbox{\Hypertarget{structvm__config_1_1VmConfig_a46ea0d10309513ccb96d323625f80e3a}\label{structvm__config_1_1VmConfig_a46ea0d10309513ccb96d323625f80e3a}} 
 \index{vm\_config::VmConfig@{vm\_config::VmConfig}!data\_section\_start@{data\_section\_start}}
@@ -287,12 +341,6 @@ bool \mbox{\hyperlink{structvm__config_1_1VmConfig_a180f3d1f68cc8ee848e837efa1de
 \index{memory\_size@{memory\_size}!vm\_config::VmConfig@{vm\_config::VmConfig}}
 \doxysubsubsection{\texorpdfstring{memory\_size}{memory\_size}}
 {\footnotesize\ttfamily uint64\+\_\+t vm\+\_\+config\+::\+Vm\+Config\+::memory\+\_\+size = 0xffffffffffffffff}
-
-\mbox{\Hypertarget{structvm__config_1_1VmConfig_a2cf9c2a5caf45a34cbb9cd7677dd97bf}\label{structvm__config_1_1VmConfig_a2cf9c2a5caf45a34cbb9cd7677dd97bf}} 
-\index{vm\_config::VmConfig@{vm\_config::VmConfig}!pipeline\_mode@{pipeline\_mode}}
-\index{pipeline\_mode@{pipeline\_mode}!vm\_config::VmConfig@{vm\_config::VmConfig}}
-\doxysubsubsection{\texorpdfstring{pipeline\_mode}{pipeline\_mode}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458fea}{Pipeline\+Modes}} vm\+\_\+config\+::\+Vm\+Config\+::pipeline\+\_\+mode = \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa4bbb8f967da6d1a610596d7257179c2b}{Pipeline\+Modes\+::\+Invalid}}}
 
 \mbox{\Hypertarget{structvm__config_1_1VmConfig_a9438d71dc02eca394d21d60da75d50f9}\label{structvm__config_1_1VmConfig_a9438d71dc02eca394d21d60da75d50f9}} 
 \index{vm\_config::VmConfig@{vm\_config::VmConfig}!run\_step\_delay@{run\_step\_delay}}

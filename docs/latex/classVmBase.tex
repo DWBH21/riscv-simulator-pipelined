@@ -11,7 +11,7 @@ Inheritance diagram for Vm\+Base\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=214pt]{classVmBase__inherit__graph}
+\includegraphics[width=350pt]{classVmBase__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -26,11 +26,13 @@ Collaboration diagram for Vm\+Base\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classVmBase_abf599e805afcf71a94eb6d6d8a68735f}{Vm\+Base}} ()=default
+\mbox{\hyperlink{classVmBase_a0a2581ae30a02f4f6a2851745eddc942}{Vm\+Base}} (bool silent=false)
 \item 
 \mbox{\hyperlink{classVmBase_ad5f25b89e273d54bb85c41b4c4eb438b}{$\sim$\+Vm\+Base}} ()=default
 \item 
 void \mbox{\hyperlink{classVmBase_a4d59d9f602948448e72a7f711ac32cbf}{Load\+Program}} (const \mbox{\hyperlink{structAssembledProgram}{Assembled\+Program}} \&program)
+\item 
+void \mbox{\hyperlink{classVmBase_a15dac2537d13de70b8b2d17fde7fb4d1}{Set\+Program\+Size}} (uint64\+\_\+t size)
 \item 
 uint64\+\_\+t \mbox{\hyperlink{classVmBase_ae06d1a2ba1a7a9fbece71f643943dbd2}{Get\+Program\+Counter}} () const
 \item 
@@ -65,6 +67,8 @@ virtual bool \mbox{\hyperlink{classVmBase_a49e7906bf19ce3fd22cf5f941ed13fab}{Is\
 virtual void \mbox{\hyperlink{classVmBase_a04d991f8e23ad55a7183cc1b1245d23d}{Clear\+Stop}} ()
 \item 
 void \mbox{\hyperlink{classVmBase_aa4c112996906a10c6e8a27cbd5091c22}{Dump\+State}} (const std\+::filesystem\+::path \&filename)
+\item 
+void \mbox{\hyperlink{classVmBase_a3cf768ccffefbdb6bdd37b465cf40fe5}{Dump\+Final\+State}} (const std\+::filesystem\+::path \&filename, uint64\+\_\+t mem\+\_\+base\+\_\+addr)
 \item 
 void \mbox{\hyperlink{classVmBase_aafff61aba5fac925eb82f5b533b2df4e}{Modify\+Register}} (const std\+::string \&reg\+\_\+name, uint64\+\_\+t value)
 \item 
@@ -110,15 +114,22 @@ std\+::string \mbox{\hyperlink{classVmBase_aa43e33d68e5bd133abb0b519b0e08b6e}{ou
 \mbox{\hyperlink{classalu_1_1Alu}{alu\+::\+Alu}} \mbox{\hyperlink{classVmBase_ae3030c966af171bb3a504c55bc53520c}{alu\+\_\+}}
 \item 
 uint64\+\_\+t \mbox{\hyperlink{classVmBase_a95d14315496f42dd5be394f0ab950539}{program\+\_\+size\+\_\+}} = 0
+\item 
+bool \mbox{\hyperlink{classVmBase_a5cb91fd94dff0c7dcc594b73dba12c16}{silent\+\_\+mode\+\_\+}} = false
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr uint64\+\_\+t \mbox{\hyperlink{classVmBase_aab035cb6550a9ee6c69ca80c472737b6}{k\+Test\+Mem\+Dump\+Size}} = 256
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classVmBase_abf599e805afcf71a94eb6d6d8a68735f}\label{classVmBase_abf599e805afcf71a94eb6d6d8a68735f}} 
+\mbox{\Hypertarget{classVmBase_a0a2581ae30a02f4f6a2851745eddc942}\label{classVmBase_a0a2581ae30a02f4f6a2851745eddc942}} 
 \index{VmBase@{VmBase}!VmBase@{VmBase}}
 \index{VmBase@{VmBase}!VmBase@{VmBase}}
 \doxysubsubsection{\texorpdfstring{VmBase()}{VmBase()}}
-{\footnotesize\ttfamily Vm\+Base\+::\+Vm\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+{\footnotesize\ttfamily Vm\+Base\+::\+Vm\+Base (\begin{DoxyParamCaption}\item[{bool}]{silent = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 \mbox{\Hypertarget{classVmBase_ad5f25b89e273d54bb85c41b4c4eb438b}\label{classVmBase_ad5f25b89e273d54bb85c41b4c4eb438b}} 
 \index{VmBase@{VmBase}!````~VmBase@{$\sim$VmBase}}
@@ -155,7 +166,13 @@ uint64\+\_\+t \mbox{\hyperlink{classVmBase_a95d14315496f42dd5be394f0ab950539}{pr
 
 
 
-Implemented in \mbox{\hyperlink{classRVSSVM_a8b954269c60ab390ecca05966dacb47e}{RVSSVM}}, and \mbox{\hyperlink{classRV5SVM_a976104059b9f28048b4b2f0f7545ab99}{RV5\+SVM}}.
+Implemented in \mbox{\hyperlink{classRVSSVM_a8b954269c60ab390ecca05966dacb47e}{RVSSVM}}, \mbox{\hyperlink{classRV5SVM_a976104059b9f28048b4b2f0f7545ab99}{RV5\+SVM}}, \mbox{\hyperlink{classRV5SStallVM_a3bf4f680d5358afb571c3daeea169456}{RV5\+SStall\+VM}}, \mbox{\hyperlink{classRV5SIDVM_aa6d9eb67252ef9c6d8d685d582b5df11}{RV5\+SIDVM}}, and \mbox{\hyperlink{classRV5SEXVM_a856db7399fec485187b440dd82cd1435}{RV5\+SEXVM}}.
+
+\mbox{\Hypertarget{classVmBase_a3cf768ccffefbdb6bdd37b465cf40fe5}\label{classVmBase_a3cf768ccffefbdb6bdd37b465cf40fe5}} 
+\index{VmBase@{VmBase}!DumpFinalState@{DumpFinalState}}
+\index{DumpFinalState@{DumpFinalState}!VmBase@{VmBase}}
+\doxysubsubsection{\texorpdfstring{DumpFinalState()}{DumpFinalState()}}
+{\footnotesize\ttfamily void Vm\+Base\+::\+Dump\+Final\+State (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{filename,  }\item[{uint64\+\_\+t}]{mem\+\_\+base\+\_\+addr }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classVmBase_aa4c112996906a10c6e8a27cbd5091c22}\label{classVmBase_aa4c112996906a10c6e8a27cbd5091c22}} 
 \index{VmBase@{VmBase}!DumpState@{DumpState}}
@@ -213,7 +230,7 @@ Implemented in \mbox{\hyperlink{classRVSSVM_a8b954269c60ab390ecca05966dacb47e}{R
 
 
 
-Implemented in \mbox{\hyperlink{classRVSSVM_a9cb130b8c84159be82027d49ce3e4279}{RVSSVM}}, and \mbox{\hyperlink{classRV5SVM_ab2dae5a89f3e454fc740feee8fae5d0f}{RV5\+SVM}}.
+Implemented in \mbox{\hyperlink{classRVSSVM_a9cb130b8c84159be82027d49ce3e4279}{RVSSVM}}, \mbox{\hyperlink{classRV5SVM_ab2dae5a89f3e454fc740feee8fae5d0f}{RV5\+SVM}}, \mbox{\hyperlink{classRV5SStallVM_a6242c6d64bb59a85369f616682df8822}{RV5\+SStall\+VM}}, \mbox{\hyperlink{classRV5SIDVM_abce4983f6331f36cb18ac68f99e9490c}{RV5\+SIDVM}}, and \mbox{\hyperlink{classRV5SEXVM_a6e35660fbe404ff256e60e68fc46d7a3}{RV5\+SEXVM}}.
 
 \mbox{\Hypertarget{classVmBase_aecc5b0b4fdfa89cfae4c71aff1275210}\label{classVmBase_aecc5b0b4fdfa89cfae4c71aff1275210}} 
 \index{VmBase@{VmBase}!RemoveBreakpoint@{RemoveBreakpoint}}
@@ -235,7 +252,7 @@ Implemented in \mbox{\hyperlink{classRVSSVM_a9cb130b8c84159be82027d49ce3e4279}{R
 
 
 
-Implemented in \mbox{\hyperlink{classRVSSVM_aa75bbde8be42c275f928681e372d6c7c}{RVSSVM}}, and \mbox{\hyperlink{classRV5SVM_a654893f3844e6002704db2e5dc36ea35}{RV5\+SVM}}.
+Implemented in \mbox{\hyperlink{classRVSSVM_aa75bbde8be42c275f928681e372d6c7c}{RVSSVM}}, \mbox{\hyperlink{classRV5SVM_a654893f3844e6002704db2e5dc36ea35}{RV5\+SVM}}, \mbox{\hyperlink{classRV5SStallVM_a1c53afc98b74ea81995c4ea20720f260}{RV5\+SStall\+VM}}, \mbox{\hyperlink{classRV5SIDVM_aa88761c4629d640fc18f1098fd53e524}{RV5\+SIDVM}}, and \mbox{\hyperlink{classRV5SEXVM_a371fd6d67468a73d9c17e9ba95fed7f8}{RV5\+SEXVM}}.
 
 \mbox{\Hypertarget{classVmBase_ab99aff7b91e22e2b041d310791ae0281}\label{classVmBase_ab99aff7b91e22e2b041d310791ae0281}} 
 \index{VmBase@{VmBase}!Run@{Run}}
@@ -245,7 +262,13 @@ Implemented in \mbox{\hyperlink{classRVSSVM_aa75bbde8be42c275f928681e372d6c7c}{R
 
 
 
-Implemented in \mbox{\hyperlink{classRVSSVM_a0aa85843a97344299380afebc83d2a5e}{RVSSVM}}, and \mbox{\hyperlink{classRV5SVM_a1710e4750daf34a8af45479f37cc44c5}{RV5\+SVM}}.
+Implemented in \mbox{\hyperlink{classRVSSVM_a0aa85843a97344299380afebc83d2a5e}{RVSSVM}}, \mbox{\hyperlink{classRV5SVM_a1710e4750daf34a8af45479f37cc44c5}{RV5\+SVM}}, \mbox{\hyperlink{classRV5SStallVM_af02371ce78f42f6a71f4e4921cbad739}{RV5\+SStall\+VM}}, \mbox{\hyperlink{classRV5SIDVM_a128e9c5a72433af14ba636eb6b05542d}{RV5\+SIDVM}}, and \mbox{\hyperlink{classRV5SEXVM_ab0e2202522e52ba2ae77b982464f9c0d}{RV5\+SEXVM}}.
+
+\mbox{\Hypertarget{classVmBase_a15dac2537d13de70b8b2d17fde7fb4d1}\label{classVmBase_a15dac2537d13de70b8b2d17fde7fb4d1}} 
+\index{VmBase@{VmBase}!SetProgramSize@{SetProgramSize}}
+\index{SetProgramSize@{SetProgramSize}!VmBase@{VmBase}}
+\doxysubsubsection{\texorpdfstring{SetProgramSize()}{SetProgramSize()}}
+{\footnotesize\ttfamily void Vm\+Base\+::\+Set\+Program\+Size (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{size }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classVmBase_a78fa2e4cc76ab45ca84e164b7b0af119}\label{classVmBase_a78fa2e4cc76ab45ca84e164b7b0af119}} 
 \index{VmBase@{VmBase}!Step@{Step}}
@@ -255,7 +278,7 @@ Implemented in \mbox{\hyperlink{classRVSSVM_a0aa85843a97344299380afebc83d2a5e}{R
 
 
 
-Implemented in \mbox{\hyperlink{classRVSSVM_a5547766e7446048242849d2510e3b2ef}{RVSSVM}}, and \mbox{\hyperlink{classRV5SVM_afb43c1466cebec9376c61a5e823e0769}{RV5\+SVM}}.
+Implemented in \mbox{\hyperlink{classRVSSVM_a5547766e7446048242849d2510e3b2ef}{RVSSVM}}, \mbox{\hyperlink{classRV5SVM_afb43c1466cebec9376c61a5e823e0769}{RV5\+SVM}}, \mbox{\hyperlink{classRV5SStallVM_a7dedf312dc9adf15984762eb2a5e01af}{RV5\+SStall\+VM}}, \mbox{\hyperlink{classRV5SIDVM_a053ef43cc4d3fe78f5a07cf080f60cf8}{RV5\+SIDVM}}, and \mbox{\hyperlink{classRV5SEXVM_a7d60a1177a8f18df63d052fa0740b0a3}{RV5\+SEXVM}}.
 
 \mbox{\Hypertarget{classVmBase_a141e025834dd6b9d68f08db7959ed391}\label{classVmBase_a141e025834dd6b9d68f08db7959ed391}} 
 \index{VmBase@{VmBase}!Undo@{Undo}}
@@ -265,7 +288,7 @@ Implemented in \mbox{\hyperlink{classRVSSVM_a5547766e7446048242849d2510e3b2ef}{R
 
 
 
-Implemented in \mbox{\hyperlink{classRVSSVM_aabc759ac821f87303daa71c9480b8756}{RVSSVM}}, and \mbox{\hyperlink{classRV5SVM_a080d127429f7058394f6f74fbe565406}{RV5\+SVM}}.
+Implemented in \mbox{\hyperlink{classRVSSVM_aabc759ac821f87303daa71c9480b8756}{RVSSVM}}, \mbox{\hyperlink{classRV5SVM_a080d127429f7058394f6f74fbe565406}{RV5\+SVM}}, \mbox{\hyperlink{classRV5SStallVM_af26fb9e5854051f51dd70431a63b5d4e}{RV5\+SStall\+VM}}, \mbox{\hyperlink{classRV5SIDVM_abd6eba80e97f0f6b3c74ecd3a7bf23d0}{RV5\+SIDVM}}, and \mbox{\hyperlink{classRV5SEXVM_abf29a2668a1da3010f06451e06cc7ed6}{RV5\+SEXVM}}.
 
 \mbox{\Hypertarget{classVmBase_ac40cd15fd5481498cc87f9754d8ac979}\label{classVmBase_ac40cd15fd5481498cc87f9754d8ac979}} 
 \index{VmBase@{VmBase}!UpdateProgramCounter@{UpdateProgramCounter}}
@@ -342,6 +365,12 @@ Implemented in \mbox{\hyperlink{classRVSSVM_aabc759ac821f87303daa71c9480b8756}{R
 \doxysubsubsection{\texorpdfstring{ipc\_}{ipc\_}}
 {\footnotesize\ttfamily float Vm\+Base\+::ipc\+\_\+ \{\}}
 
+\mbox{\Hypertarget{classVmBase_aab035cb6550a9ee6c69ca80c472737b6}\label{classVmBase_aab035cb6550a9ee6c69ca80c472737b6}} 
+\index{VmBase@{VmBase}!kTestMemDumpSize@{kTestMemDumpSize}}
+\index{kTestMemDumpSize@{kTestMemDumpSize}!VmBase@{VmBase}}
+\doxysubsubsection{\texorpdfstring{kTestMemDumpSize}{kTestMemDumpSize}}
+{\footnotesize\ttfamily constexpr uint64\+\_\+t Vm\+Base\+::k\+Test\+Mem\+Dump\+Size = 256\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
 \mbox{\Hypertarget{classVmBase_a54b7f11e76ff40b5fa08757fffe0a714}\label{classVmBase_a54b7f11e76ff40b5fa08757fffe0a714}} 
 \index{VmBase@{VmBase}!memory\_controller\_@{memory\_controller\_}}
 \index{memory\_controller\_@{memory\_controller\_}!VmBase@{VmBase}}
@@ -377,6 +406,12 @@ Implemented in \mbox{\hyperlink{classRVSSVM_aabc759ac821f87303daa71c9480b8756}{R
 \index{registers\_@{registers\_}!VmBase@{VmBase}}
 \doxysubsubsection{\texorpdfstring{registers\_}{registers\_}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classRegisterFile}{Register\+File}} Vm\+Base\+::registers\+\_\+}
+
+\mbox{\Hypertarget{classVmBase_a5cb91fd94dff0c7dcc594b73dba12c16}\label{classVmBase_a5cb91fd94dff0c7dcc594b73dba12c16}} 
+\index{VmBase@{VmBase}!silent\_mode\_@{silent\_mode\_}}
+\index{silent\_mode\_@{silent\_mode\_}!VmBase@{VmBase}}
+\doxysubsubsection{\texorpdfstring{silent\_mode\_}{silent\_mode\_}}
+{\footnotesize\ttfamily bool Vm\+Base\+::silent\+\_\+mode\+\_\+ = false}
 
 \mbox{\Hypertarget{classVmBase_a38693d7be1698897816ea448231f12b9}\label{classVmBase_a38693d7be1698897816ea448231f12b9}} 
 \index{VmBase@{VmBase}!stall\_cycles\_@{stall\_cycles\_}}

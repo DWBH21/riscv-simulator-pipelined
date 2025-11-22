@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['undo_1479',['Undo',['../classRV5SVM.html#a080d127429f7058394f6f74fbe565406',1,'RV5SVM::Undo()'],['../classRVSSVM.html#aabc759ac821f87303daa71c9480b8756',1,'RVSSVM::Undo()'],['../classVmBase.html#a141e025834dd6b9d68f08db7959ed391',1,'VmBase::Undo()']]],
-  ['unexpectedoperanderror_1480',['UnexpectedOperandError',['../structerrors_1_1UnexpectedOperandError.html#a94396fd323a94328e699a14467a9ca99',1,'errors::UnexpectedOperandError']]],
-  ['unexpectedtokenerror_1481',['UnexpectedTokenError',['../structerrors_1_1UnexpectedTokenError.html#a236bc1c5c9d2afeb534d38fab45aae9d',1,'errors::UnexpectedTokenError']]],
-  ['updateprogramcounter_1482',['UpdateProgramCounter',['../classVmBase.html#ac40cd15fd5481498cc87f9754d8ac979',1,'VmBase']]],
-  ['utypeinstructionencoding_1483',['UTypeInstructionEncoding',['../structinstruction__set_1_1UTypeInstructionEncoding.html#aa35e9b41d62ab6b26810dfd86c25f6f0',1,'instruction_set::UTypeInstructionEncoding']]]
+  ['undo_1768',['Undo',['../classRV5SEXVM.html#abf29a2668a1da3010f06451e06cc7ed6',1,'RV5SEXVM::Undo()'],['../classRV5SIDVM.html#abd6eba80e97f0f6b3c74ecd3a7bf23d0',1,'RV5SIDVM::Undo()'],['../classRV5SStallVM.html#af26fb9e5854051f51dd70431a63b5d4e',1,'RV5SStallVM::Undo()'],['../classRV5SVM.html#a080d127429f7058394f6f74fbe565406',1,'RV5SVM::Undo()'],['../classRVSSVM.html#aabc759ac821f87303daa71c9480b8756',1,'RVSSVM::Undo()'],['../classVmBase.html#a141e025834dd6b9d68f08db7959ed391',1,'VmBase::Undo()']]],
+  ['unexpectedoperanderror_1769',['UnexpectedOperandError',['../structerrors_1_1UnexpectedOperandError.html#a94396fd323a94328e699a14467a9ca99',1,'errors::UnexpectedOperandError']]],
+  ['unexpectedtokenerror_1770',['UnexpectedTokenError',['../structerrors_1_1UnexpectedTokenError.html#a236bc1c5c9d2afeb534d38fab45aae9d',1,'errors::UnexpectedTokenError']]],
+  ['updateprogramcounter_1771',['UpdateProgramCounter',['../classVmBase.html#ac40cd15fd5481498cc87f9754d8ac979',1,'VmBase']]],
+  ['updatestate_1772',['updateState',['../classDynamic1BitPredictor.html#a57ab3e99b80033199321d1ab1b5c0a54',1,'Dynamic1BitPredictor::updateState()'],['../classDynamic2BitPredictor.html#a5ed1d606c7754b29b731d2d003286923',1,'Dynamic2BitPredictor::updateState()'],['../classIBranchPredictor.html#ade8be8286578374f694d2966d4b86b24',1,'IBranchPredictor::updateState()'],['../classStaticTakenPredictor.html#a705807316807b3f1b7663f69eaeed9c4',1,'StaticTakenPredictor::updateState()'],['../classStaticNotTakenPredictor.html#a4eb725d976f5f720c6c8fae783d35dbc',1,'StaticNotTakenPredictor::updateState()']]],
+  ['utypeinstructionencoding_1773',['UTypeInstructionEncoding',['../structinstruction__set_1_1UTypeInstructionEncoding.html#aa35e9b41d62ab6b26810dfd86c25f6f0',1,'instruction_set::UTypeInstructionEncoding']]]
 ];

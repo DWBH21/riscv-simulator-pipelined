@@ -4,6 +4,7 @@
 #include "globals.h"
 #include "vm/rvss/rvss_vm.h"
 #include "vm/rv5s/rv5s_vm.h"
+#include "vm/rv5s/rv5s_ex_vm.h"
 #include "vm_runner.h"
 #include "command_handler.h"
 #include "config.h"
@@ -13,7 +14,40 @@
 #include <bitset>
 #include <regex>
 
+// Helper to initialize a new VM object from the changed config modes
+std::unique_ptr<VmBase> initializeVm() {
+    std::unique_ptr<VmBase> vm;
+    vm_config::VmTypes vmType = vm_config::config.getVmType();
 
+    if (vmType == vm_config::VmTypes::SINGLE_STAGE) {
+        std::cout << "Initializing Single-Stage VM..." << std::endl;
+        vm = std::make_unique<RVSSVM>();
+    } else {
+        vm_config::DataHazardMode hazardMode = vm_config::config.getDataHazardMode();
+        vm_config::BranchStage branch_stage = vm_config::config.getBranchStage();
+
+        if (hazardMode == vm_config::DataHazardMode::IDEAL) {
+            std::cout << "Initializing 5-Stage Pipeline VM (Ideal Mode)..." << std::endl;
+            vm = std::make_unique<RV5SVM>(); 
+        } else {
+            if (branch_stage == vm_config::BranchStage::BRANCH_IN_EX) {
+                
+                std::cout << "Initializing 5-Stage Pipeline VM (Branch in EX)..." << std::endl;
+                auto rv5s_vm = std::make_unique<RV5SEXVM>();
+
+                rv5s_vm->setBranchPredictorType(vm_config::config.getBranchPredictorType());
+                
+                bool forwarding_enabled = (hazardMode == vm_config::DataHazardMode::FORWARDING);
+                rv5s_vm->enableForwarding(forwarding_enabled);
+                vm = std::move(rv5s_vm);
+            } else {
+                std::cerr << "Error main.cpp: Combination of requested Pipeline Modes not supported." << std::endl;
+                vm = std::make_unique<RVSSVM>();
+            }
+        }
+    }
+    return vm;
+}
 
 int main(int argc, char *argv[]) {
   if (argc <= 1) {
@@ -28,14 +62,29 @@ int main(int argc, char *argv[]) {
     if (arg == "--help" || arg == "-h") {
         std::cout << "Usage: " << argv[0] << " [options]\n"
                   << "Options:\n"
-                  << "  --help, -h           Show this help message\n"
-                  << "  --assemble <file>    Assemble the specified file\n"
-                  << "  --run <file>         Run the specified file\n"
-                  << "  --verbose-errors     Enable verbose error printing\n"
-                  << "  --start-vm           Start the VM with the default program\n"
-                  << "  --start-vm --vm-as-backend  Start the VM with the default program in backend mode\n";
+                  << "  --help, -h                             Show this help message\n"
+                  << "  --assemble <file>                      Assemble the specified file\n"
+                  << "  --config <section> <key> <value>       Modify vm config\n"
+                  << "  --run <file>                           Run the specified file\n"
+                  << "  --verbose-errors                       Enable verbose error printing\n"
+                  << "  --start-vm                             Start the VM with the default program\n"
+                  << "  --start-vm --vm-as-backend             Start the VM with the default program in backend mode\n";
         return 0;
 
+    } else if (arg == "--config") {
+        if (i + 3 >= argc) {
+            std::cerr << "Error: --config requires 3 arguments: <SECTION> <KEY> <VALUE>\n";
+            return 1;
+        }
+        std::string section = argv[++i];
+        std::string key = argv[++i];
+        std::string value = argv[++i];
+        try {
+            vm_config::config.modifyConfig(section, key, value);
+        } catch (const std::exception &e) {
+            std::cerr << "Configuration Error: " << e.what() << '\n';
+            return 1;
+        }
     } else if (arg == "--assemble") {
         if (++i >= argc) {
             std::cerr << "Error: No file specified for assembly.\n";
@@ -56,13 +105,7 @@ int main(int argc, char *argv[]) {
             return 1;
         }
         try {
-            if (vm_config::config.getVmType() == vm_config::VmTypes::SINGLE_STAGE) {
-                std::cout << "Initializing Single-Stage vm_ptr->.." << std::endl;
-                vm_ptr = std::make_unique<RVSSVM>();
-            } else {
-                std::cout << "Initializing 5-Stage Pipeline vm_ptr->.." << std::endl;
-                vm_ptr = std::make_unique<RV5SVM>();
-            }
+            vm_ptr = initializeVm(); // <-- UPDATED
             AssembledProgram program = assemble(argv[i]);
             RVSSVM vm;
             vm_ptr->LoadProgram(program);
@@ -94,15 +137,8 @@ int main(int argc, char *argv[]) {
 
   setupVmStateDirectory();
 
-  // initializing the vm_ptr again on the basis of the config file
-  if (vm_config::config.getVmType() == vm_config::VmTypes::SINGLE_STAGE) {
-      std::cout << "Initializing Single-Stage vm_ptr->.." << std::endl;
-      vm_ptr = std::make_unique<RVSSVM>();
-  } else {
-      std::cout << "Initializing 5-Stage Pipeline vm_ptr->.." << std::endl;
-      vm_ptr = std::make_unique<RV5SVM>();
-  }
-
+  // initializing the vm_ptr on the basis of the config file
+  vm_ptr = initializeVm();
   AssembledProgram program;
   RVSSVM vm;
   // try {
@@ -162,15 +198,10 @@ int main(int argc, char *argv[]) {
       try {
         vm_config::config.modifyConfig(command.args[0], command.args[1], command.args[2]);
         std::cout << "VM_MODIFY_CONFIG_SUCCESS" << std::endl;
-        if (vm_config::config.getVmType() == vm_config::VmTypes::SINGLE_STAGE) {
-            std::cout << "Initializing Single-Stage vm_ptr->.." << std::endl;
-            vm_ptr = std::make_unique<RVSSVM>();
-        } else {
-            std::cout << "Initializing 5-Stage Pipeline vm_ptr->.." << std::endl;
-            vm_ptr = std::make_unique<RV5SVM>();
-        }
+        
+        vm_ptr = initializeVm();
 
-        // Check if the program from the previous load exists
+        // Checking if the program from the previous load exists
         if (!program.filename.empty()) {
             std::cout << "Re-loading existing program: " << program.filename << std::endl;
             vm_ptr->LoadProgram(program);

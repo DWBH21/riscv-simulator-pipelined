@@ -1,0 +1,97 @@
+\hypertarget{classDynamic2BitPredictor}{}\doxysection{Dynamic2\+Bit\+Predictor Class Reference}
+\label{classDynamic2BitPredictor}\index{Dynamic2BitPredictor@{Dynamic2BitPredictor}}
+
+
+{\ttfamily \#include $<$dynamic\+\_\+2bit\+\_\+predictor.\+h$>$}
+
+
+
+Inheritance diagram for Dynamic2\+Bit\+Predictor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{classDynamic2BitPredictor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dynamic2\+Bit\+Predictor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{classDynamic2BitPredictor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDynamic2BitPredictor_ab8c5cd97ce05fee361e6f8498eaa9377}{Dynamic2\+Bit\+Predictor}} ()=default
+\item 
+bool \mbox{\hyperlink{classDynamic2BitPredictor_a2f68bec16ce205cdcc04a425e623827a}{get\+Prediction}} (uint64\+\_\+t pc) override
+\item 
+void \mbox{\hyperlink{classDynamic2BitPredictor_a5ed1d606c7754b29b731d2d003286923}{update\+State}} (uint64\+\_\+t pc, bool predicted, bool actual\+\_\+outcome) override
+\item 
+unsigned int \mbox{\hyperlink{classDynamic2BitPredictor_ace6a5e66f7282f82e4fcecfe2ccd3c97}{get\+Mispredictions}} () const override
+\item 
+\mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751d}{vm\+\_\+config\+::\+Branch\+Predictor\+Type}} \mbox{\hyperlink{classDynamic2BitPredictor_ab36ede3406292c37fef339046cfcff24}{get\+Predictor\+Type}} () const override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDynamic2BitPredictor_ab8c5cd97ce05fee361e6f8498eaa9377}\label{classDynamic2BitPredictor_ab8c5cd97ce05fee361e6f8498eaa9377}} 
+\index{Dynamic2BitPredictor@{Dynamic2BitPredictor}!Dynamic2BitPredictor@{Dynamic2BitPredictor}}
+\index{Dynamic2BitPredictor@{Dynamic2BitPredictor}!Dynamic2BitPredictor@{Dynamic2BitPredictor}}
+\doxysubsubsection{\texorpdfstring{Dynamic2BitPredictor()}{Dynamic2BitPredictor()}}
+{\footnotesize\ttfamily Dynamic2\+Bit\+Predictor\+::\+Dynamic2\+Bit\+Predictor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDynamic2BitPredictor_ace6a5e66f7282f82e4fcecfe2ccd3c97}\label{classDynamic2BitPredictor_ace6a5e66f7282f82e4fcecfe2ccd3c97}} 
+\index{Dynamic2BitPredictor@{Dynamic2BitPredictor}!getMispredictions@{getMispredictions}}
+\index{getMispredictions@{getMispredictions}!Dynamic2BitPredictor@{Dynamic2BitPredictor}}
+\doxysubsubsection{\texorpdfstring{getMispredictions()}{getMispredictions()}}
+{\footnotesize\ttfamily unsigned int Dynamic2\+Bit\+Predictor\+::get\+Mispredictions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIBranchPredictor_afbddaed294865d5b18cb4e40e8dd2d48}{IBranch\+Predictor}}.
+
+\mbox{\Hypertarget{classDynamic2BitPredictor_a2f68bec16ce205cdcc04a425e623827a}\label{classDynamic2BitPredictor_a2f68bec16ce205cdcc04a425e623827a}} 
+\index{Dynamic2BitPredictor@{Dynamic2BitPredictor}!getPrediction@{getPrediction}}
+\index{getPrediction@{getPrediction}!Dynamic2BitPredictor@{Dynamic2BitPredictor}}
+\doxysubsubsection{\texorpdfstring{getPrediction()}{getPrediction()}}
+{\footnotesize\ttfamily bool Dynamic2\+Bit\+Predictor\+::get\+Prediction (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{pc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIBranchPredictor_a723533cc8b8c21226dc930b1a88dceab}{IBranch\+Predictor}}.
+
+\mbox{\Hypertarget{classDynamic2BitPredictor_ab36ede3406292c37fef339046cfcff24}\label{classDynamic2BitPredictor_ab36ede3406292c37fef339046cfcff24}} 
+\index{Dynamic2BitPredictor@{Dynamic2BitPredictor}!getPredictorType@{getPredictorType}}
+\index{getPredictorType@{getPredictorType}!Dynamic2BitPredictor@{Dynamic2BitPredictor}}
+\doxysubsubsection{\texorpdfstring{getPredictorType()}{getPredictorType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751d}{vm\+\_\+config\+::\+Branch\+Predictor\+Type}} Dynamic2\+Bit\+Predictor\+::get\+Predictor\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIBranchPredictor_ad66851426c7ad28eee72df1e65f60fa1}{IBranch\+Predictor}}.
+
+\mbox{\Hypertarget{classDynamic2BitPredictor_a5ed1d606c7754b29b731d2d003286923}\label{classDynamic2BitPredictor_a5ed1d606c7754b29b731d2d003286923}} 
+\index{Dynamic2BitPredictor@{Dynamic2BitPredictor}!updateState@{updateState}}
+\index{updateState@{updateState}!Dynamic2BitPredictor@{Dynamic2BitPredictor}}
+\doxysubsubsection{\texorpdfstring{updateState()}{updateState()}}
+{\footnotesize\ttfamily void Dynamic2\+Bit\+Predictor\+::update\+State (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{pc,  }\item[{bool}]{predicted,  }\item[{bool}]{actual\+\_\+outcome }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIBranchPredictor_ade8be8286578374f694d2966d4b86b24}{IBranch\+Predictor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/vm/rv5s/branch\+\_\+prediction/\mbox{\hyperlink{dynamic__2bit__predictor_8h}{dynamic\+\_\+2bit\+\_\+predictor.\+h}}\item 
+src/vm/rv5s/branch\+\_\+prediction/\mbox{\hyperlink{dynamic__2bit__predictor_8cpp}{dynamic\+\_\+2bit\+\_\+predictor.\+cpp}}\end{DoxyCompactItemize}

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['registertype_1751',['RegisterType',['../classRegisterFile.html#ad20885f84b337c67fd63b230e11ba230',1,'RegisterFile']]],
-  ['replacementpolicy_1752',['ReplacementPolicy',['../namespacecache.html#afdbade0aa5657d2124a87a5dbc578c8c',1,'cache']]],
-  ['roundingmode_1753',['RoundingMode',['../rounding__modes_8h.html#a5959c934b204c7bcb6766cfaea8ae101',1,'rounding_modes.h']]]
+  ['memreadop_2103',['MemReadOp',['../namespaceinstruction__type.html#a88b81fb5d72298ebb6e839fdbbe13b24',1,'instruction_type']]],
+  ['memwriteop_2104',['MemWriteOp',['../namespaceinstruction__type.html#a2099622d17eaf6717ae3a57eed1113a3',1,'instruction_type']]]
 ];

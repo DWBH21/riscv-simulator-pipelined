@@ -105,7 +105,7 @@ ControlSignals RV5SControlUnit::getControlSignals(uint32_t instruction) {
     case 0b0010111: {// AUIPC (Add Upper Immediate to PC)
       signals.alu_src_b = true;
       signals.reg_write = true; // alu will add immediate to PC
-       signals.wb_src = WriteBackSrc::WB_FROM_ALU;
+      signals.wb_src = WriteBackSrc::WB_FROM_ALU;
       signals.alu_src_a = AluSrcA::ALU_SRC_A_PC;
       break;
     }
@@ -113,6 +113,9 @@ ControlSignals RV5SControlUnit::getControlSignals(uint32_t instruction) {
       signals.reg_write = true;
       signals.branch = true;
       signals.wb_src = WriteBackSrc::WB_FROM_PC_INC;
+
+      signals.alu_src_a = AluSrcA::ALU_SRC_A_PC;   // Use PC as the first operand
+      signals.alu_src_b = true;
       break;
     }
     case 0b1100111: {// JALR (Jump and Link Register)
@@ -120,6 +123,8 @@ ControlSignals RV5SControlUnit::getControlSignals(uint32_t instruction) {
       signals.reg_write = true;
       signals.branch = true;
       signals.wb_src = WriteBackSrc::WB_FROM_PC_INC;
+
+      signals.alu_src_a = AluSrcA::ALU_SRC_A_RS1;   // specifying again
       break;
     }
     case 0b0000001: {// kMul

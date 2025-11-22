@@ -1,0 +1,69 @@
+\hypertarget{classRV5SHazardUnit}{}\doxysection{RV5\+SHazard\+Unit Class Reference}
+\label{classRV5SHazardUnit}\index{RV5SHazardUnit@{RV5SHazardUnit}}
+
+
+{\ttfamily \#include $<$rv5s\+\_\+hazard\+\_\+unit.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRV5SHazardUnit_a7db424404ee2e3835c0049a0c3fd6a0e}{RV5\+SHazard\+Unit}} ()=default
+\item 
+\mbox{\hyperlink{classRV5SHazardUnit_a45cf61ca1faf0a054debd09a5358e4f9}{$\sim$\+RV5\+SHazard\+Unit}} ()=default
+\item 
+bool \mbox{\hyperlink{classRV5SHazardUnit_ad3904ce4fcc04a7ed103d8d8f7967ddd}{detect\+Hazard}} (\mbox{\hyperlink{structControlSignals}{Control\+Signals}} signals, uint8\+\_\+t rs1\+\_\+index, uint8\+\_\+t rs2\+\_\+index, \mbox{\hyperlink{structID__EX__Reg}{ID\+\_\+\+EX\+\_\+\+Reg}} id\+\_\+ex\+\_\+reg, \mbox{\hyperlink{structEX__MEM__Reg}{EX\+\_\+\+MEM\+\_\+\+Reg}} ex\+\_\+mem\+\_\+reg)
+\item 
+bool \mbox{\hyperlink{classRV5SHazardUnit_ad5a48cd7468c70f3ed59d41f8b8838f7}{detect\+Data\+Hazard}} (\mbox{\hyperlink{structControlSignals}{Control\+Signals}} signals, uint8\+\_\+t rs1\+\_\+index, uint8\+\_\+t rs2\+\_\+index, \mbox{\hyperlink{structID__EX__Reg}{ID\+\_\+\+EX\+\_\+\+Reg}} id\+\_\+ex\+\_\+reg, \mbox{\hyperlink{structEX__MEM__Reg}{EX\+\_\+\+MEM\+\_\+\+Reg}} ex\+\_\+mem\+\_\+reg)
+\item 
+bool \mbox{\hyperlink{classRV5SHazardUnit_aaaa1769b566bc7d7e1defbbf6680125e}{detect\+Load\+Use\+Hazard}} (\mbox{\hyperlink{structControlSignals}{Control\+Signals}} signals, uint8\+\_\+t rs1\+\_\+index, uint8\+\_\+t rs2\+\_\+index, \mbox{\hyperlink{structID__EX__Reg}{ID\+\_\+\+EX\+\_\+\+Reg}} id\+\_\+ex\+\_\+reg)
+\item 
+bool \mbox{\hyperlink{classRV5SHazardUnit_a3537d7df4eb8c8ab34c88e5387a392b7}{detect\+Control\+Hazard}} (\mbox{\hyperlink{structControlSignals}{Control\+Signals}} signals)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRV5SHazardUnit_a7db424404ee2e3835c0049a0c3fd6a0e}\label{classRV5SHazardUnit_a7db424404ee2e3835c0049a0c3fd6a0e}} 
+\index{RV5SHazardUnit@{RV5SHazardUnit}!RV5SHazardUnit@{RV5SHazardUnit}}
+\index{RV5SHazardUnit@{RV5SHazardUnit}!RV5SHazardUnit@{RV5SHazardUnit}}
+\doxysubsubsection{\texorpdfstring{RV5SHazardUnit()}{RV5SHazardUnit()}}
+{\footnotesize\ttfamily RV5\+SHazard\+Unit\+::\+RV5\+SHazard\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classRV5SHazardUnit_a45cf61ca1faf0a054debd09a5358e4f9}\label{classRV5SHazardUnit_a45cf61ca1faf0a054debd09a5358e4f9}} 
+\index{RV5SHazardUnit@{RV5SHazardUnit}!````~RV5SHazardUnit@{$\sim$RV5SHazardUnit}}
+\index{````~RV5SHazardUnit@{$\sim$RV5SHazardUnit}!RV5SHazardUnit@{RV5SHazardUnit}}
+\doxysubsubsection{\texorpdfstring{$\sim$RV5SHazardUnit()}{~RV5SHazardUnit()}}
+{\footnotesize\ttfamily RV5\+SHazard\+Unit\+::$\sim$\+RV5\+SHazard\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRV5SHazardUnit_a3537d7df4eb8c8ab34c88e5387a392b7}\label{classRV5SHazardUnit_a3537d7df4eb8c8ab34c88e5387a392b7}} 
+\index{RV5SHazardUnit@{RV5SHazardUnit}!detectControlHazard@{detectControlHazard}}
+\index{detectControlHazard@{detectControlHazard}!RV5SHazardUnit@{RV5SHazardUnit}}
+\doxysubsubsection{\texorpdfstring{detectControlHazard()}{detectControlHazard()}}
+{\footnotesize\ttfamily bool RV5\+SHazard\+Unit\+::detect\+Control\+Hazard (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structControlSignals}{Control\+Signals}}}]{signals }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRV5SHazardUnit_ad5a48cd7468c70f3ed59d41f8b8838f7}\label{classRV5SHazardUnit_ad5a48cd7468c70f3ed59d41f8b8838f7}} 
+\index{RV5SHazardUnit@{RV5SHazardUnit}!detectDataHazard@{detectDataHazard}}
+\index{detectDataHazard@{detectDataHazard}!RV5SHazardUnit@{RV5SHazardUnit}}
+\doxysubsubsection{\texorpdfstring{detectDataHazard()}{detectDataHazard()}}
+{\footnotesize\ttfamily bool RV5\+SHazard\+Unit\+::detect\+Data\+Hazard (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structControlSignals}{Control\+Signals}}}]{signals,  }\item[{uint8\+\_\+t}]{rs1\+\_\+index,  }\item[{uint8\+\_\+t}]{rs2\+\_\+index,  }\item[{\mbox{\hyperlink{structID__EX__Reg}{ID\+\_\+\+EX\+\_\+\+Reg}}}]{id\+\_\+ex\+\_\+reg,  }\item[{\mbox{\hyperlink{structEX__MEM__Reg}{EX\+\_\+\+MEM\+\_\+\+Reg}}}]{ex\+\_\+mem\+\_\+reg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRV5SHazardUnit_ad3904ce4fcc04a7ed103d8d8f7967ddd}\label{classRV5SHazardUnit_ad3904ce4fcc04a7ed103d8d8f7967ddd}} 
+\index{RV5SHazardUnit@{RV5SHazardUnit}!detectHazard@{detectHazard}}
+\index{detectHazard@{detectHazard}!RV5SHazardUnit@{RV5SHazardUnit}}
+\doxysubsubsection{\texorpdfstring{detectHazard()}{detectHazard()}}
+{\footnotesize\ttfamily bool RV5\+SHazard\+Unit\+::detect\+Hazard (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structControlSignals}{Control\+Signals}}}]{signals,  }\item[{uint8\+\_\+t}]{rs1\+\_\+index,  }\item[{uint8\+\_\+t}]{rs2\+\_\+index,  }\item[{\mbox{\hyperlink{structID__EX__Reg}{ID\+\_\+\+EX\+\_\+\+Reg}}}]{id\+\_\+ex\+\_\+reg,  }\item[{\mbox{\hyperlink{structEX__MEM__Reg}{EX\+\_\+\+MEM\+\_\+\+Reg}}}]{ex\+\_\+mem\+\_\+reg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRV5SHazardUnit_aaaa1769b566bc7d7e1defbbf6680125e}\label{classRV5SHazardUnit_aaaa1769b566bc7d7e1defbbf6680125e}} 
+\index{RV5SHazardUnit@{RV5SHazardUnit}!detectLoadUseHazard@{detectLoadUseHazard}}
+\index{detectLoadUseHazard@{detectLoadUseHazard}!RV5SHazardUnit@{RV5SHazardUnit}}
+\doxysubsubsection{\texorpdfstring{detectLoadUseHazard()}{detectLoadUseHazard()}}
+{\footnotesize\ttfamily bool RV5\+SHazard\+Unit\+::detect\+Load\+Use\+Hazard (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structControlSignals}{Control\+Signals}}}]{signals,  }\item[{uint8\+\_\+t}]{rs1\+\_\+index,  }\item[{uint8\+\_\+t}]{rs2\+\_\+index,  }\item[{\mbox{\hyperlink{structID__EX__Reg}{ID\+\_\+\+EX\+\_\+\+Reg}}}]{id\+\_\+ex\+\_\+reg }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/vm/rv5s/\mbox{\hyperlink{rv5s__hazard__unit_8h}{rv5s\+\_\+hazard\+\_\+unit.\+h}}\item 
+src/vm/rv5s/\mbox{\hyperlink{rv5s__hazard__unit_8cpp}{rv5s\+\_\+hazard\+\_\+unit.\+cpp}}\end{DoxyCompactItemize}

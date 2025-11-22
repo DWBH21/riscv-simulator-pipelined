@@ -13,17 +13,26 @@ struct \mbox{\hyperlink{structvm__config_1_1VmConfig}{Vm\+Config}}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum class \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458fea}{Pipeline\+Modes}} \{ \newline
-\mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa4bbb8f967da6d1a610596d7257179c2b}{Invalid}}
-, \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa22b7c2abfb7dcf0f672899fb2b6f1670}{Ideal}}
-, \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa319f6a2b71d73e01044ba8dad5a8b64f}{With\+Hazards}}
-, \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa6fc5bfd9851bccaada6434942533b7f4}{With\+Forwarding}}
-, \newline
-\mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa4a7dc14ff5cf7bbc5f3201d483291e5e}{With\+Static\+Branch\+Prediction}}
- \}
-\item 
 enum class \mbox{\hyperlink{namespacevm__config_aa4eeb50c28c404f656938f58b44562b5}{Vm\+Types}} \{ \mbox{\hyperlink{namespacevm__config_aa4eeb50c28c404f656938f58b44562b5a2c4a0af0ffe5afecf34ef3401408722c}{SINGLE\+\_\+\+STAGE}}
 , \mbox{\hyperlink{namespacevm__config_aa4eeb50c28c404f656938f58b44562b5ad300fd0998c340710fb890f72de460b1}{MULTI\+\_\+\+STAGE}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25}{Data\+Hazard\+Mode}} \{ \mbox{\hyperlink{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25a07df98da6e2b219bc61e36237a2bf2ff}{IDEAL}}
+, \mbox{\hyperlink{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25af7b2d220d73db661af69e83fc9fc5587}{STALL\+\_\+\+ONLY}}
+, \mbox{\hyperlink{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25a92d5f2010ddf30a38352de388488a0ce}{FORWARDING}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751d}{Branch\+Predictor\+Type}} \{ \newline
+\mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751da1e6f43e47ebeec0a7f958f53b77515f7}{STATIC\+\_\+\+NOT\+\_\+\+TAKEN}}
+, \mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751da8966b508d261053794884245bf8b7338}{STATIC\+\_\+\+TAKEN}}
+, \mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751daf3894c607a2b7d52eb68ec6d1a5167f0}{DYNAMIC\+\_\+1\+BIT}}
+, \mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751da4399398d10a417a2c00453de0f264b10}{DYNAMIC\+\_\+2\+BIT}}
+, \newline
+\mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751da46ba89eb960127fef8af5df131a5212a}{TOURNAMENT}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespacevm__config_a95a8e5163d817e700a22dd4c2b903d37}{Branch\+Stage}} \{ \mbox{\hyperlink{namespacevm__config_a95a8e5163d817e700a22dd4c2b903d37aa734abca01add327e8830687ffd7c123}{BRANCH\+\_\+\+IN\+\_\+\+EX}}
+, \mbox{\hyperlink{namespacevm__config_a95a8e5163d817e700a22dd4c2b903d37a4fce297ede30a974a7972bb8786c68fa}{BRANCH\+\_\+\+IN\+\_\+\+ID}}
  \}
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
@@ -37,31 +46,67 @@ enum class \mbox{\hyperlink{namespacevm__config_aa4eeb50c28c404f656938f58b44562b
 Namespace for VM configuration management. 
 
 \doxysubsection{Enumeration Type Documentation}
-\mbox{\Hypertarget{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458fea}\label{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458fea}} 
-\index{vm\_config@{vm\_config}!PipelineModes@{PipelineModes}}
-\index{PipelineModes@{PipelineModes}!vm\_config@{vm\_config}}
-\doxysubsubsection{\texorpdfstring{PipelineModes}{PipelineModes}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458fea}{vm\+\_\+config\+::\+Pipeline\+Modes}}\hspace{0.3cm}{\ttfamily [strong]}}
+\mbox{\Hypertarget{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751d}\label{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751d}} 
+\index{vm\_config@{vm\_config}!BranchPredictorType@{BranchPredictorType}}
+\index{BranchPredictorType@{BranchPredictorType}!vm\_config@{vm\_config}}
+\doxysubsubsection{\texorpdfstring{BranchPredictorType}{BranchPredictorType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751d}{vm\+\_\+config\+::\+Branch\+Predictor\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
 
 \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{Invalid@{Invalid}!vm\_config@{vm\_config}}\index{vm\_config@{vm\_config}!Invalid@{Invalid}}}\mbox{\Hypertarget{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa4bbb8f967da6d1a610596d7257179c2b}\label{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa4bbb8f967da6d1a610596d7257179c2b}} 
-Invalid&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATIC\_NOT\_TAKEN@{STATIC\_NOT\_TAKEN}!vm\_config@{vm\_config}}\index{vm\_config@{vm\_config}!STATIC\_NOT\_TAKEN@{STATIC\_NOT\_TAKEN}}}\mbox{\Hypertarget{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751da1e6f43e47ebeec0a7f958f53b77515f7}\label{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751da1e6f43e47ebeec0a7f958f53b77515f7}} 
+STATIC\+\_\+\+NOT\+\_\+\+TAKEN&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{Ideal@{Ideal}!vm\_config@{vm\_config}}\index{vm\_config@{vm\_config}!Ideal@{Ideal}}}\mbox{\Hypertarget{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa22b7c2abfb7dcf0f672899fb2b6f1670}\label{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa22b7c2abfb7dcf0f672899fb2b6f1670}} 
-Ideal&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATIC\_TAKEN@{STATIC\_TAKEN}!vm\_config@{vm\_config}}\index{vm\_config@{vm\_config}!STATIC\_TAKEN@{STATIC\_TAKEN}}}\mbox{\Hypertarget{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751da8966b508d261053794884245bf8b7338}\label{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751da8966b508d261053794884245bf8b7338}} 
+STATIC\+\_\+\+TAKEN&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{WithHazards@{WithHazards}!vm\_config@{vm\_config}}\index{vm\_config@{vm\_config}!WithHazards@{WithHazards}}}\mbox{\Hypertarget{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa319f6a2b71d73e01044ba8dad5a8b64f}\label{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa319f6a2b71d73e01044ba8dad5a8b64f}} 
-With\+Hazards&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DYNAMIC\_1BIT@{DYNAMIC\_1BIT}!vm\_config@{vm\_config}}\index{vm\_config@{vm\_config}!DYNAMIC\_1BIT@{DYNAMIC\_1BIT}}}\mbox{\Hypertarget{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751daf3894c607a2b7d52eb68ec6d1a5167f0}\label{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751daf3894c607a2b7d52eb68ec6d1a5167f0}} 
+DYNAMIC\+\_\+1\+BIT&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{WithForwarding@{WithForwarding}!vm\_config@{vm\_config}}\index{vm\_config@{vm\_config}!WithForwarding@{WithForwarding}}}\mbox{\Hypertarget{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa6fc5bfd9851bccaada6434942533b7f4}\label{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa6fc5bfd9851bccaada6434942533b7f4}} 
-With\+Forwarding&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DYNAMIC\_2BIT@{DYNAMIC\_2BIT}!vm\_config@{vm\_config}}\index{vm\_config@{vm\_config}!DYNAMIC\_2BIT@{DYNAMIC\_2BIT}}}\mbox{\Hypertarget{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751da4399398d10a417a2c00453de0f264b10}\label{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751da4399398d10a417a2c00453de0f264b10}} 
+DYNAMIC\+\_\+2\+BIT&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{WithStaticBranchPrediction@{WithStaticBranchPrediction}!vm\_config@{vm\_config}}\index{vm\_config@{vm\_config}!WithStaticBranchPrediction@{WithStaticBranchPrediction}}}\mbox{\Hypertarget{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa4a7dc14ff5cf7bbc5f3201d483291e5e}\label{namespacevm__config_a60ba8c4046fa2e919b0f0eed79458feaa4a7dc14ff5cf7bbc5f3201d483291e5e}} 
-With\+Static\+Branch\+Prediction&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOURNAMENT@{TOURNAMENT}!vm\_config@{vm\_config}}\index{vm\_config@{vm\_config}!TOURNAMENT@{TOURNAMENT}}}\mbox{\Hypertarget{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751da46ba89eb960127fef8af5df131a5212a}\label{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751da46ba89eb960127fef8af5df131a5212a}} 
+TOURNAMENT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespacevm__config_a95a8e5163d817e700a22dd4c2b903d37}\label{namespacevm__config_a95a8e5163d817e700a22dd4c2b903d37}} 
+\index{vm\_config@{vm\_config}!BranchStage@{BranchStage}}
+\index{BranchStage@{BranchStage}!vm\_config@{vm\_config}}
+\doxysubsubsection{\texorpdfstring{BranchStage}{BranchStage}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacevm__config_a95a8e5163d817e700a22dd4c2b903d37}{vm\+\_\+config\+::\+Branch\+Stage}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BRANCH\_IN\_EX@{BRANCH\_IN\_EX}!vm\_config@{vm\_config}}\index{vm\_config@{vm\_config}!BRANCH\_IN\_EX@{BRANCH\_IN\_EX}}}\mbox{\Hypertarget{namespacevm__config_a95a8e5163d817e700a22dd4c2b903d37aa734abca01add327e8830687ffd7c123}\label{namespacevm__config_a95a8e5163d817e700a22dd4c2b903d37aa734abca01add327e8830687ffd7c123}} 
+BRANCH\+\_\+\+IN\+\_\+\+EX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BRANCH\_IN\_ID@{BRANCH\_IN\_ID}!vm\_config@{vm\_config}}\index{vm\_config@{vm\_config}!BRANCH\_IN\_ID@{BRANCH\_IN\_ID}}}\mbox{\Hypertarget{namespacevm__config_a95a8e5163d817e700a22dd4c2b903d37a4fce297ede30a974a7972bb8786c68fa}\label{namespacevm__config_a95a8e5163d817e700a22dd4c2b903d37a4fce297ede30a974a7972bb8786c68fa}} 
+BRANCH\+\_\+\+IN\+\_\+\+ID&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25}\label{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25}} 
+\index{vm\_config@{vm\_config}!DataHazardMode@{DataHazardMode}}
+\index{DataHazardMode@{DataHazardMode}!vm\_config@{vm\_config}}
+\doxysubsubsection{\texorpdfstring{DataHazardMode}{DataHazardMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25}{vm\+\_\+config\+::\+Data\+Hazard\+Mode}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IDEAL@{IDEAL}!vm\_config@{vm\_config}}\index{vm\_config@{vm\_config}!IDEAL@{IDEAL}}}\mbox{\Hypertarget{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25a07df98da6e2b219bc61e36237a2bf2ff}\label{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25a07df98da6e2b219bc61e36237a2bf2ff}} 
+IDEAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STALL\_ONLY@{STALL\_ONLY}!vm\_config@{vm\_config}}\index{vm\_config@{vm\_config}!STALL\_ONLY@{STALL\_ONLY}}}\mbox{\Hypertarget{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25af7b2d220d73db661af69e83fc9fc5587}\label{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25af7b2d220d73db661af69e83fc9fc5587}} 
+STALL\+\_\+\+ONLY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FORWARDING@{FORWARDING}!vm\_config@{vm\_config}}\index{vm\_config@{vm\_config}!FORWARDING@{FORWARDING}}}\mbox{\Hypertarget{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25a92d5f2010ddf30a38352de388488a0ce}\label{namespacevm__config_ae02d0ff961bd83eec6c16e4d96793f25a92d5f2010ddf30a38352de388488a0ce}} 
+FORWARDING&\\
 \hline
 
 \end{DoxyEnumFields}

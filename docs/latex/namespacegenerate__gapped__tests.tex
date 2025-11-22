@@ -1,0 +1,134 @@
+\hypertarget{namespacegenerate__gapped__tests}{}\doxysection{generate\+\_\+gapped\+\_\+tests Namespace Reference}
+\label{namespacegenerate__gapped__tests}\index{generate\_gapped\_tests@{generate\_gapped\_tests}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacegenerate__gapped__tests_a089e0a28f31aa786be6498db7553e845}{format\+\_\+test\+\_\+file}} (preamble\+\_\+lines, test\+\_\+lines)
+\item 
+def \mbox{\hyperlink{namespacegenerate__gapped__tests_aec9810e1206b125fa775881664181b45}{generate\+\_\+gapped\+\_\+hazards}} ()
+\item 
+def \mbox{\hyperlink{namespacegenerate__gapped__tests_a8aff205cb32996d6553c1112177e1c38}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespacegenerate__gapped__tests_a346031851643862bb33972fc15032024}{BASE\+\_\+\+DIR}} = \char`\"{}assembly\+\_\+multi\+\_\+hazard\char`\"{}
+\item 
+\mbox{\hyperlink{namespacegenerate__gapped__tests_a1a16308ad13201b613a65a0c8810a3ac}{HAZARD\+\_\+\+DIR}} = os.\+path.\+join(\mbox{\hyperlink{namespacegenerate__gapped__tests_a346031851643862bb33972fc15032024}{BASE\+\_\+\+DIR}}, \char`\"{}gapped\char`\"{})
+\item 
+list \mbox{\hyperlink{namespacegenerate__gapped__tests_a696b70516a0752d8621c30e8328baba3}{DEP\+\_\+\+REGS}} = \mbox{[}\char`\"{}x0\char`\"{}, \char`\"{}x1\char`\"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacegenerate__gapped__tests_a00dd3b1aed214864751b5b5455e909dc}{OTHER\+\_\+\+REGS}} = \mbox{[}\char`\"{}x0\char`\"{}, \char`\"{}x2\char`\"{}\mbox{]}
+\item 
+string \mbox{\hyperlink{namespacegenerate__gapped__tests_adc0d884ca83cfd338f5b9c6d1a26cea9}{OTHER\+\_\+\+REG\+\_\+\+RD}} = \char`\"{}x3\char`\"{}
+\item 
+string \mbox{\hyperlink{namespacegenerate__gapped__tests_a018f1e0177aa9341c09942f2db3aff06}{OTHER\+\_\+\+REG\+\_\+\+BASE}} = \char`\"{}x4\char`\"{}
+\item 
+string \mbox{\hyperlink{namespacegenerate__gapped__tests_ab99782bf6d8f288e4836b3ea25e40b5d}{NEUTRAL\+\_\+\+REG}} = \char`\"{}x5\char`\"{}
+\item 
+string \mbox{\hyperlink{namespacegenerate__gapped__tests_aa512ebf907fd730094e952cfe32d0349}{JUMP\+\_\+\+TEST\+\_\+\+REG}} = \char`\"{}x29\char`\"{}
+\item 
+string \mbox{\hyperlink{namespacegenerate__gapped__tests_aab02f35d8c154241e71dac3f014f3bc1}{DATA\+\_\+\+SECTION\+\_\+\+LUI\+\_\+\+VAL}} = \char`\"{}0x10000\char`\"{}
+\item 
+int \mbox{\hyperlink{namespacegenerate__gapped__tests_a25fb1302f2767ccf93ebe1adf28870e8}{DATA\+\_\+\+SECTION\+\_\+\+OFFSET}} = 128
+\item 
+list \mbox{\hyperlink{namespacegenerate__gapped__tests_aaed6a6192192899c20d5110beb28e765}{PRODUCERS}} = \mbox{[}\char`\"{}add\char`\"{}, \char`\"{}addi\char`\"{}, \char`\"{}lw\char`\"{}, \char`\"{}lui\char`\"{}, \char`\"{}jal\char`\"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacegenerate__gapped__tests_abef320c18fbae6a692241856e7eb497c}{CONSUMERS}} = \mbox{[}\char`\"{}add\char`\"{}, \char`\"{}addi\char`\"{}, \char`\"{}lw\char`\"{}, \char`\"{}sw\char`\"{}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacegenerate__gapped__tests_a089e0a28f31aa786be6498db7553e845}\label{namespacegenerate__gapped__tests_a089e0a28f31aa786be6498db7553e845}} 
+\index{generate\_gapped\_tests@{generate\_gapped\_tests}!format\_test\_file@{format\_test\_file}}
+\index{format\_test\_file@{format\_test\_file}!generate\_gapped\_tests@{generate\_gapped\_tests}}
+\doxysubsubsection{\texorpdfstring{format\_test\_file()}{format\_test\_file()}}
+{\footnotesize\ttfamily def generate\+\_\+gapped\+\_\+tests.\+format\+\_\+test\+\_\+file (\begin{DoxyParamCaption}\item[{}]{preamble\+\_\+lines,  }\item[{}]{test\+\_\+lines }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegenerate__gapped__tests_aec9810e1206b125fa775881664181b45}\label{namespacegenerate__gapped__tests_aec9810e1206b125fa775881664181b45}} 
+\index{generate\_gapped\_tests@{generate\_gapped\_tests}!generate\_gapped\_hazards@{generate\_gapped\_hazards}}
+\index{generate\_gapped\_hazards@{generate\_gapped\_hazards}!generate\_gapped\_tests@{generate\_gapped\_tests}}
+\doxysubsubsection{\texorpdfstring{generate\_gapped\_hazards()}{generate\_gapped\_hazards()}}
+{\footnotesize\ttfamily def generate\+\_\+gapped\+\_\+tests.\+generate\+\_\+gapped\+\_\+hazards (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegenerate__gapped__tests_a8aff205cb32996d6553c1112177e1c38}\label{namespacegenerate__gapped__tests_a8aff205cb32996d6553c1112177e1c38}} 
+\index{generate\_gapped\_tests@{generate\_gapped\_tests}!main@{main}}
+\index{main@{main}!generate\_gapped\_tests@{generate\_gapped\_tests}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily def generate\+\_\+gapped\+\_\+tests.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacegenerate__gapped__tests_a346031851643862bb33972fc15032024}\label{namespacegenerate__gapped__tests_a346031851643862bb33972fc15032024}} 
+\index{generate\_gapped\_tests@{generate\_gapped\_tests}!BASE\_DIR@{BASE\_DIR}}
+\index{BASE\_DIR@{BASE\_DIR}!generate\_gapped\_tests@{generate\_gapped\_tests}}
+\doxysubsubsection{\texorpdfstring{BASE\_DIR}{BASE\_DIR}}
+{\footnotesize\ttfamily string generate\+\_\+gapped\+\_\+tests.\+BASE\+\_\+\+DIR = \char`\"{}assembly\+\_\+multi\+\_\+hazard\char`\"{}}
+
+\mbox{\Hypertarget{namespacegenerate__gapped__tests_abef320c18fbae6a692241856e7eb497c}\label{namespacegenerate__gapped__tests_abef320c18fbae6a692241856e7eb497c}} 
+\index{generate\_gapped\_tests@{generate\_gapped\_tests}!CONSUMERS@{CONSUMERS}}
+\index{CONSUMERS@{CONSUMERS}!generate\_gapped\_tests@{generate\_gapped\_tests}}
+\doxysubsubsection{\texorpdfstring{CONSUMERS}{CONSUMERS}}
+{\footnotesize\ttfamily list generate\+\_\+gapped\+\_\+tests.\+CONSUMERS = \mbox{[}\char`\"{}add\char`\"{}, \char`\"{}addi\char`\"{}, \char`\"{}lw\char`\"{}, \char`\"{}sw\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacegenerate__gapped__tests_aab02f35d8c154241e71dac3f014f3bc1}\label{namespacegenerate__gapped__tests_aab02f35d8c154241e71dac3f014f3bc1}} 
+\index{generate\_gapped\_tests@{generate\_gapped\_tests}!DATA\_SECTION\_LUI\_VAL@{DATA\_SECTION\_LUI\_VAL}}
+\index{DATA\_SECTION\_LUI\_VAL@{DATA\_SECTION\_LUI\_VAL}!generate\_gapped\_tests@{generate\_gapped\_tests}}
+\doxysubsubsection{\texorpdfstring{DATA\_SECTION\_LUI\_VAL}{DATA\_SECTION\_LUI\_VAL}}
+{\footnotesize\ttfamily string generate\+\_\+gapped\+\_\+tests.\+DATA\+\_\+\+SECTION\+\_\+\+LUI\+\_\+\+VAL = \char`\"{}0x10000\char`\"{}}
+
+\mbox{\Hypertarget{namespacegenerate__gapped__tests_a25fb1302f2767ccf93ebe1adf28870e8}\label{namespacegenerate__gapped__tests_a25fb1302f2767ccf93ebe1adf28870e8}} 
+\index{generate\_gapped\_tests@{generate\_gapped\_tests}!DATA\_SECTION\_OFFSET@{DATA\_SECTION\_OFFSET}}
+\index{DATA\_SECTION\_OFFSET@{DATA\_SECTION\_OFFSET}!generate\_gapped\_tests@{generate\_gapped\_tests}}
+\doxysubsubsection{\texorpdfstring{DATA\_SECTION\_OFFSET}{DATA\_SECTION\_OFFSET}}
+{\footnotesize\ttfamily int generate\+\_\+gapped\+\_\+tests.\+DATA\+\_\+\+SECTION\+\_\+\+OFFSET = 128}
+
+\mbox{\Hypertarget{namespacegenerate__gapped__tests_a696b70516a0752d8621c30e8328baba3}\label{namespacegenerate__gapped__tests_a696b70516a0752d8621c30e8328baba3}} 
+\index{generate\_gapped\_tests@{generate\_gapped\_tests}!DEP\_REGS@{DEP\_REGS}}
+\index{DEP\_REGS@{DEP\_REGS}!generate\_gapped\_tests@{generate\_gapped\_tests}}
+\doxysubsubsection{\texorpdfstring{DEP\_REGS}{DEP\_REGS}}
+{\footnotesize\ttfamily list generate\+\_\+gapped\+\_\+tests.\+DEP\+\_\+\+REGS = \mbox{[}\char`\"{}x0\char`\"{}, \char`\"{}x1\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacegenerate__gapped__tests_a1a16308ad13201b613a65a0c8810a3ac}\label{namespacegenerate__gapped__tests_a1a16308ad13201b613a65a0c8810a3ac}} 
+\index{generate\_gapped\_tests@{generate\_gapped\_tests}!HAZARD\_DIR@{HAZARD\_DIR}}
+\index{HAZARD\_DIR@{HAZARD\_DIR}!generate\_gapped\_tests@{generate\_gapped\_tests}}
+\doxysubsubsection{\texorpdfstring{HAZARD\_DIR}{HAZARD\_DIR}}
+{\footnotesize\ttfamily generate\+\_\+gapped\+\_\+tests.\+HAZARD\+\_\+\+DIR = os.\+path.\+join(\mbox{\hyperlink{namespacegenerate__gapped__tests_a346031851643862bb33972fc15032024}{BASE\+\_\+\+DIR}}, \char`\"{}gapped\char`\"{})}
+
+\mbox{\Hypertarget{namespacegenerate__gapped__tests_aa512ebf907fd730094e952cfe32d0349}\label{namespacegenerate__gapped__tests_aa512ebf907fd730094e952cfe32d0349}} 
+\index{generate\_gapped\_tests@{generate\_gapped\_tests}!JUMP\_TEST\_REG@{JUMP\_TEST\_REG}}
+\index{JUMP\_TEST\_REG@{JUMP\_TEST\_REG}!generate\_gapped\_tests@{generate\_gapped\_tests}}
+\doxysubsubsection{\texorpdfstring{JUMP\_TEST\_REG}{JUMP\_TEST\_REG}}
+{\footnotesize\ttfamily string generate\+\_\+gapped\+\_\+tests.\+JUMP\+\_\+\+TEST\+\_\+\+REG = \char`\"{}x29\char`\"{}}
+
+\mbox{\Hypertarget{namespacegenerate__gapped__tests_ab99782bf6d8f288e4836b3ea25e40b5d}\label{namespacegenerate__gapped__tests_ab99782bf6d8f288e4836b3ea25e40b5d}} 
+\index{generate\_gapped\_tests@{generate\_gapped\_tests}!NEUTRAL\_REG@{NEUTRAL\_REG}}
+\index{NEUTRAL\_REG@{NEUTRAL\_REG}!generate\_gapped\_tests@{generate\_gapped\_tests}}
+\doxysubsubsection{\texorpdfstring{NEUTRAL\_REG}{NEUTRAL\_REG}}
+{\footnotesize\ttfamily string generate\+\_\+gapped\+\_\+tests.\+NEUTRAL\+\_\+\+REG = \char`\"{}x5\char`\"{}}
+
+\mbox{\Hypertarget{namespacegenerate__gapped__tests_a018f1e0177aa9341c09942f2db3aff06}\label{namespacegenerate__gapped__tests_a018f1e0177aa9341c09942f2db3aff06}} 
+\index{generate\_gapped\_tests@{generate\_gapped\_tests}!OTHER\_REG\_BASE@{OTHER\_REG\_BASE}}
+\index{OTHER\_REG\_BASE@{OTHER\_REG\_BASE}!generate\_gapped\_tests@{generate\_gapped\_tests}}
+\doxysubsubsection{\texorpdfstring{OTHER\_REG\_BASE}{OTHER\_REG\_BASE}}
+{\footnotesize\ttfamily string generate\+\_\+gapped\+\_\+tests.\+OTHER\+\_\+\+REG\+\_\+\+BASE = \char`\"{}x4\char`\"{}}
+
+\mbox{\Hypertarget{namespacegenerate__gapped__tests_adc0d884ca83cfd338f5b9c6d1a26cea9}\label{namespacegenerate__gapped__tests_adc0d884ca83cfd338f5b9c6d1a26cea9}} 
+\index{generate\_gapped\_tests@{generate\_gapped\_tests}!OTHER\_REG\_RD@{OTHER\_REG\_RD}}
+\index{OTHER\_REG\_RD@{OTHER\_REG\_RD}!generate\_gapped\_tests@{generate\_gapped\_tests}}
+\doxysubsubsection{\texorpdfstring{OTHER\_REG\_RD}{OTHER\_REG\_RD}}
+{\footnotesize\ttfamily string generate\+\_\+gapped\+\_\+tests.\+OTHER\+\_\+\+REG\+\_\+\+RD = \char`\"{}x3\char`\"{}}
+
+\mbox{\Hypertarget{namespacegenerate__gapped__tests_a00dd3b1aed214864751b5b5455e909dc}\label{namespacegenerate__gapped__tests_a00dd3b1aed214864751b5b5455e909dc}} 
+\index{generate\_gapped\_tests@{generate\_gapped\_tests}!OTHER\_REGS@{OTHER\_REGS}}
+\index{OTHER\_REGS@{OTHER\_REGS}!generate\_gapped\_tests@{generate\_gapped\_tests}}
+\doxysubsubsection{\texorpdfstring{OTHER\_REGS}{OTHER\_REGS}}
+{\footnotesize\ttfamily list generate\+\_\+gapped\+\_\+tests.\+OTHER\+\_\+\+REGS = \mbox{[}\char`\"{}x0\char`\"{}, \char`\"{}x2\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacegenerate__gapped__tests_aaed6a6192192899c20d5110beb28e765}\label{namespacegenerate__gapped__tests_aaed6a6192192899c20d5110beb28e765}} 
+\index{generate\_gapped\_tests@{generate\_gapped\_tests}!PRODUCERS@{PRODUCERS}}
+\index{PRODUCERS@{PRODUCERS}!generate\_gapped\_tests@{generate\_gapped\_tests}}
+\doxysubsubsection{\texorpdfstring{PRODUCERS}{PRODUCERS}}
+{\footnotesize\ttfamily list generate\+\_\+gapped\+\_\+tests.\+PRODUCERS = \mbox{[}\char`\"{}add\char`\"{}, \char`\"{}addi\char`\"{}, \char`\"{}lw\char`\"{}, \char`\"{}lui\char`\"{}, \char`\"{}jal\char`\"{}\mbox{]}}
+

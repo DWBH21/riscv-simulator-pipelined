@@ -1,0 +1,190 @@
+\hypertarget{namespacetest__runner}{}\doxysection{test\+\_\+runner Namespace Reference}
+\label{namespacetest__runner}\index{test\_runner@{test\_runner}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacetest__runner_a97d620d7f61a33cbbde4c4d5b19bc4a0}{collect\+\_\+test\+\_\+cases}} ()
+\item 
+def \mbox{\hyperlink{namespacetest__runner_adf0404b3072090e1a1a12e43374d85c0}{generate\+\_\+test\+\_\+id}} (test\+\_\+case)
+\item 
+def \mbox{\hyperlink{namespacetest__runner_ad6b4698179ca8f56ccd89ff7ef2ad4bb}{test\+\_\+simulator\+\_\+pipeline}} (sim\+\_\+config, case\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacetest__runner_a7025f8a8da479ed5261c8eda643b742f}{TIME\+\_\+\+OUT\+\_\+\+WAIT}} = 3
+\item 
+\mbox{\hyperlink{namespacetest__runner_a60c0b841bdf3d51c9bdd8814900518cb}{BUILD\+\_\+\+DIR}} = Path(\char`\"{}../build\char`\"{})
+\item 
+string \mbox{\hyperlink{namespacetest__runner_a7a805701b1cd2ee2a076d6ec979a5f27}{SIM2\+\_\+\+BIN}} = \mbox{\hyperlink{namespacetest__runner_a60c0b841bdf3d51c9bdd8814900518cb}{BUILD\+\_\+\+DIR}} / \char`\"{}rv5s\+\_\+binary\char`\"{}
+\item 
+\mbox{\hyperlink{namespacetest__runner_a47d5fab22dd475d59680fe8b9a3182c2}{RUN\+\_\+\+DIR\+\_\+\+BASE}} = Path(\char`\"{}./test\+\_\+run\+\_\+outputs\char`\"{})
+\item 
+list \mbox{\hyperlink{namespacetest__runner_ae996e0d802e8dfa548a143b8ce8c7c32}{SIMULATOR\+\_\+\+CONFIGS}}
+\item 
+list \mbox{\hyperlink{namespacetest__runner_a9b9713ecf7ccd693564cb4a92f9343b7}{HAZARD\+\_\+\+MODES}}
+\item 
+list \mbox{\hyperlink{namespacetest__runner_a76ddb37764cfd878fdf159520cf7e36f}{BRANCH\+\_\+\+PREDICTORS}}
+\item 
+string \mbox{\hyperlink{namespacetest__runner_aa710181883c5fab1cfe296e11d82610a}{config\+\_\+id}} = f\char`\"{}5Stage\+\_\+\{mode\+\_\+name\}\+\_\+\{pred\}\char`\"{}
+\item 
+\mbox{\hyperlink{namespacetest__runner_af4290c59fb3728e3cf8a5dd04dd26512}{target\+\_\+mode}} = os.\+environ.\+get(\char`\"{}SIM\+\_\+\+MODE\char`\"{})
+\item 
+list \mbox{\hyperlink{namespacetest__runner_a392804e1cfe7567f85f8c940a193514e}{filtered\+\_\+configs}} = \mbox{[}c for c in \mbox{\hyperlink{namespacetest__runner_ae996e0d802e8dfa548a143b8ce8c7c32}{SIMULATOR\+\_\+\+CONFIGS}} if c\mbox{[}\char`\"{}id\char`\"{}\mbox{]} == target\+\_\+mode\mbox{]}
+\item 
+dictionary \mbox{\hyperlink{namespacetest__runner_abdecaba8f835a891df95c2f65e2e6c47}{TEST\+\_\+\+SUITES}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacetest__runner_a97d620d7f61a33cbbde4c4d5b19bc4a0}\label{namespacetest__runner_a97d620d7f61a33cbbde4c4d5b19bc4a0}} 
+\index{test\_runner@{test\_runner}!collect\_test\_cases@{collect\_test\_cases}}
+\index{collect\_test\_cases@{collect\_test\_cases}!test\_runner@{test\_runner}}
+\doxysubsubsection{\texorpdfstring{collect\_test\_cases()}{collect\_test\_cases()}}
+{\footnotesize\ttfamily def test\+\_\+runner.\+collect\+\_\+test\+\_\+cases (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Iterates through TEST_SUITES and finds all .s files.
+Returns a list of test case dictionaries.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacetest__runner_adf0404b3072090e1a1a12e43374d85c0}\label{namespacetest__runner_adf0404b3072090e1a1a12e43374d85c0}} 
+\index{test\_runner@{test\_runner}!generate\_test\_id@{generate\_test\_id}}
+\index{generate\_test\_id@{generate\_test\_id}!test\_runner@{test\_runner}}
+\doxysubsubsection{\texorpdfstring{generate\_test\_id()}{generate\_test\_id()}}
+{\footnotesize\ttfamily def test\+\_\+runner.\+generate\+\_\+test\+\_\+id (\begin{DoxyParamCaption}\item[{}]{test\+\_\+case }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacetest__runner_ad6b4698179ca8f56ccd89ff7ef2ad4bb}\label{namespacetest__runner_ad6b4698179ca8f56ccd89ff7ef2ad4bb}} 
+\index{test\_runner@{test\_runner}!test\_simulator\_pipeline@{test\_simulator\_pipeline}}
+\index{test\_simulator\_pipeline@{test\_simulator\_pipeline}!test\_runner@{test\_runner}}
+\doxysubsubsection{\texorpdfstring{test\_simulator\_pipeline()}{test\_simulator\_pipeline()}}
+{\footnotesize\ttfamily def test\+\_\+runner.\+test\+\_\+simulator\+\_\+pipeline (\begin{DoxyParamCaption}\item[{}]{sim\+\_\+config,  }\item[{}]{case\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacetest__runner_a76ddb37764cfd878fdf159520cf7e36f}\label{namespacetest__runner_a76ddb37764cfd878fdf159520cf7e36f}} 
+\index{test\_runner@{test\_runner}!BRANCH\_PREDICTORS@{BRANCH\_PREDICTORS}}
+\index{BRANCH\_PREDICTORS@{BRANCH\_PREDICTORS}!test\_runner@{test\_runner}}
+\doxysubsubsection{\texorpdfstring{BRANCH\_PREDICTORS}{BRANCH\_PREDICTORS}}
+{\footnotesize\ttfamily list test\+\_\+runner.\+BRANCH\+\_\+\+PREDICTORS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  [}
+\DoxyCodeLine{2     \textcolor{stringliteral}{"{}static\_not\_taken"{}}, }
+\DoxyCodeLine{3     \textcolor{stringliteral}{"{}static\_taken"{}}, }
+\DoxyCodeLine{4     \textcolor{stringliteral}{"{}dynamic\_1bit"{}}, }
+\DoxyCodeLine{5     \textcolor{stringliteral}{"{}dynamic\_2bit"{}}}
+\DoxyCodeLine{6 ]}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacetest__runner_a60c0b841bdf3d51c9bdd8814900518cb}\label{namespacetest__runner_a60c0b841bdf3d51c9bdd8814900518cb}} 
+\index{test\_runner@{test\_runner}!BUILD\_DIR@{BUILD\_DIR}}
+\index{BUILD\_DIR@{BUILD\_DIR}!test\_runner@{test\_runner}}
+\doxysubsubsection{\texorpdfstring{BUILD\_DIR}{BUILD\_DIR}}
+{\footnotesize\ttfamily test\+\_\+runner.\+BUILD\+\_\+\+DIR = Path(\char`\"{}../build\char`\"{})}
+
+\mbox{\Hypertarget{namespacetest__runner_aa710181883c5fab1cfe296e11d82610a}\label{namespacetest__runner_aa710181883c5fab1cfe296e11d82610a}} 
+\index{test\_runner@{test\_runner}!config\_id@{config\_id}}
+\index{config\_id@{config\_id}!test\_runner@{test\_runner}}
+\doxysubsubsection{\texorpdfstring{config\_id}{config\_id}}
+{\footnotesize\ttfamily string test\+\_\+runner.\+config\+\_\+id = f\char`\"{}5Stage\+\_\+\{mode\+\_\+name\}\+\_\+\{pred\}\char`\"{}}
+
+\mbox{\Hypertarget{namespacetest__runner_a392804e1cfe7567f85f8c940a193514e}\label{namespacetest__runner_a392804e1cfe7567f85f8c940a193514e}} 
+\index{test\_runner@{test\_runner}!filtered\_configs@{filtered\_configs}}
+\index{filtered\_configs@{filtered\_configs}!test\_runner@{test\_runner}}
+\doxysubsubsection{\texorpdfstring{filtered\_configs}{filtered\_configs}}
+{\footnotesize\ttfamily list test\+\_\+runner.\+filtered\+\_\+configs = \mbox{[}c for c in \mbox{\hyperlink{namespacetest__runner_ae996e0d802e8dfa548a143b8ce8c7c32}{SIMULATOR\+\_\+\+CONFIGS}} if c\mbox{[}\char`\"{}id\char`\"{}\mbox{]} == target\+\_\+mode\mbox{]}}
+
+\mbox{\Hypertarget{namespacetest__runner_a9b9713ecf7ccd693564cb4a92f9343b7}\label{namespacetest__runner_a9b9713ecf7ccd693564cb4a92f9343b7}} 
+\index{test\_runner@{test\_runner}!HAZARD\_MODES@{HAZARD\_MODES}}
+\index{HAZARD\_MODES@{HAZARD\_MODES}!test\_runner@{test\_runner}}
+\doxysubsubsection{\texorpdfstring{HAZARD\_MODES}{HAZARD\_MODES}}
+{\footnotesize\ttfamily list test\+\_\+runner.\+HAZARD\+\_\+\+MODES}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  [}
+\DoxyCodeLine{2     (\textcolor{stringliteral}{"{}Stall"{}}, \textcolor{stringliteral}{"{}stall"{}}), }
+\DoxyCodeLine{3     (\textcolor{stringliteral}{"{}Forwarding"{}}, \textcolor{stringliteral}{"{}forwarding"{}})}
+\DoxyCodeLine{4 ]}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacetest__runner_a47d5fab22dd475d59680fe8b9a3182c2}\label{namespacetest__runner_a47d5fab22dd475d59680fe8b9a3182c2}} 
+\index{test\_runner@{test\_runner}!RUN\_DIR\_BASE@{RUN\_DIR\_BASE}}
+\index{RUN\_DIR\_BASE@{RUN\_DIR\_BASE}!test\_runner@{test\_runner}}
+\doxysubsubsection{\texorpdfstring{RUN\_DIR\_BASE}{RUN\_DIR\_BASE}}
+{\footnotesize\ttfamily test\+\_\+runner.\+RUN\+\_\+\+DIR\+\_\+\+BASE = Path(\char`\"{}./test\+\_\+run\+\_\+outputs\char`\"{})}
+
+\mbox{\Hypertarget{namespacetest__runner_a7a805701b1cd2ee2a076d6ec979a5f27}\label{namespacetest__runner_a7a805701b1cd2ee2a076d6ec979a5f27}} 
+\index{test\_runner@{test\_runner}!SIM2\_BIN@{SIM2\_BIN}}
+\index{SIM2\_BIN@{SIM2\_BIN}!test\_runner@{test\_runner}}
+\doxysubsubsection{\texorpdfstring{SIM2\_BIN}{SIM2\_BIN}}
+{\footnotesize\ttfamily string test\+\_\+runner.\+SIM2\+\_\+\+BIN = \mbox{\hyperlink{namespacetest__runner_a60c0b841bdf3d51c9bdd8814900518cb}{BUILD\+\_\+\+DIR}} / \char`\"{}rv5s\+\_\+binary\char`\"{}}
+
+\mbox{\Hypertarget{namespacetest__runner_ae996e0d802e8dfa548a143b8ce8c7c32}\label{namespacetest__runner_ae996e0d802e8dfa548a143b8ce8c7c32}} 
+\index{test\_runner@{test\_runner}!SIMULATOR\_CONFIGS@{SIMULATOR\_CONFIGS}}
+\index{SIMULATOR\_CONFIGS@{SIMULATOR\_CONFIGS}!test\_runner@{test\_runner}}
+\doxysubsubsection{\texorpdfstring{SIMULATOR\_CONFIGS}{SIMULATOR\_CONFIGS}}
+{\footnotesize\ttfamily list test\+\_\+runner.\+SIMULATOR\+\_\+\+CONFIGS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  [}
+\DoxyCodeLine{2     \{}
+\DoxyCodeLine{3         \textcolor{stringliteral}{"{}id"{}}: \textcolor{stringliteral}{"{}5Stage\_Ideal"{}},}
+\DoxyCodeLine{4         \textcolor{stringliteral}{"{}flags"{}}: [}
+\DoxyCodeLine{5             \textcolor{stringliteral}{"{}-\/-\/config"{}}, \textcolor{stringliteral}{"{}Execution"{}}, \textcolor{stringliteral}{"{}processor\_type"{}}, \textcolor{stringliteral}{"{}multi\_stage"{}}, }
+\DoxyCodeLine{6             \textcolor{stringliteral}{"{}-\/-\/config"{}}, \textcolor{stringliteral}{"{}Execution"{}}, \textcolor{stringliteral}{"{}data\_hazard\_mode"{}}, \textcolor{stringliteral}{"{}ideal"{}}}
+\DoxyCodeLine{7         ]}
+\DoxyCodeLine{8     \},}
+\DoxyCodeLine{9 ]}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacetest__runner_af4290c59fb3728e3cf8a5dd04dd26512}\label{namespacetest__runner_af4290c59fb3728e3cf8a5dd04dd26512}} 
+\index{test\_runner@{test\_runner}!target\_mode@{target\_mode}}
+\index{target\_mode@{target\_mode}!test\_runner@{test\_runner}}
+\doxysubsubsection{\texorpdfstring{target\_mode}{target\_mode}}
+{\footnotesize\ttfamily test\+\_\+runner.\+target\+\_\+mode = os.\+environ.\+get(\char`\"{}SIM\+\_\+\+MODE\char`\"{})}
+
+\mbox{\Hypertarget{namespacetest__runner_abdecaba8f835a891df95c2f65e2e6c47}\label{namespacetest__runner_abdecaba8f835a891df95c2f65e2e6c47}} 
+\index{test\_runner@{test\_runner}!TEST\_SUITES@{TEST\_SUITES}}
+\index{TEST\_SUITES@{TEST\_SUITES}!test\_runner@{test\_runner}}
+\doxysubsubsection{\texorpdfstring{TEST\_SUITES}{TEST\_SUITES}}
+{\footnotesize\ttfamily dictionary test\+\_\+runner.\+TEST\+\_\+\+SUITES}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \{}
+\DoxyCodeLine{2     \textcolor{stringliteral}{"{}single\_without\_hazards"{}}: \{}
+\DoxyCodeLine{3         \textcolor{stringliteral}{"{}asm\_dir"{}}: Path(\textcolor{stringliteral}{"{}./assembly\_single\_without\_hazards"{}}),}
+\DoxyCodeLine{4         \textcolor{stringliteral}{"{}ref\_dir"{}}: Path(\textcolor{stringliteral}{"{}./reference\_artifacts\_without\_hazards"{}}),}
+\DoxyCodeLine{5     \},}
+\DoxyCodeLine{6     \textcolor{stringliteral}{"{}single\_hazards"{}}: \{}
+\DoxyCodeLine{7         \textcolor{stringliteral}{"{}asm\_dir"{}}: Path(\textcolor{stringliteral}{"{}./assembly\_single\_hazards"{}}),}
+\DoxyCodeLine{8         \textcolor{stringliteral}{"{}ref\_dir"{}}: Path(\textcolor{stringliteral}{"{}./reference\_artifacts\_hazards"{}}),}
+\DoxyCodeLine{9     \},}
+\DoxyCodeLine{10     \textcolor{stringliteral}{"{}multi\_2\_instr"{}}: \{}
+\DoxyCodeLine{11         \textcolor{stringliteral}{"{}asm\_dir"{}}: Path(\textcolor{stringliteral}{"{}./assembly\_multi\_hazard/2\_instr"{}}),}
+\DoxyCodeLine{12         \textcolor{stringliteral}{"{}ref\_dir"{}}: Path(\textcolor{stringliteral}{"{}./reference\_artifacts\_multi/2\_instr"{}}),}
+\DoxyCodeLine{13     \},}
+\DoxyCodeLine{14     \textcolor{stringliteral}{"{}multi\_gapped"{}}: \{}
+\DoxyCodeLine{15         \textcolor{stringliteral}{"{}asm\_dir"{}}: Path(\textcolor{stringliteral}{"{}./assembly\_multi\_hazard/gapped"{}}),}
+\DoxyCodeLine{16         \textcolor{stringliteral}{"{}ref\_dir"{}}: Path(\textcolor{stringliteral}{"{}./reference\_artifacts\_multi/gapped"{}}),}
+\DoxyCodeLine{17     \},}
+\DoxyCodeLine{18     \textcolor{stringliteral}{"{}double\_dep"{}}: \{}
+\DoxyCodeLine{19         \textcolor{stringliteral}{"{}asm\_dir"{}}: Path(\textcolor{stringliteral}{"{}./assembly\_multi\_hazard/double\_dep"{}}),}
+\DoxyCodeLine{20         \textcolor{stringliteral}{"{}ref\_dir"{}}: Path(\textcolor{stringliteral}{"{}./reference\_artifacts\_multi/double\_dep"{}}),}
+\DoxyCodeLine{21     \},}
+\DoxyCodeLine{22     \textcolor{stringliteral}{"{}control\_data"{}}: \{}
+\DoxyCodeLine{23         \textcolor{stringliteral}{"{}asm\_dir"{}}: Path(\textcolor{stringliteral}{"{}./assembly\_multi\_hazard/control\_data"{}}),}
+\DoxyCodeLine{24         \textcolor{stringliteral}{"{}ref\_dir"{}}: Path(\textcolor{stringliteral}{"{}./reference\_artifacts\_multi/control\_data"{}}),}
+\DoxyCodeLine{25     \},}
+\DoxyCodeLine{26 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacetest__runner_a7025f8a8da479ed5261c8eda643b742f}\label{namespacetest__runner_a7025f8a8da479ed5261c8eda643b742f}} 
+\index{test\_runner@{test\_runner}!TIME\_OUT\_WAIT@{TIME\_OUT\_WAIT}}
+\index{TIME\_OUT\_WAIT@{TIME\_OUT\_WAIT}!test\_runner@{test\_runner}}
+\doxysubsubsection{\texorpdfstring{TIME\_OUT\_WAIT}{TIME\_OUT\_WAIT}}
+{\footnotesize\ttfamily int test\+\_\+runner.\+TIME\+\_\+\+OUT\+\_\+\+WAIT = 3}
+

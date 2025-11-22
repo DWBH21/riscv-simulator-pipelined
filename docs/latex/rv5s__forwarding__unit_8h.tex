@@ -1,0 +1,66 @@
+\hypertarget{rv5s__forwarding__unit_8h}{}\doxysection{include/vm/rv5s/rv5s\+\_\+forwarding\+\_\+unit.h File Reference}
+\label{rv5s__forwarding__unit_8h}\index{include/vm/rv5s/rv5s\_forwarding\_unit.h@{include/vm/rv5s/rv5s\_forwarding\_unit.h}}
+
+
+Definition of the 5-\/stage pipelined RISC-\/V Forwarding Unit.  
+
+
+{\ttfamily \#include \char`\"{}vm/vm\+\_\+base.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vm/rv5s/pipeline\+\_\+registers.\+h\char`\"{}}\newline
+Include dependency graph for rv5s\+\_\+forwarding\+\_\+unit.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rv5s__forwarding__unit_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rv5s__forwarding__unit_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classRV5SForwardingUnit}{RV5\+SForwarding\+Unit}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{rv5s__forwarding__unit_8h_ab8324de7bb32199d2967e712e09ca61c}{Forward\+Src}} \{ \mbox{\hyperlink{rv5s__forwarding__unit_8h_ab8324de7bb32199d2967e712e09ca61cadf5d696c20b46d8a497fba6e9eae08fc}{FROM\+\_\+\+REG}}
+, \mbox{\hyperlink{rv5s__forwarding__unit_8h_ab8324de7bb32199d2967e712e09ca61ca15bd40a95126c9cc4182ed515dc5e94b}{FROM\+\_\+\+EX\+\_\+\+MEM}}
+, \mbox{\hyperlink{rv5s__forwarding__unit_8h_ab8324de7bb32199d2967e712e09ca61ca79b6e833783d9ace2d179bb3fc113386}{FROM\+\_\+\+MEM\+\_\+\+WB}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definition of the 5-\/stage pipelined RISC-\/V Forwarding Unit. 
+
+Implementation of the 5-\/stage pipelined RISC-\/V Forwarding Unit.
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{rv5s__forwarding__unit_8h_ab8324de7bb32199d2967e712e09ca61c}\label{rv5s__forwarding__unit_8h_ab8324de7bb32199d2967e712e09ca61c}} 
+\index{rv5s\_forwarding\_unit.h@{rv5s\_forwarding\_unit.h}!ForwardSrc@{ForwardSrc}}
+\index{ForwardSrc@{ForwardSrc}!rv5s\_forwarding\_unit.h@{rv5s\_forwarding\_unit.h}}
+\doxysubsubsection{\texorpdfstring{ForwardSrc}{ForwardSrc}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{rv5s__forwarding__unit_8h_ab8324de7bb32199d2967e712e09ca61c}{Forward\+Src}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FROM\_REG@{FROM\_REG}!rv5s\_forwarding\_unit.h@{rv5s\_forwarding\_unit.h}}\index{rv5s\_forwarding\_unit.h@{rv5s\_forwarding\_unit.h}!FROM\_REG@{FROM\_REG}}}\mbox{\Hypertarget{rv5s__forwarding__unit_8h_ab8324de7bb32199d2967e712e09ca61cadf5d696c20b46d8a497fba6e9eae08fc}\label{rv5s__forwarding__unit_8h_ab8324de7bb32199d2967e712e09ca61cadf5d696c20b46d8a497fba6e9eae08fc}} 
+FROM\+\_\+\+REG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FROM\_EX\_MEM@{FROM\_EX\_MEM}!rv5s\_forwarding\_unit.h@{rv5s\_forwarding\_unit.h}}\index{rv5s\_forwarding\_unit.h@{rv5s\_forwarding\_unit.h}!FROM\_EX\_MEM@{FROM\_EX\_MEM}}}\mbox{\Hypertarget{rv5s__forwarding__unit_8h_ab8324de7bb32199d2967e712e09ca61ca15bd40a95126c9cc4182ed515dc5e94b}\label{rv5s__forwarding__unit_8h_ab8324de7bb32199d2967e712e09ca61ca15bd40a95126c9cc4182ed515dc5e94b}} 
+FROM\+\_\+\+EX\+\_\+\+MEM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FROM\_MEM\_WB@{FROM\_MEM\_WB}!rv5s\_forwarding\_unit.h@{rv5s\_forwarding\_unit.h}}\index{rv5s\_forwarding\_unit.h@{rv5s\_forwarding\_unit.h}!FROM\_MEM\_WB@{FROM\_MEM\_WB}}}\mbox{\Hypertarget{rv5s__forwarding__unit_8h_ab8324de7bb32199d2967e712e09ca61ca79b6e833783d9ace2d179bb3fc113386}\label{rv5s__forwarding__unit_8h_ab8324de7bb32199d2967e712e09ca61ca79b6e833783d9ace2d179bb3fc113386}} 
+FROM\+\_\+\+MEM\+\_\+\+WB&\\
+\hline
+
+\end{DoxyEnumFields}

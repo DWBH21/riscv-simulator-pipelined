@@ -1,0 +1,85 @@
+\hypertarget{classStaticTakenPredictor}{}\doxysection{Static\+Taken\+Predictor Class Reference}
+\label{classStaticTakenPredictor}\index{StaticTakenPredictor@{StaticTakenPredictor}}
+
+
+{\ttfamily \#include $<$static\+\_\+predictors.\+h$>$}
+
+
+
+Inheritance diagram for Static\+Taken\+Predictor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classStaticTakenPredictor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Static\+Taken\+Predictor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classStaticTakenPredictor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classStaticTakenPredictor_a6b19848e72959db8092bdebf63d91671}{get\+Prediction}} (uint64\+\_\+t) override
+\item 
+void \mbox{\hyperlink{classStaticTakenPredictor_a705807316807b3f1b7663f69eaeed9c4}{update\+State}} (uint64\+\_\+t, bool predicted\+\_\+outcome, bool actual\+\_\+outcome) override
+\item 
+unsigned int \mbox{\hyperlink{classStaticTakenPredictor_a63155523ccbd17aeb1f62bdda5dc4e61}{get\+Mispredictions}} () const override
+\item 
+\mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751d}{vm\+\_\+config\+::\+Branch\+Predictor\+Type}} \mbox{\hyperlink{classStaticTakenPredictor_a9f9da3fae47f34275ab9b798e3e5b632}{get\+Predictor\+Type}} () const override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStaticTakenPredictor_a63155523ccbd17aeb1f62bdda5dc4e61}\label{classStaticTakenPredictor_a63155523ccbd17aeb1f62bdda5dc4e61}} 
+\index{StaticTakenPredictor@{StaticTakenPredictor}!getMispredictions@{getMispredictions}}
+\index{getMispredictions@{getMispredictions}!StaticTakenPredictor@{StaticTakenPredictor}}
+\doxysubsubsection{\texorpdfstring{getMispredictions()}{getMispredictions()}}
+{\footnotesize\ttfamily unsigned int Static\+Taken\+Predictor\+::get\+Mispredictions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIBranchPredictor_afbddaed294865d5b18cb4e40e8dd2d48}{IBranch\+Predictor}}.
+
+\mbox{\Hypertarget{classStaticTakenPredictor_a6b19848e72959db8092bdebf63d91671}\label{classStaticTakenPredictor_a6b19848e72959db8092bdebf63d91671}} 
+\index{StaticTakenPredictor@{StaticTakenPredictor}!getPrediction@{getPrediction}}
+\index{getPrediction@{getPrediction}!StaticTakenPredictor@{StaticTakenPredictor}}
+\doxysubsubsection{\texorpdfstring{getPrediction()}{getPrediction()}}
+{\footnotesize\ttfamily bool Static\+Taken\+Predictor\+::get\+Prediction (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIBranchPredictor_a723533cc8b8c21226dc930b1a88dceab}{IBranch\+Predictor}}.
+
+\mbox{\Hypertarget{classStaticTakenPredictor_a9f9da3fae47f34275ab9b798e3e5b632}\label{classStaticTakenPredictor_a9f9da3fae47f34275ab9b798e3e5b632}} 
+\index{StaticTakenPredictor@{StaticTakenPredictor}!getPredictorType@{getPredictorType}}
+\index{getPredictorType@{getPredictorType}!StaticTakenPredictor@{StaticTakenPredictor}}
+\doxysubsubsection{\texorpdfstring{getPredictorType()}{getPredictorType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751d}{vm\+\_\+config\+::\+Branch\+Predictor\+Type}} Static\+Taken\+Predictor\+::get\+Predictor\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIBranchPredictor_ad66851426c7ad28eee72df1e65f60fa1}{IBranch\+Predictor}}.
+
+\mbox{\Hypertarget{classStaticTakenPredictor_a705807316807b3f1b7663f69eaeed9c4}\label{classStaticTakenPredictor_a705807316807b3f1b7663f69eaeed9c4}} 
+\index{StaticTakenPredictor@{StaticTakenPredictor}!updateState@{updateState}}
+\index{updateState@{updateState}!StaticTakenPredictor@{StaticTakenPredictor}}
+\doxysubsubsection{\texorpdfstring{updateState()}{updateState()}}
+{\footnotesize\ttfamily void Static\+Taken\+Predictor\+::update\+State (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{,  }\item[{bool}]{predicted\+\_\+outcome,  }\item[{bool}]{actual\+\_\+outcome }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIBranchPredictor_ade8be8286578374f694d2966d4b86b24}{IBranch\+Predictor}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/vm/rv5s/branch\+\_\+prediction/\mbox{\hyperlink{static__predictors_8h}{static\+\_\+predictors.\+h}}\end{DoxyCompactItemize}

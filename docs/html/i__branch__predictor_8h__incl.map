@@ -1,0 +1,12 @@
+<map id="include/vm/rv5s/branch_prediction/i_branch_predictor.h" name="include/vm/rv5s/branch_prediction/i_branch_predictor.h">
+<area shape="rect" id="node1" title="Definition of the Interface for all Branch Predictors." alt="" coords="228,5,457,47"/>
+<area shape="rect" id="node2" href="$config_8h.html" title="Contains configuration options for the assembler." alt="" coords="306,95,379,121"/>
+<area shape="rect" id="node6" title=" " alt="" coords="5,169,85,196"/>
+<area shape="rect" id="node8" title=" " alt="" coords="607,169,673,196"/>
+<area shape="rect" id="node3" href="$globals_8h.html" title="Contains global definitions and includes for the assembler." alt="" coords="110,169,191,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="216,169,275,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="299,169,386,196"/>
+<area shape="rect" id="node9" title=" " alt="" coords="410,169,483,196"/>
+<area shape="rect" id="node10" title=" " alt="" coords="508,169,583,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="105,244,196,271"/>
+</map>

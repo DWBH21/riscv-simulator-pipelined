@@ -1,0 +1,126 @@
+\hypertarget{namespacegenerate__2__instr__tests}{}\doxysection{generate\+\_\+2\+\_\+instr\+\_\+tests Namespace Reference}
+\label{namespacegenerate__2__instr__tests}\index{generate\_2\_instr\_tests@{generate\_2\_instr\_tests}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacegenerate__2__instr__tests_ad0d50b80219315576d44989eb332e749}{format\+\_\+test\+\_\+file}} (preamble\+\_\+lines, test\+\_\+lines)
+\item 
+def \mbox{\hyperlink{namespacegenerate__2__instr__tests_aad4e7d53555a6bb1e84d7828f569a7d2}{generate\+\_\+2\+\_\+instr\+\_\+hazards}} ()
+\item 
+def \mbox{\hyperlink{namespacegenerate__2__instr__tests_a0d99a752dad35e06371fa9ee6693888c}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespacegenerate__2__instr__tests_aee7020b3231b0c8427cb3d42d23a0cc9}{BASE\+\_\+\+DIR}} = \char`\"{}assembly\+\_\+multi\+\_\+hazard\char`\"{}
+\item 
+\mbox{\hyperlink{namespacegenerate__2__instr__tests_a6169b217908f12c1f77540f69ccf3a95}{HAZARD\+\_\+\+DIR}} = os.\+path.\+join(\mbox{\hyperlink{namespacegenerate__2__instr__tests_aee7020b3231b0c8427cb3d42d23a0cc9}{BASE\+\_\+\+DIR}}, \char`\"{}2\+\_\+instr\char`\"{})
+\item 
+list \mbox{\hyperlink{namespacegenerate__2__instr__tests_a31f000d7a6f8e29b639b43b799a3c274}{DEP\+\_\+\+REGS}} = \mbox{[}\char`\"{}x0\char`\"{}, \char`\"{}x1\char`\"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacegenerate__2__instr__tests_ae9a4c2d9231a7b484c0c989ddfce953f}{OTHER\+\_\+\+REGS}} = \mbox{[}\char`\"{}x0\char`\"{}, \char`\"{}x2\char`\"{}\mbox{]}
+\item 
+string \mbox{\hyperlink{namespacegenerate__2__instr__tests_a58ec4af442381e7ec8f4b3605569cfe9}{OTHER\+\_\+\+REG\+\_\+\+RD}} = \char`\"{}x3\char`\"{}
+\item 
+string \mbox{\hyperlink{namespacegenerate__2__instr__tests_aab83a386da002019116232eb7d5b5a5e}{OTHER\+\_\+\+REG\+\_\+\+BASE}} = \char`\"{}x4\char`\"{}
+\item 
+string \mbox{\hyperlink{namespacegenerate__2__instr__tests_adf781c187188c2658f8701f46f24a832}{JUMP\+\_\+\+TEST\+\_\+\+REG}} = \char`\"{}x29\char`\"{}
+\item 
+string \mbox{\hyperlink{namespacegenerate__2__instr__tests_a99f82329db618894765f50b84b22e329}{DATA\+\_\+\+SECTION\+\_\+\+LUI\+\_\+\+VAL}} = \char`\"{}0x10000\char`\"{}
+\item 
+int \mbox{\hyperlink{namespacegenerate__2__instr__tests_acd5a995105c239eef0dcfcfc429aa1af}{DATA\+\_\+\+SECTION\+\_\+\+OFFSET}} = 128
+\item 
+list \mbox{\hyperlink{namespacegenerate__2__instr__tests_ab336616f00233ee662a9e369528d0a81}{PRODUCERS}} = \mbox{[}\char`\"{}add\char`\"{}, \char`\"{}addi\char`\"{}, \char`\"{}lw\char`\"{}, \char`\"{}lui\char`\"{}, \char`\"{}jal\char`\"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacegenerate__2__instr__tests_afe55139f349d71441ed4540986427159}{CONSUMERS}} = \mbox{[}\char`\"{}add\char`\"{}, \char`\"{}addi\char`\"{}, \char`\"{}lw\char`\"{}, \char`\"{}sw\char`\"{}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacegenerate__2__instr__tests_ad0d50b80219315576d44989eb332e749}\label{namespacegenerate__2__instr__tests_ad0d50b80219315576d44989eb332e749}} 
+\index{generate\_2\_instr\_tests@{generate\_2\_instr\_tests}!format\_test\_file@{format\_test\_file}}
+\index{format\_test\_file@{format\_test\_file}!generate\_2\_instr\_tests@{generate\_2\_instr\_tests}}
+\doxysubsubsection{\texorpdfstring{format\_test\_file()}{format\_test\_file()}}
+{\footnotesize\ttfamily def generate\+\_\+2\+\_\+instr\+\_\+tests.\+format\+\_\+test\+\_\+file (\begin{DoxyParamCaption}\item[{}]{preamble\+\_\+lines,  }\item[{}]{test\+\_\+lines }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegenerate__2__instr__tests_aad4e7d53555a6bb1e84d7828f569a7d2}\label{namespacegenerate__2__instr__tests_aad4e7d53555a6bb1e84d7828f569a7d2}} 
+\index{generate\_2\_instr\_tests@{generate\_2\_instr\_tests}!generate\_2\_instr\_hazards@{generate\_2\_instr\_hazards}}
+\index{generate\_2\_instr\_hazards@{generate\_2\_instr\_hazards}!generate\_2\_instr\_tests@{generate\_2\_instr\_tests}}
+\doxysubsubsection{\texorpdfstring{generate\_2\_instr\_hazards()}{generate\_2\_instr\_hazards()}}
+{\footnotesize\ttfamily def generate\+\_\+2\+\_\+instr\+\_\+tests.\+generate\+\_\+2\+\_\+instr\+\_\+hazards (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegenerate__2__instr__tests_a0d99a752dad35e06371fa9ee6693888c}\label{namespacegenerate__2__instr__tests_a0d99a752dad35e06371fa9ee6693888c}} 
+\index{generate\_2\_instr\_tests@{generate\_2\_instr\_tests}!main@{main}}
+\index{main@{main}!generate\_2\_instr\_tests@{generate\_2\_instr\_tests}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily def generate\+\_\+2\+\_\+instr\+\_\+tests.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacegenerate__2__instr__tests_aee7020b3231b0c8427cb3d42d23a0cc9}\label{namespacegenerate__2__instr__tests_aee7020b3231b0c8427cb3d42d23a0cc9}} 
+\index{generate\_2\_instr\_tests@{generate\_2\_instr\_tests}!BASE\_DIR@{BASE\_DIR}}
+\index{BASE\_DIR@{BASE\_DIR}!generate\_2\_instr\_tests@{generate\_2\_instr\_tests}}
+\doxysubsubsection{\texorpdfstring{BASE\_DIR}{BASE\_DIR}}
+{\footnotesize\ttfamily string generate\+\_\+2\+\_\+instr\+\_\+tests.\+BASE\+\_\+\+DIR = \char`\"{}assembly\+\_\+multi\+\_\+hazard\char`\"{}}
+
+\mbox{\Hypertarget{namespacegenerate__2__instr__tests_afe55139f349d71441ed4540986427159}\label{namespacegenerate__2__instr__tests_afe55139f349d71441ed4540986427159}} 
+\index{generate\_2\_instr\_tests@{generate\_2\_instr\_tests}!CONSUMERS@{CONSUMERS}}
+\index{CONSUMERS@{CONSUMERS}!generate\_2\_instr\_tests@{generate\_2\_instr\_tests}}
+\doxysubsubsection{\texorpdfstring{CONSUMERS}{CONSUMERS}}
+{\footnotesize\ttfamily list generate\+\_\+2\+\_\+instr\+\_\+tests.\+CONSUMERS = \mbox{[}\char`\"{}add\char`\"{}, \char`\"{}addi\char`\"{}, \char`\"{}lw\char`\"{}, \char`\"{}sw\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacegenerate__2__instr__tests_a99f82329db618894765f50b84b22e329}\label{namespacegenerate__2__instr__tests_a99f82329db618894765f50b84b22e329}} 
+\index{generate\_2\_instr\_tests@{generate\_2\_instr\_tests}!DATA\_SECTION\_LUI\_VAL@{DATA\_SECTION\_LUI\_VAL}}
+\index{DATA\_SECTION\_LUI\_VAL@{DATA\_SECTION\_LUI\_VAL}!generate\_2\_instr\_tests@{generate\_2\_instr\_tests}}
+\doxysubsubsection{\texorpdfstring{DATA\_SECTION\_LUI\_VAL}{DATA\_SECTION\_LUI\_VAL}}
+{\footnotesize\ttfamily string generate\+\_\+2\+\_\+instr\+\_\+tests.\+DATA\+\_\+\+SECTION\+\_\+\+LUI\+\_\+\+VAL = \char`\"{}0x10000\char`\"{}}
+
+\mbox{\Hypertarget{namespacegenerate__2__instr__tests_acd5a995105c239eef0dcfcfc429aa1af}\label{namespacegenerate__2__instr__tests_acd5a995105c239eef0dcfcfc429aa1af}} 
+\index{generate\_2\_instr\_tests@{generate\_2\_instr\_tests}!DATA\_SECTION\_OFFSET@{DATA\_SECTION\_OFFSET}}
+\index{DATA\_SECTION\_OFFSET@{DATA\_SECTION\_OFFSET}!generate\_2\_instr\_tests@{generate\_2\_instr\_tests}}
+\doxysubsubsection{\texorpdfstring{DATA\_SECTION\_OFFSET}{DATA\_SECTION\_OFFSET}}
+{\footnotesize\ttfamily int generate\+\_\+2\+\_\+instr\+\_\+tests.\+DATA\+\_\+\+SECTION\+\_\+\+OFFSET = 128}
+
+\mbox{\Hypertarget{namespacegenerate__2__instr__tests_a31f000d7a6f8e29b639b43b799a3c274}\label{namespacegenerate__2__instr__tests_a31f000d7a6f8e29b639b43b799a3c274}} 
+\index{generate\_2\_instr\_tests@{generate\_2\_instr\_tests}!DEP\_REGS@{DEP\_REGS}}
+\index{DEP\_REGS@{DEP\_REGS}!generate\_2\_instr\_tests@{generate\_2\_instr\_tests}}
+\doxysubsubsection{\texorpdfstring{DEP\_REGS}{DEP\_REGS}}
+{\footnotesize\ttfamily list generate\+\_\+2\+\_\+instr\+\_\+tests.\+DEP\+\_\+\+REGS = \mbox{[}\char`\"{}x0\char`\"{}, \char`\"{}x1\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacegenerate__2__instr__tests_a6169b217908f12c1f77540f69ccf3a95}\label{namespacegenerate__2__instr__tests_a6169b217908f12c1f77540f69ccf3a95}} 
+\index{generate\_2\_instr\_tests@{generate\_2\_instr\_tests}!HAZARD\_DIR@{HAZARD\_DIR}}
+\index{HAZARD\_DIR@{HAZARD\_DIR}!generate\_2\_instr\_tests@{generate\_2\_instr\_tests}}
+\doxysubsubsection{\texorpdfstring{HAZARD\_DIR}{HAZARD\_DIR}}
+{\footnotesize\ttfamily generate\+\_\+2\+\_\+instr\+\_\+tests.\+HAZARD\+\_\+\+DIR = os.\+path.\+join(\mbox{\hyperlink{namespacegenerate__2__instr__tests_aee7020b3231b0c8427cb3d42d23a0cc9}{BASE\+\_\+\+DIR}}, \char`\"{}2\+\_\+instr\char`\"{})}
+
+\mbox{\Hypertarget{namespacegenerate__2__instr__tests_adf781c187188c2658f8701f46f24a832}\label{namespacegenerate__2__instr__tests_adf781c187188c2658f8701f46f24a832}} 
+\index{generate\_2\_instr\_tests@{generate\_2\_instr\_tests}!JUMP\_TEST\_REG@{JUMP\_TEST\_REG}}
+\index{JUMP\_TEST\_REG@{JUMP\_TEST\_REG}!generate\_2\_instr\_tests@{generate\_2\_instr\_tests}}
+\doxysubsubsection{\texorpdfstring{JUMP\_TEST\_REG}{JUMP\_TEST\_REG}}
+{\footnotesize\ttfamily string generate\+\_\+2\+\_\+instr\+\_\+tests.\+JUMP\+\_\+\+TEST\+\_\+\+REG = \char`\"{}x29\char`\"{}}
+
+\mbox{\Hypertarget{namespacegenerate__2__instr__tests_aab83a386da002019116232eb7d5b5a5e}\label{namespacegenerate__2__instr__tests_aab83a386da002019116232eb7d5b5a5e}} 
+\index{generate\_2\_instr\_tests@{generate\_2\_instr\_tests}!OTHER\_REG\_BASE@{OTHER\_REG\_BASE}}
+\index{OTHER\_REG\_BASE@{OTHER\_REG\_BASE}!generate\_2\_instr\_tests@{generate\_2\_instr\_tests}}
+\doxysubsubsection{\texorpdfstring{OTHER\_REG\_BASE}{OTHER\_REG\_BASE}}
+{\footnotesize\ttfamily string generate\+\_\+2\+\_\+instr\+\_\+tests.\+OTHER\+\_\+\+REG\+\_\+\+BASE = \char`\"{}x4\char`\"{}}
+
+\mbox{\Hypertarget{namespacegenerate__2__instr__tests_a58ec4af442381e7ec8f4b3605569cfe9}\label{namespacegenerate__2__instr__tests_a58ec4af442381e7ec8f4b3605569cfe9}} 
+\index{generate\_2\_instr\_tests@{generate\_2\_instr\_tests}!OTHER\_REG\_RD@{OTHER\_REG\_RD}}
+\index{OTHER\_REG\_RD@{OTHER\_REG\_RD}!generate\_2\_instr\_tests@{generate\_2\_instr\_tests}}
+\doxysubsubsection{\texorpdfstring{OTHER\_REG\_RD}{OTHER\_REG\_RD}}
+{\footnotesize\ttfamily string generate\+\_\+2\+\_\+instr\+\_\+tests.\+OTHER\+\_\+\+REG\+\_\+\+RD = \char`\"{}x3\char`\"{}}
+
+\mbox{\Hypertarget{namespacegenerate__2__instr__tests_ae9a4c2d9231a7b484c0c989ddfce953f}\label{namespacegenerate__2__instr__tests_ae9a4c2d9231a7b484c0c989ddfce953f}} 
+\index{generate\_2\_instr\_tests@{generate\_2\_instr\_tests}!OTHER\_REGS@{OTHER\_REGS}}
+\index{OTHER\_REGS@{OTHER\_REGS}!generate\_2\_instr\_tests@{generate\_2\_instr\_tests}}
+\doxysubsubsection{\texorpdfstring{OTHER\_REGS}{OTHER\_REGS}}
+{\footnotesize\ttfamily list generate\+\_\+2\+\_\+instr\+\_\+tests.\+OTHER\+\_\+\+REGS = \mbox{[}\char`\"{}x0\char`\"{}, \char`\"{}x2\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacegenerate__2__instr__tests_ab336616f00233ee662a9e369528d0a81}\label{namespacegenerate__2__instr__tests_ab336616f00233ee662a9e369528d0a81}} 
+\index{generate\_2\_instr\_tests@{generate\_2\_instr\_tests}!PRODUCERS@{PRODUCERS}}
+\index{PRODUCERS@{PRODUCERS}!generate\_2\_instr\_tests@{generate\_2\_instr\_tests}}
+\doxysubsubsection{\texorpdfstring{PRODUCERS}{PRODUCERS}}
+{\footnotesize\ttfamily list generate\+\_\+2\+\_\+instr\+\_\+tests.\+PRODUCERS = \mbox{[}\char`\"{}add\char`\"{}, \char`\"{}addi\char`\"{}, \char`\"{}lw\char`\"{}, \char`\"{}lui\char`\"{}, \char`\"{}jal\char`\"{}\mbox{]}}
+

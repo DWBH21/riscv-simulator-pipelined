@@ -1,0 +1,166 @@
+\hypertarget{classRV5SEXVM}{}\doxysection{RV5\+SEXVM Class Reference}
+\label{classRV5SEXVM}\index{RV5SEXVM@{RV5SEXVM}}
+
+
+{\ttfamily \#include $<$rv5s\+\_\+ex\+\_\+vm.\+h$>$}
+
+
+
+Inheritance diagram for RV5\+SEXVM\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{classRV5SEXVM__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for RV5\+SEXVM\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRV5SEXVM__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRV5SEXVM_a5c91a360d7c1885819ad737ea0f1a5e0}{RV5\+SEXVM}} (bool silent=false)
+\item 
+\mbox{\hyperlink{classRV5SEXVM_a4c5c6708ad3adcc59d343ac9dea48cb2}{$\sim$\+RV5\+SEXVM}} ()
+\item 
+void \mbox{\hyperlink{classRV5SEXVM_ab0e2202522e52ba2ae77b982464f9c0d}{Run}} () override
+\item 
+void \mbox{\hyperlink{classRV5SEXVM_a856db7399fec485187b440dd82cd1435}{Debug\+Run}} () override
+\item 
+void \mbox{\hyperlink{classRV5SEXVM_a7d60a1177a8f18df63d052fa0740b0a3}{Step}} () override
+\item 
+void \mbox{\hyperlink{classRV5SEXVM_abf29a2668a1da3010f06451e06cc7ed6}{Undo}} () override
+\item 
+void \mbox{\hyperlink{classRV5SEXVM_a6e35660fbe404ff256e60e68fc46d7a3}{Redo}} () override
+\item 
+void \mbox{\hyperlink{classRV5SEXVM_a371fd6d67468a73d9c17e9ba95fed7f8}{Reset}} () override
+\item 
+void \mbox{\hyperlink{classRV5SEXVM_a4c4c913937e0d3c26eed126f4521be4f}{Dump\+State}} (const std\+::filesystem\+::path \&filename)
+\begin{DoxyCompactList}\small\item\em Dumps the current VM state to a JSON file. This is the 5-\/stage pipeline specific implementation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRV5SEXVM_a041f1c40da31b8fdc0cb4c5bec6dfe3d}{enable\+Forwarding}} (bool enable)
+\item 
+void \mbox{\hyperlink{classRV5SEXVM_a14d008ecaf3c44ed5f2e1f5f47850b5e}{set\+Branch\+Predictor\+Type}} (\mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751d}{vm\+\_\+config\+::\+Branch\+Predictor\+Type}} type)
+\item 
+void \mbox{\hyperlink{classRV5SEXVM_a6273a043d231295fdbb077dd696d6ae9}{Print\+Type}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRV5SEXVM_a5c91a360d7c1885819ad737ea0f1a5e0}\label{classRV5SEXVM_a5c91a360d7c1885819ad737ea0f1a5e0}} 
+\index{RV5SEXVM@{RV5SEXVM}!RV5SEXVM@{RV5SEXVM}}
+\index{RV5SEXVM@{RV5SEXVM}!RV5SEXVM@{RV5SEXVM}}
+\doxysubsubsection{\texorpdfstring{RV5SEXVM()}{RV5SEXVM()}}
+{\footnotesize\ttfamily RV5\+SEXVM\+::\+RV5\+SEXVM (\begin{DoxyParamCaption}\item[{bool}]{silent = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classRV5SEXVM_a4c5c6708ad3adcc59d343ac9dea48cb2}\label{classRV5SEXVM_a4c5c6708ad3adcc59d343ac9dea48cb2}} 
+\index{RV5SEXVM@{RV5SEXVM}!````~RV5SEXVM@{$\sim$RV5SEXVM}}
+\index{````~RV5SEXVM@{$\sim$RV5SEXVM}!RV5SEXVM@{RV5SEXVM}}
+\doxysubsubsection{\texorpdfstring{$\sim$RV5SEXVM()}{~RV5SEXVM()}}
+{\footnotesize\ttfamily RV5\+SEXVM\+::$\sim$\+RV5\+SEXVM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRV5SEXVM_a856db7399fec485187b440dd82cd1435}\label{classRV5SEXVM_a856db7399fec485187b440dd82cd1435}} 
+\index{RV5SEXVM@{RV5SEXVM}!DebugRun@{DebugRun}}
+\index{DebugRun@{DebugRun}!RV5SEXVM@{RV5SEXVM}}
+\doxysubsubsection{\texorpdfstring{DebugRun()}{DebugRun()}}
+{\footnotesize\ttfamily void RV5\+SEXVM\+::\+Debug\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVmBase_ac14764bc14c9e4dd41655c9054b1dfa4}{Vm\+Base}}.
+
+\mbox{\Hypertarget{classRV5SEXVM_a4c4c913937e0d3c26eed126f4521be4f}\label{classRV5SEXVM_a4c4c913937e0d3c26eed126f4521be4f}} 
+\index{RV5SEXVM@{RV5SEXVM}!DumpState@{DumpState}}
+\index{DumpState@{DumpState}!RV5SEXVM@{RV5SEXVM}}
+\doxysubsubsection{\texorpdfstring{DumpState()}{DumpState()}}
+{\footnotesize\ttfamily void RV5\+SEXVM\+::\+Dump\+State (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Dumps the current VM state to a JSON file. This is the 5-\/stage pipeline specific implementation. 
+
+\mbox{\Hypertarget{classRV5SEXVM_a041f1c40da31b8fdc0cb4c5bec6dfe3d}\label{classRV5SEXVM_a041f1c40da31b8fdc0cb4c5bec6dfe3d}} 
+\index{RV5SEXVM@{RV5SEXVM}!enableForwarding@{enableForwarding}}
+\index{enableForwarding@{enableForwarding}!RV5SEXVM@{RV5SEXVM}}
+\doxysubsubsection{\texorpdfstring{enableForwarding()}{enableForwarding()}}
+{\footnotesize\ttfamily void RV5\+SEXVM\+::enable\+Forwarding (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRV5SEXVM_a6273a043d231295fdbb077dd696d6ae9}\label{classRV5SEXVM_a6273a043d231295fdbb077dd696d6ae9}} 
+\index{RV5SEXVM@{RV5SEXVM}!PrintType@{PrintType}}
+\index{PrintType@{PrintType}!RV5SEXVM@{RV5SEXVM}}
+\doxysubsubsection{\texorpdfstring{PrintType()}{PrintType()}}
+{\footnotesize\ttfamily void RV5\+SEXVM\+::\+Print\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classRV5SEXVM_a6e35660fbe404ff256e60e68fc46d7a3}\label{classRV5SEXVM_a6e35660fbe404ff256e60e68fc46d7a3}} 
+\index{RV5SEXVM@{RV5SEXVM}!Redo@{Redo}}
+\index{Redo@{Redo}!RV5SEXVM@{RV5SEXVM}}
+\doxysubsubsection{\texorpdfstring{Redo()}{Redo()}}
+{\footnotesize\ttfamily void RV5\+SEXVM\+::\+Redo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVmBase_ab323c0d074c2ceb9885746d1073ed505}{Vm\+Base}}.
+
+\mbox{\Hypertarget{classRV5SEXVM_a371fd6d67468a73d9c17e9ba95fed7f8}\label{classRV5SEXVM_a371fd6d67468a73d9c17e9ba95fed7f8}} 
+\index{RV5SEXVM@{RV5SEXVM}!Reset@{Reset}}
+\index{Reset@{Reset}!RV5SEXVM@{RV5SEXVM}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void RV5\+SEXVM\+::\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVmBase_ae8262f906074f8e778665b73841b0352}{Vm\+Base}}.
+
+\mbox{\Hypertarget{classRV5SEXVM_ab0e2202522e52ba2ae77b982464f9c0d}\label{classRV5SEXVM_ab0e2202522e52ba2ae77b982464f9c0d}} 
+\index{RV5SEXVM@{RV5SEXVM}!Run@{Run}}
+\index{Run@{Run}!RV5SEXVM@{RV5SEXVM}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily void RV5\+SEXVM\+::\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVmBase_ab99aff7b91e22e2b041d310791ae0281}{Vm\+Base}}.
+
+\mbox{\Hypertarget{classRV5SEXVM_a14d008ecaf3c44ed5f2e1f5f47850b5e}\label{classRV5SEXVM_a14d008ecaf3c44ed5f2e1f5f47850b5e}} 
+\index{RV5SEXVM@{RV5SEXVM}!setBranchPredictorType@{setBranchPredictorType}}
+\index{setBranchPredictorType@{setBranchPredictorType}!RV5SEXVM@{RV5SEXVM}}
+\doxysubsubsection{\texorpdfstring{setBranchPredictorType()}{setBranchPredictorType()}}
+{\footnotesize\ttfamily void RV5\+SEXVM\+::set\+Branch\+Predictor\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751d}{vm\+\_\+config\+::\+Branch\+Predictor\+Type}}}]{type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRV5SEXVM_a7d60a1177a8f18df63d052fa0740b0a3}\label{classRV5SEXVM_a7d60a1177a8f18df63d052fa0740b0a3}} 
+\index{RV5SEXVM@{RV5SEXVM}!Step@{Step}}
+\index{Step@{Step}!RV5SEXVM@{RV5SEXVM}}
+\doxysubsubsection{\texorpdfstring{Step()}{Step()}}
+{\footnotesize\ttfamily void RV5\+SEXVM\+::\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVmBase_a78fa2e4cc76ab45ca84e164b7b0af119}{Vm\+Base}}.
+
+\mbox{\Hypertarget{classRV5SEXVM_abf29a2668a1da3010f06451e06cc7ed6}\label{classRV5SEXVM_abf29a2668a1da3010f06451e06cc7ed6}} 
+\index{RV5SEXVM@{RV5SEXVM}!Undo@{Undo}}
+\index{Undo@{Undo}!RV5SEXVM@{RV5SEXVM}}
+\doxysubsubsection{\texorpdfstring{Undo()}{Undo()}}
+{\footnotesize\ttfamily void RV5\+SEXVM\+::\+Undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVmBase_a141e025834dd6b9d68f08db7959ed391}{Vm\+Base}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/vm/rv5s/\mbox{\hyperlink{rv5s__ex__vm_8h}{rv5s\+\_\+ex\+\_\+vm.\+h}}\item 
+src/vm/rv5s/\mbox{\hyperlink{rv5s__ex__vm_8cpp}{rv5s\+\_\+ex\+\_\+vm.\+cpp}}\end{DoxyCompactItemize}

@@ -132,13 +132,13 @@ Include dependency graph for assembler.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8e37bfd2b778ed2eb6c17c251aac6120"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structAssembledProgram.html">AssembledProgram</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="assembler_8cpp.html#a8e37bfd2b778ed2eb6c17c251aac6120">assemble</a> (const std::string &amp;filename)</td></tr>
-<tr class="memdesc:a8e37bfd2b778ed2eb6c17c251aac6120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assembles the intermediate code into machine code.  <a href="assembler_8cpp.html#a8e37bfd2b778ed2eb6c17c251aac6120">More...</a><br /></td></tr>
-<tr class="separator:a8e37bfd2b778ed2eb6c17c251aac6120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada0c4a8073144da4c1df14d33be6d7ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structAssembledProgram.html">AssembledProgram</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="assembler_8cpp.html#ada0c4a8073144da4c1df14d33be6d7ce">assemble</a> (const std::string &amp;filename, bool silent_mode)</td></tr>
+<tr class="memdesc:ada0c4a8073144da4c1df14d33be6d7ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assembles the intermediate code into machine code.  <a href="assembler_8cpp.html#ada0c4a8073144da4c1df14d33be6d7ce">More...</a><br /></td></tr>
+<tr class="separator:ada0c4a8073144da4c1df14d33be6d7ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a8e37bfd2b778ed2eb6c17c251aac6120"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e37bfd2b778ed2eb6c17c251aac6120">&#9670;&nbsp;</a></span>assemble()</h2>
+<a id="ada0c4a8073144da4c1df14d33be6d7ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada0c4a8073144da4c1df14d33be6d7ce">&#9670;&nbsp;</a></span>assemble()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -147,8 +147,18 @@ Functions</h2></td></tr>
           <td class="memname"><a class="el" href="structAssembledProgram.html">AssembledProgram</a> assemble </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>silent_mode</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -161,7 +171,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A vector of strings representing the machine code. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector of strings representing the machine code.</dd></dl>
+<p>silent_mode to be used in tests if enabled will not dump any information -&gt; like the disassembly or errors into a json file </p>
 
 </div>
 </div>

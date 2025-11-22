@@ -1,0 +1,86 @@
+\hypertarget{classIBranchPredictor}{}\doxysection{IBranch\+Predictor Class Reference}
+\label{classIBranchPredictor}\index{IBranchPredictor@{IBranchPredictor}}
+
+
+{\ttfamily \#include $<$i\+\_\+branch\+\_\+predictor.\+h$>$}
+
+
+
+Inheritance diagram for IBranch\+Predictor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classIBranchPredictor__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classIBranchPredictor_a9418270bd0782f97dbb1702ca7197172}{$\sim$\+IBranch\+Predictor}} ()=default
+\item 
+virtual bool \mbox{\hyperlink{classIBranchPredictor_a723533cc8b8c21226dc930b1a88dceab}{get\+Prediction}} (uint64\+\_\+t pc)=0
+\item 
+virtual void \mbox{\hyperlink{classIBranchPredictor_ade8be8286578374f694d2966d4b86b24}{update\+State}} (uint64\+\_\+t pc, bool predicted, bool actual\+\_\+outcome)=0
+\item 
+virtual unsigned int \mbox{\hyperlink{classIBranchPredictor_afbddaed294865d5b18cb4e40e8dd2d48}{get\+Mispredictions}} () const =0
+\item 
+virtual \mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751d}{vm\+\_\+config\+::\+Branch\+Predictor\+Type}} \mbox{\hyperlink{classIBranchPredictor_ad66851426c7ad28eee72df1e65f60fa1}{get\+Predictor\+Type}} () const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classIBranchPredictor_a9418270bd0782f97dbb1702ca7197172}\label{classIBranchPredictor_a9418270bd0782f97dbb1702ca7197172}} 
+\index{IBranchPredictor@{IBranchPredictor}!````~IBranchPredictor@{$\sim$IBranchPredictor}}
+\index{````~IBranchPredictor@{$\sim$IBranchPredictor}!IBranchPredictor@{IBranchPredictor}}
+\doxysubsubsection{\texorpdfstring{$\sim$IBranchPredictor()}{~IBranchPredictor()}}
+{\footnotesize\ttfamily virtual IBranch\+Predictor\+::$\sim$\+IBranch\+Predictor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIBranchPredictor_afbddaed294865d5b18cb4e40e8dd2d48}\label{classIBranchPredictor_afbddaed294865d5b18cb4e40e8dd2d48}} 
+\index{IBranchPredictor@{IBranchPredictor}!getMispredictions@{getMispredictions}}
+\index{getMispredictions@{getMispredictions}!IBranchPredictor@{IBranchPredictor}}
+\doxysubsubsection{\texorpdfstring{getMispredictions()}{getMispredictions()}}
+{\footnotesize\ttfamily virtual unsigned int IBranch\+Predictor\+::get\+Mispredictions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classStaticNotTakenPredictor_ab709652e9a070a87ed0479b943593e24}{Static\+Not\+Taken\+Predictor}}, \mbox{\hyperlink{classStaticTakenPredictor_a63155523ccbd17aeb1f62bdda5dc4e61}{Static\+Taken\+Predictor}}, \mbox{\hyperlink{classDynamic2BitPredictor_ace6a5e66f7282f82e4fcecfe2ccd3c97}{Dynamic2\+Bit\+Predictor}}, and \mbox{\hyperlink{classDynamic1BitPredictor_a5e3072765fff4b8b60c289a828c7f1ae}{Dynamic1\+Bit\+Predictor}}.
+
+\mbox{\Hypertarget{classIBranchPredictor_a723533cc8b8c21226dc930b1a88dceab}\label{classIBranchPredictor_a723533cc8b8c21226dc930b1a88dceab}} 
+\index{IBranchPredictor@{IBranchPredictor}!getPrediction@{getPrediction}}
+\index{getPrediction@{getPrediction}!IBranchPredictor@{IBranchPredictor}}
+\doxysubsubsection{\texorpdfstring{getPrediction()}{getPrediction()}}
+{\footnotesize\ttfamily virtual bool IBranch\+Predictor\+::get\+Prediction (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{pc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classStaticNotTakenPredictor_a6073392e6d76cc2c96cac913ae85b5a1}{Static\+Not\+Taken\+Predictor}}, \mbox{\hyperlink{classStaticTakenPredictor_a6b19848e72959db8092bdebf63d91671}{Static\+Taken\+Predictor}}, \mbox{\hyperlink{classDynamic2BitPredictor_a2f68bec16ce205cdcc04a425e623827a}{Dynamic2\+Bit\+Predictor}}, and \mbox{\hyperlink{classDynamic1BitPredictor_a2b01b61c6e0d33709b7f71343b4907b8}{Dynamic1\+Bit\+Predictor}}.
+
+\mbox{\Hypertarget{classIBranchPredictor_ad66851426c7ad28eee72df1e65f60fa1}\label{classIBranchPredictor_ad66851426c7ad28eee72df1e65f60fa1}} 
+\index{IBranchPredictor@{IBranchPredictor}!getPredictorType@{getPredictorType}}
+\index{getPredictorType@{getPredictorType}!IBranchPredictor@{IBranchPredictor}}
+\doxysubsubsection{\texorpdfstring{getPredictorType()}{getPredictorType()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacevm__config_af12207855fa8a67ed62dec8ff0d6751d}{vm\+\_\+config\+::\+Branch\+Predictor\+Type}} IBranch\+Predictor\+::get\+Predictor\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classStaticNotTakenPredictor_a797e30f4d9831b6b5c72df937fbf9283}{Static\+Not\+Taken\+Predictor}}, \mbox{\hyperlink{classStaticTakenPredictor_a9f9da3fae47f34275ab9b798e3e5b632}{Static\+Taken\+Predictor}}, \mbox{\hyperlink{classDynamic2BitPredictor_ab36ede3406292c37fef339046cfcff24}{Dynamic2\+Bit\+Predictor}}, and \mbox{\hyperlink{classDynamic1BitPredictor_a7c9ea031cc02858fa9070db839165f64}{Dynamic1\+Bit\+Predictor}}.
+
+\mbox{\Hypertarget{classIBranchPredictor_ade8be8286578374f694d2966d4b86b24}\label{classIBranchPredictor_ade8be8286578374f694d2966d4b86b24}} 
+\index{IBranchPredictor@{IBranchPredictor}!updateState@{updateState}}
+\index{updateState@{updateState}!IBranchPredictor@{IBranchPredictor}}
+\doxysubsubsection{\texorpdfstring{updateState()}{updateState()}}
+{\footnotesize\ttfamily virtual void IBranch\+Predictor\+::update\+State (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{pc,  }\item[{bool}]{predicted,  }\item[{bool}]{actual\+\_\+outcome }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classStaticNotTakenPredictor_a4eb725d976f5f720c6c8fae783d35dbc}{Static\+Not\+Taken\+Predictor}}, \mbox{\hyperlink{classStaticTakenPredictor_a705807316807b3f1b7663f69eaeed9c4}{Static\+Taken\+Predictor}}, \mbox{\hyperlink{classDynamic1BitPredictor_a57ab3e99b80033199321d1ab1b5c0a54}{Dynamic1\+Bit\+Predictor}}, and \mbox{\hyperlink{classDynamic2BitPredictor_a5ed1d606c7754b29b731d2d003286923}{Dynamic2\+Bit\+Predictor}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/vm/rv5s/branch\+\_\+prediction/\mbox{\hyperlink{i__branch__predictor_8h}{i\+\_\+branch\+\_\+predictor.\+h}}\end{DoxyCompactItemize}
