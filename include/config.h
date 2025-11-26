@@ -274,7 +274,7 @@ struct VmConfig {
             setBranchStage(BranchStage::BRANCH_IN_EX);
         }
         else if (value == "id") {
-            throw std::invalid_argument("BranchStage 'id' is not yet supported.");
+            setBranchStage(BranchStage::BRANCH_IN_ID);
         }
         else throw std::invalid_argument("Unknown branch_stage: " + value);
       }

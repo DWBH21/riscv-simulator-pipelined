@@ -1,9 +1,11 @@
 /**
  * @file rv5s_id_vm.cpp
- * @brief Implementation of the 5-stage pipelined RISC-V VM where Branch Comparison happens in the EX stage
+ * @brief Implementation of the 5-stage pipelined RISC-V VM where Branch Comparison happens in the ID stage
+ * Branch Prediction happens in the Fetch Stage with the Branch Target Buffer to determine whether the current instruction is a branch and what is its target address
  */
 
 #include "vm/rv5s/rv5s_id_vm.h"
+#include "vm/rv5s/btb.h"
 #include "vm/rv5s/rv5s_control_unit.h"
 #include "vm/rv5s/pipeline_registers.h"
 #include "vm/rv5s/rv5s_hazard_unit.h"
@@ -218,33 +220,51 @@ void RV5SIDVM::Redo() {
 }
 
 void RV5SIDVM::Fetch_Stage() {
-    
     if (flush_pipeline_) { 
         stall_cycles_++;
         next_if_id_reg_ = CreateBubble<IF_ID_Reg>();
         return;
     }
 
-    // If all instructions have been fetched
     if(program_counter_ >= program_size_) {
         next_if_id_reg_ = CreateBubble<IF_ID_Reg>();
         return;
     }
 
-    // the Memory::ReadWord function throws a std::out_of_range exception if an invalid memory address is read. Safety Check -> 
     try {
         uint32_t instruction = memory_controller_.ReadWord(program_counter_);
+        
+        // Checking for current PC address in the branch target buffer to determine whether it is a branch or not
+        auto [btb_hit, btb_target] = btb_.lookup(program_counter_);
+
+        // Getting Branch Prediction result from the branch predictor
+        bool predict_taken = branch_predictor_->getPrediction(program_counter_);
+
+        uint64_t next_pc_val = 0;
+        if (btb_hit && predict_taken) {
+            next_pc_val = btb_target;
+
+            next_if_id_reg_.predicted_outcome = true; 
+            next_if_id_reg_.predicted_target = btb_target;
+        } 
+        else {
+            next_pc_val = program_counter_ + 4;
+            next_if_id_reg_.predicted_outcome = false;
+            next_if_id_reg_.predicted_target = 0;
+        }
+
+        // update pipeline register
         next_if_id_reg_.instruction = instruction;
-        next_if_id_reg_.pc = program_counter_;       // original pc stored 
-        UpdateProgramCounter(4);
-        next_if_id_reg_.pc_inc = program_counter_; // the incremented pc to be stored in the pipeline register
+        next_if_id_reg_.pc = program_counter_;
+        next_if_id_reg_.pc_inc = program_counter_ + 4; 
         next_if_id_reg_.is_valid = true;
+
+        UpdateProgramCounter(next_pc_val - program_counter_);
+
     } catch(const std::exception& e) {
         std::cerr << "Fetch Stage Error: " << e.what() << std::endl;
-        next_if_id_reg_ = CreateBubble<IF_ID_Reg>();    // insert bubble 
-        next_if_id_reg_.pc = program_counter_;       // original pc stored 
+        next_if_id_reg_ = CreateBubble<IF_ID_Reg>();
         UpdateProgramCounter(4);
-        next_if_id_reg_.pc_inc = program_counter_; // the incremented pc to be stored in the pipeline register
     }
 }
 
@@ -318,48 +338,100 @@ void RV5SIDVM::Decode_Stage() {
     bool data_stall = false;
     if(forwarding_enabled_) {
         data_stall = hazard_unit_.detectLoadUseHazard(control, next_id_ex_reg_.rs1_index, next_id_ex_reg_.rs2_index, id_ex_reg_);
-    }
-    else {
+    } else {
         data_stall = hazard_unit_.detectDataHazard(control, next_id_ex_reg_.rs1_index, next_id_ex_reg_.rs2_index, id_ex_reg_, ex_mem_reg_);
     }
+
+    // ALU-Use Hazard (Specific to ID Stage)
+    // If we need a register for a branch comparison, but that register is currently being computed in the EX stage, we must stall 1 cycle.
+    if (!data_stall && control.branch && forwarding_enabled_) {
+        if (id_ex_reg_.is_valid && id_ex_reg_.control.reg_write && id_ex_reg_.rd_index != 0) {
+            if (id_ex_reg_.rd_index == next_id_ex_reg_.rs1_index || id_ex_reg_.rd_index == next_id_ex_reg_.rs2_index) {
+                data_stall = true;
+            }
+        }
+    }
+
+    // Load-Use Hazard (Specific to ID Stage) 
+    // 2-cycle stall needed
+    if (!data_stall && (control.branch || control.branch_op == BranchOp::JALR) && forwarding_enabled_) {
+        if (ex_mem_reg_.is_valid && ex_mem_reg_.control.mem_read && ex_mem_reg_.rd_index != 0) {
+            if (ex_mem_reg_.rd_index == next_id_ex_reg_.rs1_index || ex_mem_reg_.rd_index == next_id_ex_reg_.rs2_index) {
+                data_stall = true;
+            }
+        }
+    }
+
     if(data_stall) {
         stall_request_ = true;
         next_id_ex_reg_ = CreateBubble<ID_EX_Reg>();
-
-        if(!silent_mode_) {                  
-            if(forwarding_enabled_) 
-                std::cout << "Load Use Data Hazard. Forwarding + Stalling for one cycle" << std::endl;
-            else 
-                std::cout << "Data Hazard. Stalling.." << std::endl;
-        }
-        return;
+        return; 
     }
 
-    // resolution for control hazards 
-    // for JAL, JALR: 
-    bool prediction = false;
-    if (control.branch_op == BranchOp::JAL || control.branch_op == BranchOp::JALR) {
+    // Branch Resolution 
+    if (control.branch) {
         
-        prediction = true;         // branch always predicted as taken 
-        next_id_ex_reg_.predicted_outcome = prediction;                     // passing the prediction onto the EX stage to determine if it was a misprediction
-        if (control.branch_op == BranchOp::JAL) {               // if instruction is jal, target address can be determined.
-            program_counter_ = if_id_reg_.pc + next_id_ex_reg_.immediate;
+        uint64_t val1 = forwarding_enabled_ ? getForwardedIdReg(next_id_ex_reg_.rs1_index) : next_id_ex_reg_.rs1_data;
+        uint64_t val2 = forwarding_enabled_ ? getForwardedIdReg(next_id_ex_reg_.rs2_index) : next_id_ex_reg_.rs2_data;
+
+        // Calculate actual Outcome
+        bool actual_taken = false;
+        uint64_t actual_target = 0;
+
+        if (control.branch_op == BranchOp::JAL) {
+            actual_taken = true;
+            actual_target = if_id_reg_.pc + next_id_ex_reg_.immediate;
+        } 
+        else if (control.branch_op == BranchOp::JALR) {
+            actual_taken = true;
+            actual_target = val1 + next_id_ex_reg_.immediate;
+        } 
+        else { // Conditional Branches
+            int64_t op1 = static_cast<int64_t>(val1);
+            int64_t op2 = static_cast<int64_t>(val2);
+            switch (control.branch_op) {
+                case BranchOp::BEQ:  actual_taken = (op1 == op2); break;
+                case BranchOp::BNE:  actual_taken = (op1 != op2); break;
+                case BranchOp::BLT:  actual_taken = (op1 < op2);  break;
+                case BranchOp::BGE:  actual_taken = (op1 >= op2); break;
+                case BranchOp::BLTU: actual_taken = (val1 < val2); break;
+                case BranchOp::BGEU: actual_taken = (val1 >= val2); break;
+                default: break;
+            }
+            if(actual_taken) actual_target = if_id_reg_.pc + next_id_ex_reg_.immediate;
         }
-        // else if instruction is jalr, target address will be determined in the EX stage -> fetching next instruction by default 
-        flush_pipeline_ = true;  
-    }
-    else if(control.branch) {                            // other B type instructions
-        prediction = branch_predictor_->getPrediction(if_id_reg_.pc);
-        next_id_ex_reg_.predicted_outcome = prediction;                     // passing the prediction onto the EX stage to determine if it was a misprediction
-        if(prediction) {                         // predicted to take branch
-            program_counter_ = if_id_reg_.pc + next_id_ex_reg_.immediate;
-            flush_pipeline_ = true;
+
+        // Update Branch Predictor and BTB
+        if (control.branch) {
+            branch_predictor_->updateState(if_id_reg_.pc, if_id_reg_.predicted_outcome, actual_taken);
         }
-        // else -> do nothing -> next instruction at PC + 4
-    }
-    if(!silent_mode_) {          
-        if(control.branch) 
-            std::cout << "Control Hazard. Predicted Outcome: " << prediction << std::endl;
+        
+        btb_.update(if_id_reg_.pc, actual_target);      
+
+        // Verify against Fetch Stage Prediction
+        bool prediction_correct = false;
+
+        if (if_id_reg_.predicted_outcome == actual_taken) {
+            if (actual_taken) {
+                // If right target address was predicted
+                prediction_correct = (if_id_reg_.predicted_target == actual_target);
+            } else {
+                prediction_correct = true; 
+            }
+        }
+
+        // Handling Misprediction
+        if (!prediction_correct) {
+            branch_mispredictions_++;
+            flush_pipeline_ = true; // flush instruction currently in fetch stage
+            
+            // Update PC to correct value
+            if (actual_taken) {
+                program_counter_ = actual_target;
+            } else {
+                program_counter_ = next_id_ex_reg_.pc_inc; // PC + 4
+            }
+        }
     }
 }
 void RV5SIDVM::Execute_Stage() {
@@ -463,65 +535,6 @@ void RV5SIDVM::Execute_Stage() {
     int64_t execution_result;
     std::tie(execution_result, overflow) = alu_.execute(aluOperation, reg1_value, reg2_value);
 
-    // Handling for Branch Instructions
-    bool actual_outcome = false;
-    int64_t target_address = 0;
-
-    if(control.branch_op == BranchOp::JAL || control.branch_op == BranchOp::JALR) {
-        actual_outcome = true;
-        target_address = execution_result;
-    }
-    else if(control.branch) { 
-        switch (control.branch_op) {
-            case BranchOp::BEQ:
-                actual_outcome = (execution_result == 0);
-                break;
-            case BranchOp::BNE:
-                actual_outcome = (execution_result != 0);
-                break;
-            case BranchOp::BLT:
-                actual_outcome = (execution_result == 1);
-                break;
-            case BranchOp::BGE:
-                actual_outcome = (execution_result == 0);
-                break;
-            case BranchOp::BLTU:
-                actual_outcome = (execution_result == 1);
-                break;
-            case BranchOp::BGEU:
-                actual_outcome = (execution_result == 0); 
-                break;
-            default:
-                break;
-        }
-
-        if(actual_outcome) {
-            target_address = id_ex_reg_.pc + id_ex_reg_.immediate;
-        }
-    }
-
-    if(control.branch) {
-        bool predicted_outcome = id_ex_reg_.predicted_outcome;
-        branch_predictor_->updateState(id_ex_reg_.pc, predicted_outcome, actual_outcome);
-
-        if(!silent_mode_) {         
-            std::cout << "Actual Outcome: " << actual_outcome << std::endl;
-        }
-        if (control.branch_op == BranchOp::JALR) {                  // special case for jalr, as its target address is calculated only in the ex stage and hence pipeline needs to be flushed
-            program_counter_ = target_address;
-            flush_pipeline_ = true;
-        }
-        else if(predicted_outcome != actual_outcome) {             // misprediction
-            flush_pipeline_= true;
-            branch_mispredictions_++;
-            if(actual_outcome == true) {
-                program_counter_ = target_address;
-            }
-            else {
-                program_counter_ = id_ex_reg_.pc_inc;
-            }
-        }
-    }
     next_ex_mem_reg_.pc_inc = id_ex_reg_.pc_inc;
     next_ex_mem_reg_.alu_result = execution_result;
     next_ex_mem_reg_.store_data = data_alu_b; 

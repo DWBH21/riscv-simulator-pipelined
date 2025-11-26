@@ -5,6 +5,7 @@
 #include "vm/rvss/rvss_vm.h"
 #include "vm/rv5s/rv5s_vm.h"
 #include "vm/rv5s/rv5s_ex_vm.h"
+#include "vm/rv5s/rv5s_id_vm.h"
 #include "vm_runner.h"
 #include "command_handler.h"
 #include "config.h"
@@ -34,6 +35,17 @@ std::unique_ptr<VmBase> initializeVm() {
                 
                 std::cout << "Initializing 5-Stage Pipeline VM (Branch in EX)..." << std::endl;
                 auto rv5s_vm = std::make_unique<RV5SEXVM>();
+
+                rv5s_vm->setBranchPredictorType(vm_config::config.getBranchPredictorType());
+                
+                bool forwarding_enabled = (hazardMode == vm_config::DataHazardMode::FORWARDING);
+                rv5s_vm->enableForwarding(forwarding_enabled);
+                vm = std::move(rv5s_vm);
+            }
+            else if (branch_stage == vm_config::BranchStage::BRANCH_IN_ID) {
+                
+                std::cout << "Initializing 5-Stage Pipeline VM (Branch in ID)..." << std::endl;
+                auto rv5s_vm = std::make_unique<RV5SIDVM>();
 
                 rv5s_vm->setBranchPredictorType(vm_config::config.getBranchPredictorType());
                 
@@ -105,7 +117,7 @@ int main(int argc, char *argv[]) {
             return 1;
         }
         try {
-            vm_ptr = initializeVm(); // <-- UPDATED
+            vm_ptr = initializeVm();
             AssembledProgram program = assemble(argv[i]);
             RVSSVM vm;
             vm_ptr->LoadProgram(program);

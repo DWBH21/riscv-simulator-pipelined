@@ -19,7 +19,7 @@ RUN_DIR_BASE = Path("./test_run_outputs")
 
 SIMULATOR_CONFIGS = [
     {
-        "id": "5Stage_Ideal",
+        "id": "5Stage_ex_Ideal",
         "flags": [
             "--config", "Execution", "processor_type", "multi_stage", 
             "--config", "Execution", "data_hazard_mode", "ideal"
@@ -27,9 +27,14 @@ SIMULATOR_CONFIGS = [
     },
 ]
 
+BRANCH_STAGES = [
+    "ex",
+    "id"
+]
+
 HAZARD_MODES = [
-    ("Stall", "stall"), 
-    ("Forwarding", "forwarding")
+    "stall",
+    "forwarding"
 ]
 
 BRANCH_PREDICTORS = [
@@ -39,27 +44,28 @@ BRANCH_PREDICTORS = [
     "dynamic_2bit"
 ]
 
-for mode_name, mode_val in HAZARD_MODES:
-    for pred in BRANCH_PREDICTORS:
-        config_id = f"5Stage_{mode_name}_{pred}"
-        
-        SIMULATOR_CONFIGS.append({
-            "id": config_id,
-            "flags": [
-                "--config", "Execution", "processor_type", "multi_stage", 
-                "--config", "Execution", "data_hazard_mode", mode_val,
-                "--config", "Execution", "branch_stage", "ex",
-                "--config", "Execution", "branch_predictor", pred
-            ]
-        })
+for branch_stage in BRANCH_STAGES:
+    for hazard_mode in HAZARD_MODES:
+        for pred in BRANCH_PREDICTORS:
+            config_id = f"5Stage_{branch_stage}_{hazard_mode}_{pred}"
+            
+            SIMULATOR_CONFIGS.append({
+                "id": config_id,
+                "flags": [
+                    "--config", "Execution", "processor_type", "multi_stage", 
+                    "--config", "Execution", "data_hazard_mode", hazard_mode,
+                    "--config", "Execution", "branch_stage", branch_stage,
+                    "--config", "Execution", "branch_predictor", pred
+                ]
+            })
 
 # Usage: 
 #   Run all: pytest test_runner.py
-#   Run specific: SIM_MODE=5Stage_Stall_static_taken pytest test_runner.py
+#   Run specific: SIM_MODE=5Stage_ex_stall_static_taken pytest test_runner.py
 target_mode = os.environ.get("SIM_MODE")
 
 if target_mode:
-    filtered_configs = [c for c in SIMULATOR_CONFIGS if c["id"] == target_mode]
+    filtered_configs = [c for c in SIMULATOR_CONFIGS if target_mode in c["id"]]
     
     if not filtered_configs:
         print(f"\n[Error] SIM_MODE='{target_mode}' not found.")

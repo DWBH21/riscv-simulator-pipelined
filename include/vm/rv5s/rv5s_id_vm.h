@@ -7,6 +7,7 @@
 #define RV5S_ID_VM_H
 
     #include "vm/vm_base.h"
+    #include "vm/rv5s/btb.h"
     #include "vm/rv5s/pipeline_registers.h"
     #include "vm/rv5s/rv5s_control_unit.h"
     #include "vm/rv5s/rv5s_hazard_unit.h"
@@ -43,6 +44,7 @@
             RV5SHazardUnit hazard_unit_;
             RV5SForwardingUnit forwarding_unit_;
             std::unique_ptr<IBranchPredictor> branch_predictor_;        // pointer to the base class IBranchPredictor
+            BranchTargetBuffer btb_;
 
             bool stall_request_ = false;            // to indicate a stall signal from the decode stage
             bool flush_pipeline_ = false;           // to flush pipeline in case of branch taken in branch instructions

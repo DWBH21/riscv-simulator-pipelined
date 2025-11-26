@@ -89,6 +89,9 @@ struct IF_ID_Reg {
     uint32_t instruction = 0;           // the original instruction fetched from memory 
     uint64_t pc = 0;            // pc of the original instruction -> will be needed in pc relative addressing later.
     uint64_t pc_inc = 0;                    // the incremented program counter
+
+    bool predicted_outcome = false;             // for early prediction
+    uint64_t predicted_target = 0;
 };
 
 struct ID_EX_Reg {
