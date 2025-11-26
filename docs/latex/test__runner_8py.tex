@@ -27,15 +27,17 @@ string \mbox{\hyperlink{namespacetest__runner_a7a805701b1cd2ee2a076d6ec979a5f27}
 \item 
 list \mbox{\hyperlink{namespacetest__runner_ae996e0d802e8dfa548a143b8ce8c7c32}{test\+\_\+runner.\+SIMULATOR\+\_\+\+CONFIGS}}
 \item 
+list \mbox{\hyperlink{namespacetest__runner_a22730f5a3395a84d6714bd49975f4a3b}{test\+\_\+runner.\+BRANCH\+\_\+\+STAGES}}
+\item 
 list \mbox{\hyperlink{namespacetest__runner_a9b9713ecf7ccd693564cb4a92f9343b7}{test\+\_\+runner.\+HAZARD\+\_\+\+MODES}}
 \item 
 list \mbox{\hyperlink{namespacetest__runner_a76ddb37764cfd878fdf159520cf7e36f}{test\+\_\+runner.\+BRANCH\+\_\+\+PREDICTORS}}
 \item 
-string \mbox{\hyperlink{namespacetest__runner_aa710181883c5fab1cfe296e11d82610a}{test\+\_\+runner.\+config\+\_\+id}} = f\char`\"{}5Stage\+\_\+\{mode\+\_\+name\}\+\_\+\{pred\}\char`\"{}
+string \mbox{\hyperlink{namespacetest__runner_aa710181883c5fab1cfe296e11d82610a}{test\+\_\+runner.\+config\+\_\+id}} = f\char`\"{}5Stage\+\_\+\{branch\+\_\+stage\}\+\_\+\{hazard\+\_\+mode\}\+\_\+\{pred\}\char`\"{}
 \item 
 \mbox{\hyperlink{namespacetest__runner_af4290c59fb3728e3cf8a5dd04dd26512}{test\+\_\+runner.\+target\+\_\+mode}} = os.\+environ.\+get(\char`\"{}SIM\+\_\+\+MODE\char`\"{})
 \item 
-list \mbox{\hyperlink{namespacetest__runner_a392804e1cfe7567f85f8c940a193514e}{test\+\_\+runner.\+filtered\+\_\+configs}} = \mbox{[}c for c in SIMULATOR\+\_\+\+CONFIGS if c\mbox{[}\char`\"{}id\char`\"{}\mbox{]} == target\+\_\+mode\mbox{]}
+list \mbox{\hyperlink{namespacetest__runner_a392804e1cfe7567f85f8c940a193514e}{test\+\_\+runner.\+filtered\+\_\+configs}} = \mbox{[}c for c in SIMULATOR\+\_\+\+CONFIGS if target\+\_\+mode in c\mbox{[}\char`\"{}id\char`\"{}\mbox{]}\mbox{]}
 \item 
 dictionary \mbox{\hyperlink{namespacetest__runner_abdecaba8f835a891df95c2f65e2e6c47}{test\+\_\+runner.\+TEST\+\_\+\+SUITES}}
 \end{DoxyCompactItemize}

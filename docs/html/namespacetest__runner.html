@@ -90,15 +90,17 @@ Variables</h2></td></tr>
 <tr class="separator:a47d5fab22dd475d59680fe8b9a3182c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae996e0d802e8dfa548a143b8ce8c7c32"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetest__runner.html#ae996e0d802e8dfa548a143b8ce8c7c32">SIMULATOR_CONFIGS</a></td></tr>
 <tr class="separator:ae996e0d802e8dfa548a143b8ce8c7c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22730f5a3395a84d6714bd49975f4a3b"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetest__runner.html#a22730f5a3395a84d6714bd49975f4a3b">BRANCH_STAGES</a></td></tr>
+<tr class="separator:a22730f5a3395a84d6714bd49975f4a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b9713ecf7ccd693564cb4a92f9343b7"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetest__runner.html#a9b9713ecf7ccd693564cb4a92f9343b7">HAZARD_MODES</a></td></tr>
 <tr class="separator:a9b9713ecf7ccd693564cb4a92f9343b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76ddb37764cfd878fdf159520cf7e36f"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetest__runner.html#a76ddb37764cfd878fdf159520cf7e36f">BRANCH_PREDICTORS</a></td></tr>
 <tr class="separator:a76ddb37764cfd878fdf159520cf7e36f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa710181883c5fab1cfe296e11d82610a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetest__runner.html#aa710181883c5fab1cfe296e11d82610a">config_id</a> = f&quot;5Stage_{mode_name}_{pred}&quot;</td></tr>
+<tr class="memitem:aa710181883c5fab1cfe296e11d82610a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetest__runner.html#aa710181883c5fab1cfe296e11d82610a">config_id</a> = f&quot;5Stage_{branch_stage}_{hazard_mode}_{pred}&quot;</td></tr>
 <tr class="separator:aa710181883c5fab1cfe296e11d82610a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4290c59fb3728e3cf8a5dd04dd26512"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetest__runner.html#af4290c59fb3728e3cf8a5dd04dd26512">target_mode</a> = os.environ.get(&quot;SIM_MODE&quot;)</td></tr>
 <tr class="separator:af4290c59fb3728e3cf8a5dd04dd26512"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a392804e1cfe7567f85f8c940a193514e"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetest__runner.html#a392804e1cfe7567f85f8c940a193514e">filtered_configs</a> = [c for c in <a class="el" href="namespacetest__runner.html#ae996e0d802e8dfa548a143b8ce8c7c32">SIMULATOR_CONFIGS</a> if c[&quot;id&quot;] == target_mode]</td></tr>
+<tr class="memitem:a392804e1cfe7567f85f8c940a193514e"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetest__runner.html#a392804e1cfe7567f85f8c940a193514e">filtered_configs</a> = [c for c in <a class="el" href="namespacetest__runner.html#ae996e0d802e8dfa548a143b8ce8c7c32">SIMULATOR_CONFIGS</a> if <a class="el" href="namespacetest__runner.html#af4290c59fb3728e3cf8a5dd04dd26512">target_mode</a> in c[&quot;id&quot;]]</td></tr>
 <tr class="separator:a392804e1cfe7567f85f8c940a193514e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdecaba8f835a891df95c2f65e2e6c47"><td class="memItemLeft" align="right" valign="top">dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetest__runner.html#abdecaba8f835a891df95c2f65e2e6c47">TEST_SUITES</a></td></tr>
 <tr class="separator:abdecaba8f835a891df95c2f65e2e6c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -190,6 +192,24 @@ Returns a list of test case dictionaries.
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a22730f5a3395a84d6714bd49975f4a3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22730f5a3395a84d6714bd49975f4a3b">&#9670;&nbsp;</a></span>BRANCH_STAGES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">list test_runner.BRANCH_STAGES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;=  [</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    <span class="stringliteral">&quot;ex&quot;</span>,</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    <span class="stringliteral">&quot;id&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;]</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a60c0b841bdf3d51c9bdd8814900518cb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a60c0b841bdf3d51c9bdd8814900518cb">&#9670;&nbsp;</a></span>BUILD_DIR</h2>
 
@@ -211,7 +231,7 @@ Returns a list of test case dictionaries.
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string test_runner.config_id = f&quot;5Stage_{mode_name}_{pred}&quot;</td>
+          <td class="memname">string test_runner.config_id = f&quot;5Stage_{branch_stage}_{hazard_mode}_{pred}&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -225,7 +245,7 @@ Returns a list of test case dictionaries.
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">list test_runner.filtered_configs = [c for c in <a class="el" href="namespacetest__runner.html#ae996e0d802e8dfa548a143b8ce8c7c32">SIMULATOR_CONFIGS</a> if c[&quot;id&quot;] == target_mode]</td>
+          <td class="memname">list test_runner.filtered_configs = [c for c in <a class="el" href="namespacetest__runner.html#ae996e0d802e8dfa548a143b8ce8c7c32">SIMULATOR_CONFIGS</a> if <a class="el" href="namespacetest__runner.html#af4290c59fb3728e3cf8a5dd04dd26512">target_mode</a> in c[&quot;id&quot;]]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -244,8 +264,8 @@ Returns a list of test case dictionaries.
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;=  [</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    (<span class="stringliteral">&quot;Stall&quot;</span>, <span class="stringliteral">&quot;stall&quot;</span>), </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    (<span class="stringliteral">&quot;Forwarding&quot;</span>, <span class="stringliteral">&quot;forwarding&quot;</span>)</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    <span class="stringliteral">&quot;stall&quot;</span>,</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    <span class="stringliteral">&quot;forwarding&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;]</div>
 </div><!-- fragment -->
 </div>
@@ -291,7 +311,7 @@ Returns a list of test case dictionaries.
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;=  [</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    {</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;        <span class="stringliteral">&quot;id&quot;</span>: <span class="stringliteral">&quot;5Stage_Ideal&quot;</span>,</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;        <span class="stringliteral">&quot;id&quot;</span>: <span class="stringliteral">&quot;5Stage_ex_Ideal&quot;</span>,</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;        <span class="stringliteral">&quot;flags&quot;</span>: [</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;            <span class="stringliteral">&quot;--config&quot;</span>, <span class="stringliteral">&quot;Execution&quot;</span>, <span class="stringliteral">&quot;processor_type&quot;</span>, <span class="stringliteral">&quot;multi_stage&quot;</span>, </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;            <span class="stringliteral">&quot;--config&quot;</span>, <span class="stringliteral">&quot;Execution&quot;</span>, <span class="stringliteral">&quot;data_hazard_mode&quot;</span>, <span class="stringliteral">&quot;ideal&quot;</span></div>

@@ -2,7 +2,7 @@ var searchData=
 [
   ['b_5fnone_36',['B_NONE',['../namespaceinstruction__type.html#aa1eab7aa4e293318f6670cbbe73a41afae95021374f8867c2463a9c09587e7688',1,'instruction_type']]],
   ['b_5ftype_5finstruction_5fencoding_5fmap_37',['B_type_instruction_encoding_map',['../namespaceinstruction__set.html#a3e35acfc82b9e41676104e2747733de6',1,'instruction_set']]],
-  ['base_5fdir_38',['BASE_DIR',['../namespacegenerate__single__tests__without__hazards.html#abfe8c6f04bd7fce776fb03415767fc73',1,'generate_single_tests_without_hazards.BASE_DIR()'],['../namespacegenerate__single__tests__hazards.html#a52d2576d87f7a9d899b042984d7e8c6e',1,'generate_single_tests_hazards.BASE_DIR()'],['../namespacegenerate__gapped__tests.html#a346031851643862bb33972fc15032024',1,'generate_gapped_tests.BASE_DIR()'],['../namespacegenerate__double__dep__tests.html#a6d0284d0a13cc2a8df5e230cb6b4411c',1,'generate_double_dep_tests.BASE_DIR()'],['../namespacegenerate__control__data__tests.html#ad89ae23679558f501e9e10bc28f7f558',1,'generate_control_data_tests.BASE_DIR()'],['../namespacegenerate__2__instr__tests.html#aee7020b3231b0c8427cb3d42d23a0cc9',1,'generate_2_instr_tests.BASE_DIR()']]],
+  ['base_5fdir_38',['BASE_DIR',['../namespacegenerate__double__dep__tests.html#a6d0284d0a13cc2a8df5e230cb6b4411c',1,'generate_double_dep_tests.BASE_DIR()'],['../namespacegenerate__control__data__tests.html#ad89ae23679558f501e9e10bc28f7f558',1,'generate_control_data_tests.BASE_DIR()'],['../namespacegenerate__2__instr__tests.html#aee7020b3231b0c8427cb3d42d23a0cc9',1,'generate_2_instr_tests.BASE_DIR()'],['../namespacegenerate__gapped__tests.html#a346031851643862bb33972fc15032024',1,'generate_gapped_tests.BASE_DIR()'],['../namespacegenerate__single__tests__hazards.html#a52d2576d87f7a9d899b042984d7e8c6e',1,'generate_single_tests_hazards.BASE_DIR()'],['../namespacegenerate__single__tests__without__hazards.html#abfe8c6f04bd7fce776fb03415767fc73',1,'generate_single_tests_without_hazards.BASE_DIR()']]],
   ['baseaddress_39',['baseAddress',['../classMMIODevice.html#ab5d704272d2cf6d18cda4514110c7879',1,'MMIODevice::baseAddress()'],['../classNullMMIODevice.html#af1e784af30e77f4b5d997cc9f1e645e0',1,'NullMMIODevice::baseAddress()']]],
   ['beq_40',['BEQ',['../namespaceinstruction__type.html#aa1eab7aa4e293318f6670cbbe73a41afa3ef284f0b58cec98a7df8e2e33ab427e',1,'instruction_type']]],
   ['bge_41',['BGE',['../namespaceinstruction__type.html#aa1eab7aa4e293318f6670cbbe73a41afa3139f70a3cb6c0695e717928e8784e2d',1,'instruction_type']]],
@@ -21,12 +21,16 @@ var searchData=
   ['branch_5fpredictor_5ftype_54',['branch_predictor_type',['../structvm__config_1_1VmConfig.html#a4e07aba11e7d031c2ef537d1d364739b',1,'vm_config::VmConfig']]],
   ['branch_5fpredictors_55',['BRANCH_PREDICTORS',['../namespacetest__runner.html#a76ddb37764cfd878fdf159520cf7e36f',1,'test_runner']]],
   ['branch_5fstage_56',['branch_stage',['../structvm__config_1_1VmConfig.html#ab7bfe3314402d9507cf27fbcf080d335',1,'vm_config::VmConfig']]],
-  ['branch_5ftype_57',['BRANCH_TYPE',['../namespacegenerate__single__tests__hazards.html#a373a04d0f4fab86c8ed98d52ffaa3ac6',1,'generate_single_tests_hazards.BRANCH_TYPE()'],['../namespacegenerate__single__tests__without__hazards.html#a5c5778093512f6c398a75fa6d6aa3153',1,'generate_single_tests_without_hazards.BRANCH_TYPE()']]],
-  ['branchop_58',['BranchOp',['../namespaceinstruction__type.html#aa1eab7aa4e293318f6670cbbe73a41af',1,'instruction_type']]],
-  ['branchpredictortype_59',['BranchPredictorType',['../namespacevm__config.html#af12207855fa8a67ed62dec8ff0d6751d',1,'vm_config']]],
-  ['branchstage_60',['BranchStage',['../namespacevm__config.html#a95a8e5163d817e700a22dd4c2b903d37',1,'vm_config']]],
-  ['breakpoints_5f_61',['breakpoints_',['../classVmBase.html#a1ab317e9659f20f6edddad20ec241f98',1,'VmBase']]],
-  ['bss_5fsection_5fstart_62',['bss_section_start',['../structvm__config_1_1VmConfig.html#a219e9e3f1ddeb1535d0eed15ec59895f',1,'vm_config::VmConfig']]],
-  ['btypeinstructionencoding_63',['BTypeInstructionEncoding',['../structinstruction__set_1_1BTypeInstructionEncoding.html#a3ba23591ee77efa63baf872e304d32aa',1,'instruction_set::BTypeInstructionEncoding::BTypeInstructionEncoding()'],['../structinstruction__set_1_1BTypeInstructionEncoding.html',1,'instruction_set::BTypeInstructionEncoding']]],
-  ['build_5fdir_64',['BUILD_DIR',['../namespacegenerate__references.html#a2ec4870017d57be68061d7a353c8d42d',1,'generate_references.BUILD_DIR()'],['../namespacetest__runner.html#a60c0b841bdf3d51c9bdd8814900518cb',1,'test_runner.BUILD_DIR()']]]
+  ['branch_5fstages_57',['BRANCH_STAGES',['../namespacetest__runner.html#a22730f5a3395a84d6714bd49975f4a3b',1,'test_runner']]],
+  ['branch_5ftype_58',['BRANCH_TYPE',['../namespacegenerate__single__tests__hazards.html#a373a04d0f4fab86c8ed98d52ffaa3ac6',1,'generate_single_tests_hazards.BRANCH_TYPE()'],['../namespacegenerate__single__tests__without__hazards.html#a5c5778093512f6c398a75fa6d6aa3153',1,'generate_single_tests_without_hazards.BRANCH_TYPE()']]],
+  ['branchop_59',['BranchOp',['../namespaceinstruction__type.html#aa1eab7aa4e293318f6670cbbe73a41af',1,'instruction_type']]],
+  ['branchpredictortype_60',['BranchPredictorType',['../namespacevm__config.html#af12207855fa8a67ed62dec8ff0d6751d',1,'vm_config']]],
+  ['branchstage_61',['BranchStage',['../namespacevm__config.html#a95a8e5163d817e700a22dd4c2b903d37',1,'vm_config']]],
+  ['branchtargetbuffer_62',['BranchTargetBuffer',['../classBranchTargetBuffer.html',1,'']]],
+  ['breakpoints_5f_63',['breakpoints_',['../classVmBase.html#a1ab317e9659f20f6edddad20ec241f98',1,'VmBase']]],
+  ['bss_5fsection_5fstart_64',['bss_section_start',['../structvm__config_1_1VmConfig.html#a219e9e3f1ddeb1535d0eed15ec59895f',1,'vm_config::VmConfig']]],
+  ['btb_2eh_65',['btb.h',['../btb_8h.html',1,'']]],
+  ['btbentry_66',['BTBEntry',['../structBTBEntry.html',1,'']]],
+  ['btypeinstructionencoding_67',['BTypeInstructionEncoding',['../structinstruction__set_1_1BTypeInstructionEncoding.html#a3ba23591ee77efa63baf872e304d32aa',1,'instruction_set::BTypeInstructionEncoding::BTypeInstructionEncoding()'],['../structinstruction__set_1_1BTypeInstructionEncoding.html',1,'instruction_set::BTypeInstructionEncoding']]],
+  ['build_5fdir_68',['BUILD_DIR',['../namespacegenerate__references.html#a2ec4870017d57be68061d7a353c8d42d',1,'generate_references.BUILD_DIR()'],['../namespacetest__runner.html#a60c0b841bdf3d51c9bdd8814900518cb',1,'test_runner.BUILD_DIR()']]]
 ];

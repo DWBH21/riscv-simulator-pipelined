@@ -22,15 +22,17 @@ string \mbox{\hyperlink{namespacetest__runner_a7a805701b1cd2ee2a076d6ec979a5f27}
 \item 
 list \mbox{\hyperlink{namespacetest__runner_ae996e0d802e8dfa548a143b8ce8c7c32}{SIMULATOR\+\_\+\+CONFIGS}}
 \item 
+list \mbox{\hyperlink{namespacetest__runner_a22730f5a3395a84d6714bd49975f4a3b}{BRANCH\+\_\+\+STAGES}}
+\item 
 list \mbox{\hyperlink{namespacetest__runner_a9b9713ecf7ccd693564cb4a92f9343b7}{HAZARD\+\_\+\+MODES}}
 \item 
 list \mbox{\hyperlink{namespacetest__runner_a76ddb37764cfd878fdf159520cf7e36f}{BRANCH\+\_\+\+PREDICTORS}}
 \item 
-string \mbox{\hyperlink{namespacetest__runner_aa710181883c5fab1cfe296e11d82610a}{config\+\_\+id}} = f\char`\"{}5Stage\+\_\+\{mode\+\_\+name\}\+\_\+\{pred\}\char`\"{}
+string \mbox{\hyperlink{namespacetest__runner_aa710181883c5fab1cfe296e11d82610a}{config\+\_\+id}} = f\char`\"{}5Stage\+\_\+\{branch\+\_\+stage\}\+\_\+\{hazard\+\_\+mode\}\+\_\+\{pred\}\char`\"{}
 \item 
 \mbox{\hyperlink{namespacetest__runner_af4290c59fb3728e3cf8a5dd04dd26512}{target\+\_\+mode}} = os.\+environ.\+get(\char`\"{}SIM\+\_\+\+MODE\char`\"{})
 \item 
-list \mbox{\hyperlink{namespacetest__runner_a392804e1cfe7567f85f8c940a193514e}{filtered\+\_\+configs}} = \mbox{[}c for c in \mbox{\hyperlink{namespacetest__runner_ae996e0d802e8dfa548a143b8ce8c7c32}{SIMULATOR\+\_\+\+CONFIGS}} if c\mbox{[}\char`\"{}id\char`\"{}\mbox{]} == target\+\_\+mode\mbox{]}
+list \mbox{\hyperlink{namespacetest__runner_a392804e1cfe7567f85f8c940a193514e}{filtered\+\_\+configs}} = \mbox{[}c for c in \mbox{\hyperlink{namespacetest__runner_ae996e0d802e8dfa548a143b8ce8c7c32}{SIMULATOR\+\_\+\+CONFIGS}} if \mbox{\hyperlink{namespacetest__runner_af4290c59fb3728e3cf8a5dd04dd26512}{target\+\_\+mode}} in c\mbox{[}\char`\"{}id\char`\"{}\mbox{]}\mbox{]}
 \item 
 dictionary \mbox{\hyperlink{namespacetest__runner_abdecaba8f835a891df95c2f65e2e6c47}{TEST\+\_\+\+SUITES}}
 \end{DoxyCompactItemize}
@@ -77,6 +79,20 @@ Returns a list of test case dictionaries.
 \DoxyCodeLine{6 ]}
 
 \end{DoxyCode}
+\mbox{\Hypertarget{namespacetest__runner_a22730f5a3395a84d6714bd49975f4a3b}\label{namespacetest__runner_a22730f5a3395a84d6714bd49975f4a3b}} 
+\index{test\_runner@{test\_runner}!BRANCH\_STAGES@{BRANCH\_STAGES}}
+\index{BRANCH\_STAGES@{BRANCH\_STAGES}!test\_runner@{test\_runner}}
+\doxysubsubsection{\texorpdfstring{BRANCH\_STAGES}{BRANCH\_STAGES}}
+{\footnotesize\ttfamily list test\+\_\+runner.\+BRANCH\+\_\+\+STAGES}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  [}
+\DoxyCodeLine{2     \textcolor{stringliteral}{"{}ex"{}},}
+\DoxyCodeLine{3     \textcolor{stringliteral}{"{}id"{}}}
+\DoxyCodeLine{4 ]}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacetest__runner_a60c0b841bdf3d51c9bdd8814900518cb}\label{namespacetest__runner_a60c0b841bdf3d51c9bdd8814900518cb}} 
 \index{test\_runner@{test\_runner}!BUILD\_DIR@{BUILD\_DIR}}
 \index{BUILD\_DIR@{BUILD\_DIR}!test\_runner@{test\_runner}}
@@ -87,13 +103,13 @@ Returns a list of test case dictionaries.
 \index{test\_runner@{test\_runner}!config\_id@{config\_id}}
 \index{config\_id@{config\_id}!test\_runner@{test\_runner}}
 \doxysubsubsection{\texorpdfstring{config\_id}{config\_id}}
-{\footnotesize\ttfamily string test\+\_\+runner.\+config\+\_\+id = f\char`\"{}5Stage\+\_\+\{mode\+\_\+name\}\+\_\+\{pred\}\char`\"{}}
+{\footnotesize\ttfamily string test\+\_\+runner.\+config\+\_\+id = f\char`\"{}5Stage\+\_\+\{branch\+\_\+stage\}\+\_\+\{hazard\+\_\+mode\}\+\_\+\{pred\}\char`\"{}}
 
 \mbox{\Hypertarget{namespacetest__runner_a392804e1cfe7567f85f8c940a193514e}\label{namespacetest__runner_a392804e1cfe7567f85f8c940a193514e}} 
 \index{test\_runner@{test\_runner}!filtered\_configs@{filtered\_configs}}
 \index{filtered\_configs@{filtered\_configs}!test\_runner@{test\_runner}}
 \doxysubsubsection{\texorpdfstring{filtered\_configs}{filtered\_configs}}
-{\footnotesize\ttfamily list test\+\_\+runner.\+filtered\+\_\+configs = \mbox{[}c for c in \mbox{\hyperlink{namespacetest__runner_ae996e0d802e8dfa548a143b8ce8c7c32}{SIMULATOR\+\_\+\+CONFIGS}} if c\mbox{[}\char`\"{}id\char`\"{}\mbox{]} == target\+\_\+mode\mbox{]}}
+{\footnotesize\ttfamily list test\+\_\+runner.\+filtered\+\_\+configs = \mbox{[}c for c in \mbox{\hyperlink{namespacetest__runner_ae996e0d802e8dfa548a143b8ce8c7c32}{SIMULATOR\+\_\+\+CONFIGS}} if \mbox{\hyperlink{namespacetest__runner_af4290c59fb3728e3cf8a5dd04dd26512}{target\+\_\+mode}} in c\mbox{[}\char`\"{}id\char`\"{}\mbox{]}\mbox{]}}
 
 \mbox{\Hypertarget{namespacetest__runner_a9b9713ecf7ccd693564cb4a92f9343b7}\label{namespacetest__runner_a9b9713ecf7ccd693564cb4a92f9343b7}} 
 \index{test\_runner@{test\_runner}!HAZARD\_MODES@{HAZARD\_MODES}}
@@ -104,8 +120,8 @@ Returns a list of test case dictionaries.
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 =  [}
-\DoxyCodeLine{2     (\textcolor{stringliteral}{"{}Stall"{}}, \textcolor{stringliteral}{"{}stall"{}}), }
-\DoxyCodeLine{3     (\textcolor{stringliteral}{"{}Forwarding"{}}, \textcolor{stringliteral}{"{}forwarding"{}})}
+\DoxyCodeLine{2     \textcolor{stringliteral}{"{}stall"{}},}
+\DoxyCodeLine{3     \textcolor{stringliteral}{"{}forwarding"{}}}
 \DoxyCodeLine{4 ]}
 
 \end{DoxyCode}
@@ -131,7 +147,7 @@ Returns a list of test case dictionaries.
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 =  [}
 \DoxyCodeLine{2     \{}
-\DoxyCodeLine{3         \textcolor{stringliteral}{"{}id"{}}: \textcolor{stringliteral}{"{}5Stage\_Ideal"{}},}
+\DoxyCodeLine{3         \textcolor{stringliteral}{"{}id"{}}: \textcolor{stringliteral}{"{}5Stage\_ex\_Ideal"{}},}
 \DoxyCodeLine{4         \textcolor{stringliteral}{"{}flags"{}}: [}
 \DoxyCodeLine{5             \textcolor{stringliteral}{"{}-\/-\/config"{}}, \textcolor{stringliteral}{"{}Execution"{}}, \textcolor{stringliteral}{"{}processor\_type"{}}, \textcolor{stringliteral}{"{}multi\_stage"{}}, }
 \DoxyCodeLine{6             \textcolor{stringliteral}{"{}-\/-\/config"{}}, \textcolor{stringliteral}{"{}Execution"{}}, \textcolor{stringliteral}{"{}data\_hazard\_mode"{}}, \textcolor{stringliteral}{"{}ideal"{}}}

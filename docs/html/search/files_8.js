@@ -1,25 +1,6 @@
 var searchData=
 [
-  ['main_2ecpp_1401',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['main_2ecpp_2eo_2ed_1402',['main.cpp.o.d',['../vm__core_8dir_2src_2main_8cpp_8o_8d.html',1,'(Global Namespace)'],['../vm_8dir_2src_2main_8cpp_8o_8d.html',1,'(Global Namespace)']]],
-  ['main_2eh_1403',['main.h',['../main_8h.html',1,'']]],
-  ['main_5fassembler_2ecpp_1404',['main_assembler.cpp',['../main__assembler_8cpp.html',1,'']]],
-  ['main_5fassembler_2ecpp_2eo_2ed_1405',['main_assembler.cpp.o.d',['../vm__core_8dir_2src_2test_2main__assembler_8cpp_8o_8d.html',1,'(Global Namespace)'],['../assembler__binary_8dir_2src_2test_2main__assembler_8cpp_8o_8d.html',1,'(Global Namespace)']]],
-  ['main_5fcli_2ecpp_1406',['main_cli.cpp',['../main__cli_8cpp.html',1,'']]],
-  ['main_5fcli_2ecpp_2eo_2ed_1407',['main_cli.cpp.o.d',['../rv5s__binary_8dir_2src_2test_2main__cli_8cpp_8o_8d.html',1,'(Global Namespace)'],['../vm__core_8dir_2src_2test_2main__cli_8cpp_8o_8d.html',1,'(Global Namespace)']]],
-  ['main_5fmemory_2ecpp_1408',['main_memory.cpp',['../main__memory_8cpp.html',1,'']]],
-  ['main_5fmemory_2ecpp_2eo_2ed_1409',['main_memory.cpp.o.d',['../main__memory_8cpp_8o_8d.html',1,'']]],
-  ['main_5fmemory_2eh_1410',['main_memory.h',['../main__memory_8h.html',1,'']]],
-  ['main_5frv5s_2ecpp_1411',['main_rv5s.cpp',['../main__rv5s_8cpp.html',1,'']]],
-  ['main_5frv5s_2ecpp_2eo_2ed_1412',['main_rv5s.cpp.o.d',['../rv5s__binary_8dir_2src_2test_2main__rv5s_8cpp_8o_8d.html',1,'(Global Namespace)'],['../vm__core_8dir_2src_2test_2main__rv5s_8cpp_8o_8d.html',1,'(Global Namespace)']]],
-  ['main_5frv5s_5fex_2ecpp_1413',['main_rv5s_ex.cpp',['../main__rv5s__ex_8cpp.html',1,'']]],
-  ['main_5frv5s_5fex_2ecpp_2eo_2ed_1414',['main_rv5s_ex.cpp.o.d',['../vm__core_8dir_2src_2test_2main__rv5s__ex_8cpp_8o_8d.html',1,'(Global Namespace)'],['../rv5s__ex__binary_8dir_2src_2test_2main__rv5s__ex_8cpp_8o_8d.html',1,'(Global Namespace)']]],
-  ['main_5frv5s_5fstall_2ecpp_1415',['main_rv5s_stall.cpp',['../main__rv5s__stall_8cpp.html',1,'']]],
-  ['main_5frv5s_5fstall_2ecpp_2eo_2ed_1416',['main_rv5s_stall.cpp.o.d',['../vm__core_8dir_2src_2test_2main__rv5s__stall_8cpp_8o_8d.html',1,'(Global Namespace)'],['../rv5s__stall__binary_8dir_2src_2test_2main__rv5s__stall_8cpp_8o_8d.html',1,'(Global Namespace)']]],
-  ['main_5frvss_2ecpp_1417',['main_rvss.cpp',['../main__rvss_8cpp.html',1,'']]],
-  ['main_5frvss_2ecpp_2eo_2ed_1418',['main_rvss.cpp.o.d',['../rvss__binary_8dir_2src_2test_2main__rvss_8cpp_8o_8d.html',1,'(Global Namespace)'],['../vm__core_8dir_2src_2test_2main__rvss_8cpp_8o_8d.html',1,'(Global Namespace)']]],
-  ['memory_5fcontroller_2ecpp_1419',['memory_controller.cpp',['../memory__controller_8cpp.html',1,'']]],
-  ['memory_5fcontroller_2ecpp_2eo_2ed_1420',['memory_controller.cpp.o.d',['../memory__controller_8cpp_8o_8d.html',1,'']]],
-  ['memory_5fcontroller_2eh_1421',['memory_controller.h',['../memory__controller_8h.html',1,'']]],
-  ['mmio_5fdevices_2eh_1422',['mmio_devices.h',['../mmio__devices_8h.html',1,'']]]
+  ['lexer_2ecpp_1413',['lexer.cpp',['../lexer_8cpp.html',1,'']]],
+  ['lexer_2ecpp_2eo_2ed_1414',['lexer.cpp.o.d',['../lexer_8cpp_8o_8d.html',1,'']]],
+  ['lexer_2eh_1415',['lexer.h',['../lexer_8h.html',1,'']]]
 ];

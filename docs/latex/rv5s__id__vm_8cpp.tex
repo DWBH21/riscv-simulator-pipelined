@@ -2,10 +2,11 @@
 \label{rv5s__id__vm_8cpp}\index{src/vm/rv5s/rv5s\_id\_vm.cpp@{src/vm/rv5s/rv5s\_id\_vm.cpp}}
 
 
-Implementation of the 5-\/stage pipelined RISC-\/V VM where Branch Comparison happens in the EX stage.  
+Implementation of the 5-\/stage pipelined RISC-\/V VM where Branch Comparison happens in the ID stage Branch Prediction happens in the Fetch Stage with the Branch Target Buffer to determine whether the current instruction is a branch and what is its target address.  
 
 
 {\ttfamily \#include \char`\"{}vm/rv5s/rv5s\+\_\+id\+\_\+vm.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vm/rv5s/btb.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}vm/rv5s/rv5s\+\_\+control\+\_\+unit.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}vm/rv5s/pipeline\+\_\+registers.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}vm/rv5s/rv5s\+\_\+hazard\+\_\+unit.\+h\char`\"{}}\newline
@@ -39,5 +40,5 @@ Include dependency graph for rv5s\+\_\+id\+\_\+vm.\+cpp\+:
 
 
 \doxysubsection{Detailed Description}
-Implementation of the 5-\/stage pipelined RISC-\/V VM where Branch Comparison happens in the EX stage. 
+Implementation of the 5-\/stage pipelined RISC-\/V VM where Branch Comparison happens in the ID stage Branch Prediction happens in the Fetch Stage with the Branch Target Buffer to determine whether the current instruction is a branch and what is its target address. 
 

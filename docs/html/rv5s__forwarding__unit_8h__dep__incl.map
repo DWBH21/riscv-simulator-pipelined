@@ -1,11 +1,11 @@
 <map id="include/vm/rv5s/rv5s_forwarding_unit.h" name="include/vm/rv5s/rv5s_forwarding_unit.h">
-<area shape="rect" id="node1" title="Definition of the 5&#45;stage pipelined RISC&#45;V Forwarding Unit." alt="" coords="568,5,727,47"/>
-<area shape="rect" id="node2" href="$rv5s__ex__vm_8h.html" title="Definition of the 5&#45;stage pipelined RISC&#45;V VM where Branch Comparison happens in the EX stage." alt="" coords="307,95,465,136"/>
-<area shape="rect" id="node6" href="$rv5s__ex__vm_8cpp.html" title="Implementation of the 5&#45;stage pipelined RISC&#45;V VM where Branch Comparison happens in the EX stage." alt="" coords="481,184,635,225"/>
-<area shape="rect" id="node7" href="$rv5s__id__vm_8h.html" title="Definition of the 5&#45;stage pipelined RISC&#45;V VM where Branch Comparison happens in the ID stage." alt="" coords="568,95,727,136"/>
-<area shape="rect" id="node8" href="$rv5s__id__vm_8cpp.html" title="Implementation of the 5&#45;stage pipelined RISC&#45;V VM where Branch Comparison happens in the EX stage." alt="" coords="675,184,825,225"/>
-<area shape="rect" id="node9" href="$rv5s__forwarding__unit_8cpp.html" title=" " alt="" coords="803,95,1009,136"/>
-<area shape="rect" id="node3" href="$main_8cpp.html" title=" " alt="" coords="5,191,111,218"/>
-<area shape="rect" id="node4" href="$main__cli_8cpp.html" title=" " alt="" coords="135,191,291,218"/>
-<area shape="rect" id="node5" href="$main__rv5s__ex_8cpp.html" title="Isolated Entry Point for the 5&#45;stage processor mode (with Branch Comparison in the EX stage) for Test..." alt="" coords="315,184,457,225"/>
+<area shape="rect" id="node1" title="Definition of the 5&#45;stage pipelined RISC&#45;V Forwarding Unit." alt="" coords="361,5,519,47"/>
+<area shape="rect" id="node2" href="$rv5s__ex__vm_8h.html" title="Definition of the 5&#45;stage pipelined RISC&#45;V VM where Branch Comparison happens in the EX stage." alt="" coords="361,95,519,136"/>
+<area shape="rect" id="node6" href="$rv5s__ex__vm_8cpp.html" title="Implementation of the 5&#45;stage pipelined RISC&#45;V VM where Branch Comparison happens in the EX stage." alt="" coords="655,184,809,225"/>
+<area shape="rect" id="node7" href="$rv5s__id__vm_8h.html" title="Definition of the 5&#45;stage pipelined RISC&#45;V VM where Branch Comparison happens in the ID stage." alt="" coords="178,95,337,136"/>
+<area shape="rect" id="node8" href="$rv5s__id__vm_8cpp.html" title="Implementation of the 5&#45;stage pipelined RISC&#45;V VM where Branch Comparison happens in the ID stage Bra..." alt="" coords="5,184,155,225"/>
+<area shape="rect" id="node9" href="$rv5s__forwarding__unit_8cpp.html" title=" " alt="" coords="595,95,802,136"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title=" " alt="" coords="359,191,465,218"/>
+<area shape="rect" id="node4" href="$main__cli_8cpp.html" title=" " alt="" coords="179,191,335,218"/>
+<area shape="rect" id="node5" href="$main__rv5s__ex_8cpp.html" title="Isolated Entry Point for the 5&#45;stage processor mode (with Branch Comparison in the EX stage) for Test..." alt="" coords="489,184,631,225"/>
 </map>

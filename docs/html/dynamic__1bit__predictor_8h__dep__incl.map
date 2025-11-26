@@ -2,5 +2,5 @@
 <area shape="rect" id="node1" title="Defines the 1&#45;bit dynamic branch predictor." alt="" coords="168,5,355,61"/>
 <area shape="rect" id="node2" href="$dynamic__1bit__predictor_8cpp.html" title="Implementation for the Dynamic 1&#45;Bit Predictor." alt="" coords="5,109,160,165"/>
 <area shape="rect" id="node3" href="$rv5s__ex__vm_8cpp.html" title="Implementation of the 5&#45;stage pipelined RISC&#45;V VM where Branch Comparison happens in the EX stage." alt="" coords="185,117,338,158"/>
-<area shape="rect" id="node4" href="$rv5s__id__vm_8cpp.html" title="Implementation of the 5&#45;stage pipelined RISC&#45;V VM where Branch Comparison happens in the EX stage." alt="" coords="363,117,512,158"/>
+<area shape="rect" id="node4" href="$rv5s__id__vm_8cpp.html" title="Implementation of the 5&#45;stage pipelined RISC&#45;V VM where Branch Comparison happens in the ID stage Bra..." alt="" coords="363,117,512,158"/>
 </map>

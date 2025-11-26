@@ -337,7 +337,7 @@ $(function() {
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            <a class="code" href="structvm__config_1_1VmConfig.html#a54bf0cfc5d2bbcd3aa4cf9273e34285d">setBranchStage</a>(<a class="code" href="namespacevm__config.html#a95a8e5163d817e700a22dd4c2b903d37aa734abca01add327e8830687ffd7c123">BranchStage::BRANCH_IN_EX</a>);</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        }</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (value == <span class="stringliteral">&quot;id&quot;</span>) {</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;BranchStage &#39;id&#39; is not yet supported.&quot;</span>);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            <a class="code" href="structvm__config_1_1VmConfig.html#a54bf0cfc5d2bbcd3aa4cf9273e34285d">setBranchStage</a>(<a class="code" href="namespacevm__config.html#a95a8e5163d817e700a22dd4c2b903d37a4fce297ede30a974a7972bb8786c68fa">BranchStage::BRANCH_IN_ID</a>);</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        }</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Unknown branch_stage: &quot;</span> + value);</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;      }</div>
